@@ -1,3 +1,13 @@
+// Navigation menu
+const menu = document.querySelector('.menu')
+const navLinks = document.querySelector('.nav-links')
+function showMenu() {
+  menu.classList.toggle('show-menu')
+  navLinks.classList.toggle('show-nav-links')
+}
+menu.addEventListener('click', showMenu, false)
+
+// Typewriter
 class TypeWriter {
   constructor(txtElement, words, wait = 3000) {
     this.txtElement = txtElement
@@ -65,15 +75,10 @@ function init() {
   // Init TypeWriter
   new TypeWriter(txtElement, words, wait)
 }
-init()
+// setTimeout(() => init(), 2000)
+// init()
 // Init On DOM Load
-// document.addEventListener('DOMContentLoaded', init)
-
-// Navigation menu
-const menu = document.querySelector('.menu')
-const navLinks = document.querySelector('.nav-links')
-function showMenu() {
-  menu.classList.toggle('show-menu')
-  navLinks.classList.toggle('show-nav-links')
-}
-menu.addEventListener('click', showMenu, false)
+document.addEventListener(
+  'DOMContentLoaded',
+  setTimeout(() => init(), 2000)
+)
