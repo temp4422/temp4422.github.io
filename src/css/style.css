@@ -15,7 +15,7 @@ Rampart One, Kalam, Roboto
   --dark-grey: #bababa;
   --transision-time-out: 1.5s;
   --transision-time-in: 0.5s;
-  --nav-links-gap: 2rem;
+  --nav-links-gap: 1rem;
 }
 
 *,
@@ -94,10 +94,12 @@ body {
   border: none;
   z-index: 300;
   box-shadow: 0 0 28px rgba(255, 255, 255, 0.25), 0 0 10px rgba(255, 255, 255, 0.22);
+  transition: 0.5s ease; /* box shadow animation on hover*/
   cursor: pointer;
 }
 .menu:hover {
   /* transform: scale(1.5); */
+  transition: 0.5s ease;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.19), 0 0 50px rgba(255, 255, 255, 0.23);
 }
 
@@ -169,6 +171,12 @@ body {
   margin: 1rem;
   width: 3rem;
   height: 3rem;
+  transition: 1s ease;
+  box-shadow: 0 0 28px rgba(255, 255, 255, 0.25), 0 0 10px rgba(255, 255, 255, 0.22);
+}
+.svg:hover {
+  transition: 1s ease;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.19), 0 0 50px rgba(255, 255, 255, 0.23);
 }
 .question-svg {
   margin: 0 0 3rem 0;
@@ -241,7 +249,6 @@ body {
 /* .text-intro:hover {
   transition: 3s ease;
 } */
-
 
 .works-container {
   width: 100%;

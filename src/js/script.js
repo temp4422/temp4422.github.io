@@ -1,3 +1,12 @@
+/* Synchronous function to pause execution*/
+function pause(milliseconds) {
+  var dt = new Date()
+  while (new Date() - dt <= milliseconds) {
+    /* Do nothing */
+  }
+}
+// pause(2000)
+
 /* Navigation menu */
 /********************************************************************************/
 function navigationMenu() {
@@ -143,9 +152,9 @@ scrollAnimation()
   // setTimeout(() => init(), 2000)
   // init()
   // Init On DOM Load
-  document.addEventListener(
-    'DOMContentLoaded',
+  document.addEventListener('DOMContentLoaded', testTime())
+  function testTime() {
     setTimeout(() => init(), 2000)
-  )
+  }
 }
 typeWriter()
