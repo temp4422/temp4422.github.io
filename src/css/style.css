@@ -5,15 +5,17 @@ Main color - Mine Shaft (approx.) #202020
 Rampart One, Kalam, Roboto
 */
 
-/********************* GENERAL *********************/
+/* GENERAL */
+/********************************************************************************/
 @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Rampart+One&family=Roboto&family=Satisfy&display=swap');
 
 :root {
-  --bg-black: #202020;
+  --black: #202020;
   --light-grey: #cecece;
   --dark-grey: #bababa;
   --transision-time-out: 1.5s;
   --transision-time-in: 0.5s;
+  --nav-links-gap: 2rem;
 }
 
 *,
@@ -28,7 +30,7 @@ html,
 body {
   font-family: 'Kalam', 'Roboto', sans-serif;
   box-sizing: border-box;
-  background: var(--bg-black);
+  background: var(--black);
   /* background: white */
   color: var(--light-grey);
 }
@@ -41,19 +43,25 @@ body {
   overflow-x: hidden;
 }
 
+/* HEADER */
+/********************************************************************************/
+
 .nav-links {
   position: fixed;
   top: 0;
   right: -100%;
-  display: flex;
-  flex-flow: column;
   background: rgba(206, 206, 206, 0.507);
   transition: var(--transision-time-in) ease-out;
   width: 100%;
-  min-height: 100vh;
-  padding: 10rem 0 0 0;
+  height: 100%;
+  padding: 8rem 0 0 0;
   backdrop-filter: blur(2px);
   z-index: 200;
+  display: grid;
+  gap: var(--nav-links-gap);
+  place-items: center center;
+  place-content: start stretch;
+  overflow-y: scroll;
 }
 
 .show-nav-links {
@@ -62,7 +70,8 @@ body {
 }
 
 .nav-link {
-  margin: 1rem;
+  margin: 0;
+  padding: 0;
   text-decoration: none;
 }
 
@@ -70,9 +79,6 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  /* display: flex;
-  flex-flow: column;
-  justify-content: space-evenly; */
   display: grid;
   align-content: space-evenly;
   gap: 0.5rem;
@@ -88,7 +94,6 @@ body {
   border: none;
   z-index: 300;
   box-shadow: 0 0 28px rgba(255, 255, 255, 0.25), 0 0 10px rgba(255, 255, 255, 0.22);
-
   cursor: pointer;
 }
 .menu:hover {
@@ -99,7 +104,8 @@ body {
 .menu-line {
   width: 100%;
   height: 0.5rem;
-  background: var(--dark-grey);
+  /* background: var(--black); */
+  background: #000;
   border-radius: 8px;
 }
 .menu-line:nth-child(1) {
@@ -159,7 +165,27 @@ body {
   }
 }
 
-/********************* MAIN *********************/
+.svg {
+  margin: 1rem;
+  width: 3rem;
+  height: 3rem;
+}
+.question-svg {
+  margin: 0 0 3rem 0;
+}
+.language-svg {
+  place-self: start;
+  transform: translateY(calc(100% + var(--nav-links-gap) + 2rem)); /*move down: own size + size of nav-links gap + svg margin */
+}
+.sun-svg {
+  place-self: end;
+}
+.moon-svg {
+  place-self: end;
+}
+
+/* MAIN */
+/********************************************************************************/
 
 .main {
   display: grid;
@@ -208,16 +234,36 @@ body {
 .p-center {
   text-align: center;
 }
-/* .text-main {
-  width: 100%;
-  padding: 1rem;
-  margin: 1rem;
-  text-align: left;
-  line-height: 1.5rem;
-  letter-spacing: 0.015rem;
+/* .text-intro {
+  transition: 3s ease;
+  opacity: 0;
+} */
+/* .text-intro:hover {
+  transition: 3s ease;
 } */
 
-/********************* FOOTER *********************/
+
+.works-container {
+  width: 100%;
+  max-width: 50rem;
+  /* height: 20rem; */
+  margin: 8rem 2rem;
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+  /* background: grey; */
+}
+.work {
+  width: 100%;
+  height: 10rem;
+  padding: 2rem;
+  background: var(--light-grey);
+  color: var(--black);
+  border-radius: 20px;
+}
+
+/* FOOTER */
+/********************************************************************************/
 .footer {
   margin: 10rem 0 1rem 0;
 }
@@ -229,4 +275,75 @@ body {
 }
 .footer .p {
   margin: 8rem 0 2rem 0;
+}
+
+/* Animation */
+/********************************************************************************/
+/* Animate items on scroll */
+.js-scroll {
+  opacity: 0;
+  transition: 1s;
+}
+
+.js-scroll.scrolled {
+  opacity: 1;
+}
+
+/* Different scroll animation */
+.scrolled.fade-in {
+  animation: fade-in 1s ease-in-out both;
+}
+
+.scrolled.fade-in-bottom {
+  animation: fade-in-bottom 1s ease-in-out both;
+}
+
+.scrolled.slide-left {
+  animation: slide-in-left 1s ease-in-out both;
+}
+
+.scrolled.slide-right {
+  animation: slide-in-right 1s ease-in-out both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
