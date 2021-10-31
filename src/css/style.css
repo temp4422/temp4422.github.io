@@ -93,14 +93,14 @@ body {
   backdrop-filter: blur(2px);
   border: none;
   z-index: 300;
-  box-shadow: 0 0 28px rgba(255, 255, 255, 0.25), 0 0 10px rgba(255, 255, 255, 0.22);
-  transition: 0.5s ease; /* box shadow animation on hover*/
   cursor: pointer;
+  transition: 0.5s ease; /* box shadow animation on hover*/
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
 }
 .menu:hover {
   /* transform: scale(1.5); */
   transition: 0.5s ease;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.19), 0 0 50px rgba(255, 255, 255, 0.23);
+  filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
 }
 
 .menu-line {
@@ -171,15 +171,17 @@ body {
   margin: 1rem;
   width: 3rem;
   height: 3rem;
-  transition: 1s ease;
-  box-shadow: 0 0 28px rgba(255, 255, 255, 0.25), 0 0 10px rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition: 0.5s ease;
+  filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
 }
 .svg:hover {
-  transition: 1s ease;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.19), 0 0 50px rgba(255, 255, 255, 0.23);
+  transition: 0.25s ease;
+  filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
 }
-.question-svg {
-  margin: 0 0 3rem 0;
+
+.contactstion-svg {
+  margin: 1rem 1rem 3rem 1rem;
 }
 .language-svg {
   place-self: start;
