@@ -27,16 +27,20 @@ Rampart One, Kalam, Roboto
 }
 
 html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   /* scroll-behavior: smooth; */
 }
 
 body {
-  font-family: 'Kalam', 'Roboto', sans-serif;
   box-sizing: border-box;
+  font-family: 'Kalam', 'Roboto', sans-serif;
   background: var(--black);
   color: var(--light-grey);
   width: 100%;
-  height: 100%;
+  /* height: 100%; DON NOT CHANGE! BRAKES SCROLL ANIMATION!*/
+  max-height: 100%;
   overflow-x: hidden;
   display: grid;
   place-items: center;
