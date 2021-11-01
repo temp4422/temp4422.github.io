@@ -25,6 +25,7 @@ menu.addEventListener('click', showMenu, false)
 linkArr.forEach((item) => {
   item.addEventListener('click', showMenu, false)
 })
+
 /* Animation */
 /********************************************************************************/
 /* Animate items on scroll */
@@ -155,5 +156,5 @@ function init() {
 // Init On DOM Load
 document.addEventListener('DOMContentLoaded', testTime())
 function testTime() {
-  setTimeout(() => init(), 2000)
+  setTimeout(() => init(), 1500)
 }
