@@ -30,7 +30,6 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  /* scroll-behavior: smooth; */
 }
 
 body {
@@ -44,6 +43,7 @@ body {
   overflow-x: hidden;
   display: grid;
   place-items: center;
+  scroll-behavior: smooth;
 }
 
 .root {
@@ -53,6 +53,7 @@ body {
   overflow-x: hidden;
   display: grid;
   place-items: center;
+  padding: 0 2rem;
 }
 
 .lock-scroll {
@@ -201,9 +202,9 @@ body {
   filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
 }
 
-.contactstion-svg {
+/* .contactstion-svg {
   margin: 1rem 1rem 3rem 1rem;
-}
+} */
 .language-svg {
   place-self: start;
   transform: translateY(calc(100% + var(--nav-links-gap) + 2rem)); /*move down: own size + size of nav-links gap + svg margin */
@@ -247,6 +248,7 @@ body {
   width: 100%;
   height: 4rem;
   margin: 30vh 0;
+  padding: 0 4rem 0 0;
 }
 
 .hr {
@@ -260,10 +262,13 @@ body {
 }
 
 .p {
-  margin: 5rem 2rem;
+  margin: 2rem 0;
 }
 .p-center {
   text-align: center;
+}
+.p-time-to-work {
+  margin: 25% 0 0 0;
 }
 /* .text-intro {
   transition: 3s ease;
@@ -273,11 +278,17 @@ body {
   transition: 3s ease;
 } */
 
+.h1 {
+  justify-self: left;
+}
+.h1-work {
+  margin: 20rem 0 0 0;
+}
 .works-container {
   width: 100%;
   max-width: 50rem;
   /* height: 20rem; */
-  margin: 8rem 2rem;
+  margin: 2rem 2rem;
   padding: 2rem;
   display: grid;
   gap: 1rem;
@@ -292,6 +303,9 @@ body {
   border-radius: 20px;
 }
 
+.h1-about {
+  margin: 20rem 0 0 0;
+}
 /* FOOTER */
 /********************************************************************************/
 .footer {
@@ -300,11 +314,23 @@ body {
 .footer-container {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  margin: 3rem 2rem;
+  gap: 1rem;
+  margin: 3rem 0;
 }
 .footer .p {
   margin: 8rem 0 2rem 0;
+}
+.svg-footer {
+  margin: 1rem;
+  /* width: 0rem; */
+  /* height: 0rem; */
+  cursor: pointer;
+  transition: 0.5s ease;
+  filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));
+}
+.svg:hover {
+  transition: 0.25s ease;
+  filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 0.75));
 }
 
 /* Animation */
