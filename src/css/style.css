@@ -279,15 +279,15 @@ body {
 } */
 
 .h1 {
-  justify-self: left;
+  /* justify-self: left; */
 }
 .h1-work {
   margin: 20rem 0 0 0;
 }
 .works-container {
   width: 100%;
-  max-width: 50rem;
-  /* height: 20rem; */
+  max-width: 30rem;
+  height: auto;
   margin: 2rem 2rem;
   padding: 2rem;
   display: grid;
@@ -332,6 +332,9 @@ body {
   transition: 0.25s ease;
   filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 0.75));
 }
+.svg-mail {
+  transition: 5s ease;
+}
 
 /* Animation */
 /********************************************************************************/
@@ -348,6 +351,15 @@ body {
 /* Different scroll animation */
 .scrolled.fade-in {
   animation: fade-in 1s ease-in-out both;
+}
+.scrolled.fade-in-delay-2 {
+  animation: fade-in 2s ease-in-out both;
+}
+.scrolled.fade-in-delay-3 {
+  animation: fade-in 3s ease-in-out both;
+}
+.scrolled.fade-in-delay-4 {
+  animation: fade-in 4s ease-in-out both;
 }
 
 .scrolled.fade-in-bottom {
