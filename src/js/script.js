@@ -7,17 +7,18 @@
 // }
 // pause(2000)
 
-/* Navigation menu */
-/********************************************************************************/
-const menu = document.querySelector('.menu')
-const navLinks = document.querySelector('.nav-links')
-const linkArr = document.querySelectorAll('.nav-link')
+/****************************** Navigation menu ******************************/
+const menu = document.querySelector('.nav__menu')
+const navLinks = document.querySelector('.nav__panel')
+const linkArr = document.querySelectorAll('.nav__link')
 const body = document.querySelector('body')
 
 function showMenu() {
-  menu.classList.toggle('show-menu')
-  navLinks.classList.toggle('show-nav-links')
-  body.classList.toggle('lock-scroll')
+  menu.classList.toggle('show-nav__menu')
+  navLinks.classList.toggle('show-nav__panel')
+  if (Window.innerWidth < 768) {
+    body.classList.toggle('lock-scroll')
+  }
 }
 
 menu.addEventListener('click', showMenu, false)
@@ -26,8 +27,7 @@ linkArr.forEach((item) => {
   item.addEventListener('click', showMenu, false)
 })
 
-/* Animation */
-/********************************************************************************/
+/****************************** Animation ******************************/
 /* Animate items on scroll */
 const root = document.querySelector('.root')
 const scrollElements = document.querySelectorAll('.js-scroll')
@@ -83,7 +83,7 @@ body.addEventListener('scroll', () => {
   }, 250)
 })
 
-/* Typewriter */
+/****************************** Typewriter ******************************/
 class TypeWriter {
   constructor(txtElement, words, wait = 3000) {
     this.txtElement = txtElement

@@ -10,21 +10,22 @@
   </link>
 </head>
 
-<body class="">
+<body>
   <div class="root">
+
     <!-- HEADER -->
     <header class="header" id="header">
       <nav class="nav">
-        <button class="menu">
-          <div class="menu-line"></div>
-          <div class="menu-line"></div>
-          <div class="menu-line"></div>
+        <button class="nav__menu">
+          <div class="nav__menu__line"></div>
+          <div class="nav__menu__line"></div>
+          <div class="nav__menu__line"></div>
         </button>
-        <div class="nav-links">
-          <div class="nav-links-top">
+        <div class="nav__panel">
 
-            <a class="nav-link" href="#header">
-              <div class="svg home-svg">
+          <div class="nav__panel__top">
+            <a class="nav__link" href="#home">
+              <div class="svg nav__svg home-svg">
                 <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill="none" d="M0 0h48v48H0z" />
                   <path
@@ -33,8 +34,8 @@
                 </svg>
               </div>
             </a>
-            <a class="nav-link" href="#works">
-              <div class="svg work-svg">
+            <a class="nav__link" href="#works">
+              <div class="svg nav__svg work-svg">
                 <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill="none" d="M0 0h48v48H0z" />
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -43,8 +44,9 @@
                 </svg>
               </div>
             </a>
-            <a class="nav-link" href="#about">
-              <div class="svg about-svg "><svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav__link" href="#about">
+              <div class="svg nav__svg about-svg "><svg width="48" height="48" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path fill="none" d="M0 0h48v48H0z" />
                   <path
                     d="M3 14.25A5.252 5.252 0 0 1 8.25 9h31.5A5.252 5.252 0 0 1 45 14.25v19.5A5.25 5.25 0 0 1 39.75 39H8.25A5.25 5.25 0 0 1 3 33.75v-19.5ZM8.25 12A2.25 2.25 0 0 0 6 14.25v19.5A2.25 2.25 0 0 0 8.25 36h31.5A2.25 2.25 0 0 0 42 33.75v-19.5A2.25 2.25 0 0 0 39.75 12H8.25Zm20.25 6a1.5 1.5 0 1 0 0 3h9a1.5 1.5 0 1 0 0-3h-9Zm0 9a1.5 1.5 0 1 0 0 3h9a1.5 1.5 0 1 0 0-3h-9Zm-12.717-3.858a4.07 4.07 0 1 0 0-8.141 4.07 4.07 0 0 0 0 8.141Zm-4.209 2.034A2.574 2.574 0 0 0 9 27.75a5.01 5.01 0 0 0 3.795 4.86l.159.042c1.86.465 3.801.465 5.658 0l.162-.039a5.01 5.01 0 0 0 3.795-4.86 2.573 2.573 0 0 0-2.574-2.577h-8.421Z"
@@ -52,8 +54,9 @@
                 </svg>
               </div>
             </a>
-            <a class="nav-link" href="#contact">
-              <div class="svg contact-svg"><svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav__link" href="#contact">
+              <div class="svg nav__svg contact-svg"><svg width="48" height="48" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M8 4a4 4 0 0 0-4 4v24a4 4 0 0 0 4 4h8v6a2 2 0 0 0 2 2h1c.5 0 1-.2 1.4-.58L27.8 36H40a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4H8Zm0 4h32v24H26.16L20 38.16V32H8V8Zm16.38 3c-1.78 0-3.2.36-4.28 1.08-1.1.72-1.66 1.92-1.56 3.3h3.94c0-.56.2-.98.52-1.26.4-.28.84-.42 1.38-.42.62 0 1.16.16 1.52.52.36.34.54.78.54 1.38 0 .56-.16 1.06-.44 1.48-.34.44-.76.8-1.28 1.08-1.04.64-1.72 1.2-2.14 1.68C22.2 20.32 22 21 22 22h4c0-.56.1-1 .28-1.36.18-.34.52-.64 1.04-.94.92-.42 1.68-.98 2.26-1.7.58-.74.88-1.52.88-2.4 0-1.4-.54-2.52-1.62-3.36-1.08-.82-2.58-1.24-4.46-1.24ZM22 24v4h4v-4h-4Z"
                     fill="#202020" />
@@ -62,22 +65,22 @@
             </a>
           </div>
 
-          <div class="nav-links-bottom">
-            <div class="svg language-svg">
+          <div class="nav__panel__bottom">
+            <div class="svg nav__svg language-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z"
                   stroke="#202020" stroke-width="4" />
               </svg>
             </div>
-            <div class="svg sun-svg">
+            <div class="svg nav__svg sun-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
                   fill="#202020" />
               </svg>
             </div>
-            <div class="svg moon-svg">
+            <div class="svg nav__svg moon-svg">
               <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 3C13.5 3 4.5 10.5 4.5 22.5s9 21 21 21S45 34.5 45 27C28.5 37.5 10.5 19.5 21 3Z"
                   stroke="#202020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
@@ -89,47 +92,117 @@
       </nav>
     </header>
 
-    <main class="main">
-      <div class="typewriter-container">
-        <h1 class="heading response typewriter" data-wait="1000"
-          data-words="['Вітання!', 'Greetings!', 'Les salutations!', 'Grüße!', 'Saluti!', '问候！', 'Приветствие!', '!سلام تحية', 'Saluto!', 'Salutació!', '!דְרִישַׁת שָׁלוֹם', 'Salom!', '¡Saludo!', 'ຊົມເຊີຍ!', '挨拶！', 'გამარჯობა!', 'Powitanie!', 'Beannacht!', 'Hilsen!', 'Hälsning!', 'Мэндчилгээ!', 'Pozdrav!', 'Üdvözlet!', 'Salut!', 'Sveikinu!', 'Salam!', 'Salutem!', 'تبریک!', 'Saudações!', 'Lep pozdrav!', 'S pozdravom!', 'Kwaziso!', 'Salaan!', 'Χαιρετισμός!', 'Salamlayıram!', 'Поздрав!', 'Aloha!', 'शुभकामना!', 'Kveðja!', 'Прывітанне!']">
-          <!-- Greetigns! -->
-        </h1>
-      </div>
-      <p class="p p-center p-time-to-work text-intro js-scroll fade-in-bottom">It is an exciting time to work on the
-        web. The pace of
-        change is daunting, but
-        there is
-        great opportunity for those with open, curious minds.</p>
 
+    <!-- MAIN -->
+    <main class="main">
+      <!-- HOME -->
+      <section class="section section-home" id="home">
+        <div class="typewriter-container">
+          <h1 class="heading response typewriter" data-wait="1000"
+            data-words="['Вітання!', 'Greetings!', 'Les salutations!', 'Grüße!', 'Saluti!', '问候！', 'Приветствие!', '!سلام تحية', 'Saluto!', 'Salutació!', '!דְרִישַׁת שָׁלוֹם', 'Salom!', '¡Saludo!', 'ຊົມເຊີຍ!', '挨拶！', 'გამარჯობა!', 'Powitanie!', 'Beannacht!', 'Hilsen!', 'Hälsning!', 'Мэндчилгээ!', 'Pozdrav!', 'Üdvözlet!', 'Salut!', 'Sveikinu!', 'Salam!', 'Salutem!', 'تبریک!', 'Saudações!', 'Lep pozdrav!', 'S pozdravom!', 'Kwaziso!', 'Salaan!', 'Χαιρετισμός!', 'Salamlayıram!', 'Поздрав!', 'Aloha!', 'शुभकामना!', 'Kveðja!', 'Прывітанне!']">
+            <!-- Greetigns! -->
+          </h1>
+        </div>
+        <p class="p p-center quote-intro  js-scroll fade-in-bottom">It is an exciting time to work on
+          the
+          web. The pace of
+          change is daunting, but
+          there is
+          great opportunity for those with open, curious minds.</p>
+      </section>
 
 
 
       <!-- WORKS -->
-      <h1 class="h1 h1-work" id="works">MY WORKS</h1>
-      <div class="works-container">
-        <div class="work js-scroll fade-in-bottom" style="background: red" ;>
-          <h1>Work 1</h1>
+      <section class="section section-works" id="works">
+        <div>
+          <div>
+            <h1 class="h1">MY WORKS</h1>
+          </div>
         </div>
-        <div class="work js-scroll fade-in-bottom" style="background: green;"">
-          <h1>Work 2</h1>
+        <div class="works-container">
+          <a href="https://www.x-drive.ua/">
+            <div class="work-item js-scroll fade-in-bottom">
+              <img class="img" src="./src/img/jpg/x-drive.jpg" width="1024" height="602" alt="x-drive">
+            </div>
+          </a>
+          <p>X-drive.ua first grade e-commerce website</p>
+          <a href="https://solomia-portfolio.netlify.app/">
+            <div class="work-item js-scroll fade-in-bottom">
+              <img class="img" src="./src/img/jpg/solomia.jpg" width="1024" height="602" alt="x-drive">
+            </div>
+          </a>
+          <p>Artful interactive portfolio</p>
+          <div class="work-item js-scroll fade-in-bottom">
+            <h1>Playground</h1>
+          </div>
+          <p>An interactive playground</p>
+          <model-viewer
+            alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+            src="./src/assets/x-drive.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls></model-viewer>
         </div>
-        <div class=" work js-scroll fade-in-bottom" style="background: blue;">
-          <h1>Work 3</h1>
-        </div>
-      </div>
+      </section>
 
 
 
       <!-- ABOUT -->
-      <h1 class="h1 h1-about" id="about">ABOUT</h1>
-      <div class="about"></div>
-
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi natus voluptatem esse. Deserunt sapiente
-        reiciendis corrupti! Voluptatum expedita obcaecati, saepe dolorum, rem omnis in excepturi ullam libero nesciunt
-        iste molestiae!
-        lorem*100</p>
-
+      <section class="section section-about" id="about">
+        <h1 class="h1 h1-about">ABOUT</h1>
+        <p class="p">building responsive mobile first websites</p>
+        <p class="p">You can't build what you can't imagine. The opposite is also true, with modern web technologies,
+          you can
+          build
+          what ever you want.Here's my Stackshare info frame. </p>
+        <div class="htmlcssjs">
+          <div class="svg jam-svg">
+            <svg fill="none" height="100" width="87" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 141.532">
+              <path d="M10.383 126.894 0 0l124 .255-10.979 126.639-50.553 14.638z" fill="#e34f26" />
+              <path d="M62.468 129.277V12.085l51.064.17-9.106 104.851z" fill="#ef652a" />
+              <path
+                d="m99.49 41.362 1.446-15.49H22.383l4.34 47.49h54.213L78.81 93.617l-17.362 4.68-17.617-5.106-.936-12.085H27.319l2.128 24.681 32 8.936 32.255-8.936 4.34-48.17H41.107L39.49 41.362z"
+                fill="#fff" />
+            </svg>
+          </div>
+          <div class="svg jam-svg">
+            <svg fill="none" height="100" width="87" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 141.53">
+              <path d="M10.383 126.892 0 0l124 .255-10.979 126.637-50.553 14.638z" fill="#1b73ba" />
+              <path d="M62.468 129.275V12.085l51.064.17-9.106 104.85z" fill="#1c88c7" />
+              <path
+                d="M100.851 27.064H22.298l2.128 15.318h37.276l-36.68 15.745 2.127 14.808h54.043l-1.958 20.68-18.298 3.575-16.595-4.255-1.277-11.745H27.83l2.042 24.426 32.681 9.106 31.32-9.957 4-47.745H64.765l36.085-14.978z"
+                fill="#fff" />
+            </svg>
+          </div>
+          <div class="svg jam-svg js-svg">
+            <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
+              <path fill="#f7df1e" d="M0 0h630v630H0z" />
+              <path
+                d="M423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z" />
+            </svg>
+          </div>
+        </div>
+        <p class="p">Learning and working with JAMstack, most rapid and advanced web technologies for maximum speed and
+          reliability.
+        </p>
+        <div class="jamstack-logo">
+          <svg width="602" height="173" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#000" d="M0 0h602v173H0z" />
+            <path
+              d="M196.8 89.487v-35.76h-15.12v39.52c0 3.28-.24 7.52-4.56 7.52-3.84 0-4.4-3.92-4.56-6.88h-16.08c0 8.64 3.52 15.68 11.92 18.72 2.48.96 5.28 1.44 8 1.44 6.32 0 12.72-2.8 16.72-7.76 3.68-4.64 3.68-11.12 3.68-16.8Zm55.328 23.44v-44.4h-13.28v4.72h-.16c-2.64-4.4-8.08-6.24-12.96-6.24-13.36 0-22.32 10.72-22.32 23.68 0 13.2 8.64 23.76 22.32 23.76 4.8 0 10.56-1.76 12.96-6.32h.16v4.8h13.28Zm-13.28-22.24c0 6.4-4.64 11.36-11.12 11.36-6.24 0-11.04-5.04-11.04-11.2 0-6.32 4.48-11.44 10.96-11.44s11.2 4.8 11.2 11.28Zm91.128 22.24v-24.24c0-6.8.24-12.08-4.8-17.2-3.12-3.2-7.28-4.48-11.68-4.48-6 0-10.88 2.88-14.08 7.92-2.72-5.04-7.04-7.92-12.8-7.92-5.04 0-9.68 1.68-12.24 6.24h-.16v-4.72h-12.4v44.4h13.28v-23.6c0-5.2 1.36-9.84 7.52-9.84 5.6 0 6.64 4.72 6.64 9.28v24.16h13.28v-24.24c0-5.04 1.44-9.2 7.36-9.2 6.16 0 6.8 4.96 6.8 9.84v23.6h13.28Zm42.62-13.6c0-15.68-22.32-11.76-22.32-18.72 0-2 2-2.96 3.76-2.96 2.32 0 4.08.88 4.16 3.36h13.04c-.88-9.44-8.16-14-17.04-14-8.56 0-17.2 5.36-17.2 14.64 0 6.24 5.28 9.68 10.56 11.6 1.92.72 3.84 1.36 5.76 2 2.4.96 6 1.92 6 5.12 0 2.32-2.64 3.44-4.64 3.44-2.64 0-4.64-1.36-5.04-4.08h-13.2c1.04 9.76 8.8 14.72 18.08 14.72 9.04 0 18.08-5.12 18.08-15.12Zm28.962-20.72v-10.08h-6.4v-14.8h-13.28v14.8h-6.56v10.08h6.56v34.32h13.28v-34.32h6.4Zm51.195 34.32v-44.4h-13.28v4.72h-.16c-2.64-4.4-8.08-6.24-12.96-6.24-13.36 0-22.32 10.72-22.32 23.68 0 13.2 8.64 23.76 22.32 23.76 4.8 0 10.56-1.76 12.96-6.32h.16v4.8h13.28Zm-13.28-22.24c0 6.4-4.64 11.36-11.12 11.36-6.24 0-11.04-5.04-11.04-11.2 0-6.32 4.48-11.44 10.96-11.44s11.2 4.8 11.2 11.28Zm67.848 5.36h-13.52c-2 3.84-5.2 5.92-9.6 5.92-6.48 0-10.56-5.04-10.56-11.28 0-6 3.84-11.28 10.24-11.28 4.56 0 8 2.08 9.92 6.24h13.44c-2.32-11.28-12.16-18.64-23.52-18.64-13.2 0-23.44 10.48-23.44 23.6 0 13.28 10.48 23.76 23.76 23.76 11.2 0 20.72-7.44 23.28-18.32Zm48.135-27.52h-15.76l-12.32 16.08h-.16v-30.88h-13.28v59.2h13.28v-21.36h.16l12.56 21.36h15.04l-16.24-24.88 16.72-19.52Z"
+              fill="#fff" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M81.7 38.23c-26.802 0-48.47 21.668-48.47 48.47s21.668 48.47 48.47 48.47 48.47-21.668 48.47-48.47V38.23H81.7Zm-2.067 83.429c-17.719-1.012-31.947-15.24-32.959-32.959h32.96v32.959ZM83.7 88.767h32.959c-1.012 17.719-15.24 31.947-32.959 32.959v-32.96Zm0-37.136h33.003v33.002H83.7V51.631Z"
+              fill="#fff" />
+          </svg>
+        </div>
+        <!-- <a frameborder="0" data-theme="dark" data-layers="1,2,3,4" data-stack-embed="true"
+            href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
+          <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script> -->
+        <!-- <div>
+          <a frameborder="0" data-theme="light" data-layers="1,2,3,4" data-stack-embed="true"
+            href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
+          <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script>
+        </div> -->
+      </section>
     </main>
 
 
@@ -203,6 +276,7 @@
 
   </script>
   <script async defer src="./src/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </body>
 
 </html>
