@@ -19,10 +19,13 @@ Rampart One, Kalam, Roboto
 *,
 *::before,
 *::after {
+  width: 100%;
+  height: auto;
   padding: 0;
   border: 0;
   margin: 0;
   box-sizing: inherit;
+  /* overflow-x: hidden; */
 }
 html {
   width: 100%;
@@ -35,7 +38,7 @@ body {
   background: var(--black);
   color: var(--light-grey);
   width: 100%;
-  /* height: 100%; DON NOT CHANGE! BRAKES SCROLL ANIMATION!*/
+  /* height: 100%; DON NOT CHANGE MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
   max-height: 100%;
   overflow-x: hidden;
   display: grid;
@@ -71,13 +74,12 @@ body {
   width: 100%;
   height: 100%;
   padding: 8rem 0 0 0;
-  backdrop-filter: blur(2px);
   z-index: 200;
+  backdrop-filter: blur(2px);
   display: grid;
   grid-template: 1fr 5rem / 1fr;
   gap: var(--nav-links-gap);
   place-items: start center;
-  place-content: start stretch;
   overflow-y: auto;
 }
 .show-nav__panel {
@@ -88,6 +90,7 @@ body {
   width: 100%;
   display: grid;
   place-items: center;
+  place-content: center;
 }
 .nav__panel__bottom {
   width: 100%;
@@ -207,6 +210,8 @@ body {
 
 /****************************** MAIN ******************************/
 .main {
+  width: 100%;
+  height: 100%;
   display: grid;
   place-items: center;
   overflow-x: hidden;
@@ -217,13 +222,12 @@ body {
   padding: 0 0 8rem 0;
   display: grid;
   place-items: center;
+  overflow-x: hidden;
 }
-.container {
+/* .container {
   display: grid;
   place-items: center;
-  position: relative;
-  padding: 0.5rem;
-}
+} */
 .hr {
   margin: 10rem 0;
   width: 80%;
@@ -234,6 +238,7 @@ body {
   z-index: 300;
 }
 .h1 {
+  text-align: center;
   margin: 2rem 0;
 }
 .p {
@@ -264,7 +269,8 @@ body {
 /****************************** SECTIONS ******************************/
 /* SECTION-HOME */
 .section-home {
-  padding-bottom: 30rem;
+  /* display: none; */
+  padding-bottom: 20rem;
 }
 .typewriter-container {
   display: grid;
@@ -272,13 +278,16 @@ body {
   width: 100%;
   height: 4rem;
   margin: 30vh 0;
-  padding: 0 4rem 0 0;
 }
 .quote-intro {
   margin: 25% 0 0 0;
 }
 
 /* SECTION-WORKS */
+.section-works {
+  display: grid;
+  /* display: none; */
+}
 .works-container {
   width: 100%;
   max-width: 30rem;
@@ -287,30 +296,50 @@ body {
   padding: 2rem;
   display: grid;
   gap: 1rem;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .work-item {
   width: 100%;
-  height: 10rem;
-  margin: 0;
+  height: 12rem;
+  margin: 4rem 0 0 0;
   padding: 0;
-  background: var(--light-grey);
-  color: var(--black);
   border-radius: 20px;
   overflow: hidden;
+  filter: drop-shadow(0 0 1rem rgba(100, 100, 100, 0.25));
+  /* filter: grayscale(1); */
+}
+.work-item__x-drive {
+  margin-top: 2rem;
 }
 
 /* SECTION-ABOUT */
-.htmlcssjs {
+.section-about {
+  display: none;
+  display: grid;
+}
+.about-text {
+  margin-bottom: 4rem;
+}
+.web-core {
   width: 100%;
   height: 100%;
   margin: 4rem;
   display: grid;
   grid-auto-flow: column;
+  place-items: center;
   place-content: space-evenly;
+  /* gap: 3rem; */
+}
+l.web-core__svg {
+  width: 4rem;
+  /* padding: 1rem; */
+  /* margin: 0 1rem; */
 }
 .jamstack-logo {
-  margin: 4rem;
+  width: 100%;
+  height: auto;
+  margin: 4rem 0;
+  border-radius: 8px;
 }
 
 /****************************** FOOTER ******************************/

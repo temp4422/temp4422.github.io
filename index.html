@@ -55,8 +55,8 @@
               </div>
             </a>
             <a class="nav__link" href="#contact">
-              <div class="svg nav__svg contact-svg"><svg width="48" height="48" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+              <div class="svg nav__svg contact-svg">
+                <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M8 4a4 4 0 0 0-4 4v24a4 4 0 0 0 4 4h8v6a2 2 0 0 0 2 2h1c.5 0 1-.2 1.4-.58L27.8 36H40a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4H8Zm0 4h32v24H26.16L20 38.16V32H8V8Zm16.38 3c-1.78 0-3.2.36-4.28 1.08-1.1.72-1.66 1.92-1.56 3.3h3.94c0-.56.2-.98.52-1.26.4-.28.84-.42 1.38-.42.62 0 1.16.16 1.52.52.36.34.54.78.54 1.38 0 .56-.16 1.06-.44 1.48-.34.44-.76.8-1.28 1.08-1.04.64-1.72 1.2-2.14 1.68C22.2 20.32 22 21 22 22h4c0-.56.1-1 .28-1.36.18-.34.52-.64 1.04-.94.92-.42 1.68-.98 2.26-1.7.58-.74.88-1.52.88-2.4 0-1.4-.54-2.52-1.62-3.36-1.08-.82-2.58-1.24-4.46-1.24ZM22 24v4h4v-4h-4Z"
                     fill="#202020" />
@@ -65,7 +65,7 @@
             </a>
             <a class="nav__link" href="./src/playground.html">
               <div class="svg nav__svg play-svg">
-                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="48" height="48" viewBox="0 0 20 20">
+                <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M15.9 5.5C15.3 4.5 14.2 4 13 4H7c-1.2 0-2.3.5-2.9 1.5-2.3 3.5-2.8 8.8-1.2 9.9 1.6 1.1 5.2-3.7 7.1-3.7s5.4 4.8 7.1 3.7c1.6-1.1 1.1-6.4-1.2-9.9zM8 9H7v1H6V9H5V8h1V7h1v1h1v1zm5.4.5c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9zm1.9-2c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9z"
                     fill="#202020" />
@@ -107,7 +107,7 @@
       <!-- HOME -->
       <section class="section section-home" id="home">
         <div class="typewriter-container">
-          <h1 class="heading response typewriter" data-wait="1000"
+          <h1 class="h1 typewriter" data-wait="1000"
             data-words="['Вітання!', 'Greetings!', 'Les salutations!', 'Grüße!', 'Saluti!', '问候！', 'Приветствие!', '!سلام تحية', 'Saluto!', 'Salutació!', '!דְרִישַׁת שָׁלוֹם', 'Salom!', '¡Saludo!', 'ຊົມເຊີຍ!', '挨拶！', 'გამარჯობა!', 'Powitanie!', 'Beannacht!', 'Hilsen!', 'Hälsning!', 'Мэндчилгээ!', 'Pozdrav!', 'Üdvözlet!', 'Salut!', 'Sveikinu!', 'Salam!', 'Salutem!', 'تبریک!', 'Saudações!', 'Lep pozdrav!', 'S pozdravom!', 'Kwaziso!', 'Salaan!', 'Χαιρετισμός!', 'Salamlayıram!', 'Поздрав!', 'Aloha!', 'शुभकामना!', 'Kveðja!', 'Прывітанне!']">
             <!-- Greetigns! -->
           </h1>
@@ -131,21 +131,26 @@
         </div>
         <div class="works-container">
           <a href="https://www.x-drive.ua/">
-            <div class="work-item js-scroll fade-in-bottom">
-              <img class="img" src="./src/img/jpg/x-drive.jpg" width="1024" height="602" alt="x-drive">
+            <div class="work-item work-item__x-drive">
+              <img class="img" src="./src/img/jpg/x-drive.jpg" width="1280" height="720" alt="x-drive">
             </div>
           </a>
-          <p>X-drive.ua first grade e-commerce website</p>
+          <p class="p-center js-scroll fade-in-bottom">X-drive.ua - smooth and fast with nuxt.js</p>
+
           <a href="https://solomia-portfolio.netlify.app/">
-            <div class="work-item js-scroll fade-in-bottom">
-              <img class="img" src="./src/img/jpg/solomia.jpg" width="1024" height="602" alt="x-drive">
+            <div class="work-item">
+              <img class="img" src="./src/img/jpg/solomia.jpg" width="1280" height="720" alt="solomia-portfolio">
             </div>
           </a>
-          <p>Artful interactive portfolio</p>
-          <div class="work-item js-scroll fade-in-bottom">
-            <h1>Playground</h1>
-          </div>
-          <p>An interactive playground</p>
+          <p class="p-center js-scroll fade-in-bottom">Artful portfolio</p>
+
+          <a href="./src/playground.html">
+            <div class="work-item work-item__playground">
+              <img class="img playground-img" src="./src/img/jpg/playground.jpg" width="1280" height="720"
+                alt="playground">
+            </div>
+          </a>
+          <p class="p-center js-scroll fade-in-bottom">An interactive playground</p>
         </div>
       </section>
 
@@ -154,13 +159,13 @@
       <!-- ABOUT -->
       <section class="section section-about" id="about">
         <h1 class="h1 h1-about">ABOUT</h1>
-        <p class="p">building responsive mobile first websites</p>
+        <p class="p-center about-text">Building responsive mobile first websites.</p>
         <p class="p">You can't build what you can't imagine. The opposite is also true, with modern web technologies,
           you can
-          build
-          what ever you want.Here's my Stackshare info frame. </p>
-        <div class="htmlcssjs">
-          <div class="svg jam-svg">
+          make
+          what ever you want.</p>
+        <div class="web-core">
+          <div class="svg web-core__svg js-scroll fade-in">
             <svg fill="none" height="100" width="87" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 141.532">
               <path d="M10.383 126.894 0 0l124 .255-10.979 126.639-50.553 14.638z" fill="#e34f26" />
               <path d="M62.468 129.277V12.085l51.064.17-9.106 104.851z" fill="#ef652a" />
@@ -169,7 +174,7 @@
                 fill="#fff" />
             </svg>
           </div>
-          <div class="svg jam-svg">
+          <div class="svg web-core__svg js-scroll fade-in-delay-2">
             <svg fill="none" height="100" width="87" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 141.53">
               <path d="M10.383 126.892 0 0l124 .255-10.979 126.637-50.553 14.638z" fill="#1b73ba" />
               <path d="M62.468 129.275V12.085l51.064.17-9.106 104.85z" fill="#1c88c7" />
@@ -178,7 +183,7 @@
                 fill="#fff" />
             </svg>
           </div>
-          <div class="svg jam-svg js-svg">
+          <div class="svg web-core__svg js-scroll fade-in-delay-3">
             <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
               <path fill="#f7df1e" d="M0 0h630v630H0z" />
               <path
@@ -186,12 +191,13 @@
             </svg>
           </div>
         </div>
-        <p class="p">Learning and working with JAMstack, most rapid and advanced web technologies for maximum speed and
+        <p class="p">Learning and working with JAMstack, most rapid and advanced web technologies stack for increased
+          speed and
           reliability.
         </p>
-        <div class="jamstack-logo">
-          <svg width="602" height="173" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#000" d="M0 0h602v173H0z" />
+        <div class="svg jamstack-logo js-scroll fade-in">
+          <svg width="602" height="173" viewBox="150 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h602v173H0z" />
             <path
               d="M196.8 89.487v-35.76h-15.12v39.52c0 3.28-.24 7.52-4.56 7.52-3.84 0-4.4-3.92-4.56-6.88h-16.08c0 8.64 3.52 15.68 11.92 18.72 2.48.96 5.28 1.44 8 1.44 6.32 0 12.72-2.8 16.72-7.76 3.68-4.64 3.68-11.12 3.68-16.8Zm55.328 23.44v-44.4h-13.28v4.72h-.16c-2.64-4.4-8.08-6.24-12.96-6.24-13.36 0-22.32 10.72-22.32 23.68 0 13.2 8.64 23.76 22.32 23.76 4.8 0 10.56-1.76 12.96-6.32h.16v4.8h13.28Zm-13.28-22.24c0 6.4-4.64 11.36-11.12 11.36-6.24 0-11.04-5.04-11.04-11.2 0-6.32 4.48-11.44 10.96-11.44s11.2 4.8 11.2 11.28Zm91.128 22.24v-24.24c0-6.8.24-12.08-4.8-17.2-3.12-3.2-7.28-4.48-11.68-4.48-6 0-10.88 2.88-14.08 7.92-2.72-5.04-7.04-7.92-12.8-7.92-5.04 0-9.68 1.68-12.24 6.24h-.16v-4.72h-12.4v44.4h13.28v-23.6c0-5.2 1.36-9.84 7.52-9.84 5.6 0 6.64 4.72 6.64 9.28v24.16h13.28v-24.24c0-5.04 1.44-9.2 7.36-9.2 6.16 0 6.8 4.96 6.8 9.84v23.6h13.28Zm42.62-13.6c0-15.68-22.32-11.76-22.32-18.72 0-2 2-2.96 3.76-2.96 2.32 0 4.08.88 4.16 3.36h13.04c-.88-9.44-8.16-14-17.04-14-8.56 0-17.2 5.36-17.2 14.64 0 6.24 5.28 9.68 10.56 11.6 1.92.72 3.84 1.36 5.76 2 2.4.96 6 1.92 6 5.12 0 2.32-2.64 3.44-4.64 3.44-2.64 0-4.64-1.36-5.04-4.08h-13.2c1.04 9.76 8.8 14.72 18.08 14.72 9.04 0 18.08-5.12 18.08-15.12Zm28.962-20.72v-10.08h-6.4v-14.8h-13.28v14.8h-6.56v10.08h6.56v34.32h13.28v-34.32h6.4Zm51.195 34.32v-44.4h-13.28v4.72h-.16c-2.64-4.4-8.08-6.24-12.96-6.24-13.36 0-22.32 10.72-22.32 23.68 0 13.2 8.64 23.76 22.32 23.76 4.8 0 10.56-1.76 12.96-6.32h.16v4.8h13.28Zm-13.28-22.24c0 6.4-4.64 11.36-11.12 11.36-6.24 0-11.04-5.04-11.04-11.2 0-6.32 4.48-11.44 10.96-11.44s11.2 4.8 11.2 11.28Zm67.848 5.36h-13.52c-2 3.84-5.2 5.92-9.6 5.92-6.48 0-10.56-5.04-10.56-11.28 0-6 3.84-11.28 10.24-11.28 4.56 0 8 2.08 9.92 6.24h13.44c-2.32-11.28-12.16-18.64-23.52-18.64-13.2 0-23.44 10.48-23.44 23.6 0 13.28 10.48 23.76 23.76 23.76 11.2 0 20.72-7.44 23.28-18.32Zm48.135-27.52h-15.76l-12.32 16.08h-.16v-30.88h-13.28v59.2h13.28v-21.36h.16l12.56 21.36h15.04l-16.24-24.88 16.72-19.52Z"
               fill="#fff" />
@@ -200,14 +206,7 @@
               fill="#fff" />
           </svg>
         </div>
-        <!-- <a frameborder="0" data-theme="dark" data-layers="1,2,3,4" data-stack-embed="true"
-            href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
-          <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script> -->
-        <!-- <div>
-          <a frameborder="0" data-theme="light" data-layers="1,2,3,4" data-stack-embed="true"
-            href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
-          <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script>
-        </div> -->
+
       </section>
     </main>
 
@@ -274,7 +273,7 @@
       </div>
 
       <div class="p p-center">
-        <p>Built with Nuxt, Netlify, Google and sincere developer's heart :)</p>
+        <p>Built with Next, Netlify, Google and sincere developer's effort :)</p>
       </div>
     </footer>
   </div>
