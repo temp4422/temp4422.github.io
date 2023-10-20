@@ -106,9 +106,9 @@ body {
   width: 3rem;
   height: 3rem;
 }
-.sun-svg {
-  /* display: none; */
-}
+/* .sun-svg { */
+/* display: none; */
+/* } */
 .moon-svg {
   display: none;
 }
