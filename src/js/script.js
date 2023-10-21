@@ -1,12 +1,3 @@
-/* Synchronous function to pause execution*/
-// function pause(milliseconds) {
-//   var dt = new Date()
-//   while (new Date() - dt <= milliseconds) {
-//     /* Do nothing */
-//   }
-// }
-// pause(2000)
-
 const body = document.querySelector('body')
 
 /****************************** Animation ******************************/

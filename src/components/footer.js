@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+// Encapsulate code for interoparability with other script imports
+// IMPORTANT THIS MAY CAUSE PERFORMANCE ISSUES!
+function makeTemplate() {
+  const template = document.createElement('template')
+  template.innerHTML = `
     <style>
       /****************************** FOOTER ******************************/
       .footer {
@@ -27,9 +26,7 @@
         filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));
       }
     </style>
-  </head>
-  <body>
-    <!-- FOOTER -->
+
     <footer class="footer" id="footer">
       <h1 class="h1 h1-contact" id="contact">CONTACTS</h1>
       <div class="footer-container">
@@ -100,5 +97,18 @@
         <p>Built with Next, Netlify, Google and sincere developer's effort :)</p>
       </div>
     </footer>
-  </body>
-</html>
+    `
+  return template
+}
+
+class Footer extends HTMLElement {
+  constructor() {
+    super()
+    const template = makeTemplate()
+
+    // Append template with shadow DOM to DOM
+    const shadow = this.attachShadow({ mode: 'open' })
+    shadow.appendChild(template.content.cloneNode(true))
+  }
+}
+window.customElements.define('footer-x', Footer)
