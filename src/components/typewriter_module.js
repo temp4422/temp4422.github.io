@@ -1,5 +1,4 @@
 export default function typewriter() {
-  console.log('OK')
   // // Create elements
   // const container = document.createElement('div')
   // container.setAttribute('id', 'typewriter-container')
