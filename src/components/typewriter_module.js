@@ -59,7 +59,6 @@ export default function typewriter() {
 
       // Insert txt into element
       this.txtElement.innerHTML = `<span>${this.txt}</span>`
-      // this.txtElement.innerHTML = `<span style="border-right: 0.05em solid; animation: caret 1s steps(1) infinite; @keyframes caret {50% {border-color: transparent;}}">${this.txt}</span>` // NOT WORK!
 
       // Initial Type Speed
       let typeSpeed = 200
