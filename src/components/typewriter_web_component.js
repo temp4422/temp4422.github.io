@@ -36,19 +36,20 @@ class Typewriter extends HTMLElement {
     //prettier-ignore
     const data = ['Вітання!', 'Greetings!', 'Les salutations!', 'Grüße!', 'Saluti!', '问候！', 'Приветствие!', '!سلام تحية', 'Saluto!', 'Salutació!', '!דְרִישַׁת שָׁלוֹם', 'Salom!', '¡Saludo!', 'ຊົມເຊີຍ!', '挨拶！', 'გამარჯობა!', 'Powitanie!', 'Beannacht!', 'Hilsen!', 'Hälsning!', 'Мэндчилгээ!', 'Pozdrav!', 'Üdvözlet!', 'Salut!', 'Sveikinu!', 'Salam!', 'Salutem!', 'تبریک!', 'Saudações!', 'Lep pozdrav!', 'S pozdravom!', 'Kwaziso!', 'Salaan!', 'Χαιρετισμός!', 'Salamlayıram!', 'Поздрав!', 'Aloha!', 'शुभकामना!', 'Kveðja!', 'Прывітанне!']
 
-    // Select span in html
+    // Select span in html for input
     const word = shadow.querySelector('#word')
+    const cursor = shadow.querySelector('#cursor')
 
-    let typeSpeed = 200
-    let wait = 1000
+    let typeSpeed = 200 // Initial speed
+    let wait = 1500 // Pause on words boundary
     let isDeleting = false
     let currWord = 0
     let currChar = 0
     let tmpWord = ''
     let tmpChar = ''
-    // Type function -> use recursion to call itself with different speed
-    // Wait -> pause on words boundary
+
     function type(params) {
+      cursor.style.animation = 'none' // Disable cursor blinking when typing
       let speed = typeSpeed // Reset speed on each iteration
 
       // Loop through array and print each character in temporal word
@@ -64,23 +65,25 @@ class Typewriter extends HTMLElement {
       }
 
       if (currChar === data[currWord].length) {
+        cursor.style.animation = 'caret 1s steps(1) infinite' // Set cursor blinking
         speed = wait
         isDeleting = !isDeleting
       }
 
       if (isDeleting && currChar === 0) {
+        cursor.style.animation = 'caret 1s steps(1) infinite' // Set cursor blinking
         speed = wait
         isDeleting = !isDeleting
         currWord++
       }
 
       if (data.length === currWord) {
-        currWord = 0 // If rich end of array
+        currWord = 0 // If rich end of array -> repeat
       }
 
-      setTimeout(() => type(), speed) // Call itself
+      setTimeout(() => type(), speed) // Use recursion to call itself with different speed
     }
-    // Delay before start execution after windows has been loaded
+    // Delay before start execution after window has been loaded
     window.onload = () => {
       setTimeout(() => type(), 2000)
     }
