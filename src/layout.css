@@ -6,7 +6,16 @@ Rampart One, Kalam, Roboto
 */
 
 /****************************** GENERAL ******************************/
-@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Rampart+One&family=Roboto&family=Satisfy&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Rampart+One&family=Roboto&family=Satisfy&display=swap'); */
+
+@font-face {
+  font-family: Kalam;
+  src: url('./fonts/Kalam-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: Roboto;
+  src: url('./fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+}
 
 :root {
   --black: #202020;
@@ -57,7 +66,6 @@ body {
 .lock-scroll {
   overflow: hidden;
 }
-
 
 /****************************** MAIN ******************************/
 .main {
@@ -192,7 +200,6 @@ l.web-core__svg {
   margin: 4rem 0;
   border-radius: 8px;
 }
-
 
 /****************************** Animation ******************************/
 /* Animate items on scroll */

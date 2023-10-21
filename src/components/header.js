@@ -209,7 +209,7 @@ function makeTemplate() {
                 </svg>
               </div>
             </a>
-            <a class="nav__link" href="/src/playground.html">
+            <a class="nav__link" href="./playground.html">
               <div class="svg nav__svg play-svg">
                 <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path
