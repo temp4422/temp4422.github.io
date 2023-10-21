@@ -6,15 +6,10 @@ Rampart One, Kalam, Roboto
 */
 
 /****************************** GENERAL ******************************/
-/* @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Rampart+One&family=Roboto&family=Satisfy&display=swap'); */
-
+/* @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap'); */
 @font-face {
-  font-family: Kalam;
-  src: url('./fonts/Kalam-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: Roboto;
-  src: url('./fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+  font-family: 'Marck Script';
+  src: url('/src/fonts/Marck_Script/MarckScript-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -43,7 +38,8 @@ html {
 }
 body {
   box-sizing: border-box;
-  font-family: 'Kalam', 'Roboto', sans-serif;
+  font-family: 'Marck Script', cursive;
+  /* font-size: 1.2rem; */
   background: var(--black);
   color: var(--light-grey);
   width: 100%;
