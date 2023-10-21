@@ -1,8 +1,9 @@
 /*
 // COLORS
-Main color - Mine Shaft (approx.) #202020
+  Main color - Mine Shaft (approx.) #202020
+
 // FONTS
-Rampart One, Kalam, Roboto
+  Marck Script
 */
 
 /****************************** GENERAL ******************************/
@@ -20,57 +21,46 @@ Rampart One, Kalam, Roboto
   --transision-time-in: 0.5s;
   --nav-links-gap: 1rem;
 }
-*,
-*::before,
-*::after {
-  width: 100%;
-  height: auto;
-  padding: 0;
-  border: 0;
-  margin: 0;
-  box-sizing: inherit;
-  /* overflow-x: hidden; */
-}
-html {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+
+/****************************** CSS RESET START ******************************/
+/* prettier-ignore */
+*, *::before, *::after {box-sizing: border-box; margin: 0; border: 0; padding: 0;}
+/* prettier-ignore */
+body {line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; font-family: sans-serif;}
+/* prettier-ignore */
+img, picture, video, canvas, svg {display: block; max-width: 100%;}
+/* prettier-ignore */
+input, button, textarea, select {font: inherit;}
+/* prettier-ignore */
+p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
+/****************************** CSS RESET END ******************************/
+
 body {
-  box-sizing: border-box;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  /* DON NOT CHANGE MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
+  /* max-height: 100%; */
+  overflow-x: hidden;
+  /* display: grid; */
+  /* place-items: center; */
+  /* scroll-behavior: smooth; */
   font-family: 'Marck Script', cursive;
   /* font-size: 1.2rem; */
   background: var(--black);
   color: var(--light-grey);
-  width: 100%;
-  /* height: 100%; DON NOT CHANGE MAX-HEIGHT! IT BRAKES SCROLL ANIMATION!*/
-  max-height: 100%;
-  overflow-x: hidden;
-  display: grid;
-  place-items: center;
-  scroll-behavior: smooth;
 }
-.root {
-  max-width: 768px;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  display: grid;
+
+.main {
+  /* overflow-x: hidden; */
+  /* display: grid;
   place-items: center;
-  padding: 0 2rem;
+  padding: 0 2rem; */
 }
 .lock-scroll {
   overflow: hidden;
 }
 
 /****************************** MAIN ******************************/
-.main {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  overflow-x: hidden;
-}
 .section {
   width: 100%;
   height: 100%;
@@ -79,10 +69,6 @@ body {
   place-items: center;
   overflow-x: hidden;
 }
-/* .container {
-  display: grid;
-  place-items: center;
-} */
 .hr {
   margin: 10rem 0;
   width: 80%;
@@ -122,6 +108,11 @@ body {
 }
 
 /****************************** SECTIONS ******************************/
+.typewriter {
+  width: 100%;
+  height: 200px;
+}
+
 /* SECTION-HOME */
 .section-home {
   /* display: none; */
