@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      /****************************** HEADER ******************************/
-      .header {
-        overflow-x: hidden;
-      }
-      .nav {
-        overflow-x: hidden;
+// Encapsulate code for interoparability with other script imports
+// IMPORTANT THIS MAY CAUSE PERFORMANCE ISSUES!
+function makeTemplate() {
+  const template = document.createElement('template')
+  template.innerHTML = `
+  <style>
+  /****************************** HEADER ******************************/
+  .header {
+    overflow-x: hidden;
+  }
+  .nav {
+    overflow-x: hidden;
       }
       .nav__panel {
         position: fixed;
@@ -155,9 +154,7 @@
         }
       }
     </style>
-  </head>
-  <body>
-    <!-- HEADER -->
+
     <header class="header" id="header">
       <nav class="nav">
         <button class="nav__menu">
@@ -257,5 +254,38 @@
         </div>
       </nav>
     </header>
-  </body>
-</html>
+    `
+  return template
+}
+
+class Header extends HTMLElement {
+  constructor() {
+    super()
+    const template = makeTemplate()
+
+    // Append template with shadow DOM to DOM
+    const shadow = this.attachShadow({ mode: 'open' })
+    shadow.appendChild(template.content.cloneNode(true))
+
+    /****************************** Navigation menu ******************************/
+    const menu = shadow.querySelector('.nav__menu')
+    const navLinks = shadow.querySelector('.nav__panel')
+    const linkArr = shadow.querySelectorAll('.nav__link')
+    const body = document.querySelector('body')
+
+    function showMenu() {
+      menu.classList.toggle('show-nav__menu')
+      navLinks.classList.toggle('show-nav__panel')
+      if (Window.innerWidth < 768) {
+        body.classList.toggle('lock-scroll')
+      }
+    }
+
+    menu.addEventListener('click', showMenu, false)
+
+    linkArr.forEach((item) => {
+      item.addEventListener('click', showMenu, false)
+    })
+  }
+}
+window.customElements.define('header-x', Header)

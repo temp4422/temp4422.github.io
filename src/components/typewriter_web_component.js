@@ -2,32 +2,39 @@
 // Import as <script src="/src/components/typewriter_web_component.js"></script>
 // https://academind.com/tutorials/adding-web-components-to-any-app
 
-const template = document.createElement('template')
-template.innerHTML = `
+// Encapsulate code for interoparability with other script imports
+// IMPORTANT THIS MAY CAUSE PERFORMANCE ISSUES!
+function makeTemplate() {
+  const template = document.createElement('template')
+  template.innerHTML = `
   <div id="typewriter">
-    <span id="word"></span>
-    <span id="cursor"></span>
-    <style>
-      #typewriter {
-        width: max-content; /* Set width to enable margin below */
-        height: max-content;
-        margin: 10rem auto;
-        font-size: 2rem;
-      }
-      #cursor {
-        border-right: 0.1em solid;
-        animation: caret 1s steps(1) infinite;
-      }
-      @keyframes caret {
-        50% {border-color: transparent;}
-      }
-    </style>
+  <span id="word"></span>
+  <span id="cursor"></span>
+  <style>
+  #typewriter {
+    width: max-content; /* Set width to enable margin below */
+    height: max-content;
+    margin: 10rem auto;
+    font-size: 2rem;
+  }
+  #cursor {
+    border-right: 0.1em solid;
+    animation: caret 1s steps(1) infinite;
+  }
+  @keyframes caret {
+    50% {border-color: transparent;}
+  }
+  </style>
   </div>
   `
+  return template
+}
 
 class Typewriter extends HTMLElement {
   constructor() {
     super()
+    const template = makeTemplate()
+
     // Append template with shadow DOM to DOM
     const shadow = this.attachShadow({ mode: 'open' })
     shadow.appendChild(template.content.cloneNode(true))
