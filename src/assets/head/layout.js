@@ -38,7 +38,7 @@ const layout = `
       body {
         overflow-x: hidden;
         font-family: 'Marck Script', cursive;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         background: var(--black);
         color: var(--light-grey);
       }
