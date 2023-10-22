@@ -16,7 +16,7 @@ function makeTemplate() {
       margin: 3rem 0;
     }
     p {
-      margin: 3rem 1rem;
+      margin: 2rem 1rem;
       text-align: center;
     }
     svg {
@@ -56,6 +56,14 @@ function makeTemplate() {
     img:hover{
       transition: 0.25s ease;
       filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
+    }
+    @media (min-width: 768px) {
+      img {
+        width: 25rem;
+      }
+    }
+    .work-item p {
+      margin-top: 0.5rem;
     }
 
     /* SECTION-ABOUT */
