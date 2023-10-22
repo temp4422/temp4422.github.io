@@ -2,7 +2,16 @@
 <html lang="en">
   <head>
     <title>Guess The Number</title>
-    <script fetchpriority="high" src="/src/assets/meta/head.js"></script>
+    <script fetchpriority="high" src="/src/assets/head/meta.js"></script>
+    <script fetchpriority="high" src="/src/assets/head/layout.js"></script>
+
+    <style>
+      .display {
+        width: 20rem;
+        height: 20rem;
+        background: red;
+      }
+    </style>
   </head>
 
   <body>
@@ -12,6 +21,92 @@
 
     <main>
       <h1>Guess the Number</h1>
+      <p>Guess the number between 1 and 100, can you ?</p>
+
+      <div id="display" class="display"></div>
+      <form action="javascript:alert('ok')">
+        <label for="guessField">Guess</label>
+        <input type="text" id="guessField" class="guessField" value="number ..." />
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="resultParas">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+      </div>
+
+      <script>
+        let randomNumber = Math.floor(Math.random()) + 1
+
+        const guesses = document.querySelector('.guesses')
+        const lastResult = document.querySelector('.lastResult')
+        const lowOrHi = document.querySelector('lowOrHi')
+        const guessSubmit = document.querySelector('.guessSubmit')
+        const guessField = document.querySelector('.guessField')
+
+        let guessCount = 1
+        let resetButton
+
+        function checkGuess() {
+          let userGuess = Number(guessField.value)
+          if (guessCount === 1) {
+            guesses.textContent = 'Previous guesses: '
+          }
+          guesses.textContent += userGuess + ' '
+
+          if (userGuess === randomNumber) {
+            lastResult.textContent = 'Congratulations! You got it right!'
+            lastResult.style.backgroundColor = 'green'
+            lowOrHi.textContent = ''
+            setGameOver()
+          } else if (guessCount === 10) {
+            lastResult.textContent = '!!!GAME OVER!!!'
+            setGameOver()
+          } else {
+            lastResult.textContent = 'Wrong!'
+            lastResult.style.backgroundColor = 'red'
+            if (userGuess < randomNumber) {
+              lowOrHi.textContent = 'Last guess was too low!'
+            } else if (userGuess > randomNumber) {
+              lowOrHi.textContent = 'Last guess was too high!'
+            }
+          }
+
+          guessCount++
+          guessField.value = ''
+          guessField.focus()
+        }
+        guessSubmit.addeventListener('click', checkGuess)
+
+        function setGameOver() {
+          guessField.disabled = true
+          guessSubmit.disabled = true
+          resetButton = document.createElement('button')
+          resetButton.textContent = 'Start new game'
+          document.body.appendChild(resetButton)
+          resetButton.addeventListener('click', resetGame)
+        }
+
+        function resetGame() {
+          guessCount = 1
+
+          const resetParas = document.querySelectorAll('.resultParas p')
+          for (let i = 0; i < resetParas.length; i++) {
+            resetParas[i].textContent = ''
+          }
+          resetButton.parentNode.removeChild(resetButton)
+
+          guessField.disabled = false
+          guessSubmit.disabled = false
+          guessField.value = ''
+          guessField.focus()
+
+          lastResult.style.backgroundColor = 'white'
+
+          randomNumber = Math.floor(Math.random()) + 1
+        }
+      </script>
     </main>
 
     <footer>
@@ -21,6 +116,5 @@
 
   <script src="/src/components/typewriter.js"></script>
   <script src="/src/components/header.js"></script>
-  <script src="/src/components/main.js"></script>
   <script src="/src/components/footer.js"></script>
 </html>

@@ -1,7 +1,4 @@
-const headContent = `
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+const layout = `
     <style>
       /****************************** LAYOUT STYLES ******************************/
       /*
@@ -45,10 +42,19 @@ const headContent = `
         background: var(--black);
         color: var(--light-grey);
       }
-      h1 {
+      h1, h2, h3 {
+        text-align: center;
         width: max-content;
         margin: 0 auto;
         padding: 2rem 0;
+      }
+      p {
+        text-align: center;
+        margin: 3rem 1rem;
+      }
+      main {
+        display: grid;
+        place-items: center;
       }
 
       /* Scrollbar Styling */
@@ -69,4 +75,4 @@ const headContent = `
       }
     </style>
   `
-document.head.innerHTML += headContent
+document.head.innerHTML += layout

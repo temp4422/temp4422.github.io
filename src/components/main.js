@@ -17,7 +17,7 @@ function makeTemplate() {
       place-items: center;
       overflow-x: hidden;
     }
-    h2 {
+    h1, h2, h3 {
       text-align: center;
       margin: 3rem 0;
     }
@@ -101,7 +101,7 @@ function makeTemplate() {
       <div class="work-item">
         <a href="https://www.x-drive.ua/">
           <img
-            src="/src/img/jpg/x-drive.jpg"
+            src="/src/assets/img/jpg/x-drive.jpg"
             width="1280"
             height="720"
             alt="x-drive"
@@ -113,7 +113,7 @@ function makeTemplate() {
       <div class="work-item">
         <a href="https://solomia-portfolio.netlify.app/">
           <img
-            src="/src/img/jpg/solomia.jpg"
+            src="/src/assets/img/jpg/solomia.jpg"
             width="1280"
             height="720"
             alt="solomia-portfolio"
@@ -125,7 +125,7 @@ function makeTemplate() {
       <div class="work-item">
         <a href="./playground.html">
           <img
-            src="/src/img/jpg/playground.jpg"
+            src="/src/assets/img/jpg/playground.jpg"
             width="1280"
             height="720"
             alt="playground"
