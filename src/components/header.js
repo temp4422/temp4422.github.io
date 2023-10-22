@@ -67,12 +67,12 @@ function makeTemplate() {
         display: grid;
         align-content: space-evenly;
         gap: 0.5rem;
-        width: 4rem;
-        height: 4.1rem;
+        width: 3rem;
+        height: 3.1rem;
         background: rgba(186, 186, 186, 0.377);
-        margin: 2rem;
+        margin: 1rem;
         padding: 0.5rem;
-        border-radius: 25%;
+        border-radius: 30%;
         animation: menu-spin-back var(--transision-time-in) ease-in-out;
         animation-fill-mode: forwards;
         backdrop-filter: blur(2px);
@@ -80,7 +80,7 @@ function makeTemplate() {
         z-index: 300;
         cursor: pointer;
         transition: 0.5s ease; /* box shadow animation on hover*/
-        filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
+        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
       }
       .nav__menu:hover {
         transition: 0.5s ease;
@@ -89,12 +89,12 @@ function makeTemplate() {
       @media (min-width: 768px) {
         .nav__panel {
           width: 25vw;
-          border-radius: 20px 0 0 20px;
+          border-radius: 5px 0 0 5px;
         }
       }
       .nav__menu__line {
         width: 100%;
-        height: 0.5rem;
+        height: 0.3rem;
         /* background: var(--black); */
         background: #000;
         border-radius: 8px;
@@ -114,7 +114,7 @@ function makeTemplate() {
       }
       .show-nav__menu .nav__menu__line:nth-child(1) {
         transition: var(--transision-time-out);
-        transform: rotate(45deg) translate(0.8rem, 0.8rem);
+        transform: rotate(45deg) translate(0.6rem, 0.6rem);
       }
       .show-nav__menu .nav__menu__line:nth-child(2) {
         opacity: 0;
@@ -123,7 +123,7 @@ function makeTemplate() {
       }
       .show-nav__menu .nav__menu__line:nth-child(3) {
         transition: var(--transision-time-out);
-        transform: rotate(-45deg) translate(0.8rem, -0.9rem);
+        transform: rotate(-45deg) translate(0.6rem, -0.6rem);
       }
       .show-nav__menu {
         animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
@@ -276,8 +276,12 @@ class Header extends HTMLElement {
     function showMenu() {
       menu.classList.toggle('show-nav__menu')
       navLinks.classList.toggle('show-nav__panel')
-      if (Window.innerWidth < 768) {
-        body.classList.toggle('lock-scroll')
+      if (document.body.clientWidth < 768) {
+        if (body.style.overflowY === '') {
+          body.style.overflowY = 'hidden'
+        } else {
+          body.style.overflowY = ''
+        }
       }
     }
 

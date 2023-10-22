@@ -22,7 +22,7 @@ function makeTemplate() {
       margin: 3rem 0;
     }
     p {
-      margin: 3rem 0;
+      margin: 3rem 1rem;
       text-align: center;
     }
     img {
