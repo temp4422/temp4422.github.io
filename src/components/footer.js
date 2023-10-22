@@ -5,6 +5,18 @@ function makeTemplate() {
   template.innerHTML = `
     <style>
       /****************************** FOOTER ******************************/
+      p {
+        text-align: center;
+      }
+      .svg {
+        cursor: pointer;
+        transition: 0.5s ease;
+        filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.5));
+      }
+      .svg:hover {
+        transition: 0.25s ease;
+        filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+      }
       .footer {
         width: 100%;
         height: 100%;
@@ -15,10 +27,6 @@ function makeTemplate() {
         display: flex;
         justify-content: center;
         gap: 1rem;
-        margin: 3rem 0;
-      }
-      .footer .p {
-        margin: 8rem 0 2rem 0;
       }
       .svg-footer {
         margin: 1rem;
@@ -28,7 +36,8 @@ function makeTemplate() {
     </style>
 
     <footer class="footer" id="footer">
-      <h1 class="h1 h1-contact" id="contact">CONTACTS</h1>
+      <h2 id="contact">CONTACTS</h2>
+
       <div class="footer-container">
         <a href="">
           <div class="svg svg-footer js-scroll fade-in">
@@ -93,8 +102,8 @@ function makeTemplate() {
         </a>
       </div>
 
-      <div class="p p-center">
-        <p>Built with Next, Netlify, Google and sincere developer's efforts :)</p>
+      <div>
+        <p>Built with Core Web Technologies, Google and Sincere Developer's Efforts :)</p>
       </div>
     </footer>
     `
