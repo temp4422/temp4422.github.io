@@ -94,36 +94,21 @@ function makeTemplate() {
 
       <div class="work-item">
         <a href="https://www.x-drive.ua/" aria-label="x-drive.ua">
-          <img
-            src="/src/assets/img/jpg/x-drive.jpg"
-            width="1280"
-            height="720"
-            alt="x-drive"
-          />
+          <img src="/src/assets/img/webp/compressed/x-drive.webp" alt="x-drive"/>
         </a>
         <p>X-drive.ua - smooth and fast with nuxt.js</p>
       </div>
 
       <div class="work-item">
         <a href="https://solomia-portfolio.netlify.app/" aria-label="Solomia portfolio">
-          <img
-            src="/src/assets/img/jpg/solomia.jpg"
-            width="1280"
-            height="720"
-            alt="solomia-portfolio"
-          />
+          <img src="/src/assets/img/webp/compressed/solomia.webp" alt="solomia-portfolio"/>
         </a>
         <p>Artful portfolio</p>
       </div>
 
       <div class="work-item">
         <a href="/src/pages/playground.html" aria-label="Playground">
-          <img
-            src="/src/assets/img/jpg/playground.jpg"
-            width="1280"
-            height="720"
-            alt="playground"
-          />
+          <img src="/src/assets/img/webp/compressed/playground.webp" alt="playground"/>
         </a>
         <p>An interactive playground</p>
       </div>
