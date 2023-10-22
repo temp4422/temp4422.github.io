@@ -42,6 +42,10 @@ const layout = `
         background: var(--black);
         color: var(--light-grey);
       }
+      main {
+        display: grid;
+        place-items: center
+      }
       h1, h2, h3 {
         text-align: center;
         width: max-content;
