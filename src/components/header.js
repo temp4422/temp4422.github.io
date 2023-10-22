@@ -88,7 +88,7 @@ function makeTemplate() {
         width: 3rem;
         height: 3rem;
         background: rgba(186, 186, 186, 0.377);
-        margin: 1rem;
+        margin: 1.5rem;
         padding: 0.6rem;
         border-radius: 30%;
         animation: menu-spin-back var(--transision-time-in) ease-in-out;

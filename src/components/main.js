@@ -5,11 +5,8 @@ function makeTemplate() {
   template.innerHTML = `
   <style>
     /****************************** MAIN ******************************/
-    main {
-      max-width: 768px;
-    }
     section {
-      margin: 6rem 0;
+      margin: 6rem auto;
       display: grid;
       place-items: center;
       overflow-x: hidden;
@@ -21,19 +18,6 @@ function makeTemplate() {
     p {
       margin: 3rem 1rem;
       text-align: center;
-    }
-    img {
-      width: 26rem;
-      height: 14rem;
-      margin: 1rem;
-      /* object-fit: contain; */
-      filter: drop-shadow(0 0 0.5rem rgba(100, 100, 100, 0.25));
-      /* filter: grayscale(1); */
-      border-radius: 1rem;
-    }
-    img:hover{
-      transition: 0.25s ease;
-      filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
     }
     svg {
       cursor: pointer;
@@ -48,16 +32,30 @@ function makeTemplate() {
     /****************************** SECTIONS ******************************/
     /* SECTION-HOME */
     section#home{
-      margin: 20rem 0 10rem 0;
+      margin-top: 20rem;
+      margin-bottom: 10rem;
     }
 
     /* SECTION-WORKS */
     .work-item {
-      width: 30rem;
+      width: 100%;
       overflow: hidden;
       margin: 2rem 0;
       display: grid;
       place-items: center;
+    }
+    img {
+      width: 20rem;
+      height: auto;
+      margin: 1rem;
+      /* object-fit: contain; */
+      filter: drop-shadow(0 0 0.5rem rgba(100, 100, 100, 0.25));
+      /* filter: grayscale(1); */
+      border-radius: 1rem;
+    }
+    img:hover{
+      transition: 0.25s ease;
+      filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
     }
 
     /* SECTION-ABOUT */
@@ -74,7 +72,6 @@ function makeTemplate() {
     }
   </style>
 
-  <main>
     <!-- HOME -->
     <section id="home">
       <p>
@@ -218,7 +215,6 @@ function makeTemplate() {
         </a>
       </div>
     </section>
-  </main>
   `
   return template
 }

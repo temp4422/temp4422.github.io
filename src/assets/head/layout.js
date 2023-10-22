@@ -52,10 +52,6 @@ const layout = `
         text-align: center;
         margin: 3rem 1rem;
       }
-      main {
-        display: grid;
-        place-items: center;
-      }
 
       /* Scrollbar Styling */
       @media (min-width: 768px) {
