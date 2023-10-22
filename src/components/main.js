@@ -112,7 +112,7 @@ function makeTemplate() {
       </div>
 
       <div class="work-item">
-        <a href="./playground.html">
+        <a href="/src/pages/playground.html">
           <img
             src="/src/assets/img/jpg/playground.jpg"
             width="1280"
