@@ -14,6 +14,8 @@ const layout = `
       @font-face {
         font-family: 'Marck Script';
         src: url('/src/assets/fonts/Marck_Script/MarckScript-Regular.ttf') format('truetype');
+        font-display: swap; /* avoid showing invisible text */
+        /* https://developer.chrome.com/docs/lighthouse/performance/font-display/?utm_source=lighthouse&utm_medium=devtools */
       }
 
       :root {
