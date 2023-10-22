@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <title>Playground</title>
     <style>
       .object-3d {
         border-radius: 20px;
@@ -21,34 +20,40 @@
       <header-x></header-x>
     </header>
 
-    <div class="root">
-      <div class="main">
-        <div>
-          <model-viewer
-            class="object-3d"
-            alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-            src="./assets/x-drive.glb"
-            ar
-            ar-modes="webxr scene-viewer quick-look"
-            camera-controls
-          >
-          </model-viewer>
-        </div>
+    <main>
+      <div>
+        <model-viewer
+          class="object-3d"
+          alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+          src="./assets/x-drive.glb"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          camera-controls
+        >
+        </model-viewer>
+      </div>
 
-        <!-- <a frameborder="0" data-theme="dark" data-layers="1,2,3,4" data-stack-embed="true"
-            href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
-          <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script> -->
-        <!-- <div>
+      <!-- <a frameborder="0" data-theme="dark" data-layers="1,2,3,4" data-stack-embed="true"
+        href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
+        <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script> -->
+      <!-- <div>
           <a frameborder="0" data-theme="light" data-layers="1,2,3,4" data-stack-embed="true"
-            href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
+          href="https://embed.stackshare.io/stacks/embed/31dffca4308c1687a0f1f505b98a12"></a>
           <script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script>
         </div> -->
-      </div>
-    </div>
-    <script src="/src/components/header.js"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
+    </main>
+
+    <footer>
+      <footer-x></footer-x>
+    </footer>
   </body>
+
+  <script src="/src/components/header.js"></script>
+  <script src="/src/components/footer.js"></script>
+  <script
+    async
+    defer
+    type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+  ></script>
 </html>
