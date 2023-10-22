@@ -38,11 +38,13 @@ const layout = `
       /****************************** CSS RESET END ******************************/
 
       body {
-        overflow-x: hidden;
         font-family: 'Marck Script', cursive;
         font-size: 1.5rem;
         background: var(--black);
         color: var(--light-grey);
+        max-width: 768px;
+        margin: 0 auto;
+        overflow-x: hidden;
       }
       main {
         display: grid;
