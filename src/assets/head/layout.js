@@ -13,7 +13,7 @@ const layout = `
       /* @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap'); */
       @font-face {
         font-family: 'Marck Script';
-        src: url('/src/fonts/Marck_Script/MarckScript-Regular.ttf') format('truetype');
+        src: url('/src/assets/fonts/Marck_Script/MarckScript-Regular.ttf') format('truetype');
       }
 
       :root {
