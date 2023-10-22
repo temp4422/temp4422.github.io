@@ -104,7 +104,7 @@ function makeTemplate() {
         transition: 0.5s ease;
         filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
       }
-      @media (min-width: 768px) {
+      @media (min-width: 600px) {
         .nav__panel {
           width: 25vw;
           border-radius: 5px 0 0 5px;
@@ -275,11 +275,11 @@ class Header extends HTMLElement {
     function showMenu() {
       menu.classList.toggle('show-nav__menu')
       navLinks.classList.toggle('show-nav__panel')
-      if (document.body.clientWidth < 768) {
-        if (body.style.overflowY === '') {
-          body.style.overflowY = 'hidden'
+      if (document.body.clientWidth < 600) {
+        if (body.style.overflow === '') {
+          body.style.overflow = 'hidden'
         } else {
-          body.style.overflowY = ''
+          body.style.overflow = ''
         }
       }
     }
