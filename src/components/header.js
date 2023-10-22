@@ -15,6 +15,17 @@ function makeTemplate() {
     /* Links */
     --nav-links-gap: 1rem;
   }
+  svg {
+    cursor: pointer;
+    transition: 0.5s ease;
+    filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
+  }
+  svg:hover {
+    transition: 0.25s ease;
+    filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
+  }
+
+  /****************************** NAV MENU ******************************/
   .nav {
     overflow-x: hidden;
       }
@@ -75,10 +86,10 @@ function makeTemplate() {
         align-content: space-evenly;
         gap: 0.5rem;
         width: 3rem;
-        height: 3.1rem;
+        height: 3rem;
         background: rgba(186, 186, 186, 0.377);
         margin: 1rem;
-        padding: 0.5rem;
+        padding: 0.6rem;
         border-radius: 30%;
         animation: menu-spin-back var(--transision-time-in) ease-in-out;
         animation-fill-mode: forwards;
@@ -121,7 +132,7 @@ function makeTemplate() {
       }
       .show-nav__menu .nav__menu__line:nth-child(1) {
         transition: var(--transision-time-out);
-        transform: rotate(45deg) translate(0.6rem, 0.6rem);
+        transform: rotate(45deg) translate(0.5rem, 0.5rem);
       }
       .show-nav__menu .nav__menu__line:nth-child(2) {
         opacity: 0;
@@ -130,7 +141,7 @@ function makeTemplate() {
       }
       .show-nav__menu .nav__menu__line:nth-child(3) {
         transition: var(--transision-time-out);
-        transform: rotate(-45deg) translate(0.6rem, -0.6rem);
+        transform: rotate(-45deg) translate(0.6rem, -0.65rem);
       }
       .show-nav__menu {
         animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
