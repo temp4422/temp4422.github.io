@@ -93,7 +93,7 @@ function makeTemplate() {
       <h2>MY WORKS</h2>
 
       <div class="work-item">
-        <a href="https://www.x-drive.ua/">
+        <a href="https://www.x-drive.ua/" aria-label="x-drive.ua">
           <img
             src="/src/assets/img/jpg/x-drive.jpg"
             width="1280"
@@ -105,7 +105,7 @@ function makeTemplate() {
       </div>
 
       <div class="work-item">
-        <a href="https://solomia-portfolio.netlify.app/">
+        <a href="https://solomia-portfolio.netlify.app/" aria-label="Solomia portfolio">
           <img
             src="/src/assets/img/jpg/solomia.jpg"
             width="1280"
@@ -117,7 +117,7 @@ function makeTemplate() {
       </div>
 
       <div class="work-item">
-        <a href="/src/pages/playground.html">
+        <a href="/src/pages/playground.html" aria-label="Playground">
           <img
             src="/src/assets/img/jpg/playground.jpg"
             width="1280"
@@ -141,7 +141,7 @@ function makeTemplate() {
       </p>
 
       <div class="web-core">
-        <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5">
+        <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" aria-label="HTML5">
           <div>
             <svg
               fill="none"
@@ -160,7 +160,7 @@ function makeTemplate() {
           </div>
         </a>
 
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" aria-label="CSS3">
           <div>
             <svg
               fill="none"
@@ -180,7 +180,7 @@ function makeTemplate() {
         </a>
 
 
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" aria-label="JavaScript">
           <div>
             <svg height="50" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
               <path fill="#f7df1e" d="M0 0h630v630H0z" />
@@ -200,7 +200,7 @@ function makeTemplate() {
       </p>
 
       <div class="svg jamstack-logo">
-        <a href="https://jamstack.org">
+        <a href="https://jamstack.org" aria-label="JAMstack">
           <svg
             width="300"
             height="150"

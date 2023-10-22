@@ -1,4 +1,5 @@
 const headMeta = `
-    <meta name="test" content="test content" />
+    <meta name="description" content="My portfolio website">
+
   `
 document.head.innerHTML += headMeta

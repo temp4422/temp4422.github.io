@@ -39,7 +39,7 @@ function makeTemplate() {
       <h2 id="contact">CONTACTS</h2>
 
       <div class="footer-container">
-        <a href="mailto:it.temp4422@gmail.com">
+        <a href="mailto:it.temp4422@gmail.com" aria-label="Gmail">
           <div class="svg svg-footer js-scroll fade-in">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -50,7 +50,7 @@ function makeTemplate() {
           </div>
         </a>
 
-        <a href="https://github.com/webdev4422">
+        <a href="https://github.com/webdev4422" aria-label="GitHub">
           <div class="svg svg-footer js-scroll fade-in-delay-2">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -63,7 +63,7 @@ function makeTemplate() {
           </div>
         </a>
 
-        <a href="https://codepen.io/webdev4422">
+        <a href="https://codepen.io/webdev4422" aria-label="CodePen">
           <div class="svg svg-footer js-scroll fade-in-delay-3">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#a)">
@@ -83,7 +83,7 @@ function makeTemplate() {
           </div>
         </a>
 
-        <a href="https://www.freecodecamp.org/webdev4422">
+        <a href="https://www.freecodecamp.org/webdev4422" aria-label="FreeCodeCamp">
           <div class="svg svg-footer js-scroll fade-in-delay-4">
             <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#a)">

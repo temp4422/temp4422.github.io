@@ -175,14 +175,14 @@ function makeTemplate() {
 
     <header class="header" id="header">
       <nav class="nav">
-        <button class="nav__menu">
+        <button class="nav__menu" aria-label="Navigation menu">
           <div class="nav__menu__line"></div>
           <div class="nav__menu__line"></div>
           <div class="nav__menu__line"></div>
         </button>
         <div class="nav__panel">
           <div class="nav__panel__top">
-            <a class="nav__link" href="/">
+            <a class="nav__link" href="/" aria-label="Home">
               <div class="svg nav__svg home-svg">
                 <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill="none" d="M0 0h48v48H0z" />
@@ -194,12 +194,7 @@ function makeTemplate() {
               </div>
             </a>
 
-
-            <!-- comment not used links -->
-            <!-- <a class="nav__link" href="#works"><div class="svg nav__svg work-svg"><svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h48v48H0z" /><path fill-rule="evenodd" clip-rule="evenodd" d="M34 14a6 6 0 0 0-6-6h-8a6 6 0 0 0-6 6h-2a6 6 0 0 0-6 6v16a6 6 0 0 0 6 6h24a6 6 0 0 0 6-6V20a6 6 0 0 0-6-6h-2Zm-6-2h-8a2 2 0 0 0-2 2h12a2 2 0 0 0-2-2Zm-16 6h24a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V20a2 2 0 0 1 2-2Z" fill="#202020" /></svg></div></a><a class="nav__link" href="#about"><div class="svg nav__svg about-svg"><svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h48v48H0z" /><path d="M3 14.25A5.252 5.252 0 0 1 8.25 9h31.5A5.252 5.252 0 0 1 45 14.25v19.5A5.25 5.25 0 0 1 39.75 39H8.25A5.25 5.25 0 0 1 3 33.75v-19.5ZM8.25 12A2.25 2.25 0 0 0 6 14.25v19.5A2.25 2.25 0 0 0 8.25 36h31.5A2.25 2.25 0 0 0 42 33.75v-19.5A2.25 2.25 0 0 0 39.75 12H8.25Zm20.25 6a1.5 1.5 0 1 0 0 3h9a1.5 1.5 0 1 0 0-3h-9Zm0 9a1.5 1.5 0 1 0 0 3h9a1.5 1.5 0 1 0 0-3h-9Zm-12.717-3.858a4.07 4.07 0 1 0 0-8.141 4.07 4.07 0 0 0 0 8.141Zm-4.209 2.034A2.574 2.574 0 0 0 9 27.75a5.01 5.01 0 0 0 3.795 4.86l.159.042c1.86.465 3.801.465 5.658 0l.162-.039a5.01 5.01 0 0 0 3.795-4.86 2.573 2.573 0 0 0-2.574-2.577h-8.421Z" fill="#202020" /></svg></div></a><a class="nav__link" href="#contact"><div class="svg nav__svg contact-svg"><svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 4a4 4 0 0 0-4 4v24a4 4 0 0 0 4 4h8v6a2 2 0 0 0 2 2h1c.5 0 1-.2 1.4-.58L27.8 36H40a4 4 0 0 0 4-4V8a4 4 0 0 0-4-4H8Zm0 4h32v24H26.16L20 38.16V32H8V8Zm16.38 3c-1.78 0-3.2.36-4.28 1.08-1.1.72-1.66 1.92-1.56 3.3h3.94c0-.56.2-.98.52-1.26.4-.28.84-.42 1.38-.42.62 0 1.16.16 1.52.52.36.34.54.78.54 1.38 0 .56-.16 1.06-.44 1.48-.34.44-.76.8-1.28 1.08-1.04.64-1.72 1.2-2.14 1.68C22.2 20.32 22 21 22 22h4c0-.56.1-1 .28-1.36.18-.34.52-.64 1.04-.94.92-.42 1.68-.98 2.26-1.7.58-.74.88-1.52.88-2.4 0-1.4-.54-2.52-1.62-3.36-1.08-.82-2.58-1.24-4.46-1.24ZM22 24v4h4v-4h-4Z" fill="#202020" /></svg></div></a> -->
-
-
-            <a class="nav__link" href="/src/pages/playground.html">
+            <a class="nav__link" href="/src/pages/playground.html" aria-label="Playground">
               <div class="svg nav__svg play-svg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none">
                   <path d="M4 7.5L11.6078 3.22062C11.7509 3.14014 11.8224 3.09991 11.8982 3.08414C11.9654 3.07019 12.0346 3.07019 12.1018 3.08414C12.1776 3.09991 12.2491 3.14014 12.3922 3.22062L20 7.5M4 7.5V16.0321C4 16.2025 4 16.2876 4.02499 16.3637C4.04711 16.431 4.08326 16.4928 4.13106 16.545C4.1851 16.6041 4.25933 16.6459 4.40779 16.7294L12 21M4 7.5L12 11.5M12 21L19.5922 16.7294C19.7407 16.6459 19.8149 16.6041 19.8689 16.545C19.9167 16.4928 19.9529 16.431 19.975 16.3637C20 16.2876 20 16.2025 20 16.0321V7.5M12 21V11.5M20 7.5L12 11.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -207,7 +202,7 @@ function makeTemplate() {
               </div>
             </a>
 
-            <a class="nav__link" href="/src/pages/guess_the_number.html">
+            <a class="nav__link" href="/src/pages/guess_the_number.html" aria-label="Guess the Number Game">
               <div class="svg nav__svg play-svg">
                 <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path
