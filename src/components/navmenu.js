@@ -284,8 +284,10 @@ class NavMenu extends HTMLElement {
       if (document.body.clientWidth < 600) {
         if (body.style.overflow === '') {
           body.style.overflow = 'hidden'
+          body.style.paddingRight = '15px' // Prevent page shift
         } else {
           body.style.overflow = ''
+          body.style.paddingRight = '0px'
         }
       }
     }
