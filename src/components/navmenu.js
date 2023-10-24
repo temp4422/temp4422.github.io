@@ -262,7 +262,7 @@ function makeTemplate() {
   return template
 }
 
-class Header extends HTMLElement {
+class NavMenu extends HTMLElement {
   constructor() {
     super()
     const template = makeTemplate()
@@ -296,4 +296,4 @@ class Header extends HTMLElement {
     })
   }
 }
-window.customElements.define('header-x', Header)
+window.customElements.define('nav-menu-x', NavMenu)
