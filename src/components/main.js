@@ -107,6 +107,13 @@ function makeTemplate() {
       </div>
 
       <div class="work-item">
+        <a href="/src/pages/freecodecamp.html" aria-label="Freecodecamp">
+          <img loading="lazy" src="/src/assets/img/webp/compressed/freecodecamp.webp" alt="freecodecamp"/>
+        </a>
+        <p>freeCodeCamp projects</p>
+      </div>
+
+      <div class="work-item">
         <a href="/src/pages/playground.html" aria-label="Playground">
           <img loading="lazy" src="/src/assets/img/webp/compressed/playground.webp" alt="playground"/>
         </a>
