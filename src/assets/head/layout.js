@@ -53,7 +53,7 @@ const layout = `
       }
       h1, h2, h3 {
         text-align: center;
-        margin: 2rem 0 0 0;
+        margin: 2rem 1rem;
         padding: 2rem 0;
       }
       p {
