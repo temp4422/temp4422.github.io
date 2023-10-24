@@ -33,6 +33,9 @@ function makeTemplate() {
         transition: 0.5s ease;
         filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.25));
       }
+      .footer-note{
+        padding: 0 1rem;
+      }
     </style>
 
     <footer class="footer" id="footer">
@@ -103,7 +106,7 @@ function makeTemplate() {
       </div>
 
       <div>
-        <p>Built with Core Web Technologies, Google and Sincere Developer's Efforts :)</p>
+        <p class="footer-note">Built with Core Web Technologies, Google and Sincere Developer's Efforts :)</p>
       </div>
     </footer>
     `
