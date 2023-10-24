@@ -60,6 +60,15 @@ const layout = `
         text-align: center;
         margin: 3rem 1rem;
       }
+      a {
+        text-decoration: none;
+        color: #54b3d6;
+        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+      }
+      a:hover {
+        color: white;
+        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
+      }
 
       /* Scrollbar Styling */
       @media (min-width: 768px) {
