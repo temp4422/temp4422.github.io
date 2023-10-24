@@ -40,11 +40,12 @@ const layout = `
       body {
         font-family: 'Marck Script', cursive;
         font-size: 1.5rem;
-        background: var(--black);
-        color: var(--light-grey);
         max-width: 768px;
         margin: 0 auto;
         overflow-x: hidden;
+        /* background: var(--black);*/
+        background: linear-gradient(to bottom, #202020 66%, #101010);
+        color: var(--light-grey);
       }
       main {
         margin: 4rem auto;
