@@ -16,8 +16,8 @@ function makeTemplate() {
       margin: 3rem 0;
     }
     p {
-      margin: 2rem 1rem;
       text-align: center;
+      margin: 2rem 1rem;
     }
     svg {
       cursor: pointer;
@@ -70,7 +70,6 @@ function makeTemplate() {
     .web-core {
       width: 100%;
       height: 100%;
-      margin: 2rem 0;
       display: flex;
       align-items: center;
       justify-content: space-evenly;

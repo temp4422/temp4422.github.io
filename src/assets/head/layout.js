@@ -47,13 +47,13 @@ const layout = `
         overflow-x: hidden;
       }
       main {
+        margin: 4rem auto;
         display: grid;
         place-items: center;
       }
       h1, h2, h3 {
         text-align: center;
-        width: max-content;
-        margin: 0 auto;
+        margin: 2rem 0 0 0;
         padding: 2rem 0;
       }
       p {
