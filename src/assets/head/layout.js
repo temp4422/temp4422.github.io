@@ -48,7 +48,7 @@ const layout = `
       }
       main {
         display: grid;
-        place-items: center
+        place-items: center;
       }
       h1, h2, h3 {
         text-align: center;
