@@ -2,11 +2,16 @@ const layout = `
     <style>
       /****************************** LAYOUT STYLES ******************************/
       /*
-      // COLORS
+        // COLORS
         Main color - Mine Shaft (approx.) #202020
 
-      // FONTS
+        // FONTS
         Marck Script
+
+        // SVG
+        https://www.svgrepo.com
+        
+
       */
 
       /****************************** GENERAL ******************************/
