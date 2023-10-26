@@ -229,6 +229,10 @@ function makeTemplate() {
             </a>
 
 
+            <a class="nav__link" href="/src/pages/test.html" aria-label="Test" style="color: black">
+                <p>"->TEST<-"</p>
+            </a>
+
 
           </div>
 
