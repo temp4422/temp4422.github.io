@@ -73,6 +73,7 @@ function makeTemplate() {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      margin: 4rem 0;
     }
     .jamstack-logo {
       margin: 2rem auto;
