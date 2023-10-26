@@ -4,7 +4,9 @@
     <title>My Webdev Portfolio</title>
     <script async fetchpriority="high" src="/src/assets/head/meta.js"></script>
     <link rel="stylesheet" href="/src/assets/head/layout.css" as="style" />
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> -->
     <style>
+      /* Setup font */
       @font-face {
         font-family: 'ashcan';
         src: url('/src/assets/fonts/ashcan-bb/ashcanbb_reg.ttf') format('truetype');
@@ -14,8 +16,50 @@
         src: url('/src/assets/fonts/vtks-hunt/Vtks\ Hunt.ttf') format('truetype');
       }
 
-      .container {
-        min-height: 30rem;
+      /* Setup icon font */
+
+      @font-face {
+        font-family: 'Material Icons';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Material Icons'), local('MaterialIcons-Regular'),
+          /* url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), */
+            /* url(https://example.com/MaterialIcons-Regular.woff) format('woff'), */
+            url(/src/assets/fonts/google\ material-design-icons\ font/MaterialIcons-Regular.ttf)
+            format('truetype');
+      }
+
+      .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px; /* Guideline: 18, 24, 36 or 48px */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .material-icons.md-18 {
+        font-size: 18px;
+      }
+      .material-icons.md-24 {
+        font-size: 24px;
+      }
+      .material-icons.md-36 {
+        font-size: 36px;
+      }
+      .material-icons.md-48 {
+        font-size: 48px;
       }
     </style>
   </head>
@@ -28,7 +72,9 @@
     <main>
       <h1>Test page</h1>
 
-      <div class="container">
+      <section id="fonts">
+        <h2>Test fonts</h2>
+
         <p style="font-family: 'Marck Script'">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet facere ex, unde
           inventore voluptatem vitae quas. Aut in delectus assumenda?
@@ -43,7 +89,12 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet facere ex, unde
           inventore voluptatem vitae quas. Aut in delectus assumenda?
         </p>
-      </div>
+      </section>
+
+      <section id="icons">
+        <h2>Test Icon Font</h2>
+        <span class="material-icons md-48">face</span>
+      </section>
     </main>
 
     <footer>
