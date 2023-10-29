@@ -2,7 +2,7 @@
 // IMPORTANT THIS MAY CAUSE PERFORMANCE ISSUES!
 function makeTemplate() {
   const template = document.createElement('template')
-  template.innerHTML = `
+  template.innerHTML = /*html*/ `
   <style>
   /****************************** HEADER ******************************/
   .header {
@@ -283,14 +283,15 @@ class NavMenu extends HTMLElement {
     shadow.appendChild(template.content.cloneNode(true))
 
     /****************************** Navigation menu ******************************/
-    const menu = shadow.querySelector('.nav__menu')
-    const navLinks = shadow.querySelector('.nav__panel')
-    const linkArr = shadow.querySelectorAll('.nav__link')
+    const navmenu = shadow.querySelector('.nav__menu')
+    const navpanel = shadow.querySelector('.nav__panel')
+    const navlinks = shadow.querySelectorAll('.nav__link')
     const body = document.querySelector('body')
 
     function showMenu() {
-      menu.classList.toggle('show-nav__menu')
-      navLinks.classList.toggle('show-nav__panel')
+      navmenu.classList.toggle('show-nav__menu')
+      navpanel.classList.toggle('show-nav__panel')
+
       if (document.body.clientWidth < 600) {
         if (body.style.overflow === '') {
           body.style.overflow = 'hidden'
@@ -302,9 +303,10 @@ class NavMenu extends HTMLElement {
       }
     }
 
-    menu.addEventListener('click', showMenu, false)
+    navmenu.addEventListener('click', showMenu, false)
+    navpanel.addEventListener('click', showMenu, false)
 
-    linkArr.forEach((item) => {
+    navlinks.forEach((item) => {
       item.addEventListener('click', showMenu, false)
     })
   }
