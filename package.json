@@ -9,7 +9,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "glob": "^10.3.10",
     "html-minifier": "^4.0.0",
     "sharp": "^0.32.6"
   },
