@@ -1,3 +1,4 @@
+// TODO: Add uglifyjs
 const fs = require('fs')
 const path = require('path')
 const minify = require('html-minifier').minify
@@ -19,6 +20,7 @@ if (!fs.existsSync(dist)) {
   fs.mkdirSync(dist, { recursive: true })
 }
 
+/* ************************************************************************************** */
 //
 // KISS-x framework main job. Replace special tags with corresponding content
 //
@@ -60,6 +62,7 @@ function main() {
 }
 main()
 
+/* ************************************************************************************** */
 //
 // Optimize HTML
 //
@@ -94,6 +97,7 @@ function optimizeHTML() {
 }
 optimizeHTML()
 
+/* ************************************************************************************** */
 //
 // Convert images
 //
@@ -132,6 +136,7 @@ function convertImages() {
 }
 convertImages()
 
+/* ************************************************************************************** */
 //
 // Copy assets
 //
