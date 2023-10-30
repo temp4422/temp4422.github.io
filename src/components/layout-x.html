@@ -26,6 +26,12 @@
     --black: #202020;
     --light-grey: #cecece;
     --dark-grey: #bababa;
+
+    /* SVG filter glow and transition */
+    --svg-transition: 0.5s ease;
+    --svg-transition-hover: 0.25s ease;
+    --svg-glow: drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.5));
+    --svg-glow-hover: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
   }
 
   /****************************** CSS RESET START ******************************/
@@ -47,7 +53,6 @@
     max-width: 768px;
     margin: 0 auto;
     overflow-x: hidden;
-    /* background: var(--black);*/
     background: linear-gradient(to bottom, #202020 66%, #101010);
     color: var(--light-grey);
   }
@@ -63,10 +68,12 @@
     margin: 2rem 1rem;
     padding: 2rem 0;
   }
+
   p {
     text-align: center;
     margin: 3rem 1rem;
   }
+
   a {
     text-decoration: none;
     color: #54b3d6;
@@ -75,6 +82,16 @@
   a:hover {
     color: white;
     filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
+  }
+
+  svg {
+    cursor: pointer;
+    transition: var(--svg-transition);
+    filter: var(--svg-glow);
+  }
+  svg:hover {
+    transition: var(--svg-transition-hover);
+    filter: var(--svg-glow-hover);
   }
 
   /* Scrollbar Styling */

@@ -5,12 +5,14 @@
   "main": "index.html",
   "scripts": {
     "build": "bun index.js",
-    "dev": "serve docs/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon",
+    "serve": "serve docs/",
+    "watch": "watch 'npm run build' ./src/"
   },
   "devDependencies": {
     "html-minifier": "^4.0.0",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "watch": "^1.0.2"
   },
   "author": "",
   "license": "ISC"
