@@ -1,14 +1,5 @@
 <style>
   /****************************** NAVMENU ******************************/
-  svg {
-    cursor: pointer;
-    transition: 0.5s ease;
-    filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
-  }
-  svg:hover {
-    transition: 0.25s ease;
-    filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
-  }
   .nav {
     overflow-x: hidden;
     /* Declare variables */
@@ -28,7 +19,7 @@
     height: 100%;
     padding: 8rem 0 0 0;
     z-index: 200;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
     display: grid;
     grid-template: 1fr 5rem / 1fr;
     gap: var(--nav-links-gap);
@@ -414,7 +405,7 @@
       }
     }
   }
-
+  showMenu()
   navmenu.addEventListener('click', showMenu, false)
   navpanel.addEventListener('click', showMenu, false)
 

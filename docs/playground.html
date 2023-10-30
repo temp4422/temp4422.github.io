@@ -101,14 +101,13 @@
 
   a {
     text-decoration: none;
-    color: #54b3d6;
+    color: #000000;
     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   a:hover {
     color: white;
-    filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
+    filter: var(--svg-glow-hover);
   }
-
   svg {
     cursor: pointer;
     transition: var(--svg-transition);
@@ -117,6 +116,24 @@
   svg:hover {
     transition: var(--svg-transition-hover);
     filter: var(--svg-glow-hover);
+  }
+  img {
+    width: 20rem;
+    height: auto;
+    margin: 2rem 1rem;
+    /* object-fit: contain; */
+    /* filter: grayscale(1); */
+    filter: var(--svg-glow);
+    border-radius: 1rem;
+  }
+  img:hover {
+    transition: var(--svg-transition-hover);
+    filter: var(--svg-glow-hover);
+  }
+  @media (min-width: 768px) {
+    img {
+      width: 25rem;
+    }
   }
 
   /* Scrollbar Styling */
@@ -169,15 +186,6 @@
     <header>
       <style>
   /****************************** NAVMENU ******************************/
-  svg {
-    cursor: pointer;
-    transition: 0.5s ease;
-    filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.5));
-  }
-  svg:hover {
-    transition: 0.25s ease;
-    filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
-  }
   .nav {
     overflow-x: hidden;
     /* Declare variables */
@@ -197,7 +205,7 @@
     height: 100%;
     padding: 8rem 0 0 0;
     z-index: 200;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
     display: grid;
     grid-template: 1fr 5rem / 1fr;
     gap: var(--nav-links-gap);
@@ -583,7 +591,7 @@
       }
     }
   }
-
+  showMenu()
   navmenu.addEventListener('click', showMenu, false)
   navpanel.addEventListener('click', showMenu, false)
 

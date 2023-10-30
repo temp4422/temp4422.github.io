@@ -79,71 +79,71 @@ console.log(`Tags replaced in all HTML pages and saved to the ${dist} directory.
 
 // console.log(`HTML optimization completed for all HTML files in the ${dist} directory. 👍 \n`)
 
-/* ************************************************************************************** */
-// Start optimization of images
-console.log(`Start images conversion in ${srcAssetsImg} with sharp 🔨`)
+// /* ************************************************************************************** */
+// // Start optimization of images
+// console.log(`Start images conversion in ${srcAssetsImg} with sharp 🔨`)
 
-// Create dir if it doesnt exists
-if (!fs.existsSync(distAssetsImg)) {
-  fs.mkdirSync(distAssetsImg, { recursive: true })
-}
+// // Create dir if it doesnt exists
+// if (!fs.existsSync(distAssetsImg)) {
+//   fs.mkdirSync(distAssetsImg, { recursive: true })
+// }
 
-// List all files in the source directory
-const files = fs.readdirSync(srcAssetsImg)
+// // List all files in the source directory
+// const files = fs.readdirSync(srcAssetsImg)
 
-// Process each image file
-files.forEach((file) => {
-  const sourceFilePath = path.join(srcAssetsImg, file)
+// // Process each image file
+// files.forEach((file) => {
+//   const sourceFilePath = path.join(srcAssetsImg, file)
 
-  // Check if the file is a JPG or PNG
-  if (file.endsWith('.jpg') || file.endsWith('.png')) {
-    const outputFilePath = path.join(distAssetsImg, `${file.split('.')[0]}.webp`)
+//   // Check if the file is a JPG or PNG
+//   if (file.endsWith('.jpg') || file.endsWith('.png')) {
+//     const outputFilePath = path.join(distAssetsImg, `${file.split('.')[0]}.webp`)
 
-    try {
-      sharp(sourceFilePath).toFormat('webp', { quality: 5 }).toFile(outputFilePath)
+//     try {
+//       sharp(sourceFilePath).toFormat('webp', { quality: 5 }).toFile(outputFilePath)
 
-      console.log(`Converted ${file} to WebP.`)
-    } catch (err) {
-      console.error(`Error converting ${file} to WebP: ${err.message}`)
-    }
-  }
-})
+//       console.log(`Converted ${file} to WebP.`)
+//     } catch (err) {
+//       console.error(`Error converting ${file} to WebP: ${err.message}`)
+//     }
+//   }
+// })
 
-console.log(`Image conversion completed in ${distAssetsImg} 👍\n`)
+// console.log(`Image conversion completed in ${distAssetsImg} 👍\n`)
 
-/* ************************************************************************************** */
-// Copy other assets
-console.log(`Copy other assets from ${srcAssets} to ${distAssets} dir  🔨`)
-function copyAssets(params) {
-  try {
-    fs.copyFileSync(`${srcAssets}head/favicon.ico`, `${distAssets}favicon.ico`)
-    fs.copyFileSync(
-      `${srcAssets}fonts/Marck_Script/MarckScript-Regular.ttf`,
-      `${distAssets}MarckScript-Regular.ttf`
-    )
-    fs.copyFileSync(`${srcAssets}3d/x-drive.glb`, `${distAssets}x-drive.glb`)
-    fs.copyFileSync(`${srcAssets}modules/model-viewer.min.js`, `${distAssets}model-viewer.min.js`)
-    fs.copyFileSync(`${srcAssets}img/svg-sprite/sprite.svg`, `${distAssets}sprite.svg`)
-    fs.copyFileSync(`${srcAssets}img/svg-sprite/brands.svg`, `${distAssets}brands.svg`)
-    fs.copyFileSync(`${srcAssets}img/svg-sprite/simple-svg.svg`, `${distAssets}simple-svg.svg`)
-    fs.copyFileSync(
-      `${srcAssets}fontawesome-free-6.4.2-web/css/all.min.css`,
-      `${distAssets}fontawesome.min.css`
-    )
-    fs.copyFileSync(
-      `${srcAssets}fontawesome-free-6.4.2-web/sprites/regular.svg`,
-      `${distAssets}regular.svg`
-    )
-    fs.copyFileSync(`${srcAssets}fonts/ashcan-bb/ashcanbb_reg.ttf`, `${distAssets}ashcanbb_reg.ttf`)
-    fs.copyFileSync(`${srcAssets}fonts/vtks-hunt/Vtks-Hunt.ttf`, `${distAssets}Vtks-Hunt.ttf`)
-    fs.copyFileSync(
-      `${srcAssets}fonts/google material-design-icons font/MaterialIcons-Regular.ttf`,
-      `${distAssets}MaterialIcons-Regular.ttf`
-    )
-  } catch (err) {
-    console.error(err)
-  }
-}
-copyAssets()
+// /* ************************************************************************************** */
+// // Copy other assets
+// console.log(`Copy other assets from ${srcAssets} to ${distAssets} dir  🔨`)
+// function copyAssets(params) {
+//   try {
+//     fs.copyFileSync(`${srcAssets}head/favicon.ico`, `${distAssets}favicon.ico`)
+//     fs.copyFileSync(
+//       `${srcAssets}fonts/Marck_Script/MarckScript-Regular.ttf`,
+//       `${distAssets}MarckScript-Regular.ttf`
+//     )
+//     fs.copyFileSync(`${srcAssets}3d/x-drive.glb`, `${distAssets}x-drive.glb`)
+//     fs.copyFileSync(`${srcAssets}modules/model-viewer.min.js`, `${distAssets}model-viewer.min.js`)
+//     fs.copyFileSync(`${srcAssets}img/svg-sprite/sprite.svg`, `${distAssets}sprite.svg`)
+//     fs.copyFileSync(`${srcAssets}img/svg-sprite/brands.svg`, `${distAssets}brands.svg`)
+//     fs.copyFileSync(`${srcAssets}img/svg-sprite/simple-svg.svg`, `${distAssets}simple-svg.svg`)
+//     fs.copyFileSync(
+//       `${srcAssets}fontawesome-free-6.4.2-web/css/all.min.css`,
+//       `${distAssets}fontawesome.min.css`
+//     )
+//     fs.copyFileSync(
+//       `${srcAssets}fontawesome-free-6.4.2-web/sprites/regular.svg`,
+//       `${distAssets}regular.svg`
+//     )
+//     fs.copyFileSync(`${srcAssets}fonts/ashcan-bb/ashcanbb_reg.ttf`, `${distAssets}ashcanbb_reg.ttf`)
+//     fs.copyFileSync(`${srcAssets}fonts/vtks-hunt/Vtks-Hunt.ttf`, `${distAssets}Vtks-Hunt.ttf`)
+//     fs.copyFileSync(
+//       `${srcAssets}fonts/google material-design-icons font/MaterialIcons-Regular.ttf`,
+//       `${distAssets}MaterialIcons-Regular.ttf`
+//     )
+//   } catch (err) {
+//     console.error(err)
+//   }
+// }
+// copyAssets()
 
-console.log(`Finish copying 👍`)
+// console.log(`Finish copying 👍`)

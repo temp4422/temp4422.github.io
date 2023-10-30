@@ -21,23 +21,10 @@
     display: grid;
     place-items: center;
   }
-  img {
-    width: 20rem;
-    height: auto;
-    margin: 1rem;
-    /* object-fit: contain; */
-    filter: drop-shadow(0 0 0.5rem rgba(100, 100, 100, 0.25));
-    /* filter: grayscale(1); */
-    border-radius: 1rem;
-  }
-  img:hover {
-    transition: 0.25s ease;
-    filter: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
-  }
-  @media (min-width: 768px) {
-    img {
-      width: 25rem;
-    }
+  .work-item a,
+  .work-item a:hover {
+    /* Disable filter for links */
+    filter: none;
   }
   .work-item p {
     margin-top: 0.5rem;
