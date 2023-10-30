@@ -3,10 +3,13 @@
   <span id="cursor"></span>
   <style>
     #typewriter {
-      width: max-content; /* Set width to enable margin below */
+      width: 20rem; /* Set width to enable margin below */
       height: max-content;
       margin: 10rem auto;
       font-size: 2rem;
+    }
+    #word {
+      overflow-wrap: break-word;
     }
     #cursor {
       border-right: 0.1em solid;
@@ -30,7 +33,7 @@
   const word = document.querySelector('#word')
   const cursor = document.querySelector('#cursor')
 
-  let typeSpeed = 200 // Initial speed
+  let typeSpeed = 100 // Initial speed
   let wait = 1500 // Pause on words boundary
   let isDeleting = false
   let currWord = 0
