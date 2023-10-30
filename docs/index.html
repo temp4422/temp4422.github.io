@@ -137,21 +137,21 @@
   }
 
   /* Scrollbar Styling */
-  @media (min-width: 768px) {
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background-color: #303030;
-      -webkit-border-radius: 10px;
-      border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb {
-      -webkit-border-radius: 10px;
-      border-radius: 10px;
-      background: #6d6d6d;
-    }
+  /* @media (min-width: 768px) { */
+  ::-webkit-scrollbar {
+    width: 10px;
   }
+  ::-webkit-scrollbar-track {
+    background-color: #303030;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #6d6d6d;
+  }
+  /* } */
 </style>
 
   </head>
@@ -192,6 +192,7 @@
     padding: 8rem 0 0 0;
     z-index: 200;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     display: grid;
     grid-template: 1fr 5rem / 1fr;
     gap: var(--nav-links-gap);
@@ -248,7 +249,8 @@
     border-radius: 30%;
     animation: menu-spin-back var(--transision-time-in) ease-in-out;
     animation-fill-mode: forwards;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border: none;
     z-index: 300;
     cursor: pointer;
@@ -570,14 +572,16 @@
     if (document.body.clientWidth < 600) {
       if (body.style.overflow === '') {
         body.style.overflow = 'hidden'
-        body.style.paddingRight = '15px' // Prevent page shift
+        // body.style.paddingRight = '10px' // Prevent page shift
+        // navmenu.style.right = '15px' // Prevent navmenu shift
       } else {
         body.style.overflow = ''
-        body.style.paddingRight = '0px'
+        // body.style.paddingRight = '0'
+        // navmenu.style.right = '0'
       }
     }
   }
-  showMenu()
+  // showMenu()
   navmenu.addEventListener('click', showMenu, false)
   navpanel.addEventListener('click', showMenu, false)
 
