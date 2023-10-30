@@ -230,7 +230,7 @@ function makeTemplate() {
 
 
             <a class="nav__link" href="/src/pages/test.html" aria-label="Test" style="color: black">
-                <p>"->TEST<-"</p>
+                <p>TEST</p>
             </a>
 
 
