@@ -52,33 +52,33 @@ htmlFiles.forEach((fileName) => {
 
 console.log(`Tags replaced in all HTML pages and saved to the ${distDir} directory. 👍 \n`)
 
-/* ************************************************************************************** */
-// Start optimization
-console.log(`Start optimization all pages in ${distDir} 🔨 \n`)
+// /* ************************************************************************************** */
+// // Start optimization
+// console.log(`Start optimization all pages in ${distDir} 🔨 \n`)
 
-// Optimize HTML in a given file
-function optimizeHtmlFile(filePath) {
-  let htmlContent = fs.readFileSync(filePath, 'utf-8')
-  const minifiedHtml = minify(htmlContent, {
-    collapseWhitespace: true,
-    removeComments: true,
-    minifyJS: true,
-    minifyCSS: true,
-  })
-  fs.writeFileSync(filePath, minifiedHtml, 'utf-8')
-}
+// // Optimize HTML in a given file
+// function optimizeHtmlFile(filePath) {
+//   let htmlContent = fs.readFileSync(filePath, 'utf-8')
+//   const minifiedHtml = minify(htmlContent, {
+//     collapseWhitespace: true,
+//     removeComments: true,
+//     minifyJS: true,
+//     minifyCSS: true,
+//   })
+//   fs.writeFileSync(filePath, minifiedHtml, 'utf-8')
+// }
 
-// Get a list of all HTML files in the dist directory
-const distFiles = fs.readdirSync(distDir).filter((file) => path.extname(file) === htmlFileExtension)
+// // Get a list of all HTML files in the dist directory
+// const distFiles = fs.readdirSync(distDir).filter((file) => path.extname(file) === htmlFileExtension)
 
-// Process each HTML file in the dist directory
-distFiles.forEach((fileName) => {
-  const distFilePath = path.join(distDir, fileName)
-  optimizeHtmlFile(distFilePath)
-  console.log(`Optimized ${fileName} in the dist directory.`)
-})
+// // Process each HTML file in the dist directory
+// distFiles.forEach((fileName) => {
+//   const distFilePath = path.join(distDir, fileName)
+//   optimizeHtmlFile(distFilePath)
+//   console.log(`Optimized ${fileName} in the dist directory.`)
+// })
 
-console.log(`HTML optimization completed for all HTML files in the ${distDir} directory. 👍 \n`)
+// console.log(`HTML optimization completed for all HTML files in the ${distDir} directory. 👍 \n`)
 
 /* ************************************************************************************** */
 // Start optimization of images
@@ -101,7 +101,7 @@ files.forEach(async (file) => {
     const outputFilePath = path.join(distAssetsDir, `${file.split('.')[0]}.webp`)
 
     try {
-      await sharp(sourceFilePath).toFormat('webp').toFile(outputFilePath)
+      await sharp(sourceFilePath).toFormat('webp', { quality: 20 }).toFile(outputFilePath)
 
       console.log(`Converted ${file} to WebP.`)
     } catch (err) {
