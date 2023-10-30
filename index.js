@@ -4,9 +4,15 @@ const minify = require('html-minifier').minify
 
 // Define source and destination directories, file extension, and tag files directory
 const pagesDir = './src/pages/'
+const componentsDir = './src/components/'
+const assetsDir = './src/assets/img/'
 const distDir = './docs/'
 const htmlFileExtension = '.html'
-const componentsDir = './src/components/'
+
+// Create dir if it doesnt exists
+if (!fs.existsSync(distDir)) {
+  fs.mkdirSync(distDir, { recursive: true })
+}
 
 // Start replacing
 console.log(`Start replacing corresponding tags for all pages in ${pagesDir} 🔨 \n`)
@@ -71,3 +77,33 @@ console.log(`Tags replaced in all HTML pages and saved to the ${distDir} directo
 // })
 
 // console.log(`HTML optimization completed for all HTML files in the ${distDir} directory. 👍 \n`)
+
+// /* ************************************************************************************** */
+// Start optimization of images
+console.log(`Start optimization of images in ${assetsDir} 🔨 \n`)
+
+// Optimize image in a given file
+function optimizeHtmlFile(filePath) {
+  let htmlContent = fs.readFileSync(filePath, 'utf-8')
+  const minifiedHtml = minify(htmlContent, {
+    collapseWhitespace: true,
+    removeComments: true,
+    minifyJS: true,
+    minifyCSS: true,
+  })
+  fs.writeFileSync(filePath, minifiedHtml, 'utf-8')
+}
+
+// Get a list of all HTML files in the dist directory
+const distFiles = fs.readdirSync(distDir).filter((file) => path.extname(file) === htmlFileExtension)
+
+// Process each HTML file in the dist directory
+distFiles.forEach((fileName) => {
+  const distFilePath = path.join(distDir, fileName)
+  optimizeHtmlFile(distFilePath)
+  console.log(`Optimized ${fileName} in the dist directory.`)
+})
+
+console.log(
+  `Images optimization completed for all images files in the ${assetsDir} directory. 👍 \n`
+)

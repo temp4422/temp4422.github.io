@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "https://webdev4422.github.io",
   "main": "index.html",
-  "dependencies": {},
-  "devDependencies": {
-    "html-minifier": "^4.0.0"
-  },
   "scripts": {
     "build": "bun index.js",
     "dev": "serve docs/",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "html-minifier": "^4.0.0",
+    "sharp": "^0.32.6"
   },
   "author": "",
   "license": "ISC"
