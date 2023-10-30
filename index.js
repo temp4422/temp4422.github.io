@@ -18,7 +18,7 @@ if (!fs.existsSync(dist)) {
 }
 
 // Start replacing
-console.log(`Start replacing corresponding tags for all pages in ${srcPages} 🔨 \n`)
+console.log(`Start replacing corresponding tags for all pages in ${srcPages} 🔨`)
 
 // Read and replace tags in a given HTML file
 function replaceTagsInFile(srcPath, distPath) {
@@ -53,7 +53,7 @@ console.log(`Tags replaced in all HTML pages and saved to the ${dist} directory.
 
 /* ************************************************************************************** */
 // Start optimization
-console.log(`Start optimization all pages in ${dist} 🔨 \n`)
+console.log(`Start optimization all pages in ${dist} 🔨`)
 
 // Optimize HTML in a given file
 function optimizeHtmlFile(filePath) {
@@ -81,7 +81,7 @@ console.log(`HTML optimization completed for all HTML files in the ${dist} direc
 
 /* ************************************************************************************** */
 // Start optimization of images
-console.log(`Start images conversion in ${srcAssetsImg} with sharp 🔨 \n`)
+console.log(`Start images conversion in ${srcAssetsImg} with sharp 🔨`)
 
 // Create dir if it doesnt exists
 if (!fs.existsSync(distAssetsImg)) {
@@ -92,7 +92,7 @@ if (!fs.existsSync(distAssetsImg)) {
 const files = fs.readdirSync(srcAssetsImg)
 
 // Process each image file
-files.forEach(async (file) => {
+files.forEach((file) => {
   const sourceFilePath = path.join(srcAssetsImg, file)
 
   // Check if the file is a JPG or PNG
@@ -100,7 +100,7 @@ files.forEach(async (file) => {
     const outputFilePath = path.join(distAssetsImg, `${file.split('.')[0]}.webp`)
 
     try {
-      await sharp(sourceFilePath).toFormat('webp', { quality: 20 }).toFile(outputFilePath)
+      sharp(sourceFilePath).toFormat('webp', { quality: 20 }).toFile(outputFilePath)
 
       console.log(`Converted ${file} to WebP.`)
     } catch (err) {
@@ -109,26 +109,20 @@ files.forEach(async (file) => {
   }
 })
 
-console.log(`Image conversion completed in ${distAssetsImg} 👍`)
+console.log(`Image conversion completed in ${distAssetsImg} 👍\n`)
 
 /* ************************************************************************************** */
 // Copy other assets
-console.log(`Copy other assets from ${srcAssets} to ${distAssets} dir  🔨 \n`)
-async function copyAssets(params) {
+console.log(`Copy other assets from ${srcAssets} to ${distAssets} dir  🔨`)
+function copyAssets(params) {
   try {
-    await fs.copyFileSync(
+    fs.copyFileSync(
       `${srcAssets}fonts/Marck_Script/MarckScript-Regular.ttf`,
       `${distAssets}MarckScript-Regular.ttf`
     )
-    await fs.copyFileSync(`${srcAssets}3d/x-drive.glb`, `${distAssets}x-drive.glb`)
-    await fs.copyFileSync(
-      `${srcAssets}modules/model-viewer.min.js`,
-      `${distAssets}model-viewer.min.js`
-    )
-    await fs.copyFileSync(
-      `${srcAssets}modules/model-viewer.min.js`,
-      `${distAssets}model-viewer.min.js`
-    )
+    fs.copyFileSync(`${srcAssets}3d/x-drive.glb`, `${distAssets}x-drive.glb`)
+    fs.copyFileSync(`${srcAssets}modules/model-viewer.min.js`, `${distAssets}model-viewer.min.js`)
+    fs.copyFileSync(`${srcAssets}modules/model-viewer.min.js`, `${distAssets}model-viewer.min.js`)
   } catch (error) {
     console.error(error)
   }
