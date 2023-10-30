@@ -1,26 +1,9 @@
-// // Shorter version
-// const fs = require('fs')
-
-// // Read 'typewriter2-x.html' and store its content in a variable
-// const typewriterContent = fs.readFileSync('typewriter2-x.html', 'utf-8')
-
-// // Read 'index2.html'
-// let indexContent = fs.readFileSync('index2.html', 'utf-8')
-
-// // Replace <typewriter2-x /> with the content of 'typewriter2-x.html'
-// indexContent = indexContent.replace(/<typewriter2-x\s*\/>/g, typewriterContent)
-
-// // Write the modified content back to 'index2.html'
-// fs.writeFileSync('index2.html', indexContent, 'utf-8')
-
-// console.log('Replacement completed successfully.')
-
 // Replace each tag with corresponding file content
 const fs = require('fs')
 const path = require('path')
 
 // Read 'index2.html'
-let indexContent = fs.readFileSync('index2.html', 'utf-8')
+let indexContent = fs.readFileSync('index.html', 'utf-8')
 
 // Define a regular expression to match any tag like <filename />
 const tagRegex = /<(\w+-x) \/>/g
@@ -43,6 +26,6 @@ if (matches) {
 }
 
 // Write the modified content back to 'index2.html'
-fs.writeFileSync('index2.html', indexContent, 'utf-8')
+fs.writeFileSync('index.html', indexContent, 'utf-8')
 
 console.log('Replacement completed successfully.')
