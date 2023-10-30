@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <title>Playground</title>
-    <script async fetchpriority="high" src="/src/assets/head/head_meta.js"></script>
-    <link rel="stylesheet" href="/src/assets/head/layout.css" />
+    <head-x />
+    <layout-x />
 
     <style>
       .object-3d {
@@ -21,9 +21,10 @@
   </head>
 
   <body>
-    <script async fetchpriority="high" src="/src/assets/head/body_meta.js"></script>
+    <gtm-body-x />
+
     <header>
-      <nav-menu-x></nav-menu-x>
+      <navmenu-x />
     </header>
 
     <main>
@@ -51,13 +52,9 @@
     </main>
 
     <footer>
-      <footer-x></footer-x>
+      <footer-x />
     </footer>
   </body>
-
-  <script src="/src/components/navmenu.js"></script>
-  <script src="/src/components/footer.js"></script>
-
   <!-- <script async defer type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
   <script async defer type="module" src="/src/assets/modules/model-viewer.min.js"></script>
 </html>
