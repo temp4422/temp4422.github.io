@@ -4,7 +4,9 @@
   "description": "https://webdev4422.github.io",
   "main": "index.html",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "html-minifier": "^4.0.0"
+  },
   "scripts": {
     "dev": "serve .",
     "test": "echo \"Error: no test specified\" && exit 1"
