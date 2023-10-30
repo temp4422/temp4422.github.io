@@ -1,6 +1,6 @@
 const fs = require('fs')
 const sharp = require('sharp')
-const glob = require('glob')
+// const glob = require('glob')
 const path = require('path')
 
 const assetsDir = './src/assets/img/jpg'
@@ -9,10 +9,10 @@ const distDir = './docs/assets/img/'
 // Create dir if it doesnt exists
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true })
-  console.log('OK')
 }
 
-const folderPath = path.resolve(process.argv[2] || __dirname)
+// const folderPath = path.resolve(process.argv[2] || __dirname)
+const folderPath = './src/assets/img'
 const imageExtensions = ['.png', '.jpg']
 const outputFormats = ['webp', 'avif']
 
