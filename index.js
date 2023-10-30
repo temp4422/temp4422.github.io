@@ -100,7 +100,7 @@ files.forEach((file) => {
     const outputFilePath = path.join(distAssetsImg, `${file.split('.')[0]}.webp`)
 
     try {
-      sharp(sourceFilePath).toFormat('webp', { quality: 20 }).toFile(outputFilePath)
+      sharp(sourceFilePath).toFormat('webp', { quality: 5 }).toFile(outputFilePath)
 
       console.log(`Converted ${file} to WebP.`)
     } catch (err) {
@@ -116,15 +116,32 @@ console.log(`Image conversion completed in ${distAssetsImg} 👍\n`)
 console.log(`Copy other assets from ${srcAssets} to ${distAssets} dir  🔨`)
 function copyAssets(params) {
   try {
+    fs.copyFileSync(`${srcAssets}head/favicon.ico`, `${distAssets}favicon.ico`)
     fs.copyFileSync(
       `${srcAssets}fonts/Marck_Script/MarckScript-Regular.ttf`,
       `${distAssets}MarckScript-Regular.ttf`
     )
     fs.copyFileSync(`${srcAssets}3d/x-drive.glb`, `${distAssets}x-drive.glb`)
     fs.copyFileSync(`${srcAssets}modules/model-viewer.min.js`, `${distAssets}model-viewer.min.js`)
-    fs.copyFileSync(`${srcAssets}modules/model-viewer.min.js`, `${distAssets}model-viewer.min.js`)
-  } catch (error) {
-    console.error(error)
+    fs.copyFileSync(`${srcAssets}img/svg-sprite/sprite.svg`, `${distAssets}sprite.svg`)
+    fs.copyFileSync(`${srcAssets}img/svg-sprite/brands.svg`, `${distAssets}brands.svg`)
+    fs.copyFileSync(`${srcAssets}img/svg-sprite/simple-svg.svg`, `${distAssets}simple-svg.svg`)
+    fs.copyFileSync(
+      `${srcAssets}fontawesome-free-6.4.2-web/css/all.min.css`,
+      `${distAssets}fontawesome.min.css`
+    )
+    fs.copyFileSync(
+      `${srcAssets}fontawesome-free-6.4.2-web/sprites/regular.svg`,
+      `${distAssets}regular.svg`
+    )
+    fs.copyFileSync(`${srcAssets}fonts/ashcan-bb/ashcanbb_reg.ttf`, `${distAssets}ashcanbb_reg.ttf`)
+    fs.copyFileSync(`${srcAssets}fonts/vtks-hunt/Vtks-Hunt.ttf`, `${distAssets}Vtks-Hunt.ttf`)
+    fs.copyFileSync(
+      `${srcAssets}fonts/google material-design-icons font/MaterialIcons-Regular.ttf`,
+      `${distAssets}MaterialIcons-Regular.ttf`
+    )
+  } catch (err) {
+    console.error(err)
   }
 }
 copyAssets()
