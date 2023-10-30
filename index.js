@@ -3,10 +3,13 @@ const path = require('path')
 const minify = require('html-minifier').minify
 
 // Define source and destination directories, file extension, and tag files directory
-const srcDir = './src/pages/'
-const distDir = './dist/'
+const pagesDir = './src/pages/'
+const distDir = './docs/'
 const htmlFileExtension = '.html'
 const componentsDir = './src/components/'
+
+// Start replacing
+console.log(`Start replacing corresponding tags for all pages in ${pagesDir} 🔨 \n`)
 
 // Read and replace tags in a given HTML file
 function replaceTagsInFile(srcPath, distPath) {
@@ -27,39 +30,44 @@ function replaceTagsInFile(srcPath, distPath) {
 }
 
 // Get a list of all HTML files in the source directory
-const htmlFiles = fs.readdirSync(srcDir).filter((file) => path.extname(file) === htmlFileExtension)
+const htmlFiles = fs
+  .readdirSync(pagesDir)
+  .filter((file) => path.extname(file) === htmlFileExtension)
 
 // Process each HTML file
 htmlFiles.forEach((fileName) => {
-  const srcFilePath = path.join(srcDir, fileName)
+  const srcFilePath = path.join(pagesDir, fileName)
   const distFilePath = path.join(distDir, fileName)
   replaceTagsInFile(srcFilePath, distFilePath)
   console.log(`Replaced tags in ${fileName} and saved to dist directory.`)
 })
 
-console.log('Tags replaced in all HTML pages and saved to the dist directory.')
+console.log(`Tags replaced in all HTML pages and saved to the ${distDir} directory. 👍 \n`)
 
-// /* ************************************************************************************** */
-// // Optimize HTML in a given file
-// function optimizeHtmlFile(filePath) {
-//   let htmlContent = fs.readFileSync(filePath, 'utf-8')
-//   const minifiedHtml = minify(htmlContent, {
-//     collapseWhitespace: true,
-//     removeComments: true,
-//     minifyJS: true,
-//     minifyCSS: true,
-//   })
-//   fs.writeFileSync(filePath, minifiedHtml, 'utf-8')
-// }
+/* ************************************************************************************** */
+// Start optimization
+console.log(`Start optimization all pages in ${distDir} 🔨 \n`)
 
-// // Get a list of all HTML files in the dist directory
-// const distFiles = fs.readdirSync(distDir).filter((file) => path.extname(file) === htmlFileExtension)
+// Optimize HTML in a given file
+function optimizeHtmlFile(filePath) {
+  let htmlContent = fs.readFileSync(filePath, 'utf-8')
+  const minifiedHtml = minify(htmlContent, {
+    collapseWhitespace: true,
+    removeComments: true,
+    minifyJS: true,
+    minifyCSS: true,
+  })
+  fs.writeFileSync(filePath, minifiedHtml, 'utf-8')
+}
 
-// // Process each HTML file in the dist directory
-// distFiles.forEach((fileName) => {
-//   const distFilePath = path.join(distDir, fileName)
-//   optimizeHtmlFile(distFilePath)
-//   console.log(`Optimized ${fileName} in the dist directory.`)
-// })
+// Get a list of all HTML files in the dist directory
+const distFiles = fs.readdirSync(distDir).filter((file) => path.extname(file) === htmlFileExtension)
 
-// console.log('HTML optimization completed for all HTML files in the dist directory.')
+// Process each HTML file in the dist directory
+distFiles.forEach((fileName) => {
+  const distFilePath = path.join(distDir, fileName)
+  optimizeHtmlFile(distFilePath)
+  console.log(`Optimized ${fileName} in the dist directory.`)
+})
+
+console.log(`HTML optimization completed for all HTML files in the ${distDir} directory. 👍 \n`)

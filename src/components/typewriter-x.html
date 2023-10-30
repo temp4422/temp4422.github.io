@@ -1,82 +1,80 @@
-<div>
-  <div id="typewriter">
-    <span id="word"></span>
-    <span id="cursor"></span>
-    <style>
-      #typewriter {
-        width: max-content; /* Set width to enable margin below */
-        height: max-content;
-        margin: 10rem auto;
-        font-size: 2rem;
-      }
-      #cursor {
-        border-right: 0.1em solid;
-        animation: caret 1s steps(1) infinite;
-      }
-      @keyframes caret {
-        50% {
-          border-color: transparent;
-        }
-      }
-    </style>
-  </div>
-
-  <script>
-    console.log('ok')
-    // Typewriter
-    //prettier-ignore
-    const data = ['Greetings!', 'Вітання!', 'Les salutations!', 'Grüße!', 'Saluti!', '问候！', 'Приветствие!', '!سلام تحية', 'Saluto!', 'Salutació!', '!דְרִישַׁת שָׁלוֹם', 'Salom!', '¡Saludo!', 'ຊົມເຊີຍ!', '挨拶！', 'გამარჯობა!', 'Powitanie!', 'Beannacht!', 'Hilsen!', 'Hälsning!', 'Мэндчилгээ!', 'Pozdrav!', 'Üdvözlet!', 'Salut!', 'Sveikinu!', 'Salam!', 'Salutem!', 'تبریک!', 'Saudações!', 'Lep pozdrav!', 'S pozdravom!', 'Kwaziso!', 'Salaan!', 'Χαιρετισμός!', 'Salamlayıram!', 'Поздрав!', 'Aloha!', 'शुभकामना!', 'Kveðja!', 'Прывітанне!']
-
-    // Select span in html for input
-    const word = document.querySelector('#word')
-    const cursor = document.querySelector('#cursor')
-
-    let typeSpeed = 200 // Initial speed
-    let wait = 1500 // Pause on words boundary
-    let isDeleting = false
-    let currWord = 0
-    let currChar = 0
-    let tmpWord = ''
-    let tmpChar = ''
-
-    function type(params) {
-      cursor.style.animation = 'none' // Disable cursor blinking when typing
-      let speed = typeSpeed // Reset speed on each iteration
-
-      // Loop through array and print each character in temporal word
-      if (!isDeleting) {
-        tmpChar = data[currWord][currChar++]
-        tmpWord += tmpChar
-        word.innerHTML = tmpWord
-      } else if (isDeleting) {
-        speed = speed / 2.5
-        tmpChar = data[currWord][currChar--]
-        tmpWord = tmpWord.slice(0, -1)
-        word.innerHTML = tmpWord
-      }
-
-      if (currChar === data[currWord].length) {
-        cursor.style.animation = 'caret 1s steps(1) infinite' // Set cursor blinking
-        speed = wait
-        isDeleting = !isDeleting
-      }
-
-      if (isDeleting && currChar === 0) {
-        cursor.style.animation = 'caret 1s steps(1) infinite' // Set cursor blinking
-        speed = wait
-        isDeleting = !isDeleting
-        currWord++
-      }
-
-      if (data.length === currWord) {
-        currWord = 0 // If rich end of array -> repeat
-      }
-
-      setTimeout(() => type(), speed) // Use recursion to call itself with different speed
+<div id="typewriter">
+  <span id="word"></span>
+  <span id="cursor"></span>
+  <style>
+    #typewriter {
+      width: max-content; /* Set width to enable margin below */
+      height: max-content;
+      margin: 10rem auto;
+      font-size: 2rem;
     }
-    // Delay before start execution after window has been loaded
-    window.onload = () => {
-      setTimeout(() => type(), 2000)
+    #cursor {
+      border-right: 0.1em solid;
+      animation: caret 1s steps(1) infinite;
     }
-  </script>
+    @keyframes caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
 </div>
+
+<script>
+  console.log('ok')
+  // Typewriter
+  //prettier-ignore
+  const data = ['Greetings!', 'Вітання!', 'Les salutations!', 'Grüße!', 'Saluti!', '问候！', 'Приветствие!', '!سلام تحية', 'Saluto!', 'Salutació!', '!דְרִישַׁת שָׁלוֹם', 'Salom!', '¡Saludo!', 'ຊົມເຊີຍ!', '挨拶！', 'გამარჯობა!', 'Powitanie!', 'Beannacht!', 'Hilsen!', 'Hälsning!', 'Мэндчилгээ!', 'Pozdrav!', 'Üdvözlet!', 'Salut!', 'Sveikinu!', 'Salam!', 'Salutem!', 'تبریک!', 'Saudações!', 'Lep pozdrav!', 'S pozdravom!', 'Kwaziso!', 'Salaan!', 'Χαιρετισμός!', 'Salamlayıram!', 'Поздрав!', 'Aloha!', 'शुभकामना!', 'Kveðja!', 'Прывітанне!']
+
+  // Select span in html for input
+  const word = document.querySelector('#word')
+  const cursor = document.querySelector('#cursor')
+
+  let typeSpeed = 200 // Initial speed
+  let wait = 1500 // Pause on words boundary
+  let isDeleting = false
+  let currWord = 0
+  let currChar = 0
+  let tmpWord = ''
+  let tmpChar = ''
+
+  function type(params) {
+    cursor.style.animation = 'none' // Disable cursor blinking when typing
+    let speed = typeSpeed // Reset speed on each iteration
+
+    // Loop through array and print each character in temporal word
+    if (!isDeleting) {
+      tmpChar = data[currWord][currChar++]
+      tmpWord += tmpChar
+      word.innerHTML = tmpWord
+    } else if (isDeleting) {
+      speed = speed / 2.5
+      tmpChar = data[currWord][currChar--]
+      tmpWord = tmpWord.slice(0, -1)
+      word.innerHTML = tmpWord
+    }
+
+    if (currChar === data[currWord].length) {
+      cursor.style.animation = 'caret 1s steps(1) infinite' // Set cursor blinking
+      speed = wait
+      isDeleting = !isDeleting
+    }
+
+    if (isDeleting && currChar === 0) {
+      cursor.style.animation = 'caret 1s steps(1) infinite' // Set cursor blinking
+      speed = wait
+      isDeleting = !isDeleting
+      currWord++
+    }
+
+    if (data.length === currWord) {
+      currWord = 0 // If rich end of array -> repeat
+    }
+
+    setTimeout(() => type(), speed) // Use recursion to call itself with different speed
+  }
+  // Delay before start execution after window has been loaded
+  window.onload = () => {
+    setTimeout(() => type(), 2000)
+  }
+</script>
