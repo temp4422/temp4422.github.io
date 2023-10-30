@@ -5,8 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "bun index.js",
-    "dev": "nodemon",
-    "serve": "serve docs/",
+    "dev": "serve docs/",
     "watch": "watch 'npm run build' ./src/"
   },
   "devDependencies": {
