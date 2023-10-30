@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "bun index.js",
-    "dev": "serve .",
+    "dev": "serve docs/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
