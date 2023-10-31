@@ -4,7 +4,7 @@
   "description": "https://webdev4422.github.io",
   "main": "index.html",
   "scripts": {
-    "build": "bun index.js",
+    "build": "node index.js",
     "dev": "serve docs/",
     "watch": "watch 'npm run build' ./src/"
   },
