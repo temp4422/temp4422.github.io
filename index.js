@@ -1,13 +1,20 @@
-// TODO: Add uglifyjs
+console.log('⭐️ START BUILD ⭐️')
+
 const fs = require('fs')
 const path = require('path')
 const minify = require('html-minifier').minify
 const sharp = require('sharp')
+
+const cheerio = require('cheerio')
+const crypto = require('crypto')
+
 const uglifyjs = require('uglify-js')
 
-console.log('⭐️ START BUILD ⭐️')
-
 // Define source and destination directories, file extension, and tag files directory
+
+// const srcPages = './tmp/pages/'
+// const srcComponents = './tmp/components/'
+
 const srcPages = './src/pages/'
 const srcComponents = './src/components/'
 const srcAssets = './src/assets/'
@@ -17,9 +24,15 @@ const distAssets = './docs/assets/'
 const distAssetsImg = './docs/assets/img/'
 
 // Create dir if it doesnt exists
-if (!fs.existsSync(dist)) {
-  fs.mkdirSync(dist, { recursive: true })
-}
+if (!fs.existsSync(dist)) fs.mkdirSync(dist, { recursive: true })
+
+// Run each function
+main()
+optimizeHTML()
+// optimizeCSS()
+// optimizeJS()
+convertImages()
+copyAssets()
 
 /* ************************************************************************************** */
 //
@@ -61,7 +74,6 @@ function main() {
 
   console.log(`Tags replaced in all HTML pages and saved to the ${dist} directory. 👍 \n`)
 }
-main()
 
 /* ************************************************************************************** */
 //
@@ -96,7 +108,80 @@ function optimizeHTML() {
 
   console.log(`HTML optimization completed for all HTML files in the ${dist} directory. 👍 \n`)
 }
-optimizeHTML()
+
+/* ************************************************************************************** */
+//
+// Optimize CSS
+//
+/* ************************************************************************************** */
+function optimizeCSS() {
+  const srcDir = './src/components/'
+  const distDir = './tmp/components/'
+
+  // const srcDir = './src/pages/'
+  // const distDir = './tmp/pages/'
+
+  // Function to generate random class names
+  function generateRandomClassName() {
+    return 'ks-' + crypto.randomBytes(4).toString('hex')
+  }
+
+  // Function to ensure a directory exists, creating it if needed
+  function ensureDirectoryExists(directory) {
+    if (!fs.existsSync(directory)) {
+      fs.mkdirSync(directory, { recursive: true })
+    }
+  }
+
+  // Function to process and modify an HTML file
+  function processHTMLFile(file) {
+    const html = fs.readFileSync(file, 'utf8')
+
+    // Replace CSS class names in <style> blocks
+    const modifiedHTML = html.replace(/<style>[\s\S]*?<\/style>/g, (match) => {
+      return match.replace(/\s\.([A-Za-z0-9_-]+)/g, (classMatch, className) => {
+        return `.${generateRandomClassName()}`
+      })
+    })
+
+    // Replace CSS class names in HTML attributes
+    const updatedHTML = modifiedHTML.replace(/<[^>]*>/g, (match) => {
+      return match.replace(/class=["']([^"']+)["']/g, (classMatch, classNames) => {
+        const modifiedClassNames = classNames.split(' ').map((className) => {
+          return generateRandomClassName()
+        })
+        return `class="${modifiedClassNames.join(' ')}"`
+      })
+    })
+
+    // Save the modified HTML to the 'dist' directory
+    const relativePath = path.relative(srcDir, file)
+    const distFile = path.join(distDir, relativePath)
+    ensureDirectoryExists(path.dirname(distFile))
+    fs.writeFileSync(distFile, updatedHTML)
+  }
+
+  // Function to process HTML files in a directory
+  function processHTMLFilesInDirectory(directory) {
+    const files = fs.readdirSync(directory)
+    files.forEach((file) => {
+      const filePath = path.join(directory, file)
+      if (fs.statSync(filePath).isDirectory()) {
+        processHTMLFilesInDirectory(filePath) // Recurse into subdirectories
+      } else if (file.endsWith('.html')) {
+        processHTMLFile(filePath)
+      }
+    })
+  }
+
+  // Create the 'dist' directory if it doesn't exist
+  ensureDirectoryExists(distDir)
+
+  // Start processing HTML files in the 'src' directory
+  processHTMLFilesInDirectory(srcDir)
+
+  console.log('HTML files processed and saved to the "dist" directory.')
+}
 
 /* ************************************************************************************** */
 //
@@ -138,7 +223,6 @@ function optimizeJS() {
 
   console.log(`JS optimization completed, output in ${dist} 👍 \n`)
 }
-// optimizeJS()
 
 /* ************************************************************************************** */
 //
@@ -177,14 +261,13 @@ function convertImages() {
 
   console.log(`Image conversion completed in ${distAssetsImg} 👍\n`)
 }
-convertImages()
 
 /* ************************************************************************************** */
 //
 // Copy assets
 //
 /* ************************************************************************************** */
-function copyAssets(params) {
+function copyAssets() {
   // Copy other assets
   console.log(`Copy other assets from ${srcAssets} to ${distAssets} dir  🔨`)
 
@@ -218,6 +301,5 @@ function copyAssets(params) {
   }
   console.log(`Finish copying 👍`)
 }
-copyAssets()
 
 console.log('⭐️ END BUILD ⭐️\n🎉 🎉 🎉')

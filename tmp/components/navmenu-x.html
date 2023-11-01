@@ -1,6 +1,6 @@
 <style>
   /****************************** NAVMENU ******************************/
-  .nav {
+ .ks-edafbdbf {
     overflow-x: hidden;
     /* Declare variables */
     /* Nav menu animation speed */
@@ -9,7 +9,7 @@
     /* Links */
     --nav-links-gap: 1rem;
   }
-  .nav__panel {
+ .ks-e8d4e83e {
     position: fixed;
     top: 0;
     right: -100%;
@@ -27,42 +27,42 @@
     place-items: start center;
     overflow-y: auto;
   }
-  .show-nav__panel {
+ .ks-c8d42592 {
     right: 0;
     transition: calc(var(--transision-time-out) / 1.5) ease;
   }
-  .nav__panel__top {
+ .ks-f67c0ce4 {
     width: 100%;
     display: grid;
     place-items: center;
     place-content: center;
   }
-  .nav__panel__bottom {
+ .ks-21b3b938 {
     width: 100%;
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
   }
-  .nav__link {
+ .ks-cff75a69 {
     text-decoration: none;
   }
-  .nav__svg {
+ .ks-caa9e908 {
     margin: 1rem;
     width: 3rem;
     height: 3rem;
   }
-  .language-svg {
+ .ks-0a2ac766 {
     display: none;
   }
-  .sun-svg {
+ .ks-31c22f47 {
     display: none;
   }
-  .moon-svg {
+ .ks-f176ec53 {
     display: none;
   }
 
   /* Navigation menu button animation */
-  .nav__menu {
+ .ks-79f77ba5 {
     position: fixed;
     top: 0;
     right: 0;
@@ -85,50 +85,50 @@
     transition: 0.5s ease; /* box shadow animation on hover*/
     filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
   }
-  .nav__menu:hover {
+ .ks-1a83b49c:hover {
     transition: 0.5s ease;
     filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
   }
   @media (min-width: 600px) {
-    .nav__panel {
+   .ks-6080105b {
       width: 25vw;
       border-radius: 5px 0 0 5px;
     }
   }
-  .nav__menu__line {
+ .ks-11aaee45 {
     width: 100%;
     height: 0.3rem;
     /* background: var(--black); */
     background: #000;
     border-radius: 8px;
   }
-  .nav__menu__line:nth-child(1) {
+ .ks-98c0f929:nth-child(1) {
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  .nav__menu__line:nth-child(2) {
+ .ks-7edece82:nth-child(2) {
     opacity: 1;
     transition: var(--transision-time-in);
     transform: rotate(0);
   }
-  .nav__menu__line:nth-child(3) {
+ .ks-263ba422:nth-child(3) {
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  .show-nav__menu .nav__menu__line:nth-child(1) {
+ .ks-7ef0613b.ks-db35d2cb:nth-child(1) {
     transition: var(--transision-time-out);
     transform: rotate(45deg) translate(0.5rem, 0.5rem);
   }
-  .show-nav__menu .nav__menu__line:nth-child(2) {
+ .ks-23a247bd.ks-5fed04de:nth-child(2) {
     opacity: 0;
     transition: var(--transision-time-out);
     transform: rotate(360deg);
   }
-  .show-nav__menu .nav__menu__line:nth-child(3) {
+ .ks-f7454681.ks-4cb62a95:nth-child(3) {
     transition: var(--transision-time-out);
     transform: rotate(-45deg) translate(0.6rem, -0.65rem);
   }
-  .show-nav__menu {
+ .ks-ad8cd31d {
     animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
     animation-fill-mode: forwards;
   }
@@ -158,16 +158,16 @@
   }
 </style>
 
-<nav id="navmenu" class="nav">
-  <button class="nav__menu" aria-label="Navigation menu">
-    <div class="nav__menu__line"></div>
-    <div class="nav__menu__line"></div>
-    <div class="nav__menu__line"></div>
+<nav id="navmenu" class="ks-95344187">
+  <button class="ks-ed9488b4" aria-label="Navigation menu">
+    <div class="ks-7b3a6400"></div>
+    <div class="ks-a49619c7"></div>
+    <div class="ks-6ede9c55"></div>
   </button>
-  <div class="nav__panel">
-    <div class="nav__panel__top">
-      <a class="nav__link" href="/" aria-label="Home">
-        <div class="svg nav__svg">
+  <div class="ks-bba720bf">
+    <div class="ks-814da934">
+      <a class="ks-9902ffca" href="/" aria-label="Home">
+        <div class="ks-ec32e22d ks-7b8520a1">
           <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill="none" d="M0 0h48v48H0z" />
             <path
@@ -178,8 +178,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/freecodecamp" aria-label="freecodecamp">
-        <div class="svg nav__svg">
+      <a class="ks-1350767d" href="/freecodecamp" aria-label="freecodecamp">
+        <div class="ks-da24de11 ks-4bcaefdc">
           <svg
             width="48"
             height="48"
@@ -202,8 +202,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/guess-the-number" aria-label="Guess the Number Game">
-        <div class="svg nav__svg">
+      <a class="ks-f84895d0" href="/guess-the-number" aria-label="Guess the Number Game">
+        <div class="ks-48818f91 ks-3fd70e6e">
           <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M15.9 5.5C15.3 4.5 14.2 4 13 4H7c-1.2 0-2.3.5-2.9 1.5-2.3 3.5-2.8 8.8-1.2 9.9 1.6 1.1 5.2-3.7 7.1-3.7s5.4 4.8 7.1 3.7c1.6-1.1 1.1-6.4-1.2-9.9zM8 9H7v1H6V9H5V8h1V7h1v1h1v1zm5.4.5c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9zm1.9-2c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9z"
@@ -213,8 +213,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/playground" aria-label="Playground">
-        <div class="svg nav__svg">
+      <a class="ks-d20d60b6" href="/playground" aria-label="Playground">
+        <div class="ks-074f5077 ks-83b79dd9">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="48"
@@ -233,8 +233,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/svg-sprites" aria-label="link to page">
-        <div class="svg nav__svg">
+      <a class="ks-d930fbf0" href="/svg-sprites" aria-label="link to page">
+        <div class="ks-f8550811 ks-9fd0189e">
           <svg
             height="48px"
             width="48px"
@@ -269,8 +269,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/fonts" aria-label="link to page">
-        <div class="svg nav__svg">
+      <a class="ks-36674197" href="/fonts" aria-label="link to page">
+        <div class="ks-82930d5d ks-c9f36c9d">
           <svg
             height="48px"
             width="48px"
@@ -311,8 +311,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/test" aria-label="link to page">
-        <div class="svg nav__svg">
+      <a class="ks-2af0b096" href="/test" aria-label="link to page">
+        <div class="ks-71f4abed ks-b1386a50">
           <svg
             height="48px"
             width="48px"
@@ -345,8 +345,8 @@
       </a>
     </div>
 
-    <div class="nav__panel__bottom">
-      <div class="svg nav__svg language-svg">
+    <div class="ks-48da63fe">
+      <div class="ks-54e25ed6 ks-c86b271f ks-00f3f5ce">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z"
@@ -355,7 +355,7 @@
           />
         </svg>
       </div>
-      <div class="svg nav__svg sun-svg">
+      <div class="ks-ad1e31c4 ks-ac48b15d ks-d50e3f6b">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
@@ -363,7 +363,7 @@
           />
         </svg>
       </div>
-      <div class="svg nav__svg moon-svg">
+      <div class="ks-b89baa91 ks-4be3a6ec ks-0ce905f2">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M21 3C13.5 3 4.5 10.5 4.5 22.5s9 21 21 21S45 34.5 45 27C28.5 37.5 10.5 19.5 21 3Z"

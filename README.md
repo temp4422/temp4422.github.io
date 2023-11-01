@@ -17,3 +17,13 @@ How is works ?
 Make html tamplate with any tags that ends with '-x': <my_tag-x />. Traverse components dir and replace this tags with content of files that named coresponding to this tags. Do this for each page. End result: static pages.
 
 DX is satisfying, because tend to modular approch with simple components, trying to reapeat modern frameworks e.g. React.
+
+## KISS-X aims:
+
+- Build static website without using any secondary libraries in production only core web technologies.
+- DX of modern frameworks like next (at least some), components approach
+- No config delpoyment, just throw `docs` folder to any static server
+
+## Rules:
+
+- Use css classes selectors to make css modules scope, and css tag selectors for global scope.
