@@ -3,6 +3,7 @@ const fs = require('fs')
 const path = require('path')
 const minify = require('html-minifier').minify
 const sharp = require('sharp')
+const uglifyjs = require('uglify-js')
 
 console.log('⭐️ START BUILD ⭐️')
 
@@ -96,6 +97,48 @@ function optimizeHTML() {
   console.log(`HTML optimization completed for all HTML files in the ${dist} directory. 👍 \n`)
 }
 optimizeHTML()
+
+/* ************************************************************************************** */
+//
+// Optimize JS
+//
+/* ************************************************************************************** */
+function optimizeJS() {
+  // Start optimization
+  console.log(`Start optimization JS for all files in ${dist} 🔨`)
+
+  // Minify options https://github.com/mishoo/UglifyJS#minify-options
+  const options = {
+    toplevel: true,
+  }
+
+  // List all files in the source directory
+  const files = fs.readdirSync(srcAssets)
+
+  // Process each JavaScript file
+  files.forEach((file) => {
+    const sourceFilePath = path.join(srcAssets, file)
+
+    // Check if the file is a JavaScript file (ends with .js)
+    if (file.endsWith('.js')) {
+      const outputFilePath = path.join(dist, file)
+
+      try {
+        const code = fs.readFileSync(sourceFilePath, 'utf-8')
+        const minifiedCode = uglifyjs.minify(code, options)
+
+        fs.writeFileSync(outputFilePath, minifiedCode.code, 'utf-8')
+
+        console.log(`Optimized ${file}`)
+      } catch (err) {
+        console.error(`Error optimizing ${file}: ${err.message}`)
+      }
+    }
+  })
+
+  console.log(`JS optimization completed, output in ${dist} 👍 \n`)
+}
+// optimizeJS()
 
 /* ************************************************************************************** */
 //
