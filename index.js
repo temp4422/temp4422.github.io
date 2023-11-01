@@ -12,8 +12,8 @@ const uglifyjs = require('uglify-js')
 
 // Define source and destination directories, file extension, and tag files directory
 
-// const srcPages = './tmp/pages/'
-// const srcComponents = './tmp/components/'
+// const srcPages = './tmp/pages/' // TEST optimizeCSS
+// const srcComponents = './tmp/components/' // TEST optimizeCSS
 
 const srcPages = './src/pages/'
 const srcComponents = './src/components/'
@@ -29,8 +29,8 @@ if (!fs.existsSync(dist)) fs.mkdirSync(dist, { recursive: true })
 // Run each function
 main()
 optimizeHTML()
-// optimizeCSS()
-// optimizeJS()
+// optimizeCSS() // Not replacing classes in JS
+optimizeJS()
 convertImages()
 copyAssets()
 
@@ -139,8 +139,8 @@ function optimizeCSS() {
 
     // Replace CSS class names in <style> blocks
     const modifiedHTML = html.replace(/<style>[\s\S]*?<\/style>/g, (match) => {
-      return match.replace(/\s\.([A-Za-z0-9_-]+)/g, (classMatch, className) => {
-        return `.${generateRandomClassName()}`
+      return match.replace(/\s\.([A-Za-z0-9_-]+)|'\.([A-Za-z0-9_-]+)/g, (classMatch, className) => {
+        return ` .${generateRandomClassName()}`
       })
     })
 
