@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MangleCssClassPlugin = require('mangle-css-class-webpack-plugin')
 
 module.exports = {
+  mode: 'development',
+
   entry: {
     index: './src/index.js',
     print: './src/print.js',
@@ -56,6 +58,4 @@ module.exports = {
       },
     ],
   },
-
-  mode: 'development',
 }
