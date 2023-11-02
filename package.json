@@ -8,18 +8,12 @@
     "dev": "browser-sync start --server 'docs/' --files 'docs/' & node watch",
     "serve": "serve docs/",
     "watch": "node watch.js",
-    "watch2": "watch 'npm run build' src/",
-    "watch3": "bun --watch index.js",
-    "nodemon": "nodemon src --ext *",
-    "livereload": "livereload src/",
-    "lite-server": "lite-server --baseDir='docs' --port=3000  --files='./src/**/*.{html,htm,css,js}'",
-    "browser-sync": "browser-sync start --server 'docs/' --files 'docs/' "
+    "brws-sync": "browser-sync start --server 'docs/' --files 'docs/' "
   },
   "devDependencies": {
     "browser-sync": "^2.29.3",
     "html-minifier": "^4.0.0",
     "mangle-css-class-webpack-plugin": "^5.1.0",
-    "nodemon": "^3.0.1",
     "sharp": "^0.32.6",
     "uglify-js": "^3.17.4",
     "webpack": "^5.89.0",
