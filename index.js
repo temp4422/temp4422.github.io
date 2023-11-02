@@ -5,9 +5,7 @@ const path = require('path')
 const minify = require('html-minifier').minify
 const sharp = require('sharp')
 
-const cheerio = require('cheerio')
 const crypto = require('crypto')
-
 const uglifyjs = require('uglify-js')
 
 // Define source and destination directories, file extension, and tag files directory
@@ -15,6 +13,7 @@ const uglifyjs = require('uglify-js')
 // const srcPages = './tmp/pages/' // TEST optimizeCSS
 // const srcComponents = './tmp/components/' // TEST optimizeCSS
 
+const src = './src/'
 const srcPages = './src/pages/'
 const srcComponents = './src/components/'
 const srcAssets = './src/assets/'
@@ -26,20 +25,12 @@ const distAssetsImg = './docs/assets/img/'
 // Create dir if it doesnt exists
 if (!fs.existsSync(dist)) fs.mkdirSync(dist, { recursive: true })
 
-// Run each function
-main()
-optimizeHTML()
-// optimizeCSS() // Not replacing classes in JS
-optimizeJS()
-convertImages()
-copyAssets()
-
 /* ************************************************************************************** */
 //
 // KISS-x framework main job. Replace special tags with corresponding content
 //
 /* ************************************************************************************** */
-function main() {
+function kissX() {
   // Start replacing
   console.log(`Start replacing corresponding tags for all pages in ${srcPages} 🔨`)
 
@@ -302,5 +293,14 @@ function copyAssets() {
   }
   console.log(`Finish copying 👍`)
 }
+
+kissX()
+// optimizeHTML()
+// convertImages()
+// copyAssets()
+// optimizeCSS() // Not finished. Not replacing classes in <script>
+// optimizeJS() // Not finished
+
+module.exports = { kissX, optimizeHTML, convertImages, copyAssets, optimizeCSS, optimizeJS }
 
 console.log('⭐️ END BUILD ⭐️\n🎉 🎉 🎉')

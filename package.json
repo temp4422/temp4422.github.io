@@ -5,17 +5,23 @@
   "main": "index.html",
   "scripts": {
     "build": "node index.js",
-    "dev": "serve docs/ && npm run watch",
+    "dev": "browser-sync start --server 'docs/' --files 'docs/' & node watch",
     "serve": "serve docs/",
-    "watch": "watch 'npm run build' src/"
+    "watch": "node watch.js",
+    "watch2": "watch 'npm run build' src/",
+    "watch3": "bun --watch index.js",
+    "nodemon": "nodemon src --ext *",
+    "livereload": "livereload src/",
+    "lite-server": "lite-server --baseDir='docs' --port=3000  --files='./src/**/*.{html,htm,css,js}'",
+    "browser-sync": "browser-sync start --server 'docs/' --files 'docs/' "
   },
   "devDependencies": {
-    "cheerio": "^1.0.0-rc.12",
+    "browser-sync": "^2.29.3",
     "html-minifier": "^4.0.0",
     "mangle-css-class-webpack-plugin": "^5.1.0",
+    "nodemon": "^3.0.1",
     "sharp": "^0.32.6",
     "uglify-js": "^3.17.4",
-    "watch": "^1.0.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },

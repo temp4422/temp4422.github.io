@@ -1,196 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Guess The Number</title>
-    <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="My portfolio website" />
-<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-<!-- Set root folder to use in navmenu component for easier links -->
-<base href="/" />
-<!-- Google Tag Manager -->
-<script>
-  ;(function (w, d, s, l, i) {
-    w[l] = w[l] || []
-    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != 'dataLayer' ? '&l=' + l : ''
-    j.async = true
-    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
-    f.parentNode.insertBefore(j, f)
-  })(window, document, 'script', 'dataLayer', 'GTM-PRTMM7JX')
-</script>
-<!-- End Google Tag Manager -->
-
-    <style>
-  /****************************** LAYOUT STYLES ******************************/
-  /*
-        // COLORS
-        Main color - Mine Shaft (approx.) #202020
-
-        // FONTS
-        Marck Script
-
-        // SVG
-        https://www.svgrepo.com
-
-
-      */
-
-  /****************************** GENERAL ******************************/
-  /* @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap'); */
-  @font-face {
-    font-family: 'Marck Script';
-    src: url('/assets/MarckScript-Regular.ttf') format('truetype');
-    font-display: swap; /*avoid showing invisible text*/
-    /* https://developer.chrome.com/docs/lighthouse/performance/font-display/?utm_source=lighthouse&utm_medium=devtools */
-  }
-
-  :root {
-    --black: #202020;
-    --light-grey: #cecece;
-    --dark-grey: #bababa;
-
-    /* SVG filter glow and transition */
-    --svg-transition: 0.5s ease;
-    --svg-transition-hover: 0.25s ease;
-    --svg-glow: drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.5));
-    --svg-glow-hover: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
-  }
-
-  /****************************** CSS RESET START ******************************/
-  /* prettier-ignore */
-  *, *::before, *::after {box-sizing: border-box; margin: 0; border: 0; padding: 0;}
-  /* prettier-ignore */
-  body {line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; font-family: sans-serif;}
-  /* prettier-ignore */
-  img, picture, video, canvas, svg {display: block; max-width: 100%;}
-  /* prettier-ignore */
-  input, button, textarea, select {font: inherit;}
-  /* prettier-ignore */
-  p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
-  /****************************** CSS RESET END ******************************/
-
-  body {
-    font-family: 'Marck Script', cursive;
-    font-size: 1.5rem;
-    max-width: 768px;
-    margin: 0 auto;
-    overflow-x: hidden;
-    background: linear-gradient(to bottom, #202020 66%, #101010);
-    color: var(--light-grey);
-  }
-  main {
-    margin: 4rem auto;
-    display: grid;
-    place-items: center;
-  }
-  h1,
-  h2,
-  h3 {
-    text-align: center;
-    margin: 2rem 1rem;
-    padding: 2rem 0;
-  }
-
-  p {
-    text-align: center;
-    margin: 3rem 1rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000000;
-    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  a:hover {
-    color: white;
-    filter: var(--svg-glow-hover);
-  }
-  svg {
-    cursor: pointer;
-    transition: var(--svg-transition);
-    filter: var(--svg-glow);
-  }
-  svg:hover {
-    transition: var(--svg-transition-hover);
-    filter: var(--svg-glow-hover);
-  }
-  img {
-    width: 20rem;
-    height: auto;
-    margin: 2rem 1rem;
-    /* object-fit: contain; */
-    /* filter: grayscale(1); */
-    filter: var(--svg-glow);
-    border-radius: 1rem;
-  }
-  img:hover {
-    transition: var(--svg-transition-hover);
-    filter: var(--svg-glow-hover);
-  }
-  @media (min-width: 768px) {
-    img {
-      width: 25rem;
-    }
-  }
-
-  /* Scrollbar Styling */
-  /* @media (min-width: 768px) { */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: #303030;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: #6d6d6d;
-  }
-  /* } */
-</style>
-
-
-    <style>
-      label {
-        width: max-content;
-        display: block;
-        margin: 2rem auto;
-      }
-      input {
-        padding: 0 1rem;
-      }
-      .display {
-        width: 18rem;
-        height: 16rem;
-        margin: 2rem 0;
-        border-radius: 1rem;
-        background: rgba(206, 206, 206, 0.507);
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript
-  ><iframe
-    src="https://www.googletagmanager.com/ns.html?id=GTM-PRTMM7JX"
-    height="0"
-    width="0"
-    style="display: none; visibility: hidden"
-  ></iframe
-></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-    <header>
-      <style>
+<style>
   /****************************** NAVMENU ******************************/
-  .nav {
+  .ks-dbaba40a {
     overflow-x: hidden;
     /* Declare variables */
     /* Nav menu animation speed */
@@ -199,7 +9,7 @@
     /* Links */
     --nav-links-gap: 1rem;
   }
-  .nav__panel {
+  .ks-3e89b321 {
     position: fixed;
     top: 0;
     right: -100%;
@@ -217,42 +27,42 @@
     place-items: start center;
     overflow-y: auto;
   }
-  .show-nav__panel {
+  .ks-e45180ef {
     right: 0;
     transition: calc(var(--transision-time-out) / 1.5) ease;
   }
-  .nav__panel__top {
+  .ks-6c1b6f5b {
     width: 100%;
     display: grid;
     place-items: center;
     place-content: center;
   }
-  .nav__panel__bottom {
+  .ks-4d54743c {
     width: 100%;
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
   }
-  .nav__link {
+  .ks-0d579520 {
     text-decoration: none;
   }
-  .nav__svg {
+  .ks-53e13852 {
     margin: 1rem;
     width: 3rem;
     height: 3rem;
   }
-  .language-svg {
+  .ks-12eeea41 {
     display: none;
   }
-  .sun-svg {
+  .ks-44ed039e {
     display: none;
   }
-  .moon-svg {
+  .ks-dea19335 {
     display: none;
   }
 
   /* Navigation menu button animation */
-  .nav__menu {
+  .ks-5e78656c {
     position: fixed;
     top: 0;
     right: 0;
@@ -275,50 +85,50 @@
     transition: 0.5s ease; /* box shadow animation on hover*/
     filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
   }
-  .nav__menu:hover {
+  .ks-5aab19f0:hover {
     transition: 0.5s ease;
     filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
   }
   @media (min-width: 600px) {
-    .nav__panel {
+    .ks-05ac778f {
       width: 25vw;
       border-radius: 5px 0 0 5px;
     }
   }
-  .nav__menu__line {
+  .ks-ee0fc1bf {
     width: 100%;
     height: 0.3rem;
     /* background: var(--black); */
     background: #000;
     border-radius: 8px;
   }
-  .nav__menu__line:nth-child(1) {
+  .ks-8bc1173c:nth-child(1) {
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  .nav__menu__line:nth-child(2) {
+  .ks-86e70e19:nth-child(2) {
     opacity: 1;
     transition: var(--transision-time-in);
     transform: rotate(0);
   }
-  .nav__menu__line:nth-child(3) {
+  .ks-aeff9316:nth-child(3) {
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  .show-nav__menu .nav__menu__line:nth-child(1) {
+  .ks-a0088559 .ks-e001987f:nth-child(1) {
     transition: var(--transision-time-out);
     transform: rotate(45deg) translate(0.5rem, 0.5rem);
   }
-  .show-nav__menu .nav__menu__line:nth-child(2) {
+  .ks-5a724768 .ks-430bb615:nth-child(2) {
     opacity: 0;
     transition: var(--transision-time-out);
     transform: rotate(360deg);
   }
-  .show-nav__menu .nav__menu__line:nth-child(3) {
+  .ks-85c73a7d .ks-ebb98d4c:nth-child(3) {
     transition: var(--transision-time-out);
     transform: rotate(-45deg) translate(0.6rem, -0.65rem);
   }
-  .show-nav__menu {
+  .ks-99538dc7 {
     animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
     animation-fill-mode: forwards;
   }
@@ -348,16 +158,16 @@
   }
 </style>
 
-<nav id="navmenu" class="nav">
-  <button class="nav__menu" aria-label="Navigation menu">
-    <div class="nav__menu__line"></div>
-    <div class="nav__menu__line"></div>
-    <div class="nav__menu__line"></div>
+<nav id="navmenu" class="ks-1d20ad49">
+  <button class="ks-e02276cd" aria-label="Navigation menu">
+    <div class="ks-4a6e4cba"></div>
+    <div class="ks-2ce18b8c"></div>
+    <div class="ks-5464ab1a"></div>
   </button>
-  <div class="nav__panel">
-    <div class="nav__panel__top">
-      <a class="nav__link" href="/" aria-label="Home">
-        <div class="svg nav__svg">
+  <div class="ks-1efb9c58">
+    <div class="ks-fe76f1f0">
+      <a class="ks-60a2ce8b" href="/" aria-label="Home">
+        <div class="ks-e0725c2e ks-f2a1ef20">
           <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill="none" d="M0 0h48v48H0z" />
             <path
@@ -368,8 +178,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/freecodecamp" aria-label="freecodecamp">
-        <div class="svg nav__svg">
+      <a class="ks-d4bace94" href="/freecodecamp" aria-label="freecodecamp">
+        <div class="ks-ab0b352c ks-8acc4d46">
           <svg
             width="48"
             height="48"
@@ -392,8 +202,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/guess-the-number" aria-label="Guess the Number Game">
-        <div class="svg nav__svg">
+      <a class="ks-d388a0e8" href="/guess-the-number" aria-label="Guess the Number Game">
+        <div class="ks-9f33e9ae ks-d9f24482">
           <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M15.9 5.5C15.3 4.5 14.2 4 13 4H7c-1.2 0-2.3.5-2.9 1.5-2.3 3.5-2.8 8.8-1.2 9.9 1.6 1.1 5.2-3.7 7.1-3.7s5.4 4.8 7.1 3.7c1.6-1.1 1.1-6.4-1.2-9.9zM8 9H7v1H6V9H5V8h1V7h1v1h1v1zm5.4.5c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9zm1.9-2c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9z"
@@ -403,8 +213,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/playground" aria-label="Playground">
-        <div class="svg nav__svg">
+      <a class="ks-dcd3a225" href="/playground" aria-label="Playground">
+        <div class="ks-9f0a5848 ks-7eb13bd6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="48"
@@ -423,8 +233,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/svg-sprites" aria-label="link to page">
-        <div class="svg nav__svg">
+      <a class="ks-ffe1b240" href="/svg-sprites" aria-label="link to page">
+        <div class="ks-ba169b1a ks-cd3dbfc4">
           <svg
             height="48px"
             width="48px"
@@ -459,8 +269,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/fonts" aria-label="link to page">
-        <div class="svg nav__svg">
+      <a class="ks-e06f5f37" href="/fonts" aria-label="link to page">
+        <div class="ks-2dbb1b82 ks-7125e477">
           <svg
             height="48px"
             width="48px"
@@ -501,8 +311,8 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/test" aria-label="link to page">
-        <div class="svg nav__svg">
+      <a class="ks-7d9d5aab" href="/test" aria-label="link to page">
+        <div class="ks-51468a21 ks-33af906b">
           <svg
             height="48px"
             width="48px"
@@ -535,8 +345,8 @@
       </a>
     </div>
 
-    <div class="nav__panel__bottom">
-      <div class="svg nav__svg language-svg">
+    <div class="ks-dfc98155">
+      <div class="ks-78396578 ks-8093fa8c ks-9acdde50">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z"
@@ -545,7 +355,7 @@
           />
         </svg>
       </div>
-      <div class="svg nav__svg sun-svg">
+      <div class="ks-ff885901 ks-45cb7160 ks-23139ba3">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
@@ -553,7 +363,7 @@
           />
         </svg>
       </div>
-      <div class="svg nav__svg moon-svg">
+      <div class="ks-e588179e ks-9d120fd3 ks-4d5f5bf2">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M21 3C13.5 3 4.5 10.5 4.5 22.5s9 21 21 21S45 34.5 45 27C28.5 37.5 10.5 19.5 21 3Z"
@@ -598,199 +408,3 @@
     item.addEventListener('click', showMenu, false)
   })
 </script>
-
-    </header>
-
-    <main>
-      <h1>Guess the Number</h1>
-      <p>Guess the number between 1 and 100, can you ?</p>
-
-      <!-- Display Result -->
-      <div id="display" class="display">
-        <div class="resultParas">
-          <p class="guesses"></p>
-          <p class="lastResult"></p>
-          <p class="lowOrHi"></p>
-        </div>
-      </div>
-
-      <!-- <form action="" class="form">
-        <label for="guessField">Guess</label>
-        <input
-          type="text"
-          id="guessField"
-          class="guessField"
-          placeholder="number 1...100"
-          value="50"
-        />
-        <button type="submit" id="guessSubmit" class="guessSubmit">Submit</button>
-      </form> -->
-
-      <div class="form">
-        <label for="guessField">Enter a guess: </label>
-        <input type="number" min="1" max="100" required="" id="guessField" class="guessField" />
-        <input type="submit" value="Submit guess" class="guessSubmit" />
-      </div>
-
-      <script>
-        let randomNumber = Math.floor(Math.random() * 100) + 1
-        const guesses = document.querySelector('.guesses')
-        const lastResult = document.querySelector('.lastResult')
-        const lowOrHi = document.querySelector('.lowOrHi')
-        const guessSubmit = document.querySelector('.guessSubmit')
-        const guessField = document.querySelector('.guessField')
-        let guessCount = 1
-        let resetButton
-
-        function checkGuess() {
-          const userGuess = Number(guessField.value)
-          if (guessCount === 1) {
-            guesses.textContent = 'Previous guesses: '
-          }
-
-          guesses.textContent += userGuess + ' '
-
-          if (userGuess === randomNumber) {
-            lastResult.textContent = 'Congratulations! You got it right!'
-            lastResult.style.backgroundColor = 'green'
-            lowOrHi.textContent = ''
-            setGameOver()
-          } else if (guessCount === 10) {
-            lastResult.textContent = '!!!GAME OVER!!!'
-            lowOrHi.textContent = ''
-            setGameOver()
-          } else {
-            lastResult.textContent = 'Wrong!'
-            lastResult.style.backgroundColor = 'red'
-            if (userGuess < randomNumber) {
-              lowOrHi.textContent = 'Last guess was too low!'
-            } else if (userGuess > randomNumber) {
-              lowOrHi.textContent = 'Last guess was too high!'
-            }
-          }
-
-          guessCount++
-          guessField.value = ''
-          guessField.focus()
-        }
-
-        guessSubmit.addEventListener('click', checkGuess)
-
-        function setGameOver() {
-          guessField.disabled = true
-          guessSubmit.disabled = true
-          resetButton = document.createElement('button')
-          resetButton.textContent = 'Start new game'
-          document.body.appendChild(resetButton)
-          resetButton.addEventListener('click', resetGame)
-        }
-
-        function resetGame() {
-          guessCount = 1
-          const resetParas = document.querySelectorAll('.resultParas p')
-          for (const resetPara of resetParas) {
-            resetPara.textContent = ''
-          }
-
-          resetButton.parentNode.removeChild(resetButton)
-          guessField.disabled = false
-          guessSubmit.disabled = false
-          guessField.value = ''
-          guessField.focus()
-          lastResult.style.backgroundColor = 'white'
-          randomNumber = Math.floor(Math.random() * 100) + 1
-        }
-      </script>
-    </main>
-
-    <footer>
-      <style>
-  /****************************** FOOTER ******************************/
-  .footer-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  .svg-footer {
-    margin: 1rem;
-  }
-  .footer-note {
-    padding: 0 1rem;
-  }
-</style>
-
-<h2 id="contact">CONTACTS</h2>
-
-<div class="footer-container">
-  <a href="mailto:it.temp4422@gmail.com" aria-label="Gmail">
-    <div class="svg svg-footer js-scroll fade-in">
-      <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M40 36h-4V18.5L24 26l-12-7.5V36H8V12h2.4L24 20.5 37.6 12H40v24Zm0-28H8c-2.22 0-4 1.78-4 4v24a4 4 0 0 0 4 4h32a4 4 0 0 0 4-4V12a4 4 0 0 0-4-4Z"
-          fill="#CECECE"
-        />
-      </svg>
-    </div>
-  </a>
-
-  <a href="https://github.com/webdev4422" aria-label="GitHub">
-    <div class="svg svg-footer js-scroll fade-in-delay-2">
-      <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M24 0C10.74 0 0 10.74 0 24c0 10.62 6.87 19.59 16.41 22.77 1.2.21 1.65-.51 1.65-1.14 0-.57-.03-2.46-.03-4.47-6.03 1.11-7.59-1.47-8.07-2.82-.27-.69-1.44-2.82-2.46-3.39-.84-.45-2.04-1.56-.03-1.59 1.89-.03 3.24 1.74 3.69 2.46 2.16 3.63 5.61 2.61 6.99 1.98.21-1.56.84-2.61 1.53-3.21-5.34-.6-10.92-2.67-10.92-11.85 0-2.61.93-4.77 2.46-6.45-.24-.6-1.08-3.06.24-6.36 0 0 2.01-.63 6.6 2.46 1.92-.54 3.96-.81 6-.81s4.08.27 6 .81c4.59-3.12 6.6-2.46 6.6-2.46 1.32 3.3.48 5.76.24 6.36 1.53 1.68 2.46 3.81 2.46 6.45 0 9.21-5.61 11.25-10.95 11.85.87.75 1.62 2.19 1.62 4.44 0 3.21-.03 5.79-.03 6.6 0 .63.45 1.38 1.65 1.14A24.04 24.04 0 0 0 48 24C48 10.74 37.26 0 24 0Z"
-          fill="#CECECE"
-        />
-      </svg>
-    </div>
-  </a>
-
-  <a href="https://codepen.io/webdev4422" aria-label="CodePen">
-    <div class="svg svg-footer js-scroll fade-in-delay-3">
-      <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#a)">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M22.744.38a2.268 2.268 0 0 1 2.512 0L46.984 14.8A2.27 2.27 0 0 1 48 16.692v14.616c0 .76-.38 1.472-1.016 1.894l-21.728 14.42c-.76.504-1.75.504-2.512 0L1.016 33.2A2.272 2.272 0 0 1 0 31.308V16.692c0-.76.38-1.472 1.016-1.894L22.744.38Zm-18.2 20.546v6.116l4.576-3.08-4.576-3.036Zm8.674 5.756L6.36 31.296l15.368 10.2V32.33l-8.508-5.648h-.002Zm13.054 5.648v9.164l15.368-10.2-6.86-4.612-8.508 5.648Zm12.606-8.366 4.58 3.08v-6.12l-4.58 3.04Zm2.742-7.272-6.82 4.526-8.528-5.736V6.506L41.62 16.692ZM21.728 6.506v8.974l-8.526 5.736-6.822-4.524L21.728 6.506ZM24 19.43l-6.7 4.508 6.7 4.446 6.7-4.446L24 19.43Z"
-            fill="#CECECE"
-          />
-        </g>
-        <defs>
-          <clipPath id="a">
-            <path fill="#fff" d="M0 0h48v48H0z" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  </a>
-
-  <a href="https://www.freecodecamp.org/webdev4422" aria-label="FreeCodeCamp">
-    <div class="svg svg-footer js-scroll fade-in-delay-4">
-      <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#a)">
-          <path
-            d="M39.77 7.812c-.255.005-.502.09-.708.24-.16.16-.322.392-.322.626 0 .4.472.948 1.346 1.846 3.644 3.508 5.476 7.806 5.464 12.988-.014 5.734-1.94 10.34-5.688 13.908-.788.706-1.112 1.26-1.114 1.734 0 .232.16.474.32.706.191.186.44.3.706.324.868 0 2.08-1.024 3.666-3.018 3.084-3.78 4.48-7.956 4.558-13.648.072-5.694-1.714-9.554-5.206-13.54-1.26-1.424-2.306-2.164-3.022-2.166Zm-31.538.004c-.716 0-1.764.74-3.02 2.166-3.496 3.986-5.282 7.846-5.21 13.54.08 5.692 1.474 9.866 4.56 13.648 1.582 1.994 2.796 3.02 3.664 3.018.265-.023.514-.138.704-.324.16-.232.32-.474.32-.706 0-.474-.324-1.028-1.112-1.732-3.746-3.57-5.674-8.174-5.688-13.91-.012-5.182 1.82-9.48 5.464-12.988.874-.898 1.348-1.444 1.346-1.846 0-.234-.16-.466-.322-.626a1.242 1.242 0 0 0-.708-.24h.002Zm14.112 1.79s1.31 4.162-5.298 13.454c-6.312 8.866 2.09 14.3 2.864 14.772-.562-.36-4.002-3 .804-10.846.932-1.54 2.152-2.94 3.668-6.082 0 0 1.34 1.892.64 5.996-1.046 6.202 4.542 4.428 4.628 4.514 1.952 2.3-1.616 6.34-1.834 6.466-.216.122 10.192-6.26 2.798-15.87-.506.506-1.164 2.884-2.534 2.532-1.368-.348 4.25-6.988-5.736-14.936ZM19.91 37.832a.846.846 0 0 0 .076.048l-.076-.048Z"
-            fill="#CECECE"
-          />
-        </g>
-        <defs>
-          <clipPath id="a">
-            <path fill="#fff" d="M0 0h48v48H0z" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-  </a>
-</div>
-
-<div>
-  <p class="footer-note">
-    Built with Core Web Technologies, Google and Sincere Developer's Efforts :)
-  </p>
-</div>
-
-    </footer>
-  </body>
-</html>
