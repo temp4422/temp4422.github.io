@@ -6,8 +6,8 @@
   "scripts": {
     "build": "node index.js",
     "dev": "serve docs/ && npm run watch",
-    "dev2": "serve docs/",
-    "watch": "watch 'npm run build' ./src/"
+    "serve": "serve docs/",
+    "watch": "watch 'npm run build' src/"
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.12",

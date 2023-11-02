@@ -1,10 +1,33 @@
-function Coutner() {
+// Add React to website https://github.com/nadeem099/adding-react-to-website/tree/main
+
+function Counter() {
   const [count, setCount] = React.useState(0)
 
+  const mystyle = {
+    container: {
+      display: 'flex',
+      flexFlow: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+
+    button: {
+      width: '10rem',
+      color: 'white',
+      backgroundColor: 'DodgerBlue',
+      padding: '10px',
+      fontFamily: 'Arial',
+      borderRadius: '10px',
+    },
+  }
+
   return (
-    <div>
+    <div style={mystyle.container}>
+      <h3>Counter</h3>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <button style={mystyle.button} onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
     </div>
   )
 }
@@ -13,20 +36,18 @@ function Header() {
   return <h1>Develop. Preview. Ship. 🚀</h1>
 }
 
-function HomePage() {
+function App() {
   return (
     <div>
       <Header />
-      <Coutner />
+      <Counter />
     </div>
   )
 }
 
-// ReactDOM.render(<HomePage />, app)
-
 const app = document.getElementById('app')
 const root = ReactDOM.createRoot(app)
-root.render(<HomePage />)
+root.render(<App />)
 
 // "use strict";
 
