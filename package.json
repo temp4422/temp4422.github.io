@@ -12,6 +12,7 @@
   "devDependencies": {
     "cheerio": "^1.0.0-rc.12",
     "html-minifier": "^4.0.0",
+    "mangle-css-class-webpack-plugin": "^5.1.0",
     "sharp": "^0.32.6",
     "uglify-js": "^3.17.4",
     "watch": "^1.0.2",
