@@ -24,6 +24,7 @@ const distAssetsImg = './docs/assets/img/'
 
 // Create dir if it doesnt exists
 if (!fs.existsSync(dist)) fs.mkdirSync(dist, { recursive: true })
+if (!fs.existsSync(distAssets)) fs.mkdirSync(distAssets, { recursive: true })
 
 /* ************************************************************************************** */
 //

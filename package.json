@@ -5,14 +5,17 @@
   "main": "index.html",
   "scripts": {
     "build": "node index.js",
-    "dev": "browser-sync start --server 'docs/' --files 'docs/' & node watch",
+    "dev": "browser-sync start --server 'docs/' --files 'docs/' & node watch.js",
     "serve": "serve docs/",
     "watch": "node watch.js",
-    "brws-sync": "browser-sync start --server 'docs/' --files 'docs/' "
+    "brws-sync": "browser-sync start --server 'docs/' --files 'docs/' ",
+    "wp": "webpack"
   },
   "devDependencies": {
     "browser-sync": "^2.29.3",
+    "html-loader": "^4.2.0",
     "html-minifier": "^4.0.0",
+    "html-webpack-plugin": "^5.5.3",
     "mangle-css-class-webpack-plugin": "^5.1.0",
     "sharp": "^0.32.6",
     "uglify-js": "^3.17.4",
