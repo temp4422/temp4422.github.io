@@ -9,9 +9,15 @@ module.exports = {
   },
 
   output: {
+    // filename: '[name][hash].bundle.js',
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+
+  devServer: {
+    static: './dist',
+    port: 3000,
   },
 
   plugins: [
@@ -28,18 +34,26 @@ module.exports = {
 
   module: {
     rules: [
-      // {
-      //   test: /\.html$/,
-      //   use: [
-      //     {
-      //       loader: 'html-loader',
-      //       options: {
-      //         minimize: true,
-      //         interpolation: false,
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            // options: {
+            //   minimize: true,
+            //   interpolation: false,
+            // },
+          },
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
 

@@ -9,19 +9,27 @@
     "serve": "serve docs/",
     "watch": "node watch.js",
     "brws-sync": "browser-sync start --server 'docs/' --files 'docs/' ",
-    "wp": "webpack"
+    "wp": "webpack",
+    "wpw": "webpack --watch",
+    "wps": "webpack serve --open"
   },
   "devDependencies": {
     "browser-sync": "^2.29.3",
+    "css-loader": "^6.8.1",
     "html-loader": "^4.2.0",
     "html-minifier": "^4.0.0",
     "html-webpack-plugin": "^5.5.3",
     "mangle-css-class-webpack-plugin": "^5.1.0",
     "sharp": "^0.32.6",
+    "style-loader": "^3.3.3",
     "uglify-js": "^3.17.4",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
