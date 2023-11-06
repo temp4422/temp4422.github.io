@@ -108,7 +108,7 @@ function optimizeHTML() {
 /* ************************************************************************************** */
 function optimizeCSS() {
   const srcDir = './src/components/'
-  const distDir = './tmp/components/'
+  const distDir = './dist/components/'
 
   // const srcDir = './src/pages/'
   // const distDir = './tmp/pages/'
@@ -145,6 +145,9 @@ function optimizeCSS() {
         return `class="${modifiedClassNames.join(' ')}"`
       })
     })
+
+    // Replace class names in JS
+    // TODO
 
     // Save the modified HTML to the 'dist' directory
     const relativePath = path.relative(srcDir, file)
@@ -296,10 +299,10 @@ function copyAssets() {
 }
 
 kissX()
-optimizeHTML()
-convertImages()
-copyAssets()
-// optimizeCSS() // Not finished. Not replacing classes in <script>
+// optimizeHTML()
+// convertImages()
+// copyAssets()
+optimizeCSS() // Not finished. Not replacing classes in <script>
 // optimizeJS() // Not finished
 
 module.exports = { kissX, optimizeHTML, convertImages, copyAssets, optimizeCSS, optimizeJS }

@@ -26,4 +26,8 @@ DX is satisfying, because tend to modular approch with simple components, trying
 
 ## Rules:
 
+### CSS
+
 - Use css classes selectors to make css modules scope, and css tag selectors for global scope.
+- Use css classes inside `<style></style>` block inside each component, all related css classes will be replaced with `ks-<hash>`.
+
