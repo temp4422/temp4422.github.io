@@ -1,6 +1,21 @@
-.hello {
-  color: blue;
+:global body {
+  margin: 0;
+  padding: 0;
 }
-h1 {
-  background: blue;
+
+.page {
+  background-color: purple;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  text-transoform: capitalize;
+  color: #fff;
+  font-weight: bold;
+  font-size: 4em;
 }

@@ -1,28 +1,25 @@
-// import header from './components/header-x.html'
-// import footer from './components/footer-x.html'
+// Simple css import
+// import _ from 'lodash'
+// import './style1.css' // Simple css import to use inside html
 
-// document.onload = function () {
-//   const test = (document.getElementById('root').innerHTML = 'TEST INJECT XXXX')
-
-//   console.log(test)
-//   // document.getElementById('root').innerHTML = '<h1>TEST INJECT XXXX</h1>'
+// function component() {
+//   const element = document.createElement('div')
+//   // Lodash, now imported by this script
+//   element.innerHTML = _.join(['Hello', 'webpack'], ' ')
+//   element.classList.add('hello')
+//   return element
 // }
+// // document.body.appendChild(component())
+// console.log('OKOK🎉')
 
-// console.log('OK')
+// CSS modules example
+import styles from './style.css'
+// console.log(styles)
 
-import _ from 'lodash'
-import './style.css'
+const element = document.querySelector('.element')
+element.innerHTML = `<div class="${styles.page}">
+     <p class="${styles.text}">CSS Modules Webpack</p>
+   </div>`
 
-function component() {
-  const element = document.createElement('div')
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-  element.classList.add('hello')
-
-  return element
-}
-
-document.body.appendChild(component())
-
-console.log('OKOK🎉')
+// https://github.com/hulyak/css-module-webpack
+// https://blog.logrocket.com/how-to-configure-css-modules-webpack/

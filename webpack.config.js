@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MangleCssClassPlugin = require('mangle-css-class-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
+  mode: 'production',
 
   entry: {
     index: './src/index.js',
@@ -47,9 +48,22 @@ module.exports = {
           },
         ],
       },
+      // {
+      //   test: /\.css$/i,
+      //   use: ['style-loader', 'css-loader'],
+      // },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
