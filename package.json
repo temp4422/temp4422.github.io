@@ -4,7 +4,7 @@
   "description": "https://webdev4422.github.io",
   "main": "index.html",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -19,9 +19,12 @@
   },
   "devDependencies": {
     "@types/react": "18.2.36",
+    "autoprefixer": "^10.4.16",
     "browser-sync": "^2.29.3",
     "html-minifier": "^4.0.0",
+    "postcss": "^8.4.31",
     "sharp": "^0.32.6",
+    "tailwindcss": "^3.3.5",
     "typescript": "5.2.2",
     "uglify-js": "^3.17.4"
   },
