@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SVG sprites</title>
+    <title>Test</title>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="My portfolio website" />
@@ -154,6 +154,20 @@
   /* } */
 </style>
 
+    <style>
+      .hr {
+        width: 80%;
+        height: 2px;
+        border-radius: 10px;
+        background: black;
+        margin: 3rem 0 6rem 0;
+      }
+      .iframe {
+        background: #303030;
+        border-radius: 5px;
+        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
+      }
+    </style>
   </head>
 
   <body>
@@ -592,31 +606,57 @@
     </header>
 
     <main>
-      <h1>SVG Sprites</h1>
-      <svg><use href="/assets/brands.svg#mixer" /></svg>
+      <h1>React & Next.js</h1>
 
-      <h2>Example SVG</h2>
+      <h2>React</h2>
 
-      <svg width="300" height="200">
-        <rect width="100%" height="100%" fill="red" />
-        <circle cx="150" cy="100" r="80" fill="green" />
-        <text x="100" y="125" font-size="60" fill="white">SVG</text>
-      </svg>
+      <div id="app"></div>
 
-      <h2>SVG sprite</h2>
-      <!-- <style>
-        .icon {
-          width: 3em;
-          height: 3em;
-        }
-      </style> -->
-      <!-- <svg class="icon"><use href="sprite.svg#icon-1" /></svg> -->
-      <svg><use href="/assets/sprite.svg#icon-1" /></svg>
-      <svg><use href="/assets/sprite.svg#icon-2" /></svg>
-      <svg><use href="/assets/sprite.svg#icon-3" /></svg>
+      <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+      <script
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        crossorigin
+      ></script>
+      <!-- Babel Script -->
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <!-- React Component -->
+      <script src="/assets/react.js" type="text/babel"></script>
 
-      <h2>Import as image SVG</h2>
-      <img src="/assets/simple-svg.svg" alt="sprite svg" />
+      <h2>Next.js</h2>
+
+      <a href="https://nextjs-blog-pink-two-81.vercel.app">Next.js Blog</a>
+      <div class="iframe">
+        <iframe
+          title="Next.js Blog"
+          width="400"
+          height="300"
+          src="https://nextjs-blog-pink-two-81.vercel.app"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <p>
+        <a href="https://github.com/webdev4422/nextjs-blog">GitHub</a>
+        <br />
+        <a href="https://nextjs.org/docs/pages">Pages Router</a>
+      </p>
+
+      <hr class="hr" />
+
+      <a href="https://nextjs-dashboard-eta-sooty.vercel.app">Next.js Dashboard</a>
+      <div class="iframe">
+        <iframe
+          title="Next.js Blog"
+          width="400"
+          height="300"
+          src="https://nextjs-dashboard-eta-sooty.vercel.app"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <p>
+        <a href="https://github.com/webdev4422/nextjs-dashboard">Next.js Dashboard</a>
+        <br />
+        <a href="https://nextjs.org/docs/app">App Router</a>
+      </p>
     </main>
 
     <footer>

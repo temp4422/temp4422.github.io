@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "build": "node index.js",
-    "dev": "browser-sync start --server 'docs/' --files 'docs/' & node watch.js",
+    "start": "serve docs/",
+    "dev": "browser-sync start --server 'docs/nextjs.html' --files 'docs/' & node watch.js",
     "serve": "serve docs/",
     "watch": "node watch.js",
     "brws-sync": "browser-sync start --server 'docs/' --files 'docs/' ",
@@ -19,6 +20,5 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-  }
+  "dependencies": {}
 }

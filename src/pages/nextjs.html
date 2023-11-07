@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test</title>
+    <head-x />
+    <layout-x />
+    <style>
+      .hr {
+        width: 80%;
+        height: 2px;
+        border-radius: 10px;
+        background: black;
+        margin: 3rem 0 6rem 0;
+      }
+      .iframe {
+        background: #303030;
+        border-radius: 5px;
+        filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
+      }
+    </style>
+  </head>
+
+  <body>
+    <gtm_body-x />
+
+    <header>
+      <navmenu-x />
+    </header>
+
+    <main>
+      <h1>React & Next.js</h1>
+
+      <h2>React</h2>
+
+      <div id="app"></div>
+
+      <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+      <script
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        crossorigin
+      ></script>
+      <!-- Babel Script -->
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <!-- React Component -->
+      <script src="/assets/react.js" type="text/babel"></script>
+
+      <h2>Next.js</h2>
+
+      <a href="https://nextjs-blog-pink-two-81.vercel.app">Next.js Blog</a>
+      <div class="iframe">
+        <iframe
+          title="Next.js Blog"
+          width="400"
+          height="300"
+          src="https://nextjs-blog-pink-two-81.vercel.app"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <p>
+        <a href="https://github.com/webdev4422/nextjs-blog">GitHub</a>
+        <br />
+        <a href="https://nextjs.org/docs/pages">Pages Router</a>
+      </p>
+
+      <hr class="hr" />
+
+      <a href="https://nextjs-dashboard-eta-sooty.vercel.app">Next.js Dashboard</a>
+      <div class="iframe">
+        <iframe
+          title="Next.js Blog"
+          width="400"
+          height="300"
+          src="https://nextjs-dashboard-eta-sooty.vercel.app"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <p>
+        <a href="https://github.com/webdev4422/nextjs-dashboard">Next.js Dashboard</a>
+        <br />
+        <a href="https://nextjs.org/docs/app">App Router</a>
+      </p>
+    </main>
+
+    <footer>
+      <footer-x />
+    </footer>
+  </body>
+</html>
