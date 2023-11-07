@@ -4,22 +4,32 @@
   "description": "https://webdev4422.github.io",
   "main": "index.html",
   "scripts": {
-    "build": "node index.js",
-    "start": "serve docs/",
-    "dev": "serve docs/ & node watch.js",
-    "dev2": "browser-sync start --server 'docs/nextjs.html' --files 'docs/' & node watch.js",
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "dev2": "serve docs/ & node watch.js",
+    "build2": "node index.js",
+    "start2": "serve docs/",
+    "dev3": "browser-sync start --server 'docs/nextjs.html' --files 'docs/' & node watch.js",
     "serve": "serve docs/",
     "watch": "node watch.js",
     "brws-sync": "browser-sync start --server 'docs/' --files 'docs/' ",
     "webpack": "webpack --watch & webpack serve --open"
   },
   "devDependencies": {
+    "@types/react": "18.2.36",
     "browser-sync": "^2.29.3",
     "html-minifier": "^4.0.0",
     "sharp": "^0.32.6",
+    "typescript": "5.2.2",
     "uglify-js": "^3.17.4"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "next": "^14.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
