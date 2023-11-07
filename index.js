@@ -299,10 +299,10 @@ function copyAssets() {
 }
 
 kissX()
-// optimizeHTML()
-// convertImages()
-// copyAssets()
-optimizeCSS() // Not finished. Not replacing classes in <script>
+optimizeHTML()
+convertImages()
+copyAssets()
+// optimizeCSS() // Not finished. Not replacing classes in <script>
 // optimizeJS() // Not finished
 
 module.exports = { kissX, optimizeHTML, convertImages, copyAssets, optimizeCSS, optimizeJS }

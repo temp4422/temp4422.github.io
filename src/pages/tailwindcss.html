@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test</title>
+    <head-x />
+    <layout-x />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style></style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+
+  <body>
+    <gtm_body-x />
+
+    <header>
+      <navmenu-x />
+    </header>
+
+    <main>
+      <h1>Tailwind CSS</h1>
+
+      <h2 class="text-3xl font-bold underline text-blue-500">Hello world!</h2>
+    </main>
+
+    <footer>
+      <footer-x />
+    </footer>
+  </body>
+</html>

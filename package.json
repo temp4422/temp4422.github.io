@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node index.js",
     "start": "serve docs/",
-    "dev": "browser-sync start --server 'docs/nextjs.html' --files 'docs/' & node watch.js",
+    "dev": "serve docs/ & node watch.js",
+    "dev2": "browser-sync start --server 'docs/nextjs.html' --files 'docs/' & node watch.js",
     "serve": "serve docs/",
     "watch": "node watch.js",
     "brws-sync": "browser-sync start --server 'docs/' --files 'docs/' ",

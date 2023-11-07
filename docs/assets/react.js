@@ -33,7 +33,7 @@ function Counter() {
 }
 
 function Header() {
-  return <h1>Develop. Preview. Ship. 🚀</h1>
+  return <h2>Develop. Preview. Ship. 🚀</h2>
 }
 
 function App() {
