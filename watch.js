@@ -8,9 +8,9 @@ fs.watch('./src/', { recursive: true }, (event, filename) => {
   console.log(`Detected ${event} in ${filename}`)
 
   kissX()
-  optimizeHTML()
-  convertImages()
-  copyAssets()
+  // optimizeHTML()
+  // convertImages()
+  // copyAssets()
   // optimizeCSS()
   // optimizeJS()
 })

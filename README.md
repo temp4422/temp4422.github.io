@@ -24,9 +24,9 @@ DX is satisfying, because tend to modular approch with simple components, trying
 - DX of modern frameworks like next (at least some), components approach
 - No config delpoyment, just throw `docs` folder to any static server
 
-## Rules:
+## Rules & Constraints:
 
-- TODO
+- Flat components encapsulation: at this moment, you can't include component inside another component,
 
 ### CSS
 
