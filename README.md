@@ -28,11 +28,15 @@ DX is satisfying, because tend to modular approch with simple components, trying
 
 - Flat components encapsulation: at this moment, you can't include component inside another component,
 
+## Next.js
+
+- Use Next.js on custom subdomain `/next`
+
+## TODO
+
+- Use components inside components
+
 ### CSS
 
 - Use css classes selectors to make css modules scope, and css tag selectors for global scope.
 - Use css classes inside `<style></style>` block inside each component, all related css classes will be replaced with `ks-<hash>`.
-
-## Next.js
-
-- Use Next.js on custom subdomain `/next`

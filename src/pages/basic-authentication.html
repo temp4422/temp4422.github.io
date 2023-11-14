@@ -4,15 +4,51 @@
     <title>My Portfolio</title>
     <head-x />
     <layout-x />
+    <gtm_head-x />
   </head>
 
   <body>
+    <gtm_body-x />
+
     <header>
       <navmenu-x />
     </header>
 
     <main>
-      <h1>Basic Authenticaion</h1>
+      <script>
+        const password = prompt('Enter the password:')
+        if (password === '12345') {
+          // Proceed with displaying the content
+          document.body.innerHTML = `
+            <h1>Basic Authenticaion</h1>
+
+            <h2>Basic HTTP Authenticaion</h2>
+            <p>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication">Basic HTTP Authenticaion</a> possible only if you have access to server. So it's not possible on GitHub pages.
+            </p>
+            <p>
+              I.e. If you don't have direct access to server settings, such as when using a hosting service that doesn't allow server configuration changes, implementing basic HTTP authentication directly on the server might not be possible.
+            </p>
+
+            <h3>How Basic HTTP Authenticaion work ?</h3>
+            <p>
+              <a href="https://roadmap.sh/guides/basic-authentication">Basic HTTP Authenticaion with request headers</a>
+            </p>
+
+            <h2>Client side, low security JS solution</h2>
+
+            <p>
+              Implement simple JS script to check for password, very insecure. See source code of this page.
+            </p>
+
+            <p>Secret information - password: 12345</p>
+          `
+        } else {
+          // Redirect or display an error message
+          alert('Authentication failed')
+          window.location.href = '/basic-authentication' // Redirect to home page
+        }
+      </script>
     </main>
 
     <footer>
