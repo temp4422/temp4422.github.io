@@ -328,9 +328,9 @@ function copyAssets() {
 
 optimizeCSS() // run before kiss-x()
 kissX()
-// optimizeHTML()
-// convertImages()
-// copyAssets()
+optimizeHTML()
+convertImages()
+copyAssets()
 // optimizeJS() // Not finished
 
 // fs.rmSync('./dist/', { recursive: true, force: true })
