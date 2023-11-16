@@ -14,10 +14,12 @@ const uglifyjs = require('uglify-js')
 // const srcComponents = './tmp/components/' // TEST optimizeCSS
 
 // To disable optimizeCSS() comment 2 lines below and uncomment next 2 lines.
-const srcPages = './dist/pages/' // for optimizeCSS()
-const srcComponents = './dist/components/' // for optimizeCSS()
-// const srcPages = './src/pages/'
-// const srcComponents = './src/components/'
+// NOT WORK PROPERLY WITHIN <SCRIPT>
+// const srcPages = './dist/pages/' // for optimizeCSS()
+// const srcComponents = './dist/components/' // for optimizeCSS()
+
+const srcPages = './src/pages/'
+const srcComponents = './src/components/'
 const src = './src/'
 const srcAssets = './src/assets/'
 const srcAssetsImg = './src/assets/img/jpg/'
@@ -327,7 +329,7 @@ function copyAssets() {
   console.log(`Finish copying 👍`)
 }
 
-optimizeCSS() // run before kiss-x()
+// optimizeCSS() // run before kiss-x()
 kissX()
 optimizeHTML()
 convertImages()
