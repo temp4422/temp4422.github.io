@@ -1,0 +1,86 @@
+<style>
+  /****************************** NAVMENU ******************************/
+  .nav {
+    overflow-x: hidden;
+    /* Declare variables */
+    --transision-time-in: 0.2s;
+  }
+  .nav__panel {
+    background: rgba(206, 206, 206, 0.507);
+    transition: var(--transision-time-in) ease-out;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    grid-template: 1fr 5rem / 1fr;
+    gap: var(--nav-links-gap);
+  }
+  .show-nav__panel {
+    right: 0;
+    transition: calc(var(--transision-time-out) / 1.5) ease;
+  }
+  .nav__menu:hover {
+    transition: 0.5s ease;
+    filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+  }
+  @media (min-width: 600px) {
+    .nav__panel {
+      width: 25vw;
+      border-radius: 5px 0 0 5px;
+    }
+  }
+  .nav__menu__line:nth-child(1) {
+    transition: var(--transision-time-in);
+    transform: rotate(0) translate(0);
+  }
+  .show-nav__menu .nav__menu__line:nth-child(1) {
+    transition: var(--transision-time-out);
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
+  @keyframes menu-spin {
+    0% {
+      border-radius: 25%;
+    }
+    50% {
+      border-radius: 100%;
+    }
+    100% {
+      border-radius: 100%;
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<nav id="navmenu" class="nav">
+  <div class="nav__panel">
+    <div class="nav__panel__top">
+      <a class="nav__link" href="/" aria-label="Home">
+        <div class="svg nav__svg">
+          <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h48v48H0z" />
+            <path
+              d="M6 26h2v14c0 2.206 1.794 4 4 4h24c2.206 0 4-1.794 4-4V26h2a2 2 0 0 0 1.414-3.414l-18-18a1.998 1.998 0 0 0-2.828 0l-18 18A2 2 0 0 0 6 26Zm14 14V30h8v10h-8Zm4-31.172 12 12V30l.002 10H32V30c0-2.206-1.794-4-4-4h-8c-2.206 0-4 1.794-4 4v10h-4V20.828l12-12Z"
+              fill="#202020"
+            />
+          </svg>
+        </div>
+      </a>
+
+      <a class="nav__link" href="/freecodecamp" aria-label="freecodecamp">
+        <div class="svg nav__svg"></div>
+      </a>
+
+      <!-- Links folder END -->
+    </div>
+  </div>
+</nav>
+<script>
+  /****************************** Navigation menu ******************************/
+  const navmenu = document.querySelector('.nav__menu')
+  const navpanel = document.querySelector('.nav__panel')
+  const navlinks = document.querySelectorAll('.nav__link')
+  const body = document.querySelector('body')
+
+  function showMenu() {
+    navmenu.classList.toggle('show-nav__menu')
+    navpanel.classList.toggle('show-nav__panel')
+  }
+</script>
