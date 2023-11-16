@@ -21,12 +21,13 @@ DX is satisfying, because tend to modular approch with simple components, trying
 ## KISS-X aims:
 
 - Build static website without using any secondary libraries in production only core web technologies.
-- DX of modern frameworks like next (at least some), components approach
-- No config delpoyment, just throw `docs` folder to any static server
+- DX of modern frameworks like next (at least some), components approach.
+- No config delpoyment, just throw `docs` folder to any static server.
 
 ## Rules & Constraints:
 
-- Flat components encapsulation: at this moment, you can't include component inside another component,
+- Flat components encapsulation: at this moment, you can't include component inside another component.
+- At the moment have to use tailwindcss for proper classes, because components with same classnames brake code.
 
 ## Next.js
 
