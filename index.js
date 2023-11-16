@@ -14,10 +14,10 @@ const uglifyjs = require('uglify-js')
 // const srcComponents = './tmp/components/' // TEST optimizeCSS
 
 const src = './src/'
-// const srcPages = './src/pages/'
-// const srcComponents = './src/components/'
-const srcPages = './dist/pages/' // for optimizeCSS()
-const srcComponents = './dist/components/' // for optimizeCSS()
+const srcPages = './src/pages/'
+const srcComponents = './src/components/'
+// const srcPages = './dist/pages/' // for optimizeCSS()
+// const srcComponents = './dist/components/' // for optimizeCSS()
 const srcAssets = './src/assets/'
 const srcAssetsImg = './src/assets/img/jpg/'
 const dist = './docs/'

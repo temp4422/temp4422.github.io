@@ -157,14 +157,14 @@
 
 
     <style>
-      .ks-bed5 {
+      .a {
         display: block;
         padding: 1rem 0;
       }
-      .ks-13a9 {
+      .h2 {
         margin: 4rem 0 0 0;
       }
-      .ks-332f {
+      .link-container {
         margin: 1rem;
         padding: 1rem 6rem;
         border-radius: 10px;
@@ -191,7 +191,7 @@
     <header>
       <style>
   /****************************** NAVMENU ******************************/
-  .ks-d245 {
+  .nav {
     overflow-x: hidden;
     /* Declare variables */
     /* Nav menu animation speed */
@@ -200,7 +200,7 @@
     /* Links */
     --nav-links-gap: 1rem;
   }
-  .ks-024d {
+  .nav__panel {
     position: fixed;
     top: 0;
     right: -100%;
@@ -222,38 +222,38 @@
     right: 0;
     transition: calc(var(--transision-time-out) / 1.5) ease;
   }
-  .ks-3fd4 {
+  .nav__panel__top {
     width: 100%;
     display: grid;
     place-items: center;
     place-content: center;
   }
-  .ks-a996 {
+  .nav__panel__bottom {
     width: 100%;
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
   }
-  .ks-4903 {
+  .nav__link {
     text-decoration: none;
   }
-  .ks-8b9a {
+  .nav__svg {
     margin: 1rem;
     width: 3rem;
     height: 3rem;
   }
-  .ks-0e53 {
+  .language-svg {
     display: none;
   }
-  .ks-6d41 {
+  .sun-svg {
     display: none;
   }
-  .ks-af98 {
+  .moon-svg {
     display: none;
   }
 
   /* Navigation menu button animation */
-  .ks-d996 {
+  .nav__menu {
     position: fixed;
     top: 0;
     right: 0;
@@ -276,46 +276,46 @@
     transition: 0.5s ease; /* box shadow animation on hover*/
     filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
   }
-  .ks-d996:hover {
+  .nav__menu:hover {
     transition: 0.5s ease;
     filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
   }
   @media (min-width: 600px) {
-    .ks-024d {
+    .nav__panel {
       width: 25vw;
       border-radius: 5px 0 0 5px;
     }
   }
-  .ks-244e {
+  .nav__menu__line {
     width: 100%;
     height: 0.3rem;
     /* background: var(--black); */
     background: #000;
     border-radius: 8px;
   }
-  .ks-244e:nth-child(1) {
+  .nav__menu__line:nth-child(1) {
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  .ks-244e:nth-child(2) {
+  .nav__menu__line:nth-child(2) {
     opacity: 1;
     transition: var(--transision-time-in);
     transform: rotate(0);
   }
-  .ks-244e:nth-child(3) {
+  .nav__menu__line:nth-child(3) {
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  .show-nav__menu .ks-244e:nth-child(1) {
+  .show-nav__menu .nav__menu__line:nth-child(1) {
     transition: var(--transision-time-out);
     transform: rotate(45deg) translate(0.5rem, 0.5rem);
   }
-  .show-nav__menu .ks-244e:nth-child(2) {
+  .show-nav__menu .nav__menu__line:nth-child(2) {
     opacity: 0;
     transition: var(--transision-time-out);
     transform: rotate(360deg);
   }
-  .show-nav__menu .ks-244e:nth-child(3) {
+  .show-nav__menu .nav__menu__line:nth-child(3) {
     transition: var(--transision-time-out);
     transform: rotate(-45deg) translate(0.6rem, -0.65rem);
   }
@@ -348,10 +348,10 @@
     }
   }
   /* Links folder */
-  .ks-c2a4 {
+  .show-links-button {
     background: transparent;
   }
-  .ks-cb75 {
+  .links-folder {
     display: none;
     visibility: none;
     flex-wrap: wrap;
@@ -361,16 +361,16 @@
   }
 </style>
 
-<nav id="navmenu" class="ks-d245">
-  <button class="ks-d996" aria-label="Navigation menu">
-    <div class="ks-244e"></div>
-    <div class="ks-244e"></div>
-    <div class="ks-244e"></div>
+<nav id="navmenu" class="nav">
+  <button class="nav__menu" aria-label="Navigation menu">
+    <div class="nav__menu__line"></div>
+    <div class="nav__menu__line"></div>
+    <div class="nav__menu__line"></div>
   </button>
-  <div class="ks-024d">
-    <div class="ks-3fd4">
-      <a class="ks-4903" href="/" aria-label="Home">
-        <div class="ks-ea54 ks-8b9a">
+  <div class="nav__panel">
+    <div class="nav__panel__top">
+      <a class="nav__link" href="/" aria-label="Home">
+        <div class="svg nav__svg">
           <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill="none" d="M0 0h48v48H0z" />
             <path
@@ -381,8 +381,8 @@
         </div>
       </a>
 
-      <a class="ks-4903" href="/freecodecamp" aria-label="freecodecamp">
-        <div class="ks-ea54 ks-8b9a">
+      <a class="nav__link" href="/freecodecamp" aria-label="freecodecamp">
+        <div class="svg nav__svg">
           <svg
             width="48"
             height="48"
@@ -405,8 +405,8 @@
         </div>
       </a>
 
-      <a class="ks-4903" href="/playground" aria-label="Playground">
-        <div class="ks-ea54 ks-8b9a">
+      <a class="nav__link" href="/playground" aria-label="Playground">
+        <div class="svg nav__svg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="48"
@@ -425,8 +425,8 @@
         </div>
       </a>
 
-      <a class="ks-4903" href="/next" aria-label="Nextjs">
-        <div class="ks-ea54 ks-8b9a">
+      <a class="nav__link" href="/next" aria-label="Nextjs">
+        <div class="svg nav__svg">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <g clip-path="url(#a)">
               <path
@@ -442,8 +442,8 @@
       </a>
 
       <!-- Button to open links folder -->
-      <button id="js-show-links-button" class="ks-c2a4">
-        <div class="ks-ea54 ks-8b9a">
+      <button id="js-show-links-button" class="show-links-button">
+        <div class="svg nav__svg">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <path
               stroke="#000"
@@ -457,9 +457,9 @@
       </button>
 
       <!-- Links folder START -->
-      <div id="js-links-folder" class="ks-cb75">
-        <a class="ks-4903" href="/guess-the-number" aria-label="Guess the Number Game">
-          <div class="ks-ea54 ks-8b9a">
+      <div id="js-links-folder" class="links-folder">
+        <a class="nav__link" href="/guess-the-number" aria-label="Guess the Number Game">
+          <div class="svg nav__svg">
             <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M15.9 5.5C15.3 4.5 14.2 4 13 4H7c-1.2 0-2.3.5-2.9 1.5-2.3 3.5-2.8 8.8-1.2 9.9 1.6 1.1 5.2-3.7 7.1-3.7s5.4 4.8 7.1 3.7c1.6-1.1 1.1-6.4-1.2-9.9zM8 9H7v1H6V9H5V8h1V7h1v1h1v1zm5.4.5c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9zm1.9-2c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9z"
@@ -469,8 +469,8 @@
           </div>
         </a>
 
-        <a class="ks-4903" href="/svg-sprites" aria-label="link to page">
-          <div class="ks-ea54 ks-8b9a">
+        <a class="nav__link" href="/svg-sprites" aria-label="link to page">
+          <div class="svg nav__svg">
             <svg
               height="48px"
               width="48px"
@@ -505,8 +505,8 @@
           </div>
         </a>
 
-        <a class="ks-4903" href="/fonts" aria-label="link to page">
-          <div class="ks-ea54 ks-8b9a">
+        <a class="nav__link" href="/fonts" aria-label="link to page">
+          <div class="svg nav__svg">
             <svg
               height="48px"
               width="48px"
@@ -547,8 +547,8 @@
           </div>
         </a>
 
-        <a class="ks-4903" href="/nextjs" aria-label="link to page">
-          <div class="ks-ea54 ks-8b9a">
+        <a class="nav__link" href="/nextjs" aria-label="link to page">
+          <div class="svg nav__svg">
             <svg
               width="48"
               height="48"
@@ -572,8 +572,8 @@
           </div>
         </a>
 
-        <a class="ks-4903" href="/test" aria-label="link to page">
-          <div class="ks-ea54 ks-8b9a">
+        <a class="nav__link" href="/test" aria-label="link to page">
+          <div class="svg nav__svg">
             <svg
               height="48px"
               width="48px"
@@ -608,8 +608,8 @@
       <!-- Links folder END -->
     </div>
 
-    <div class="ks-a996">
-      <div class="ks-ea54 ks-8b9a ks-0e53">
+    <div class="nav__panel__bottom">
+      <div class="svg nav__svg language-svg">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z"
@@ -618,7 +618,7 @@
           />
         </svg>
       </div>
-      <div class="ks-ea54 ks-8b9a ks-6d41">
+      <div class="svg nav__svg sun-svg">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
@@ -626,7 +626,7 @@
           />
         </svg>
       </div>
-      <div class="ks-ea54 ks-8b9a ks-af98">
+      <div class="svg nav__svg moon-svg">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M21 3C13.5 3 4.5 10.5 4.5 22.5s9 21 21 21S45 34.5 45 27C28.5 37.5 10.5 19.5 21 3Z"
@@ -642,9 +642,9 @@
 </nav>
 <script>
   /****************************** Navigation menu ******************************/
-  const navmenu = document.querySelector('.ks-d996')
-  const navpanel = document.querySelector('.ks-024d')
-  const navlinks = document.querySelectorAll('.ks-4903')
+  const navmenu = document.querySelector('.nav__menu')
+  const navpanel = document.querySelector('.nav__panel')
+  const navlinks = document.querySelectorAll('.nav__link')
   const body = document.querySelector('body')
 
   function showMenu() {
@@ -689,145 +689,145 @@
     </header>
 
     <main>
-      <h1 class="ks-4603">freeCodeCamp Projects</h1>
+      <h1 class="h1">freeCodeCamp Projects</h1>
 
-      <h2 class="ks-13a9">Responsive Web Design</h2>
-      <div class="ks-332f">
-        <a class="ks-bed5" target="_blank" href="https://github.com/webdev4422/responsive-web-design"
+      <h2 class="h2">Responsive Web Design</h2>
+      <div class="link-container">
+        <a class="a" target="_blank" href="https://github.com/webdev4422/responsive-web-design"
           >Responsive Web Design</a
         >
-        <a class="ks-bed5" target="_blank" href="https://codepen.io/webdev4422/pen/MWoWwyN"
+        <a class="a" target="_blank" href="https://codepen.io/webdev4422/pen/MWoWwyN"
           >Tribute Page</a
         >
-        <a class="ks-bed5" target="_blank" href="https://codepen.io/webdev4422/pen/OJgJNVv"
+        <a class="a" target="_blank" href="https://codepen.io/webdev4422/pen/OJgJNVv"
           >Survey Form</a
         >
-        <a class="ks-bed5" target="_blank" href="https://codepen.io/webdev4422/pen/gORbLYW"
+        <a class="a" target="_blank" href="https://codepen.io/webdev4422/pen/gORbLYW"
           >Product Landing</a
         >
-        <a class="ks-bed5" target="_blank" href="https://codepen.io/webdev4422/pen/vYZErRZ"
+        <a class="a" target="_blank" href="https://codepen.io/webdev4422/pen/vYZErRZ"
           >Techincal Documentation</a
         >
-        <a class="ks-bed5" target="_blank" href="https://codepen.io/webdev4422/pen/LYLEJGX"
+        <a class="a" target="_blank" href="https://codepen.io/webdev4422/pen/LYLEJGX"
           >Personal Portfolio</a
         >
       </div>
 
-      <h2 class="ks-13a9">JavaScript Algorithms and Data Structures</h2>
-      <div class="ks-332f">
+      <h2 class="h2">JavaScript Algorithms and Data Structures</h2>
+      <div class="link-container">
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/js-algorithms-and-data-structures"
           >Algorithms and Data Structures</a
         >
       </div>
 
-      <h2 class="ks-13a9">Front End Development Libraries</h2>
-      <div class="ks-332f">
+      <h2 class="h2">Front End Development Libraries</h2>
+      <div class="link-container">
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://webdev4422.github.io/fcc-frontend-random-quote-machine"
           >Random Quote Machine</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://webdev4422.github.io/fcc-frontend-markdown-previewer"
           >Markdown Previewer</a
         >
-        <a class="ks-bed5" target="_blank" href="https://webdev4422.github.io/fcc-frontend-drum-machine"
+        <a class="a" target="_blank" href="https://webdev4422.github.io/fcc-frontend-drum-machine"
           >Drum Machine</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://webdev4422.github.io/fcc-frontend-javascript-calculator"
           >JavaScript Calculator</a
         >
-        <a class="ks-bed5" target="_blank" href="https://webdev4422.github.io/fcc-frontend-25-5-clock"
+        <a class="a" target="_blank" href="https://webdev4422.github.io/fcc-frontend-25-5-clock"
           >25 + 5 Clock</a
         >
       </div>
-      <h2 class="ks-13a9">Back End Development and APIs</h2>
-      <div class="ks-332f">
+      <h2 class="h2">Back End Development and APIs</h2>
+      <div class="link-container">
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-timestamp"
           >Timestamp Microservice</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-headerparser"
           >Request Header Parser Microservice</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-urlshortener"
           >URL Shortener Microservice</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-exercisetracker"
           >Exercise Tracker</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-filemetadata"
           >File Metadata Microservice</a
         >
       </div>
 
-      <h2 class="ks-13a9">Quality Assurance</h2>
-      <div class="ks-332f">
+      <h2 class="h2">Quality Assurance</h2>
+      <div class="link-container">
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-metricimpconverter"
           >Metric-Imperial Converter</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-issuetracker"
           >Issue Tracker</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-library"
           >Personal Library</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-sudoku-solver"
           >Sudoku Solver</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-american-british-english-translator"
           >American British Translator</a
         >
       </div>
 
-      <h2 class="ks-13a9">Information Security</h2>
-      <div class="ks-332f">
+      <h2 class="h2">Information Security</h2>
+      <div class="link-container">
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-stockchecker"
           >Stock Price Checker</a
         >
         <a
-          class="ks-bed5"
+          class="a"
           target="_blank"
           href="https://github.com/webdev4422/boilerplate-project-messageboard"
           >Anonymous Message Board</a
@@ -838,24 +838,24 @@
     <footer>
       <style>
   /****************************** FOOTER ******************************/
-  .ks-faa7 {
+  .footer-container {
     display: flex;
     justify-content: center;
     gap: 1rem;
   }
-  .ks-ba8f {
+  .svg-footer {
     margin: 1rem;
   }
-  .ks-6462 {
+  .footer-note {
     padding: 0 1rem;
   }
 </style>
 
 <h2 id="contact">CONTACTS</h2>
 
-<div class="ks-faa7">
+<div class="footer-container">
   <a href="mailto:it.temp4422@gmail.com" aria-label="Gmail">
-    <div class="ks-35d8 ks-ba8f ks-1cae ks-6d2e">
+    <div class="svg svg-footer js-scroll fade-in">
       <svg
         width="48"
         height="48"
@@ -872,7 +872,7 @@
   </a>
 
   <a href="https://github.com/webdev4422" aria-label="GitHub">
-    <div class="ks-35d8 ks-ba8f ks-1cae ks-0f28">
+    <div class="svg svg-footer js-scroll fade-in-delay-2">
       <svg
         width="48"
         height="48"
@@ -891,7 +891,7 @@
   </a>
 
   <a href="https://codepen.io/webdev4422" aria-label="CodePen">
-    <div class="ks-35d8 ks-ba8f ks-1cae ks-f10e">
+    <div class="svg svg-footer js-scroll fade-in-delay-3">
       <svg
         width="48"
         height="48"
@@ -899,25 +899,18 @@
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#a)">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M22.744.38a2.268 2.268 0 0 1 2.512 0L46.984 14.8A2.27 2.27 0 0 1 48 16.692v14.616c0 .76-.38 1.472-1.016 1.894l-21.728 14.42c-.76.504-1.75.504-2.512 0L1.016 33.2A2.272 2.272 0 0 1 0 31.308V16.692c0-.76.38-1.472 1.016-1.894L22.744.38Zm-18.2 20.546v6.116l4.576-3.08-4.576-3.036Zm8.674 5.756L6.36 31.296l15.368 10.2V32.33l-8.508-5.648h-.002Zm13.054 5.648v9.164l15.368-10.2-6.86-4.612-8.508 5.648Zm12.606-8.366 4.58 3.08v-6.12l-4.58 3.04Zm2.742-7.272-6.82 4.526-8.528-5.736V6.506L41.62 16.692ZM21.728 6.506v8.974l-8.526 5.736-6.822-4.524L21.728 6.506ZM24 19.43l-6.7 4.508 6.7 4.446 6.7-4.446L24 19.43Z"
-            fill="#CECECE"
-          />
-        </g>
-        <defs>
-          <clipPath id="a">
-            <path fill="#fff" d="M0 0h48v48H0z" />
-          </clipPath>
-        </defs>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M22.744.38a2.268 2.268 0 0 1 2.512 0L46.984 14.8A2.27 2.27 0 0 1 48 16.692v14.616c0 .76-.38 1.472-1.016 1.894l-21.728 14.42c-.76.504-1.75.504-2.512 0L1.016 33.2A2.272 2.272 0 0 1 0 31.308V16.692c0-.76.38-1.472 1.016-1.894L22.744.38Zm-18.2 20.546v6.116l4.576-3.08-4.576-3.036Zm8.674 5.756L6.36 31.296l15.368 10.2V32.33l-8.508-5.648h-.002Zm13.054 5.648v9.164l15.368-10.2-6.86-4.612-8.508 5.648Zm12.606-8.366 4.58 3.08v-6.12l-4.58 3.04Zm2.742-7.272-6.82 4.526-8.528-5.736V6.506L41.62 16.692ZM21.728 6.506v8.974l-8.526 5.736-6.822-4.524L21.728 6.506ZM24 19.43l-6.7 4.508 6.7 4.446 6.7-4.446L24 19.43Z"
+          fill="#CECECE"
+        />
       </svg>
     </div>
   </a>
 
   <a href="https://www.freecodecamp.org/webdev4422" aria-label="FreeCodeCamp">
-    <div class="ks-35d8 ks-ba8f ks-1cae ks-5a6e">
+    <div class="svg svg-footer js-scroll fade-in-delay-4">
       <svg
         width="48"
         height="48"
@@ -925,24 +918,17 @@
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#a)">
-          <path
-            d="M39.77 7.812c-.255.005-.502.09-.708.24-.16.16-.322.392-.322.626 0 .4.472.948 1.346 1.846 3.644 3.508 5.476 7.806 5.464 12.988-.014 5.734-1.94 10.34-5.688 13.908-.788.706-1.112 1.26-1.114 1.734 0 .232.16.474.32.706.191.186.44.3.706.324.868 0 2.08-1.024 3.666-3.018 3.084-3.78 4.48-7.956 4.558-13.648.072-5.694-1.714-9.554-5.206-13.54-1.26-1.424-2.306-2.164-3.022-2.166Zm-31.538.004c-.716 0-1.764.74-3.02 2.166-3.496 3.986-5.282 7.846-5.21 13.54.08 5.692 1.474 9.866 4.56 13.648 1.582 1.994 2.796 3.02 3.664 3.018.265-.023.514-.138.704-.324.16-.232.32-.474.32-.706 0-.474-.324-1.028-1.112-1.732-3.746-3.57-5.674-8.174-5.688-13.91-.012-5.182 1.82-9.48 5.464-12.988.874-.898 1.348-1.444 1.346-1.846 0-.234-.16-.466-.322-.626a1.242 1.242 0 0 0-.708-.24h.002Zm14.112 1.79s1.31 4.162-5.298 13.454c-6.312 8.866 2.09 14.3 2.864 14.772-.562-.36-4.002-3 .804-10.846.932-1.54 2.152-2.94 3.668-6.082 0 0 1.34 1.892.64 5.996-1.046 6.202 4.542 4.428 4.628 4.514 1.952 2.3-1.616 6.34-1.834 6.466-.216.122 10.192-6.26 2.798-15.87-.506.506-1.164 2.884-2.534 2.532-1.368-.348 4.25-6.988-5.736-14.936ZM19.91 37.832a.846.846 0 0 0 .076.048l-.076-.048Z"
-            fill="#CECECE"
-          />
-        </g>
-        <defs>
-          <clipPath id="a">
-            <path fill="#fff" d="M0 0h48v48H0z" />
-          </clipPath>
-        </defs>
+        <path
+          d="M39.77 7.812c-.255.005-.502.09-.708.24-.16.16-.322.392-.322.626 0 .4.472.948 1.346 1.846 3.644 3.508 5.476 7.806 5.464 12.988-.014 5.734-1.94 10.34-5.688 13.908-.788.706-1.112 1.26-1.114 1.734 0 .232.16.474.32.706.191.186.44.3.706.324.868 0 2.08-1.024 3.666-3.018 3.084-3.78 4.48-7.956 4.558-13.648.072-5.694-1.714-9.554-5.206-13.54-1.26-1.424-2.306-2.164-3.022-2.166Zm-31.538.004c-.716 0-1.764.74-3.02 2.166-3.496 3.986-5.282 7.846-5.21 13.54.08 5.692 1.474 9.866 4.56 13.648 1.582 1.994 2.796 3.02 3.664 3.018.265-.023.514-.138.704-.324.16-.232.32-.474.32-.706 0-.474-.324-1.028-1.112-1.732-3.746-3.57-5.674-8.174-5.688-13.91-.012-5.182 1.82-9.48 5.464-12.988.874-.898 1.348-1.444 1.346-1.846 0-.234-.16-.466-.322-.626a1.242 1.242 0 0 0-.708-.24h.002Zm14.112 1.79s1.31 4.162-5.298 13.454c-6.312 8.866 2.09 14.3 2.864 14.772-.562-.36-4.002-3 .804-10.846.932-1.54 2.152-2.94 3.668-6.082 0 0 1.34 1.892.64 5.996-1.046 6.202 4.542 4.428 4.628 4.514 1.952 2.3-1.616 6.34-1.834 6.466-.216.122 10.192-6.26 2.798-15.87-.506.506-1.164 2.884-2.534 2.532-1.368-.348 4.25-6.988-5.736-14.936ZM19.91 37.832a.846.846 0 0 0 .076.048l-.076-.048Z"
+          fill="#CECECE"
+        />
       </svg>
     </div>
   </a>
 </div>
 
 <div>
-  <p class="ks-6462">
+  <p class="footer-note">
     Built with Core Web Technologies, Google and Sincere Developer's Efforts :)
   </p>
 </div>
