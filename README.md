@@ -27,7 +27,9 @@ DX is satisfying, because tend to modular approch with simple components, trying
 ## Rules & Constraints:
 
 - Flat components encapsulation: at this moment, you can't include component inside another component
-- At the moment have to use tailwindcss for proper classes, because components with same classnames brake code
+- optimzeCSS() function is not 100% working, so be careful when naming classes.
+- Do NOT use same class and id names.
+
 
 ## Next.js
 

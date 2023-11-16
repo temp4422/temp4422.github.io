@@ -165,7 +165,7 @@
     visibility: none;
     flex-wrap: wrap;
   }
-  .show-links-foler {
+  .show-links-folder {
     display: flex;
   }
 </style>
@@ -251,7 +251,7 @@
       </a>
 
       <!-- Button to open links folder -->
-      <button id="show-links-button" class="show-links-button">
+      <button id="js-show-links-button" class="show-links-button">
         <div class="svg nav__svg">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <path
@@ -266,7 +266,7 @@
       </button>
 
       <!-- Links folder START -->
-      <div id="links-folder" class="links-folder">
+      <div id="js-links-folder" class="links-folder">
         <a class="nav__link" href="/guess-the-number" aria-label="Guess the Number Game">
           <div class="svg nav__svg">
             <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -482,14 +482,14 @@
   })
 
   /* Show links in folder START */
-  const linksfolder = document.querySelector('#links-folder')
-  const showLinksButton = document.querySelector('#show-links-button')
+  const linksfolder = document.querySelector('#js-links-folder')
+  const showLinksButton = document.querySelector('#js-show-links-button')
 
   function showLinks(e) {
     // showLinksButton.removeEventListener('click', showMenu) // Remove event click from button NOT WORK
     // e.stopImmediatePropagation() // Disable showMenu, alternative to removeEventListener
     e.stopPropagation() // Disable showMenu, alternative to removeEventListener
-    linksfolder.classList.toggle('show-links-foler')
+    linksfolder.classList.toggle('show-links-folder')
   }
 
   showLinksButton.addEventListener('click', showLinks, false)

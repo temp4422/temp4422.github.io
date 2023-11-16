@@ -14,10 +14,10 @@ const uglifyjs = require('uglify-js')
 // const srcComponents = './tmp/components/' // TEST optimizeCSS
 
 const src = './src/'
-const srcPages = './src/pages/'
-const srcComponents = './src/components/'
-// const srcPages = './dist/pages/' // for optimizeCSS()
-// const srcComponents = './dist/components/' for optimizeCSS()
+// const srcPages = './src/pages/'
+// const srcComponents = './src/components/'
+const srcPages = './dist/pages/' // for optimizeCSS()
+const srcComponents = './dist/components/' // for optimizeCSS()
 const srcAssets = './src/assets/'
 const srcAssetsImg = './src/assets/img/jpg/'
 const dist = './docs/'
@@ -328,12 +328,12 @@ function copyAssets() {
 
 optimizeCSS() // run before kiss-x()
 kissX()
-optimizeHTML()
-convertImages()
-copyAssets()
+// optimizeHTML()
+// convertImages()
+// copyAssets()
 // optimizeJS() // Not finished
 
-fs.rmSync('./dist/', { recursive: true, force: true })
+// fs.rmSync('./dist/', { recursive: true, force: true })
 
 module.exports = { kissX, optimizeHTML, convertImages, copyAssets, optimizeCSS, optimizeJS }
 
