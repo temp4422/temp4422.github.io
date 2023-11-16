@@ -13,9 +13,14 @@ const uglifyjs = require('uglify-js')
 // const srcPages = './tmp/pages/' // TEST optimizeCSS
 // const srcComponents = './tmp/components/' // TEST optimizeCSS
 
-const src = './src/'
+// To disable optimizeCSS() comment 2 lines below and uncomment next 2 lines.
+// NOT WORK PROPERLY WITHIN <SCRIPT>
+// const srcPages = './dist/pages/' // for optimizeCSS()
+// const srcComponents = './dist/components/' // for optimizeCSS()
+
 const srcPages = './src/pages/'
 const srcComponents = './src/components/'
+const src = './src/'
 const srcAssets = './src/assets/'
 const srcAssetsImg = './src/assets/img/jpg/'
 const dist = './docs/'
@@ -107,75 +112,101 @@ function optimizeHTML() {
 //
 /* ************************************************************************************** */
 function optimizeCSS() {
-  const srcDir = './src/components/'
-  const distDir = './dist/components/'
+  const srcDir = './src/'
+  const distDir = './dist/'
 
-  // const srcDir = './src/pages/'
-  // const distDir = './tmp/pages/'
+  console.log(`Start optimizeCSS in ${srcDir} 🔨`)
 
-  // Function to generate random class names
-  function generateRandomClassName() {
-    return 'ks-' + crypto.randomBytes(4).toString('hex')
-  }
-
-  // Function to ensure a directory exists, creating it if needed
-  function ensureDirectoryExists(directory) {
-    if (!fs.existsSync(directory)) {
-      fs.mkdirSync(directory, { recursive: true })
+  function replaceClassesWithRandomNumbers(srcDir, distDir) {
+    // Function to generate a random class name
+    function generateRandomClassName() {
+      return 'ks-' + crypto.randomBytes(2).toString('hex')
     }
-  }
 
-  // Function to process and modify an HTML file
-  function processHTMLFile(file) {
-    const html = fs.readFileSync(file, 'utf8')
-
-    // Replace CSS class names in <style> blocks
-    const modifiedHTML = html.replace(/<style>[\s\S]*?<\/style>/g, (match) => {
-      return match.replace(/\s\.([A-Za-z0-9_-]+)|'\.([A-Za-z0-9_-]+)/g, (classMatch, className) => {
-        return ` .${generateRandomClassName()}`
-      })
-    })
-
-    // Replace CSS class names in HTML attributes
-    const updatedHTML = modifiedHTML.replace(/<[^>]*>/g, (match) => {
-      return match.replace(/class=["']([^"']+)["']/g, (classMatch, classNames) => {
-        const modifiedClassNames = classNames.split(' ').map((className) => {
-          return generateRandomClassName()
-        })
-        return `class="${modifiedClassNames.join(' ')}"`
-      })
-    })
-
-    // Replace class names in JS
-    // TODO
-
-    // Save the modified HTML to the 'dist' directory
-    const relativePath = path.relative(srcDir, file)
-    const distFile = path.join(distDir, relativePath)
-    ensureDirectoryExists(path.dirname(distFile))
-    fs.writeFileSync(distFile, updatedHTML)
-  }
-
-  // Function to process HTML files in a directory
-  function processHTMLFilesInDirectory(directory) {
-    const files = fs.readdirSync(directory)
-    files.forEach((file) => {
-      const filePath = path.join(directory, file)
-      if (fs.statSync(filePath).isDirectory()) {
-        processHTMLFilesInDirectory(filePath) // Recurse into subdirectories
-      } else if (file.endsWith('.html')) {
-        processHTMLFile(filePath)
+    // Function to ensure a directory exists, creating it if needed
+    function ensureDirectoryExists(directory) {
+      if (!fs.existsSync(directory)) {
+        fs.mkdirSync(directory, { recursive: true })
       }
-    })
+    }
+
+    // Function to process and modify an HTML file
+    function processHTMLFile(file) {
+      const html = fs.readFileSync(file, 'utf8')
+
+      let uniqueClassMap = {}
+
+      // Replace class names in HTML attributes
+      const replacedContent = html.replace(
+        /\bclass\s*=\s*["']([^"']*)["']/g,
+        (match, classList) => {
+          const classNames = classList.split(/\s+/)
+          const replacedClassList = classNames.map((className) => {
+            if (!uniqueClassMap[className]) {
+              // Generate a random number for the class if not already generated
+              const randomNumber = generateRandomClassName()
+              uniqueClassMap[className] = randomNumber
+            }
+            return uniqueClassMap[className]
+          })
+
+          return `class="${replacedClassList.join(' ')}"`
+        }
+      )
+
+      // Replace class names in <style></style> blocks
+      const replacedStyleContent = replacedContent.replace(
+        /<style>([\s\S]*?)<\/style>/g,
+        (match, styleBlock) => {
+          const replacedStyleBlock = styleBlock.replace(/\b([A-Za-z0-9_-]+)\b/g, (className) => {
+            return uniqueClassMap[className] || className
+          })
+
+          return `<style>${replacedStyleBlock}</style>`
+        }
+      )
+
+      // Replace class names in <script></script> blocks
+      const replacedScriptContent = replacedStyleContent.replace(
+        /<script>([\s\S]*?)<\/script>/g,
+        (match, scriptBlock) => {
+          const replacedScriptBlock = scriptBlock.replace(/\b([A-Za-z0-9_-]+)\b/g, (className) => {
+            return uniqueClassMap[className] || className
+          })
+
+          return `<script>${replacedScriptBlock}</script>`
+        }
+      )
+
+      // Save the modified HTML to the 'dist' directory
+      const relativePath = path.relative(srcDir, file)
+      const distFile = path.join(distDir, relativePath)
+      ensureDirectoryExists(path.dirname(distFile))
+      fs.writeFileSync(distFile, replacedScriptContent, 'utf-8')
+    }
+
+    // Function to process HTML files in a directory recursively
+    function processHTMLFilesInDirectory(directory) {
+      const files = fs.readdirSync(directory)
+      files.forEach((file) => {
+        const filePath = path.join(directory, file)
+        if (fs.statSync(filePath).isDirectory()) {
+          processHTMLFilesInDirectory(filePath) // Recurse into subdirectories
+        } else if (file.endsWith('.html')) {
+          processHTMLFile(filePath)
+        }
+      })
+    }
+
+    // Create the 'dist' directory if it doesn't exist
+    ensureDirectoryExists(distDir)
+
+    // Start processing HTML files in the 'src' directory
+    processHTMLFilesInDirectory(srcDir)
   }
+  console.log(`CSS optimization completed for all HTML files in the ${distDir} directory. 👍 \n`)
 
-  // Create the 'dist' directory if it doesn't exist
-  ensureDirectoryExists(distDir)
-
-  // Start processing HTML files in the 'src' directory
-  processHTMLFilesInDirectory(srcDir)
-
-  console.log('HTML files processed and saved to the "dist" directory.')
+  replaceClassesWithRandomNumbers(srcDir, distDir)
 }
 
 /* ************************************************************************************** */
@@ -298,12 +329,14 @@ function copyAssets() {
   console.log(`Finish copying 👍`)
 }
 
+// optimizeCSS() // run before kiss-x()
 kissX()
 optimizeHTML()
 convertImages()
 copyAssets()
-// optimizeCSS() // Not finished. Not replacing classes in <script>
 // optimizeJS() // Not finished
+
+// fs.rmSync('./dist/', { recursive: true, force: true })
 
 module.exports = { kissX, optimizeHTML, convertImages, copyAssets, optimizeCSS, optimizeJS }
 
