@@ -7,7 +7,7 @@ const { kissX, optimizeHTML, convertImages, copyAssets, optimizeCSS, optimizeJS 
 fs.watch('./src/', { recursive: true }, (event, filename) => {
   console.log(`Detected ${event} in ${filename}`)
 
-  optimizeCSS() // Run before kissX
+  // optimizeCSS() // Run before kissX
   kissX()
   // optimizeHTML()
   // convertImages()
