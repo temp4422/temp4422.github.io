@@ -1,4 +1,681 @@
-<!DOCTYPE html><html lang="en"><head><title>My Portfolio</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="My portfolio website"><link rel="icon" type="image/x-icon" href="/assets/favicon.ico"><base href="/"><style>@font-face{font-family:'Marck Script';src:url(/assets/MarckScript-Regular.ttf) format('truetype');font-display:swap}:root{--black:#202020;--light-grey:#cecece;--dark-grey:#bababa;--svg-transition:0.5s ease;--svg-transition-hover:0.25s ease;--svg-glow:drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.5));--svg-glow-hover:drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1))}*,::after,::before{box-sizing:border-box;margin:0;border:0;padding:0}body{line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-family:sans-serif}canvas,img,picture,svg,video{display:block;max-width:100%}button,input,select,textarea{font:inherit}h1,h2,h3,h4,h5,h6,p{overflow-wrap:break-word}body{font-family:'Marck Script',cursive;font-size:1.5rem;max-width:768px;margin:0 auto;overflow-x:hidden;background:linear-gradient(to bottom,#202020 66%,#101010);color:var(--light-grey)}main{margin:4rem auto;display:grid;place-items:center}h1,h2,h3{text-align:center;margin:2rem 1rem;padding:2rem 0}p{text-align:center;margin:3rem 1rem}a{text-decoration:none;color:#000;transition:color .3s ease-in-out,box-shadow .3s ease-in-out}a:hover{color:#fff;filter:var(--svg-glow-hover)}svg{cursor:pointer;transition:var(--svg-transition);filter:var(--svg-glow)}svg:hover{transition:var(--svg-transition-hover);filter:var(--svg-glow-hover)}img{width:20rem;height:auto;margin:2rem 1rem;filter:var(--svg-glow);border-radius:1rem}img:hover{transition:var(--svg-transition-hover);filter:var(--svg-glow-hover)}@media (min-width:768px){img{width:25rem}}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#303030}::-webkit-scrollbar-thumb{background:#6d6d6d;border-radius:10px}</style><script>!function(e,t,a,n){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});e=t.getElementsByTagName(a)[0],n=t.createElement(a);n.async=!0,n.src="https://www.googletagmanager.com/gtm.js?id=GTM-PRTMM7JX",e.parentNode.insertBefore(n,e)}(window,document,"script","dataLayer")</script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTMM7JX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header><style>.nav{overflow-x:hidden;--transision-time-out:0.5s;--transision-time-in:0.2s;--nav-links-gap:1rem}.nav__panel{position:fixed;top:0;right:-100%;background:rgba(206,206,206,.507);transition:var(--transision-time-in) ease-out;width:100%;height:100%;padding:8rem 0 0 0;z-index:200;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);display:grid;grid-template:1fr 5rem/1fr;gap:var(--nav-links-gap);place-items:start center;overflow-y:auto}.show-nav__panel{right:0;transition:calc(var(--transision-time-out)/ 1.5) ease}.nav__panel__top{width:100%;display:grid;place-items:center;place-content:center}.nav__panel__bottom{width:100%;display:grid;grid-auto-flow:column;justify-content:space-between}.nav__link{text-decoration:none}.nav__svg{margin:1rem;width:3rem;height:3rem}.language-svg{display:none}.sun-svg{display:none}.moon-svg{display:none}.nav__menu{position:fixed;top:0;right:0;display:grid;align-content:space-evenly;gap:.5rem;width:3rem;height:3rem;background:rgba(186,186,186,.377);margin:1.5rem;padding:.6rem;border-radius:30%;animation:menu-spin-back var(--transision-time-in) ease-in-out;animation-fill-mode:forwards;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border:none;z-index:300;cursor:pointer;transition:.5s ease;filter:drop-shadow(0 0 2rem rgba(255, 255, 255, .5))}.nav__menu:hover{transition:.5s ease;filter:drop-shadow(0 0 .25rem rgba(255, 255, 255, 1))}@media (min-width:600px){.nav__panel{width:25vw;border-radius:5px 0 0 5px}}.nav__menu__line{width:100%;height:.3rem;background:#000;border-radius:8px}.nav__menu__line:nth-child(1){transition:var(--transision-time-in);transform:rotate(0) translate(0)}.nav__menu__line:nth-child(2){opacity:1;transition:var(--transision-time-in);transform:rotate(0)}.nav__menu__line:nth-child(3){transition:var(--transision-time-in);transform:rotate(0) translate(0)}.show-nav__menu .nav__menu__line:nth-child(1){transition:var(--transision-time-out);transform:rotate(45deg) translate(.5rem,.5rem)}.show-nav__menu .nav__menu__line:nth-child(2){opacity:0;transition:var(--transision-time-out);transform:rotate(360deg)}.show-nav__menu .nav__menu__line:nth-child(3){transition:var(--transision-time-out);transform:rotate(-45deg) translate(.6rem,-.65rem)}.show-nav__menu{animation:menu-spin var(--transision-time-out) cubic-bezier(.8,-.07,.05,1.8);animation-fill-mode:forwards}@keyframes menu-spin{0%{border-radius:25%}50%{border-radius:100%}100%{border-radius:100%;transform:rotate(360deg)}}@keyframes menu-spin-back{0%{border-radius:100%}50%{border-radius:50%}100%{border-radius:25%;transform:rotate(-180deg)}}.show-links-button{background:0 0}.links-folder{display:none;visibility:none;flex-wrap:wrap}.show-links-folder{display:flex}</style><nav id="navmenu" class="nav"><button class="nav__menu" aria-label="Navigation menu"><div class="nav__menu__line"></div><div class="nav__menu__line"></div><div class="nav__menu__line"></div></button><div class="nav__panel"><div class="nav__panel__top"><a class="nav__link" href="/" aria-label="Home"><div class="svg nav__svg"><svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h48v48H0z"/><path d="M6 26h2v14c0 2.206 1.794 4 4 4h24c2.206 0 4-1.794 4-4V26h2a2 2 0 0 0 1.414-3.414l-18-18a1.998 1.998 0 0 0-2.828 0l-18 18A2 2 0 0 0 6 26Zm14 14V30h8v10h-8Zm4-31.172 12 12V30l.002 10H32V30c0-2.206-1.794-4-4-4h-8c-2.206 0-4 1.794-4 4v10h-4V20.828l12-12Z" fill="#202020"/></svg></div></a><a class="nav__link" href="/freecodecamp" aria-label="freecodecamp"><div class="svg nav__svg"><svg width="48" height="48" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 84.76" style="enable-background:new 0 0 122.88 84.76" xml:space="preserve"><g><path d="M20.63,84.63c-2.13-0.51-5.22-3.19-8.64-7.5C5.04,68.39,1.27,58.58,0.16,46.36c-0.21-2.35-0.21-8.3,0-10.47 C1.18,25.63,4.77,16.8,11.36,8.34c2.02-2.59,5.36-5.98,6.96-7.06c2.27-1.53,3.69-1.65,5.06-0.44c0.56,0.5,0.69,0.73,0.76,1.36 c0.13,1.2-0.48,2.13-3.33,5.08c-3.98,4.11-5.82,6.41-7.86,9.79c-4.62,7.69-6.6,15.78-6.32,25.84c0.15,5.36,0.72,9.3,1.99,13.69 c1.14,3.95,2.5,7.14,4.55,10.62c2.05,3.49,3.78,5.7,7.23,9.25c3.03,3.12,3.78,4.2,3.78,5.44c0,1.24-0.87,2.35-2.1,2.69 C21.4,84.8,21.35,84.8,20.63,84.63L20.63,84.63L20.63,84.63z M100.57,84.68c-0.64-0.14-1.8-1.38-1.93-2.07 c-0.21-1.12,0.46-2.12,3.57-5.34c1.53-1.58,3.42-3.67,4.19-4.63c5.64-7.04,8.78-14.87,9.62-24.01c0.26-2.82,0.13-10.08-0.23-12.81 c-0.75-5.71-2.14-10.37-4.55-15.28c-2.3-4.7-4.69-8.03-8.71-12.18c-2.7-2.79-3.5-3.8-3.77-4.82c-0.27-0.99-0.07-1.73,0.67-2.57 c1.02-1.16,2.19-1.26,4.01-0.36c2.21,1.1,5.07,3.96,8.39,8.41c6.68,8.94,10.13,18.77,10.96,31.26c0.7,10.61-1.87,21.35-7.25,30.25 c-3.71,6.14-9.38,12.43-12.39,13.77C102.33,84.64,101.2,84.81,100.57,84.68L100.57,84.68L100.57,84.68z M33.85,78.21 c-1.81-0.55-2.85-2.35-2.42-4.17c0.27-1.12,1.4-2.28,2.49-2.55c1.1-0.28,58.23-0.28,59.33,0c1.13,0.29,2.24,1.44,2.49,2.59 c0.32,1.51-0.35,3.05-1.67,3.81l-0.7,0.4l-29.54,0.03C47.59,78.33,34.1,78.28,33.85,78.21L33.85,78.21z M56.35,64.32 c-5.49-2-10.05-5.88-12.39-10.55c-1.3-2.6-2.05-5.74-2.05-8.56c0-3.81,1.49-7.44,6.03-14.69c3.38-5.4,3.96-6.39,4.95-8.46 c1.32-2.76,1.76-4.4,1.79-6.72c0.03-2.21-0.31-3.53-1.32-5.24C52.63,8.88,51,7.05,50.34,6.7c-1.08-0.56-1.3-1.31-0.54-1.82 c1.21-0.79,4.52-0.29,7.56,1.15c3.44,1.63,5.97,3.97,7.62,7.03c1.27,2.36,1.78,4.18,2.65,9.35c0.96,5.74,1.91,7.57,3.82,7.35 c1.02-0.12,1.65-0.5,2.08-1.26c0.68-1.21,0.39-2.87-0.99-5.62c-1.13-2.25-1.06-2.92,0.26-2.57c0.68,0.18,2.91,2,4.44,3.63 c3.85,4.09,5.76,7.8,6.68,12.97c0.48,2.71,0.52,7.2,0.08,9.54c-0.55,2.96-1.67,5.75-3.26,8.14c-1.77,2.66-5.47,6.04-8.17,7.44 c-1.21,0.63-1.64,0.67-2.23,0.2c-0.74-0.58-0.58-0.99,1.05-2.73c2.46-2.61,3.72-4.47,4.45-6.57c1.12-3.25,0.56-7.77-1.32-10.65 c-0.78-1.19-1.92-2.25-2.44-2.25c-0.28,0-0.24,0.37,0.29,2.29c0.18,0.67,0.33,1.49,0.33,1.83c0,1.76-2.48,3.03-4.66,2.39 c-1.78-0.52-2.56-2.13-2.32-4.78c0.07-0.82,0.14-2.31,0.14-3.31c0.01-1.76,0-1.85-0.56-2.96c-1.09-2.15-3.61-4.36-4.96-4.36 c-0.58,0-0.63,0.04-0.63,0.47c0,0.29,0.16,0.62,0.43,0.86c1.4,1.31,1.67,4,0.63,6.37c-0.64,1.47-1.37,2.3-3.85,4.4 c-3.26,2.77-4.31,4.09-4.97,6.23c-0.3,0.99-0.33,1.39-0.25,3.21c0.14,3.05,0.76,5.07,2.21,7.21c1.11,1.64,2.42,2.68,4.19,3.34 c0.85,0.32,0.95,0.4,0.95,0.83c0,0.5-0.38,0.82-0.94,0.81C57.97,64.86,57.17,64.62,56.35,64.32L56.35,64.32L56.35,64.32z"/></g></svg></div></a><a class="nav__link" href="/playground" aria-label="Playground"><div class="svg nav__svg"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M4 7.5L11.6078 3.22062C11.7509 3.14014 11.8224 3.09991 11.8982 3.08414C11.9654 3.07019 12.0346 3.07019 12.1018 3.08414C12.1776 3.09991 12.2491 3.14014 12.3922 3.22062L20 7.5M4 7.5V16.0321C4 16.2025 4 16.2876 4.02499 16.3637C4.04711 16.431 4.08326 16.4928 4.13106 16.545C4.1851 16.6041 4.25933 16.6459 4.40779 16.7294L12 21M4 7.5L12 11.5M12 21L19.5922 16.7294C19.7407 16.6459 19.8149 16.6041 19.8689 16.545C19.9167 16.4928 19.9529 16.431 19.975 16.3637C20 16.2876 20 16.2025 20 16.0321V7.5M12 21V11.5M20 7.5L12 11.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a><a class="nav__link" href="/next" aria-label="Nextjs"><div class="svg nav__svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g clip-path="url(#a)"><path fill="#000" d="M11.214.006c-.052.005-.216.022-.364.033-3.408.308-6.6 2.147-8.624 4.974a11.88 11.88 0 0 0-2.118 5.243c-.096.66-.108.854-.108 1.748s.012 1.089.108 1.748c.652 4.507 3.86 8.293 8.209 9.696.779.251 1.6.422 2.533.526.364.04 1.936.04 2.3 0 1.611-.179 2.977-.578 4.323-1.265.207-.105.247-.134.219-.157a211.64 211.64 0 0 1-1.955-2.62l-1.919-2.593-2.404-3.559a342.499 342.499 0 0 0-2.422-3.556c-.009-.003-.018 1.578-.023 3.51-.007 3.38-.01 3.516-.052 3.596a.426.426 0 0 1-.206.213c-.075.038-.14.045-.495.045H7.81l-.108-.068a.44.44 0 0 1-.157-.172l-.05-.105.005-4.704.007-4.706.073-.092a.644.644 0 0 1 .174-.143c.096-.047.133-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 2 2.895 4.362l4.734 7.172 1.9 2.878.097-.063a12.318 12.318 0 0 0 2.465-2.163 11.947 11.947 0 0 0 2.825-6.135c.096-.66.108-.854.108-1.748s-.012-1.088-.108-1.748C23.24 5.75 20.032 1.963 15.683.56a12.6 12.6 0 0 0-2.498-.523c-.226-.024-1.776-.05-1.97-.03Zm4.913 7.26a.473.473 0 0 1 .237.276c.018.06.023 1.365.018 4.305l-.007 4.218-.743-1.14-.746-1.14v-3.066c0-1.983.009-3.097.023-3.151a.478.478 0 0 1 .232-.296c.097-.05.132-.054.5-.054.347 0 .408.005.486.047Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></svg></div></a><button id="js-show-links-button" class="show-links-button"><div class="svg nav__svg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m0 0-2-2m2 2-2 2m-.937-8.937-.126-.126c-.346-.346-.519-.519-.72-.642a2.001 2.001 0 0 0-.579-.24C10.409 5 10.165 5 9.676 5H6.2c-1.12 0-1.68 0-2.108.218a2 2 0 0 0-.874.874C3 6.52 3 7.08 3 8.2v7.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874C4.52 19 5.08 19 6.2 19h11.6c1.12 0 1.68 0 2.108-.218a2 2 0 0 0 .874-.874C21 17.48 21 16.92 21 15.8v-5.6c0-1.12 0-1.68-.218-2.108a2 2 0 0 0-.874-.874C19.48 7 18.92 7 17.8 7h-3.475c-.489 0-.733 0-.963-.055-.204-.05-.4-.13-.579-.24-.201-.123-.374-.296-.72-.642Z"/></svg></div></button><div id="js-links-folder" class="links-folder"><a class="nav__link" href="/guess-the-number" aria-label="Guess the Number Game"><div class="svg nav__svg"><svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15.9 5.5C15.3 4.5 14.2 4 13 4H7c-1.2 0-2.3.5-2.9 1.5-2.3 3.5-2.8 8.8-1.2 9.9 1.6 1.1 5.2-3.7 7.1-3.7s5.4 4.8 7.1 3.7c1.6-1.1 1.1-6.4-1.2-9.9zM8 9H7v1H6V9H5V8h1V7h1v1h1v1zm5.4.5c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9zm1.9-2c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9z" fill="#202020"/></svg></div></a><a class="nav__link" href="/svg-sprites" aria-label="link to page"><div class="svg nav__svg"><svg height="48px" width="48px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><g><path d="M378.409,0H208.294h-13.176l-9.314,9.315L57.017,138.101l-9.314,9.315v13.176v265.513 c0,47.36,38.528,85.896,85.895,85.896h244.811c47.361,0,85.888-38.535,85.888-85.896V85.896C464.297,38.528,425.77,0,378.409,0z M432.493,426.104c0,29.877-24.214,54.091-54.084,54.091H133.598c-29.877,0-54.091-24.214-54.091-54.091V160.592h83.717 c24.884,0,45.07-20.179,45.07-45.071V31.804h170.114c29.87,0,54.084,24.214,54.084,54.091V426.104z"></path><path d="M180.296,296.668l-4.846-0.67c-10.63-1.487-14.265-4.978-14.265-10.104c0-5.78,4.309-9.817,12.383-9.817 c5.653,0,11.305,1.62,15.745,3.764c1.886,0.942,3.903,1.487,5.789,1.487c4.845,0,8.612-3.63,8.612-8.616 c0-3.226-1.481-5.921-4.71-7.939c-5.384-3.372-15.476-6.06-25.572-6.06c-19.781,0-32.436,11.171-32.436,27.998 c0,16.15,10.232,24.898,28.938,27.454l4.846,0.67c10.903,1.48,14.129,4.846,14.129,10.229c0,6.326-5.247,10.766-14.939,10.766 c-6.727,0-12.111-1.745-19.645-5.921c-1.616-0.942-3.634-1.62-5.788-1.62c-5.115,0-8.885,3.91-8.885,8.756 c0,3.226,1.616,6.326,4.713,8.344c6.054,3.764,15.878,7.8,28.798,7.8c23.823,0,35.934-12.24,35.934-28.795 C209.097,307.84,199.273,299.356,180.296,296.668z"></path><path d="M281.108,259.382c-4.577,0-7.939,2.43-9.556,7.674l-16.69,54.51h-0.402l-17.634-54.51 c-1.745-5.244-4.978-7.674-9.551-7.674c-5.653,0-9.692,4.176-9.692,9.287c0,1.347,0.269,2.834,0.67,4.175l23.286,68.104 c2.96,8.477,6.727,11.57,12.652,11.57c5.785,0,9.555-3.093,12.516-11.57l23.282-68.104c0.406-1.341,0.674-2.828,0.674-4.175 C290.664,263.558,286.76,259.382,281.108,259.382z"></path><path d="M364.556,300.836h-18.841c-5.114,0-8.344,3.1-8.344,7.806c0,4.713,3.23,7.814,8.344,7.814h6.193 c0.538,0,0.803,0.258,0.803,0.803c0,3.505-0.265,6.598-1.075,9.014c-1.882,5.796-7.67,9.426-14.669,9.426 c-7.943,0-12.921-3.903-14.939-10.096c-1.075-3.365-1.48-7.8-1.48-19.648c0-11.842,0.405-16.15,1.48-19.516 c2.018-6.325,6.867-10.228,14.67-10.228c5.924,0,10.362,1.885,13.859,6.724c2.695,3.777,5.387,4.852,8.749,4.852 c4.981,0,9.021-3.638,9.021-8.888c0-2.151-0.674-4.035-1.752-5.921c-4.842-8.204-15.071-14.264-29.877-14.264 c-16.287,0-28.935,7.408-33.644,22.204c-2.022,6.466-2.559,11.576-2.559,25.038c0,13.454,0.538,18.573,2.559,25.031 c4.709,14.802,17.357,22.204,33.644,22.204c16.286,0,28.668-8.204,33.374-22.881c1.617-5.111,2.29-12.645,2.29-20.716v-0.95 C372.362,303.664,369.538,300.836,364.556,300.836z"></path></g></g></svg></div></a><a class="nav__link" href="/fonts" aria-label="link to page"><div class="svg nav__svg"><svg height="48px" width="48px" viewBox="0 0 512 512" id="Layer_1" fill="#000000" stroke="#000000" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><g><g><path d="M215.77,59.535l-47.628-47.628H0v434.605c0,29.546,24.037,53.581,53.581,53.581h404.837 c29.545,0,53.581-24.035,53.581-53.581V59.535H215.77z M476.279,446.512c0,9.849-8.012,17.86-17.86,17.86H53.581 c-9.848,0-17.86-8.011-17.86-17.86V47.628h117.625l47.628,47.628h275.305V446.512z"></path></g></g><g><g><path d="M404.837,244.093v12.23c-12.039-7.728-26.337-12.23-41.674-12.23c-42.676,0-77.395,34.72-77.395,77.395 c0,42.676,34.72,77.395,77.395,77.395c15.337,0,29.635-4.502,41.674-12.231v12.231h35.721V244.093H404.837z M363.163,363.163 c-22.979,0-41.674-18.695-41.674-41.674c0-22.979,18.695-41.674,41.674-41.674s41.674,18.695,41.674,41.674 C404.837,344.468,386.142,363.163,363.163,363.163z"></path></g></g><g><g><path d="M178.326,140.823L63.151,398.884h39.117l34.543-77.395h83.383l34.705,77.395h39.148L178.326,140.823z M152.753,285.767 l25.651-57.474l25.773,57.474H152.753z"></path></g></g></g></svg></div></a><a class="nav__link" href="/nextjs" aria-label="link to page"><div class="svg nav__svg"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><g fill="#000"><path d="M4.85 2.372c-.251.145-.515.544-.546 1.416a.75.75 0 0 1-1.499-.053c.038-1.068.376-2.131 1.295-2.662.922-.532 2.015-.29 2.961.214a.75.75 0 0 1-.706 1.324c-.773-.413-1.253-.384-1.505-.24Zm4.021 1.3a.75.75 0 0 1 1.056.1 16.46 16.46 0 0 1 1.57 2.268c1.04 1.802 1.681 3.648 1.854 5.196.086.773.06 1.509-.12 2.14-.183.635-.537 1.21-1.131 1.553-.719.415-1.55.357-2.309.08-.762-.278-1.547-.803-2.295-1.486a.75.75 0 0 1 1.011-1.108c.66.602 1.279.996 1.797 1.184.522.19.85.145 1.046.031.164-.095.33-.288.438-.667.11-.384.145-.91.072-1.56-.145-1.299-.7-2.947-1.663-4.613a14.994 14.994 0 0 0-1.425-2.06.75.75 0 0 1 .1-1.056Z"/><path d="M14.5 8.206c0-.29-.214-.719-.953-1.18a.75.75 0 0 1 .795-1.273C15.248 6.32 16 7.144 16 8.206c0 1.064-.756 1.89-1.666 2.457a.75.75 0 0 1-.793-1.273c.744-.464.959-.894.959-1.184Zm-3.137 2.832a.75.75 0 0 1-.614.865A16.56 16.56 0 0 1 8 12.127c-2.08 0-4-.367-5.427-.992-.713-.311-1.336-.702-1.792-1.174C.32 9.486 0 8.891 0 8.206c0-.83.466-1.52 1.085-2.04.622-.521 1.47-.938 2.435-1.244a.75.75 0 0 1 .454 1.43c-.85.27-1.502.609-1.924.964-.426.356-.55.663-.55.89 0 .19.085.43.359.713.278.287.716.58 1.315.842 1.197.524 2.902.866 4.826.866.885 0 1.727-.072 2.498-.203a.75.75 0 0 1 .865.614Z"/><path d="M4.872 13.63c.25.145.729.174 1.499-.235a.75.75 0 1 1 .704 1.325c-.944.501-2.034.74-2.953.21-.922-.533-1.26-1.6-1.295-2.672a.75.75 0 0 1 1.499-.05c.03.875.294 1.277.546 1.422Zm-.884-4.133a.75.75 0 0 1-.442-.964c.302-.815.697-1.657 1.18-2.493 1.04-1.802 2.318-3.28 3.572-4.204.626-.461 1.276-.806 1.913-.965.641-.16 1.317-.141 1.91.202.72.415 1.084 1.163 1.224 1.96.141.799.078 1.741-.14 2.73a.75.75 0 1 1-1.464-.321c.191-.872.223-1.606.127-2.15-.096-.546-.3-.807-.496-.92-.164-.095-.415-.142-.797-.046-.388.097-.86.33-1.387.718-1.052.774-2.202 2.08-3.163 3.746a14.925 14.925 0 0 0-1.073 2.265.75.75 0 0 1-.964.442Z"/><path d="M9.46 8.066a1.36 1.36 0 1 1-2.72 0 1.36 1.36 0 0 1 2.72 0Z"/></g></svg></div></a><a class="nav__link" href="/test" aria-label="link to page"><div class="svg nav__svg"><svg height="48px" width="48px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11 16C11 16.5523 10.5523 17 10 17C9.44772 17 9 16.5523 9 16C9 15.4477 9.44772 15 10 15C10.5523 15 11 15.4477 11 16Z" fill="#0F0F0F"></path><path d="M14 19C14.5523 19 15 18.5523 15 18C15 17.4477 14.5523 17 14 17C13.4477 17 13 17.4477 13 18C13 18.5523 13.4477 19 14 19Z" fill="#0F0F0F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 2C7 1.44772 7.44772 1 8 1H16C16.5523 1 17 1.44772 17 2C17 2.55228 16.5523 3 16 3H15V8.74788L20.6899 19.3148C21.5867 20.9803 20.3804 23 18.4887 23H5.51133C3.61964 23 2.4133 20.9803 3.31015 19.3148L9 8.74788V3H8C7.44772 3 7 2.55228 7 2ZM11 3H13V9.25212L13.9412 11H10.0588L11 9.25212V3ZM8.98191 13L5.07109 20.263C4.89172 20.5961 5.13299 21 5.51133 21H18.4887C18.867 21 19.1083 20.5961 18.9289 20.263L15.0181 13H8.98191Z" fill="#0F0F0F"></path></g></svg></div></a></div></div><div class="nav__panel__bottom"><div class="svg nav__svg language-svg"><svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z" stroke="#202020" stroke-width="4"/></svg></div><div class="svg nav__svg sun-svg"><svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z" fill="#202020"/></svg></div><div class="svg nav__svg moon-svg"><svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 3C13.5 3 4.5 10.5 4.5 22.5s9 21 21 21S45 34.5 45 27C28.5 37.5 10.5 19.5 21 3Z" stroke="#202020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div></nav><script>const navmenu=document.querySelector(".nav__menu"),navpanel=document.querySelector(".nav__panel"),navlinks=document.querySelectorAll(".nav__link"),body=document.querySelector("body");function showMenu(){navmenu.classList.toggle("show-nav__menu"),navpanel.classList.toggle("show-nav__panel"),document.body.clientWidth<600&&(""===body.style.overflow?body.style.overflow="hidden":body.style.overflow="")}navmenu.addEventListener("click",showMenu,!1),navpanel.addEventListener("click",showMenu),navlinks.forEach(e=>{e.addEventListener("click",showMenu,!1)});const linksfolder=document.querySelector("#js-links-folder"),showLinksButton=document.querySelector("#js-show-links-button");function showLinks(e){e.stopPropagation(),linksfolder.classList.toggle("show-links-folder")}showLinksButton.addEventListener("click",showLinks,!1)</script></header><main><script>const password=prompt("Enter the password:");"12345"===password?document.body.innerHTML=`
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Portfolio</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="My portfolio website" />
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+<!-- Set root folder to use in navmenu component for easier links -->
+<base href="/" />
+
+    <style>
+  /****************************** LAYOUT STYLES ******************************/
+  /*
+        // COLORS
+        Main color - Mine Shaft (approx.) #202020
+
+        // FONTS
+        Marck Script
+
+        // SVG
+        https://www.svgrepo.com
+
+
+      */
+
+  /****************************** GENERAL ******************************/
+  /* @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap'); */
+  @font-face {
+    font-family: 'Marck Script';
+    src: url('/assets/MarckScript-Regular.ttf') format('truetype');
+    font-display: swap; /*avoid showing invisible text*/
+    /* https://developer.chrome.com/docs/lighthouse/performance/font-display/?utm_source=lighthouse&utm_medium=devtools */
+  }
+
+  :root {
+    --black: #202020;
+    --light-grey: #cecece;
+    --dark-grey: #bababa;
+
+    /* SVG filter glow and transition */
+    --svg-transition: 0.5s ease;
+    --svg-transition-hover: 0.25s ease;
+    --svg-glow: drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.5));
+    --svg-glow-hover: drop-shadow(0 0 0.2rem rgba(255, 255, 255, 1));
+  }
+
+  /****************************** CSS RESET START ******************************/
+  /* prettier-ignore */
+  *, *::before, *::after {box-sizing: border-box; margin: 0; border: 0; padding: 0;}
+  /* prettier-ignore */
+  body {line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; font-family: sans-serif;}
+  /* prettier-ignore */
+  img, picture, video, canvas, svg {display: block; max-width: 100%;}
+  /* prettier-ignore */
+  input, button, textarea, select {font: inherit;}
+  /* prettier-ignore */
+  p, h1, h2, h3, h4, h5, h6 {overflow-wrap: break-word;}
+  /****************************** CSS RESET END ******************************/
+
+  body {
+    font-family: 'Marck Script', cursive;
+    font-size: 1.5rem;
+    max-width: 768px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, #202020 66%, #101010);
+    color: var(--light-grey);
+  }
+  main {
+    margin: 4rem auto;
+    display: grid;
+    place-items: center;
+  }
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+    margin: 2rem 1rem;
+    padding: 2rem 0;
+  }
+
+  p {
+    text-align: center;
+    margin: 3rem 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #4682b4;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  a:hover {
+    color: white;
+    filter: var(--svg-glow-hover);
+  }
+  svg {
+    cursor: pointer;
+    transition: var(--svg-transition);
+    filter: var(--svg-glow);
+  }
+  svg:hover {
+    transition: var(--svg-transition-hover);
+    filter: var(--svg-glow-hover);
+  }
+  img {
+    width: 20rem;
+    height: auto;
+    margin: 2rem 1rem;
+    /* object-fit: contain; */
+    /* filter: grayscale(1); */
+    filter: var(--svg-glow);
+    border-radius: 1rem;
+  }
+  img:hover {
+    transition: var(--svg-transition-hover);
+    filter: var(--svg-glow-hover);
+  }
+  @media (min-width: 768px) {
+    img {
+      width: 25rem;
+    }
+  }
+
+  /* Scrollbar Styling */
+  /* @media (min-width: 768px) { */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #303030;
+    /* border-radius: 10px; */
+    /* -webkit-border-radius: 10px; */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #6d6d6d;
+    border-radius: 10px;
+    /* -webkit-border-radius: 10px; */
+  }
+  /* } */
+</style>
+
+    <!-- Google Tag Manager -->
+<script>
+  ;(function (w, d, s, l, i) {
+    w[l] = w[l] || []
+    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : ''
+    j.async = true
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+    f.parentNode.insertBefore(j, f)
+  })(window, document, 'script', 'dataLayer', 'GTM-PRTMM7JX')
+</script>
+<!-- End Google Tag Manager -->
+
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PRTMM7JX"
+    height="0"
+    width="0"
+    style="display: none; visibility: hidden"
+  ></iframe
+></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+    <header>
+      <style>
+  /****************************** NAVMENU ******************************/
+  .nav {
+    overflow-x: hidden;
+    /* Declare variables */
+    /* Nav menu animation speed */
+    --transision-time-out: 0.5s;
+    --transision-time-in: 0.2s;
+    /* Links */
+    --nav-links-gap: 1rem;
+  }
+  .nav__panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background: rgba(206, 206, 206, 0.507);
+    transition: var(--transision-time-in) ease-out;
+    width: 100%;
+    height: 100%;
+    padding: 8rem 0 0 0;
+    z-index: 200;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: grid;
+    grid-template: 1fr 5rem / 1fr;
+    gap: var(--nav-links-gap);
+    place-items: start center;
+    overflow-y: auto;
+  }
+  .show-nav__panel {
+    right: 0;
+    transition: calc(var(--transision-time-out) / 1.5) ease;
+  }
+  .nav__panel__top {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    place-content: center;
+  }
+  .nav__panel__bottom {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+  .nav__link {
+    text-decoration: none;
+  }
+  .nav__svg {
+    margin: 1rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  .language-svg {
+    display: none;
+  }
+  .sun-svg {
+    display: none;
+  }
+  .moon-svg {
+    display: none;
+  }
+
+  /* Navigation menu button animation */
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: grid;
+    align-content: space-evenly;
+    gap: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(186, 186, 186, 0.377);
+    margin: 1.5rem;
+    padding: 0.6rem;
+    border-radius: 30%;
+    animation: menu-spin-back var(--transision-time-in) ease-in-out;
+    animation-fill-mode: forwards;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: none;
+    z-index: 300;
+    cursor: pointer;
+    transition: 0.5s ease; /* box shadow animation on hover*/
+    filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
+  }
+  .nav__menu:hover {
+    transition: 0.5s ease;
+    filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+  }
+  @media (min-width: 600px) {
+    .nav__panel {
+      width: 25vw;
+      border-radius: 5px 0 0 5px;
+    }
+  }
+  .nav__menu__line {
+    width: 100%;
+    height: 0.3rem;
+    /* background: var(--black); */
+    background: #000;
+    border-radius: 8px;
+  }
+  .nav__menu__line:nth-child(1) {
+    transition: var(--transision-time-in);
+    transform: rotate(0) translate(0);
+  }
+  .nav__menu__line:nth-child(2) {
+    opacity: 1;
+    transition: var(--transision-time-in);
+    transform: rotate(0);
+  }
+  .nav__menu__line:nth-child(3) {
+    transition: var(--transision-time-in);
+    transform: rotate(0) translate(0);
+  }
+  .show-nav__menu .nav__menu__line:nth-child(1) {
+    transition: var(--transision-time-out);
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
+  .show-nav__menu .nav__menu__line:nth-child(2) {
+    opacity: 0;
+    transition: var(--transision-time-out);
+    transform: rotate(360deg);
+  }
+  .show-nav__menu .nav__menu__line:nth-child(3) {
+    transition: var(--transision-time-out);
+    transform: rotate(-45deg) translate(0.6rem, -0.65rem);
+  }
+  .show-nav__menu {
+    animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
+    animation-fill-mode: forwards;
+  }
+  @keyframes menu-spin {
+    0% {
+      border-radius: 25%;
+    }
+    50% {
+      border-radius: 100%;
+    }
+    100% {
+      border-radius: 100%;
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes menu-spin-back {
+    0% {
+      border-radius: 100%;
+    }
+    50% {
+      border-radius: 50%;
+    }
+    100% {
+      border-radius: 25%;
+      transform: rotate(-180deg);
+    }
+  }
+  /* Links folder */
+  .show-links-button {
+    background: transparent;
+  }
+  .links-folder {
+    display: none;
+    visibility: none;
+    flex-wrap: wrap;
+  }
+  .show-links-folder {
+    display: flex;
+  }
+</style>
+
+<nav id="navmenu" class="nav">
+  <button class="nav__menu" aria-label="Navigation menu">
+    <div class="nav__menu__line"></div>
+    <div class="nav__menu__line"></div>
+    <div class="nav__menu__line"></div>
+  </button>
+  <div class="nav__panel">
+    <div class="nav__panel__top">
+      <a class="nav__link" href="/" aria-label="Home">
+        <div class="svg nav__svg">
+          <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h48v48H0z" />
+            <path
+              d="M6 26h2v14c0 2.206 1.794 4 4 4h24c2.206 0 4-1.794 4-4V26h2a2 2 0 0 0 1.414-3.414l-18-18a1.998 1.998 0 0 0-2.828 0l-18 18A2 2 0 0 0 6 26Zm14 14V30h8v10h-8Zm4-31.172 12 12V30l.002 10H32V30c0-2.206-1.794-4-4-4h-8c-2.206 0-4 1.794-4 4v10h-4V20.828l12-12Z"
+              fill="#202020"
+            />
+          </svg>
+        </div>
+      </a>
+
+      <a class="nav__link" href="/freecodecamp" aria-label="freecodecamp">
+        <div class="svg nav__svg">
+          <svg
+            width="48"
+            height="48"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 122.88 84.76"
+            style="enable-background: new 0 0 122.88 84.76"
+            xml:space="preserve"
+          >
+            <g>
+              <path
+                d="M20.63,84.63c-2.13-0.51-5.22-3.19-8.64-7.5C5.04,68.39,1.27,58.58,0.16,46.36c-0.21-2.35-0.21-8.3,0-10.47 C1.18,25.63,4.77,16.8,11.36,8.34c2.02-2.59,5.36-5.98,6.96-7.06c2.27-1.53,3.69-1.65,5.06-0.44c0.56,0.5,0.69,0.73,0.76,1.36 c0.13,1.2-0.48,2.13-3.33,5.08c-3.98,4.11-5.82,6.41-7.86,9.79c-4.62,7.69-6.6,15.78-6.32,25.84c0.15,5.36,0.72,9.3,1.99,13.69 c1.14,3.95,2.5,7.14,4.55,10.62c2.05,3.49,3.78,5.7,7.23,9.25c3.03,3.12,3.78,4.2,3.78,5.44c0,1.24-0.87,2.35-2.1,2.69 C21.4,84.8,21.35,84.8,20.63,84.63L20.63,84.63L20.63,84.63z M100.57,84.68c-0.64-0.14-1.8-1.38-1.93-2.07 c-0.21-1.12,0.46-2.12,3.57-5.34c1.53-1.58,3.42-3.67,4.19-4.63c5.64-7.04,8.78-14.87,9.62-24.01c0.26-2.82,0.13-10.08-0.23-12.81 c-0.75-5.71-2.14-10.37-4.55-15.28c-2.3-4.7-4.69-8.03-8.71-12.18c-2.7-2.79-3.5-3.8-3.77-4.82c-0.27-0.99-0.07-1.73,0.67-2.57 c1.02-1.16,2.19-1.26,4.01-0.36c2.21,1.1,5.07,3.96,8.39,8.41c6.68,8.94,10.13,18.77,10.96,31.26c0.7,10.61-1.87,21.35-7.25,30.25 c-3.71,6.14-9.38,12.43-12.39,13.77C102.33,84.64,101.2,84.81,100.57,84.68L100.57,84.68L100.57,84.68z M33.85,78.21 c-1.81-0.55-2.85-2.35-2.42-4.17c0.27-1.12,1.4-2.28,2.49-2.55c1.1-0.28,58.23-0.28,59.33,0c1.13,0.29,2.24,1.44,2.49,2.59 c0.32,1.51-0.35,3.05-1.67,3.81l-0.7,0.4l-29.54,0.03C47.59,78.33,34.1,78.28,33.85,78.21L33.85,78.21z M56.35,64.32 c-5.49-2-10.05-5.88-12.39-10.55c-1.3-2.6-2.05-5.74-2.05-8.56c0-3.81,1.49-7.44,6.03-14.69c3.38-5.4,3.96-6.39,4.95-8.46 c1.32-2.76,1.76-4.4,1.79-6.72c0.03-2.21-0.31-3.53-1.32-5.24C52.63,8.88,51,7.05,50.34,6.7c-1.08-0.56-1.3-1.31-0.54-1.82 c1.21-0.79,4.52-0.29,7.56,1.15c3.44,1.63,5.97,3.97,7.62,7.03c1.27,2.36,1.78,4.18,2.65,9.35c0.96,5.74,1.91,7.57,3.82,7.35 c1.02-0.12,1.65-0.5,2.08-1.26c0.68-1.21,0.39-2.87-0.99-5.62c-1.13-2.25-1.06-2.92,0.26-2.57c0.68,0.18,2.91,2,4.44,3.63 c3.85,4.09,5.76,7.8,6.68,12.97c0.48,2.71,0.52,7.2,0.08,9.54c-0.55,2.96-1.67,5.75-3.26,8.14c-1.77,2.66-5.47,6.04-8.17,7.44 c-1.21,0.63-1.64,0.67-2.23,0.2c-0.74-0.58-0.58-0.99,1.05-2.73c2.46-2.61,3.72-4.47,4.45-6.57c1.12-3.25,0.56-7.77-1.32-10.65 c-0.78-1.19-1.92-2.25-2.44-2.25c-0.28,0-0.24,0.37,0.29,2.29c0.18,0.67,0.33,1.49,0.33,1.83c0,1.76-2.48,3.03-4.66,2.39 c-1.78-0.52-2.56-2.13-2.32-4.78c0.07-0.82,0.14-2.31,0.14-3.31c0.01-1.76,0-1.85-0.56-2.96c-1.09-2.15-3.61-4.36-4.96-4.36 c-0.58,0-0.63,0.04-0.63,0.47c0,0.29,0.16,0.62,0.43,0.86c1.4,1.31,1.67,4,0.63,6.37c-0.64,1.47-1.37,2.3-3.85,4.4 c-3.26,2.77-4.31,4.09-4.97,6.23c-0.3,0.99-0.33,1.39-0.25,3.21c0.14,3.05,0.76,5.07,2.21,7.21c1.11,1.64,2.42,2.68,4.19,3.34 c0.85,0.32,0.95,0.4,0.95,0.83c0,0.5-0.38,0.82-0.94,0.81C57.97,64.86,57.17,64.62,56.35,64.32L56.35,64.32L56.35,64.32z"
+              />
+            </g>
+          </svg>
+        </div>
+      </a>
+
+      <a class="nav__link" href="/playground" aria-label="Playground">
+        <div class="svg nav__svg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M4 7.5L11.6078 3.22062C11.7509 3.14014 11.8224 3.09991 11.8982 3.08414C11.9654 3.07019 12.0346 3.07019 12.1018 3.08414C12.1776 3.09991 12.2491 3.14014 12.3922 3.22062L20 7.5M4 7.5V16.0321C4 16.2025 4 16.2876 4.02499 16.3637C4.04711 16.431 4.08326 16.4928 4.13106 16.545C4.1851 16.6041 4.25933 16.6459 4.40779 16.7294L12 21M4 7.5L12 11.5M12 21L19.5922 16.7294C19.7407 16.6459 19.8149 16.6041 19.8689 16.545C19.9167 16.4928 19.9529 16.431 19.975 16.3637C20 16.2876 20 16.2025 20 16.0321V7.5M12 21V11.5M20 7.5L12 11.5"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </a>
+
+      <a class="nav__link" href="/next" aria-label="Nextjs">
+        <div class="svg nav__svg">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <g clip-path="url(#a)">
+              <path
+                fill="#000"
+                d="M11.214.006c-.052.005-.216.022-.364.033-3.408.308-6.6 2.147-8.624 4.974a11.88 11.88 0 0 0-2.118 5.243c-.096.66-.108.854-.108 1.748s.012 1.089.108 1.748c.652 4.507 3.86 8.293 8.209 9.696.779.251 1.6.422 2.533.526.364.04 1.936.04 2.3 0 1.611-.179 2.977-.578 4.323-1.265.207-.105.247-.134.219-.157a211.64 211.64 0 0 1-1.955-2.62l-1.919-2.593-2.404-3.559a342.499 342.499 0 0 0-2.422-3.556c-.009-.003-.018 1.578-.023 3.51-.007 3.38-.01 3.516-.052 3.596a.426.426 0 0 1-.206.213c-.075.038-.14.045-.495.045H7.81l-.108-.068a.44.44 0 0 1-.157-.172l-.05-.105.005-4.704.007-4.706.073-.092a.644.644 0 0 1 .174-.143c.096-.047.133-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 2 2.895 4.362l4.734 7.172 1.9 2.878.097-.063a12.318 12.318 0 0 0 2.465-2.163 11.947 11.947 0 0 0 2.825-6.135c.096-.66.108-.854.108-1.748s-.012-1.088-.108-1.748C23.24 5.75 20.032 1.963 15.683.56a12.6 12.6 0 0 0-2.498-.523c-.226-.024-1.776-.05-1.97-.03Zm4.913 7.26a.473.473 0 0 1 .237.276c.018.06.023 1.365.018 4.305l-.007 4.218-.743-1.14-.746-1.14v-3.066c0-1.983.009-3.097.023-3.151a.478.478 0 0 1 .232-.296c.097-.05.132-.054.5-.054.347 0 .408.005.486.047Z"
+              />
+            </g>
+            <defs>
+              <clipPath id="a"><path fill="#fff" d="M0 0h24v24H0z" /></clipPath>
+            </defs>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Button to open links folder -->
+      <button id="js-show-links-button" class="show-links-button">
+        <div class="svg nav__svg">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path
+              stroke="#000"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 13h6m0 0-2-2m2 2-2 2m-.937-8.937-.126-.126c-.346-.346-.519-.519-.72-.642a2.001 2.001 0 0 0-.579-.24C10.409 5 10.165 5 9.676 5H6.2c-1.12 0-1.68 0-2.108.218a2 2 0 0 0-.874.874C3 6.52 3 7.08 3 8.2v7.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874C4.52 19 5.08 19 6.2 19h11.6c1.12 0 1.68 0 2.108-.218a2 2 0 0 0 .874-.874C21 17.48 21 16.92 21 15.8v-5.6c0-1.12 0-1.68-.218-2.108a2 2 0 0 0-.874-.874C19.48 7 18.92 7 17.8 7h-3.475c-.489 0-.733 0-.963-.055-.204-.05-.4-.13-.579-.24-.201-.123-.374-.296-.72-.642Z"
+            />
+          </svg>
+        </div>
+      </button>
+
+      <!-- Links folder START -->
+      <div id="js-links-folder" class="links-folder">
+        <a class="nav__link" href="/guess-the-number" aria-label="Guess the Number Game">
+          <div class="svg nav__svg">
+            <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M15.9 5.5C15.3 4.5 14.2 4 13 4H7c-1.2 0-2.3.5-2.9 1.5-2.3 3.5-2.8 8.8-1.2 9.9 1.6 1.1 5.2-3.7 7.1-3.7s5.4 4.8 7.1 3.7c1.6-1.1 1.1-6.4-1.2-9.9zM8 9H7v1H6V9H5V8h1V7h1v1h1v1zm5.4.5c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9zm1.9-2c0 .5-.4.9-.9.9s-.9-.4-.9-.9.4-.9.9-.9.9.4.9.9z"
+                fill="#202020"
+              />
+            </svg>
+          </div>
+        </a>
+
+        <a class="nav__link" href="/svg-sprites" aria-label="link to page">
+          <div class="svg nav__svg">
+            <svg
+              height="48px"
+              width="48px"
+              version="1.1"
+              id="_x32_"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+              fill="#000000"
+              stroke="#000000"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <path
+                    d="M378.409,0H208.294h-13.176l-9.314,9.315L57.017,138.101l-9.314,9.315v13.176v265.513 c0,47.36,38.528,85.896,85.895,85.896h244.811c47.361,0,85.888-38.535,85.888-85.896V85.896C464.297,38.528,425.77,0,378.409,0z M432.493,426.104c0,29.877-24.214,54.091-54.084,54.091H133.598c-29.877,0-54.091-24.214-54.091-54.091V160.592h83.717 c24.884,0,45.07-20.179,45.07-45.071V31.804h170.114c29.87,0,54.084,24.214,54.084,54.091V426.104z"
+                  ></path>
+                  <path
+                    d="M180.296,296.668l-4.846-0.67c-10.63-1.487-14.265-4.978-14.265-10.104c0-5.78,4.309-9.817,12.383-9.817 c5.653,0,11.305,1.62,15.745,3.764c1.886,0.942,3.903,1.487,5.789,1.487c4.845,0,8.612-3.63,8.612-8.616 c0-3.226-1.481-5.921-4.71-7.939c-5.384-3.372-15.476-6.06-25.572-6.06c-19.781,0-32.436,11.171-32.436,27.998 c0,16.15,10.232,24.898,28.938,27.454l4.846,0.67c10.903,1.48,14.129,4.846,14.129,10.229c0,6.326-5.247,10.766-14.939,10.766 c-6.727,0-12.111-1.745-19.645-5.921c-1.616-0.942-3.634-1.62-5.788-1.62c-5.115,0-8.885,3.91-8.885,8.756 c0,3.226,1.616,6.326,4.713,8.344c6.054,3.764,15.878,7.8,28.798,7.8c23.823,0,35.934-12.24,35.934-28.795 C209.097,307.84,199.273,299.356,180.296,296.668z"
+                  ></path>
+                  <path
+                    d="M281.108,259.382c-4.577,0-7.939,2.43-9.556,7.674l-16.69,54.51h-0.402l-17.634-54.51 c-1.745-5.244-4.978-7.674-9.551-7.674c-5.653,0-9.692,4.176-9.692,9.287c0,1.347,0.269,2.834,0.67,4.175l23.286,68.104 c2.96,8.477,6.727,11.57,12.652,11.57c5.785,0,9.555-3.093,12.516-11.57l23.282-68.104c0.406-1.341,0.674-2.828,0.674-4.175 C290.664,263.558,286.76,259.382,281.108,259.382z"
+                  ></path>
+                  <path
+                    d="M364.556,300.836h-18.841c-5.114,0-8.344,3.1-8.344,7.806c0,4.713,3.23,7.814,8.344,7.814h6.193 c0.538,0,0.803,0.258,0.803,0.803c0,3.505-0.265,6.598-1.075,9.014c-1.882,5.796-7.67,9.426-14.669,9.426 c-7.943,0-12.921-3.903-14.939-10.096c-1.075-3.365-1.48-7.8-1.48-19.648c0-11.842,0.405-16.15,1.48-19.516 c2.018-6.325,6.867-10.228,14.67-10.228c5.924,0,10.362,1.885,13.859,6.724c2.695,3.777,5.387,4.852,8.749,4.852 c4.981,0,9.021-3.638,9.021-8.888c0-2.151-0.674-4.035-1.752-5.921c-4.842-8.204-15.071-14.264-29.877-14.264 c-16.287,0-28.935,7.408-33.644,22.204c-2.022,6.466-2.559,11.576-2.559,25.038c0,13.454,0.538,18.573,2.559,25.031 c4.709,14.802,17.357,22.204,33.644,22.204c16.286,0,28.668-8.204,33.374-22.881c1.617-5.111,2.29-12.645,2.29-20.716v-0.95 C372.362,303.664,369.538,300.836,364.556,300.836z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </a>
+
+        <a class="nav__link" href="/fonts" aria-label="link to page">
+          <div class="svg nav__svg">
+            <svg
+              height="48px"
+              width="48px"
+              viewBox="0 0 512 512"
+              id="Layer_1"
+              fill="#000000"
+              stroke="#000000"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g>
+                    <path
+                      d="M215.77,59.535l-47.628-47.628H0v434.605c0,29.546,24.037,53.581,53.581,53.581h404.837 c29.545,0,53.581-24.035,53.581-53.581V59.535H215.77z M476.279,446.512c0,9.849-8.012,17.86-17.86,17.86H53.581 c-9.848,0-17.86-8.011-17.86-17.86V47.628h117.625l47.628,47.628h275.305V446.512z"
+                    ></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path
+                      d="M404.837,244.093v12.23c-12.039-7.728-26.337-12.23-41.674-12.23c-42.676,0-77.395,34.72-77.395,77.395 c0,42.676,34.72,77.395,77.395,77.395c15.337,0,29.635-4.502,41.674-12.231v12.231h35.721V244.093H404.837z M363.163,363.163 c-22.979,0-41.674-18.695-41.674-41.674c0-22.979,18.695-41.674,41.674-41.674s41.674,18.695,41.674,41.674 C404.837,344.468,386.142,363.163,363.163,363.163z"
+                    ></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path
+                      d="M178.326,140.823L63.151,398.884h39.117l34.543-77.395h83.383l34.705,77.395h39.148L178.326,140.823z M152.753,285.767 l25.651-57.474l25.773,57.474H152.753z"
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </a>
+
+        <a class="nav__link" href="/nextjs" aria-label="link to page">
+          <div class="svg nav__svg">
+            <svg
+              width="48"
+              height="48"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 16 16"
+            >
+              <g fill="#000">
+                <path
+                  d="M4.85 2.372c-.251.145-.515.544-.546 1.416a.75.75 0 0 1-1.499-.053c.038-1.068.376-2.131 1.295-2.662.922-.532 2.015-.29 2.961.214a.75.75 0 0 1-.706 1.324c-.773-.413-1.253-.384-1.505-.24Zm4.021 1.3a.75.75 0 0 1 1.056.1 16.46 16.46 0 0 1 1.57 2.268c1.04 1.802 1.681 3.648 1.854 5.196.086.773.06 1.509-.12 2.14-.183.635-.537 1.21-1.131 1.553-.719.415-1.55.357-2.309.08-.762-.278-1.547-.803-2.295-1.486a.75.75 0 0 1 1.011-1.108c.66.602 1.279.996 1.797 1.184.522.19.85.145 1.046.031.164-.095.33-.288.438-.667.11-.384.145-.91.072-1.56-.145-1.299-.7-2.947-1.663-4.613a14.994 14.994 0 0 0-1.425-2.06.75.75 0 0 1 .1-1.056Z"
+                />
+                <path
+                  d="M14.5 8.206c0-.29-.214-.719-.953-1.18a.75.75 0 0 1 .795-1.273C15.248 6.32 16 7.144 16 8.206c0 1.064-.756 1.89-1.666 2.457a.75.75 0 0 1-.793-1.273c.744-.464.959-.894.959-1.184Zm-3.137 2.832a.75.75 0 0 1-.614.865A16.56 16.56 0 0 1 8 12.127c-2.08 0-4-.367-5.427-.992-.713-.311-1.336-.702-1.792-1.174C.32 9.486 0 8.891 0 8.206c0-.83.466-1.52 1.085-2.04.622-.521 1.47-.938 2.435-1.244a.75.75 0 0 1 .454 1.43c-.85.27-1.502.609-1.924.964-.426.356-.55.663-.55.89 0 .19.085.43.359.713.278.287.716.58 1.315.842 1.197.524 2.902.866 4.826.866.885 0 1.727-.072 2.498-.203a.75.75 0 0 1 .865.614Z"
+                />
+                <path
+                  d="M4.872 13.63c.25.145.729.174 1.499-.235a.75.75 0 1 1 .704 1.325c-.944.501-2.034.74-2.953.21-.922-.533-1.26-1.6-1.295-2.672a.75.75 0 0 1 1.499-.05c.03.875.294 1.277.546 1.422Zm-.884-4.133a.75.75 0 0 1-.442-.964c.302-.815.697-1.657 1.18-2.493 1.04-1.802 2.318-3.28 3.572-4.204.626-.461 1.276-.806 1.913-.965.641-.16 1.317-.141 1.91.202.72.415 1.084 1.163 1.224 1.96.141.799.078 1.741-.14 2.73a.75.75 0 1 1-1.464-.321c.191-.872.223-1.606.127-2.15-.096-.546-.3-.807-.496-.92-.164-.095-.415-.142-.797-.046-.388.097-.86.33-1.387.718-1.052.774-2.202 2.08-3.163 3.746a14.925 14.925 0 0 0-1.073 2.265.75.75 0 0 1-.964.442Z"
+                />
+                <path d="M9.46 8.066a1.36 1.36 0 1 1-2.72 0 1.36 1.36 0 0 1 2.72 0Z" />
+              </g>
+            </svg>
+          </div>
+        </a>
+
+        <a class="nav__link" href="/test" aria-label="link to page">
+          <div class="svg nav__svg">
+            <svg
+              height="48px"
+              width="48px"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M11 16C11 16.5523 10.5523 17 10 17C9.44772 17 9 16.5523 9 16C9 15.4477 9.44772 15 10 15C10.5523 15 11 15.4477 11 16Z"
+                  fill="#0F0F0F"
+                ></path>
+                <path
+                  d="M14 19C14.5523 19 15 18.5523 15 18C15 17.4477 14.5523 17 14 17C13.4477 17 13 17.4477 13 18C13 18.5523 13.4477 19 14 19Z"
+                  fill="#0F0F0F"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7 2C7 1.44772 7.44772 1 8 1H16C16.5523 1 17 1.44772 17 2C17 2.55228 16.5523 3 16 3H15V8.74788L20.6899 19.3148C21.5867 20.9803 20.3804 23 18.4887 23H5.51133C3.61964 23 2.4133 20.9803 3.31015 19.3148L9 8.74788V3H8C7.44772 3 7 2.55228 7 2ZM11 3H13V9.25212L13.9412 11H10.0588L11 9.25212V3ZM8.98191 13L5.07109 20.263C4.89172 20.5961 5.13299 21 5.51133 21H18.4887C18.867 21 19.1083 20.5961 18.9289 20.263L15.0181 13H8.98191Z"
+                  fill="#0F0F0F"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </a>
+      </div>
+      <!-- Links folder END -->
+    </div>
+
+    <div class="nav__panel__bottom">
+      <div class="svg nav__svg language-svg">
+        <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z"
+            stroke="#202020"
+            stroke-width="4"
+          />
+        </svg>
+      </div>
+      <div class="svg nav__svg sun-svg">
+        <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
+            fill="#202020"
+          />
+        </svg>
+      </div>
+      <div class="svg nav__svg moon-svg">
+        <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M21 3C13.5 3 4.5 10.5 4.5 22.5s9 21 21 21S45 34.5 45 27C28.5 37.5 10.5 19.5 21 3Z"
+            stroke="#202020"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+  /****************************** Navigation menu ******************************/
+  const navmenu = document.querySelector('.nav__menu')
+  const navpanel = document.querySelector('.nav__panel')
+  const navlinks = document.querySelectorAll('.nav__link')
+  const body = document.querySelector('body')
+
+  function showMenu() {
+    navmenu.classList.toggle('show-nav__menu')
+    navpanel.classList.toggle('show-nav__panel')
+
+    if (document.body.clientWidth < 600) {
+      if (body.style.overflow === '') {
+        body.style.overflow = 'hidden'
+        // body.style.paddingRight = '10px' // Prevent page shift
+        // navmenu.style.right = '15px' // Prevent navmenu shift
+      } else {
+        body.style.overflow = ''
+        // body.style.paddingRight = '0'
+        // navmenu.style.right = '0'
+      }
+    }
+  }
+  // showMenu()
+
+  navmenu.addEventListener('click', showMenu, false)
+  navpanel.addEventListener('click', showMenu)
+
+  navlinks.forEach((item) => {
+    item.addEventListener('click', showMenu, false)
+  })
+
+  /* Show links in folder START */
+  const linksfolder = document.querySelector('#js-links-folder')
+  const showLinksButton = document.querySelector('#js-show-links-button')
+
+  function showLinks(e) {
+    // showLinksButton.removeEventListener('click', showMenu) // Remove event click from button NOT WORK
+    // e.stopImmediatePropagation() // Disable showMenu, alternative to removeEventListener
+    e.stopPropagation() // Disable showMenu, alternative to removeEventListener
+    linksfolder.classList.toggle('show-links-folder')
+  }
+
+  showLinksButton.addEventListener('click', showLinks, false)
+</script>
+
+    </header>
+
+    <main>
+      <script>
+        const password = prompt('Enter the password:')
+        if (password === '12345') {
+          // Proceed with displaying the content
+          document.body.innerHTML = `
             <h1>Basic Authenticaion</h1>
 
             <h2>Basic HTTP Authenticaion</h2>
@@ -21,4 +698,113 @@
             </p>
 
             <p>Secret information - password: 12345</p>
-          `:(alert("Authentication failed"),window.location.href="/basic-authentication")</script></main><footer><style>.footer-container{display:flex;justify-content:center;gap:1rem}.svg-footer{margin:1rem}.footer-note{padding:0 1rem}</style><h2 id="contact">CONTACTS</h2><div class="footer-container"><a href="mailto:it.temp4422@gmail.com" aria-label="Gmail"><div class="svg svg-footer js-scroll fade-in"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 36h-4V18.5L24 26l-12-7.5V36H8V12h2.4L24 20.5 37.6 12H40v24Zm0-28H8c-2.22 0-4 1.78-4 4v24a4 4 0 0 0 4 4h32a4 4 0 0 0 4-4V12a4 4 0 0 0-4-4Z" fill="#CECECE"/></svg></div></a><a href="https://github.com/webdev4422" aria-label="GitHub"><div class="svg svg-footer js-scroll fade-in-delay-2"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 0C10.74 0 0 10.74 0 24c0 10.62 6.87 19.59 16.41 22.77 1.2.21 1.65-.51 1.65-1.14 0-.57-.03-2.46-.03-4.47-6.03 1.11-7.59-1.47-8.07-2.82-.27-.69-1.44-2.82-2.46-3.39-.84-.45-2.04-1.56-.03-1.59 1.89-.03 3.24 1.74 3.69 2.46 2.16 3.63 5.61 2.61 6.99 1.98.21-1.56.84-2.61 1.53-3.21-5.34-.6-10.92-2.67-10.92-11.85 0-2.61.93-4.77 2.46-6.45-.24-.6-1.08-3.06.24-6.36 0 0 2.01-.63 6.6 2.46 1.92-.54 3.96-.81 6-.81s4.08.27 6 .81c4.59-3.12 6.6-2.46 6.6-2.46 1.32 3.3.48 5.76.24 6.36 1.53 1.68 2.46 3.81 2.46 6.45 0 9.21-5.61 11.25-10.95 11.85.87.75 1.62 2.19 1.62 4.44 0 3.21-.03 5.79-.03 6.6 0 .63.45 1.38 1.65 1.14A24.04 24.04 0 0 0 48 24C48 10.74 37.26 0 24 0Z" fill="#CECECE"/></svg></div></a><a href="https://codepen.io/webdev4422" aria-label="CodePen"><div class="svg svg-footer js-scroll fade-in-delay-3"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.744.38a2.268 2.268 0 0 1 2.512 0L46.984 14.8A2.27 2.27 0 0 1 48 16.692v14.616c0 .76-.38 1.472-1.016 1.894l-21.728 14.42c-.76.504-1.75.504-2.512 0L1.016 33.2A2.272 2.272 0 0 1 0 31.308V16.692c0-.76.38-1.472 1.016-1.894L22.744.38Zm-18.2 20.546v6.116l4.576-3.08-4.576-3.036Zm8.674 5.756L6.36 31.296l15.368 10.2V32.33l-8.508-5.648h-.002Zm13.054 5.648v9.164l15.368-10.2-6.86-4.612-8.508 5.648Zm12.606-8.366 4.58 3.08v-6.12l-4.58 3.04Zm2.742-7.272-6.82 4.526-8.528-5.736V6.506L41.62 16.692ZM21.728 6.506v8.974l-8.526 5.736-6.822-4.524L21.728 6.506ZM24 19.43l-6.7 4.508 6.7 4.446 6.7-4.446L24 19.43Z" fill="#CECECE"/></svg></div></a><a href="https://www.freecodecamp.org/webdev4422" aria-label="FreeCodeCamp"><div class="svg svg-footer js-scroll fade-in-delay-4"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M39.77 7.812c-.255.005-.502.09-.708.24-.16.16-.322.392-.322.626 0 .4.472.948 1.346 1.846 3.644 3.508 5.476 7.806 5.464 12.988-.014 5.734-1.94 10.34-5.688 13.908-.788.706-1.112 1.26-1.114 1.734 0 .232.16.474.32.706.191.186.44.3.706.324.868 0 2.08-1.024 3.666-3.018 3.084-3.78 4.48-7.956 4.558-13.648.072-5.694-1.714-9.554-5.206-13.54-1.26-1.424-2.306-2.164-3.022-2.166Zm-31.538.004c-.716 0-1.764.74-3.02 2.166-3.496 3.986-5.282 7.846-5.21 13.54.08 5.692 1.474 9.866 4.56 13.648 1.582 1.994 2.796 3.02 3.664 3.018.265-.023.514-.138.704-.324.16-.232.32-.474.32-.706 0-.474-.324-1.028-1.112-1.732-3.746-3.57-5.674-8.174-5.688-13.91-.012-5.182 1.82-9.48 5.464-12.988.874-.898 1.348-1.444 1.346-1.846 0-.234-.16-.466-.322-.626a1.242 1.242 0 0 0-.708-.24h.002Zm14.112 1.79s1.31 4.162-5.298 13.454c-6.312 8.866 2.09 14.3 2.864 14.772-.562-.36-4.002-3 .804-10.846.932-1.54 2.152-2.94 3.668-6.082 0 0 1.34 1.892.64 5.996-1.046 6.202 4.542 4.428 4.628 4.514 1.952 2.3-1.616 6.34-1.834 6.466-.216.122 10.192-6.26 2.798-15.87-.506.506-1.164 2.884-2.534 2.532-1.368-.348 4.25-6.988-5.736-14.936ZM19.91 37.832a.846.846 0 0 0 .076.048l-.076-.048Z" fill="#CECECE"/></svg></div></a></div><div><p class="footer-note">Built with Core Web Technologies, Google and Sincere Developer's Efforts :)</p></div></footer></body></html>
+          `
+        } else {
+          // Redirect or display an error message
+          alert('Authentication failed')
+          window.location.href = '/basic-authentication' // Redirect to home page
+        }
+      </script>
+    </main>
+
+    <footer>
+      <style>
+  /****************************** FOOTER ******************************/
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .svg-footer {
+    margin: 1rem;
+  }
+  .footer-note {
+    padding: 0 1rem;
+  }
+</style>
+
+<h2 id="contact">CONTACTS</h2>
+
+<div class="footer-container">
+  <a href="mailto:it.temp4422@gmail.com" aria-label="Gmail">
+    <div class="svg svg-footer js-scroll fade-in">
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M40 36h-4V18.5L24 26l-12-7.5V36H8V12h2.4L24 20.5 37.6 12H40v24Zm0-28H8c-2.22 0-4 1.78-4 4v24a4 4 0 0 0 4 4h32a4 4 0 0 0 4-4V12a4 4 0 0 0-4-4Z"
+          fill="#CECECE"
+        />
+      </svg>
+    </div>
+  </a>
+
+  <a href="https://github.com/webdev4422" aria-label="GitHub">
+    <div class="svg svg-footer js-scroll fade-in-delay-2">
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M24 0C10.74 0 0 10.74 0 24c0 10.62 6.87 19.59 16.41 22.77 1.2.21 1.65-.51 1.65-1.14 0-.57-.03-2.46-.03-4.47-6.03 1.11-7.59-1.47-8.07-2.82-.27-.69-1.44-2.82-2.46-3.39-.84-.45-2.04-1.56-.03-1.59 1.89-.03 3.24 1.74 3.69 2.46 2.16 3.63 5.61 2.61 6.99 1.98.21-1.56.84-2.61 1.53-3.21-5.34-.6-10.92-2.67-10.92-11.85 0-2.61.93-4.77 2.46-6.45-.24-.6-1.08-3.06.24-6.36 0 0 2.01-.63 6.6 2.46 1.92-.54 3.96-.81 6-.81s4.08.27 6 .81c4.59-3.12 6.6-2.46 6.6-2.46 1.32 3.3.48 5.76.24 6.36 1.53 1.68 2.46 3.81 2.46 6.45 0 9.21-5.61 11.25-10.95 11.85.87.75 1.62 2.19 1.62 4.44 0 3.21-.03 5.79-.03 6.6 0 .63.45 1.38 1.65 1.14A24.04 24.04 0 0 0 48 24C48 10.74 37.26 0 24 0Z"
+          fill="#CECECE"
+        />
+      </svg>
+    </div>
+  </a>
+
+  <a href="https://codepen.io/webdev4422" aria-label="CodePen">
+    <div class="svg svg-footer js-scroll fade-in-delay-3">
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M22.744.38a2.268 2.268 0 0 1 2.512 0L46.984 14.8A2.27 2.27 0 0 1 48 16.692v14.616c0 .76-.38 1.472-1.016 1.894l-21.728 14.42c-.76.504-1.75.504-2.512 0L1.016 33.2A2.272 2.272 0 0 1 0 31.308V16.692c0-.76.38-1.472 1.016-1.894L22.744.38Zm-18.2 20.546v6.116l4.576-3.08-4.576-3.036Zm8.674 5.756L6.36 31.296l15.368 10.2V32.33l-8.508-5.648h-.002Zm13.054 5.648v9.164l15.368-10.2-6.86-4.612-8.508 5.648Zm12.606-8.366 4.58 3.08v-6.12l-4.58 3.04Zm2.742-7.272-6.82 4.526-8.528-5.736V6.506L41.62 16.692ZM21.728 6.506v8.974l-8.526 5.736-6.822-4.524L21.728 6.506ZM24 19.43l-6.7 4.508 6.7 4.446 6.7-4.446L24 19.43Z"
+          fill="#CECECE"
+        />
+      </svg>
+    </div>
+  </a>
+
+  <a href="https://www.freecodecamp.org/webdev4422" aria-label="FreeCodeCamp">
+    <div class="svg svg-footer js-scroll fade-in-delay-4">
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M39.77 7.812c-.255.005-.502.09-.708.24-.16.16-.322.392-.322.626 0 .4.472.948 1.346 1.846 3.644 3.508 5.476 7.806 5.464 12.988-.014 5.734-1.94 10.34-5.688 13.908-.788.706-1.112 1.26-1.114 1.734 0 .232.16.474.32.706.191.186.44.3.706.324.868 0 2.08-1.024 3.666-3.018 3.084-3.78 4.48-7.956 4.558-13.648.072-5.694-1.714-9.554-5.206-13.54-1.26-1.424-2.306-2.164-3.022-2.166Zm-31.538.004c-.716 0-1.764.74-3.02 2.166-3.496 3.986-5.282 7.846-5.21 13.54.08 5.692 1.474 9.866 4.56 13.648 1.582 1.994 2.796 3.02 3.664 3.018.265-.023.514-.138.704-.324.16-.232.32-.474.32-.706 0-.474-.324-1.028-1.112-1.732-3.746-3.57-5.674-8.174-5.688-13.91-.012-5.182 1.82-9.48 5.464-12.988.874-.898 1.348-1.444 1.346-1.846 0-.234-.16-.466-.322-.626a1.242 1.242 0 0 0-.708-.24h.002Zm14.112 1.79s1.31 4.162-5.298 13.454c-6.312 8.866 2.09 14.3 2.864 14.772-.562-.36-4.002-3 .804-10.846.932-1.54 2.152-2.94 3.668-6.082 0 0 1.34 1.892.64 5.996-1.046 6.202 4.542 4.428 4.628 4.514 1.952 2.3-1.616 6.34-1.834 6.466-.216.122 10.192-6.26 2.798-15.87-.506.506-1.164 2.884-2.534 2.532-1.368-.348 4.25-6.988-5.736-14.936ZM19.91 37.832a.846.846 0 0 0 .076.048l-.076-.048Z"
+          fill="#CECECE"
+        />
+      </svg>
+    </div>
+  </a>
+</div>
+
+<div>
+  <p class="footer-note">
+    Built with Core Web Technologies, Google and Sincere Developer's Efforts :)
+  </p>
+</div>
+
+    </footer>
+  </body>
+</html>
