@@ -5,18 +5,17 @@
   "main": "index.html",
   "scripts": {
     "//1": "🔹 BASIC COMMANDS",
-    "dev": "serve docs/ & node watch.js",
+    "dev": "browser-sync start --server 'docs/' --files 'src/' & node watch.js",
+    "dev2": "serve docs/ & node watch.js",
     "build": "node index.js",
     "start": "serve docs/",
     "watch": "node watch.js",
+    "webpack": "webpack --watch & webpack serve --open",
     "//2": "🔹 NEXT COMMANDS",
     "dev-next": "next dev",
     "build-next": "next build",
     "start-next": "next start",
-    "lint-next": "next lint",
-    "//3": "🔹 OLD COMMANDS",
-    "brws-sync-watch": "browser-sync start --server 'docs/nextjs.html' --files 'docs/' & node watch.js",
-    "webpack": "webpack --watch & webpack serve --open"
+    "lint-next": "next lint"
   },
   "devDependencies": {
     "@types/react": "18.2.36",
