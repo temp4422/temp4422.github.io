@@ -1,0 +1,43 @@
+<style>
+  .random-quote-box {
+    min-width: 20rem;
+    min-height: 15rem;
+    width: auto; /* Set width to enable margin below */
+    height: max-content;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    text-align: end;
+
+    & p {
+      margin: 1rem;
+    }
+  }
+</style>
+<blockquote id="random-quote-box" class="random-quote-box">
+  <!-- Quote will be here -->
+</blockquote>
+<script>
+  async function getAndAppendRandomQuote() {
+    try {
+      const response = await fetch(
+        'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
+      )
+      const data = await response.json()
+      const randomNum = Math.round(Math.random() * data.quotes.length)
+      const dataItem = data.quotes[randomNum]
+      // const quoteJSON = { text: dataItem.quote, author: dataItem.author }
+
+      // Append quote to random-quote-box
+      const randomQuoteBox = document.querySelector('#random-quote-box')
+      const pElem = document.createElement('p')
+      pElem.innerHTML = `"${dataItem.quote}"`
+      const citeElem = document.createElement('cite')
+      citeElem.innerHTML = `- ${dataItem.author}`
+      randomQuoteBox.appendChild(pElem)
+      randomQuoteBox.appendChild(citeElem)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  getAndAppendRandomQuote()
+</script>
