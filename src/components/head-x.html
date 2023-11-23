@@ -4,3 +4,22 @@
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
 <!-- Set root folder to use in navmenu component for easier links -->
 <base href="/" />
+<!-- Auto reload page in browser on source changes -->
+<!-- <script>
+  var bfr = ''
+  setInterval(function () {
+    fetch(window.location)
+      .then((response) => {
+        return response.text()
+      })
+      .then((r) => {
+        if (bfr != '' && bfr != r) {
+          window.location.reload()
+        } else {
+          bfr = r
+        }
+      })
+  }, 500)
+</script> -->
+<!-- Alternative -->
+<!-- <script type="text/javascript" src="https://livejs.com/live.js"></script> -->
