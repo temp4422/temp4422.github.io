@@ -323,6 +323,8 @@ function copyAssets() {
       `${srcAssets}fonts/google material-design-icons font/MaterialIcons-Regular.ttf`,
       `${distAssets}MaterialIcons-Regular.ttf`
     )
+    // Add .nojekyll to disable Jekyll and proper assets loading
+    fs.openSync(`${dist}.nojekyll`, 'w')
   } catch (err) {
     console.error(err)
   }
