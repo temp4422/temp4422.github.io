@@ -1,18 +1,11 @@
 const { exec } = require('child_process')
 const fs = require('fs')
-// prettier-ignore
-const { kissX, optimizeHTML, convertImages, copyAssets, optimizeCSS, optimizeJS  } = require('./index.js')
+const { main } = require('./index.js')
 
 //Watch file changes and rebuild
 fs.watch('./src/', { recursive: true }, (event, filename) => {
   console.log(`Detected ${event} in ${filename}`)
-
-  // optimizeCSS() // Run before kissX
-  kissX()
-  // optimizeHTML()
-  // convertImages()
-  // copyAssets()
-  // optimizeJS()
+  main()
 })
 
 // // Exec shell command

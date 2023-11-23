@@ -329,15 +329,17 @@ function copyAssets() {
   console.log(`Finish copying 👍`)
 }
 
-// optimizeCSS() // run before kiss-x()
-kissX()
-optimizeHTML()
-convertImages()
-copyAssets()
-// optimizeJS() // Not finished
-
-// fs.rmSync('./dist/', { recursive: true, force: true })
-
-module.exports = { kissX, optimizeHTML, convertImages, copyAssets, optimizeCSS, optimizeJS }
-
 console.log('⭐️ END BUILD ⭐️\n🎉 🎉 🎉')
+
+function main() {
+  // optimizeCSS() // run before kiss-x() // Not finished
+  kissX()
+  optimizeHTML()
+  convertImages()
+  copyAssets()
+  // optimizeJS() // Not finished
+  // fs.rmSync('./dist/', { recursive: true, force: true })
+}
+main()
+
+module.exports = { main }
