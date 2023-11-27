@@ -7,16 +7,16 @@
  */
 
 const cacheName = 'cache v1'
-const filesToCache = [
-  './index.html',
-  './assets/MarckScript-Regular.ttf',
-  './assets/img/x-drive.webp',
-  './assets/img/solomia.webp',
-  './assets/img/freecodecamp.webp',
-  './assets/img/playground.webp',
-  './sw.js',
-]
-// filesToCache = ['./']
+// const filesToCache = [
+//   './index.html',
+//   './assets/MarckScript-Regular.ttf',
+//   './assets/img/x-drive.webp',
+//   './assets/img/solomia.webp',
+//   './assets/img/freecodecamp.webp',
+//   './assets/img/playground.webp',
+//   './sw.js',
+// ]
+filesToCache = ['./']
 
 // event.waitUntil will stop the flow till the Promise is resolved
 
