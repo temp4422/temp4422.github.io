@@ -1,8 +1,8 @@
 # Portfolio
 
-https://webdev4422.github.io
+[Link to Portfolio Website](https://webdev4422.github.io)
 
-Greetings! This is my portfolio. Let me accquintece you with my work ;)
+Greetings! This is my portfolio. Let me acquaintance you with my works ;)
 
 ## Philosophy
 
