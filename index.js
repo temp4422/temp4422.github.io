@@ -24,9 +24,9 @@ const srcComponents = './src/components/'
 const src = './src/'
 const srcAssets = './src/assets/'
 const srcAssetsImg = './src/assets/img/jpg/'
-const dist = './docs/'
-const distAssets = './docs/assets/'
-const distAssetsImg = './docs/assets/img/'
+const dist = './dist/'
+const distAssets = './dist/assets/'
+const distAssetsImg = './dist/assets/img/'
 
 // Clean and create dirs
 // fs.rmSync(dist, { recursive: true, force: true })

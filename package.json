@@ -7,10 +7,10 @@
   "main": "index.html",
   "scripts": {
     "//1": "🔹 BASIC COMMANDS",
-    "dev": "browser-sync start --server 'docs/' --files 'src/' & node watch.js",
-    "dev2": "serve docs/ & node watch.js",
+    "dev": "browser-sync start --server 'dist/' --files 'src/' & node watch.js",
+    "dev2": "serve dist/ & node watch.js",
     "build": "node index.js",
-    "start": "serve docs/",
+    "start": "serve dist/",
     "watch": "node watch.js",
     "webpack": "webpack --watch & webpack serve --open",
     "//2": "🔹 NEXT COMMANDS",

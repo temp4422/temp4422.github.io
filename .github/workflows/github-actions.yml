@@ -50,7 +50,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload folder
-          path: './docs'
+          path: './dist'
 
       # Deploy Actions artifacts to GitHub Pages.
       - name: Deploy to GitHub Pages

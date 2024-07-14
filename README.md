@@ -22,7 +22,7 @@ DX is satisfying, because tend to modular approch with simple components, trying
 
 - Build static website without using any secondary libraries in production only core web technologies.
 - DX of modern frameworks like next (at least some), components approach.
-- No config delpoyment, just throw `docs` folder to any static server.
+- No config delpoyment, just throw `dist` folder to any static server.
 
 ## Rules & Constraints:
 
