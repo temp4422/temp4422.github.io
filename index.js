@@ -336,14 +336,14 @@ function copyAssets() {
 console.log('⭐️ END BUILD ⭐️\n🎉 🎉 🎉')
 
 function main() {
-  // optimizeCSS() // run before kiss-x() // Not finished
+  // optimizeCSS() // run before kiss-x() // WIP
   kissX()
   optimizeHTML()
   convertImages()
   copyAssets()
-  // optimizeJS() // Not finished
+  // optimizeJS() // WIP
   // fs.rmSync('./dist/', { recursive: true, force: true })
 }
 main()
 
-module.exports = { kissX } // for development purpose
+module.exports = { kissX } // For development purpose
