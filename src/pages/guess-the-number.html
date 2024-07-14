@@ -7,20 +7,38 @@
     <gtm_head-x />
 
     <style>
-      .label {
-        width: max-content;
-        display: block;
-        margin: 2rem auto;
-      }
-      .input {
-        padding: 0 1rem;
-      }
       .display {
-        width: 18rem;
-        height: 16rem;
-        margin: 2rem 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        width: 20rem;
+        height: 12rem;
+        padding: 0.5rem;
         border-radius: 1rem;
         background: rgba(206, 206, 206, 0.507);
+      }
+      .display p {
+        margin: 0;
+        border-radius: 0.5rem;
+      }
+      .form {
+        width: 20rem;
+        padding: 0.5rem;
+      }
+      .guessField {
+        border-radius: 0.5rem;
+      }
+      .guessSubmit {
+        padding: 0 0.5rem;
+        border-radius: 0.5rem;
+        background: lightgreen;
+      }
+      .resetGame {
+        float: right;
+        margin: 0.5rem 0;
+        padding: 0 0.5rem;
+        border-radius: 0.5rem;
+        background: salmon;
       }
     </style>
   </head>
@@ -38,27 +56,13 @@
 
       <!-- Display Result -->
       <div id="display" class="display">
-        <div class="resultParas">
-          <p class="guesses"></p>
-          <p class="lastResult"></p>
-          <p class="lowOrHi"></p>
-        </div>
+        <p class="lastGuess"></p>
+        <p class="preiousGeusses">Previous guesses:</p>
+        <p class="lowOrHi">Last guess:</p>
       </div>
 
-      <!-- <form action="" class="form">
-        <label for="guessField">Guess</label>
-        <input
-          type="text"
-          id="guessField"
-          class="guessField"
-          placeholder="number 1...100"
-          value="50"
-        />
-        <button type="submit" id="guessSubmit" class="guessSubmit">Submit</button>
-      </form> -->
-
       <div class="form">
-        <label class="label" for="guessField">Enter a guess: </label>
+        <label class="label guessLable" for="guessField">Enter a guess: </label>
         <input
           type="number"
           min="1"
@@ -67,43 +71,42 @@
           id="guessField"
           class="input guessField"
         />
-        <input type="submit" value="Submit guess" class="input guessSubmit" />
+        <input type="submit" value="Submit" class="input guessSubmit" />
+        <input type="submit" value="Reset" class="input resetGame" />
       </div>
 
       <script>
-        let randomNumber = Math.floor(Math.random() * 100) + 1
-        const guesses = document.querySelector('.guesses')
-        const lastResult = document.querySelector('.lastResult')
+        const previousGuesses = document.querySelector('.preiousGeusses')
+        const lastGuess = document.querySelector('.lastGuess')
         const lowOrHi = document.querySelector('.lowOrHi')
         const guessSubmit = document.querySelector('.guessSubmit')
         const guessField = document.querySelector('.guessField')
+        const resetGameButton = document.querySelector('.resetGame')
+
+        let randomNumber = Math.floor(Math.random() * 100) + 1
         let guessCount = 1
         let resetButton
 
         function checkGuess() {
           const userGuess = Number(guessField.value)
-          if (guessCount === 1) {
-            guesses.textContent = 'Previous guesses: '
-          }
-
-          guesses.textContent += userGuess + ' '
+          previousGuesses.textContent += ' ' + userGuess
 
           if (userGuess === randomNumber) {
-            lastResult.textContent = 'Congratulations! You got it right!'
-            lastResult.style.backgroundColor = 'green'
-            lowOrHi.textContent = ''
-            setGameOver()
+            lastGuess.textContent = 'Congratulations! You got it right!'
+            lastGuess.style.backgroundColor = 'green'
+            guessField.disabled = true
+            guessSubmit.disabled = true
           } else if (guessCount === 10) {
-            lastResult.textContent = '!!!GAME OVER!!!'
-            lowOrHi.textContent = ''
-            setGameOver()
+            lastGuess.textContent = '!!!GAME OVER!!!'
+            guessField.disabled = true
+            guessSubmit.disabled = true
           } else {
-            lastResult.textContent = 'Wrong!'
-            lastResult.style.backgroundColor = 'red'
+            lastGuess.textContent = 'Wrong!'
+            lastGuess.style.backgroundColor = 'red'
             if (userGuess < randomNumber) {
-              lowOrHi.textContent = 'Last guess was too low!'
+              lowOrHi.textContent = 'Last guess: too low!'
             } else if (userGuess > randomNumber) {
-              lowOrHi.textContent = 'Last guess was too high!'
+              lowOrHi.textContent = 'Last guess: too high!'
             }
           }
 
@@ -111,33 +114,21 @@
           guessField.value = ''
           guessField.focus()
         }
-
         guessSubmit.addEventListener('click', checkGuess)
-
-        function setGameOver() {
-          guessField.disabled = true
-          guessSubmit.disabled = true
-          resetButton = document.createElement('button')
-          resetButton.textContent = 'Start new game'
-          document.body.appendChild(resetButton)
-          resetButton.addEventListener('click', resetGame)
-        }
 
         function resetGame() {
           guessCount = 1
-          const resetParas = document.querySelectorAll('.resultParas p')
-          for (const resetPara of resetParas) {
-            resetPara.textContent = ''
-          }
-
-          resetButton.parentNode.removeChild(resetButton)
+          lastGuess.textContent = ''
+          lastGuess.style.backgroundColor = 'white'
+          previousGuesses.textContent = 'Previous guesses:'
+          lowOrHi.textContent = 'Last guess:'
           guessField.disabled = false
           guessSubmit.disabled = false
           guessField.value = ''
           guessField.focus()
-          lastResult.style.backgroundColor = 'white'
           randomNumber = Math.floor(Math.random() * 100) + 1
         }
+        resetGameButton.addEventListener('click', resetGame)
       </script>
     </main>
 
