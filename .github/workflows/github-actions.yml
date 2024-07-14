@@ -24,14 +24,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      
+
       # Install and run Bun in GitHub Actions https://bun.sh/guides/runtime/cicd
       - uses: oven-sh/setup-bun@v2
 
       # Build deployment
       - run: bun install
-      - run: bun run build
-      
+      - run: bun index.js
+
 
       # Runs a single command using the runners shell
       #- name: Run a one-line script
