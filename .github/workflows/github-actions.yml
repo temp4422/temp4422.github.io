@@ -28,22 +28,31 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v4
+
       # Install and run Bun in GitHub Actions https://bun.sh/guides/runtime/cicd
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
-      - name: Install dependencies
-        run: bun install
-      - name: Build
-        run: bun run build
+
+      - name: Install dependencies and build
+        run: |
+          bun install
+          bun run build
+
+      # A GitHub Action to enable Pages and extract various metadata about a site https://github.com/actions/configure-pages
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
+
+      # A composite Action for packaging and uploading artifact that can be deployed to GitHub Pages https://github.com/actions/upload-pages-artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload folder
           path: './docs'
+
+      # Deploy Actions artifacts to GitHub Pages.
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
