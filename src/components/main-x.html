@@ -49,12 +49,16 @@
     filter: var(--svg-glow);
     transition: var(--svg-transition);
     overflow: hidden;
-
-    background: blue;
   }
   .work-item__image-wrapper:hover {
     filter: var(--svg-glow-hover);
     transition: var(--svg-transition-hover);
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    /* object-fit: contain; */
+    object-fit: cover;
   }
   /* #endregion */
 
@@ -88,7 +92,7 @@
   <div class="work-item">
     <div class="work-item__image-wrapper">
       <a href="https://www.x-drive.ua/" aria-label="x-drive.ua">
-        <img loading="lazy" src="/assets/img/x-drive.webp" alt="x-drive" />
+        <img class="image" loading="lazy" src="/assets/img/x-drive.webp" alt="x-drive" />
       </a>
     </div>
     <p class="work-item__text">X-drive.ua ski rental network</p>
@@ -97,7 +101,12 @@
   <div class="work-item">
     <div class="work-item__image-wrapper">
       <a href="https://alpenkrokus.com/" aria-label="Link to source">
-        <img loading="lazy" src="/assets/img/alpenkrokus.webp" alt="Alpen Krokus Hotel" />
+        <img
+          class="image"
+          loading="lazy"
+          src="/assets/img/alpenkrokus.webp"
+          alt="Alpen Krokus Hotel"
+        />
       </a>
     </div>
     <p class="work-item__text">Alpen Krokus hotel</p>
@@ -106,7 +115,7 @@
   <div class="work-item">
     <div class="work-item__image-wrapper">
       <a href="https://solomia-portfolio.netlify.app/" aria-label="Solomia portfolio">
-        <img loading="lazy" src="/assets/img/solomia.webp" alt="solomia-portfolio" />
+        <img class="image" loading="lazy" src="/assets/img/solomia.webp" alt="solomia-portfolio" />
       </a>
     </div>
     <p class="work-item__text">Artful portfolio</p>
@@ -115,7 +124,7 @@
   <div class="work-item">
     <div class="work-item__image-wrapper">
       <a href="/freecodecamp" aria-label="Freecodecamp">
-        <img loading="lazy" src="/assets/img/freecodecamp.webp" alt="freecodecamp" />
+        <img class="image" loading="lazy" src="/assets/img/freecodecamp.webp" alt="freecodecamp" />
       </a>
     </div>
     <p class="work-item__text">freeCodeCamp projects</p>
@@ -124,7 +133,7 @@
   <div class="work-item">
     <div class="work-item__image-wrapper">
       <a href="/playground" aria-label="Playground">
-        <img loading="lazy" src="/assets/img/playground.webp" alt="playground" />
+        <img class="image" loading="lazy" src="/assets/img/playground.webp" alt="playground" />
       </a>
     </div>
     <p class="work-item__text">An interactive playground</p>
