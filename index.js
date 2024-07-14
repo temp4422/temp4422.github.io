@@ -346,4 +346,4 @@ function main() {
 }
 main()
 
-module.exports = { main }
+module.exports = { kissX } // for development purpose

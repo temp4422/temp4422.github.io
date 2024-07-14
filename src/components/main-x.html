@@ -7,30 +7,36 @@
     overflow-x: hidden;
   }
 
-  /* SECTION-HOME */
+  /*#region SECTION-HOME */
   section#home {
     margin-top: 20rem;
     margin-bottom: 10rem;
   }
+  /* #endregion */
 
-  /* SECTION-WORKS */
+  /*#region SECTION-WORKS */
+  .works-title {
+    width: 100%;
+  }
   .work-item {
     width: 100%;
     overflow: hidden;
-    margin: 2rem 0;
+    margin: rem 0;
     display: grid;
     place-items: center;
-  }
-  .work-item a,
-  .work-item a:hover {
-    /* Disable filter for links */
-    filter: none;
-  }
-  .work-item p {
-    margin-top: 0.5rem;
-  }
 
-  /* SECTION-ABOUT */
+    .work-item__image-wrapper,
+    .work-item__image-wrapper:hover {
+      /* Disable filter for links */
+      filter: none;
+    }
+    .work-item__text {
+      margin-top: 0.5rem;
+    }
+  }
+  /* #endregion */
+
+  /*#region SECTION-ABOUT */
   .web-core {
     width: 100%;
     height: 100%;
@@ -42,6 +48,7 @@
   .jamstack-logo {
     margin: 2rem auto;
   }
+  /* #endregion */
 </style>
 
 <!-- HOME -->
@@ -54,13 +61,15 @@
 
 <!-- WORKS -->
 <section id="works">
-  <h2>MY WORKS</h2>
+  <h2 class="works-title">MY WORKS</h2>
 
   <div class="work-item">
-    <a href="https://www.x-drive.ua/" aria-label="x-drive.ua">
-      <img loading="lazy" src="/assets/img/x-drive.webp" alt="x-drive" />
-    </a>
-    <p>X-drive.ua - smooth and fast with nuxt.js</p>
+    <div class="work-item__image-wrapper">
+      <a href="https://www.x-drive.ua/" aria-label="x-drive.ua">
+        <img loading="lazy" src="/assets/img/x-drive.webp" alt="x-drive" />
+      </a>
+    </div>
+    <p class="work-item__text">X-drive.ua ski rental network</p>
   </div>
 
   <div class="work-item">

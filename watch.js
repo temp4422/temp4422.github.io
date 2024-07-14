@@ -1,11 +1,11 @@
 const { exec } = require('child_process')
 const fs = require('fs')
-const { main } = require('./index.js')
+const { kissX } = require('./index.js')
 
 //Watch file changes and rebuild
 fs.watch('./src/', { recursive: true }, (event, filename) => {
   console.log(`Detected ${event} in ${filename}`)
-  main()
+  kissX()
 })
 
 // // Exec shell command
