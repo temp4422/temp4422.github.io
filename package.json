@@ -1,9 +1,9 @@
 {
   "name": "my-portfolio",
   "version": "2.0.0",
-  "license": "ISC",
   "author": "temp4422",
   "description": "https://temp4422.github.io",
+  "license": "ISC",
   "main": "index.html",
   "scripts": {
     "//1": "🔹 BASIC COMMANDS",
@@ -20,19 +20,10 @@
     "lint-next": "next lint"
   },
   "devDependencies": {
-    "@types/react": "18.2.36",
-    "autoprefixer": "^10.4.19",
     "browser-sync": "^2.29.3",
+    "crypto": "^1.0.1",
     "html-minifier": "^4.0.0",
-    "postcss": "^8.4.39",
     "sharp": "^0.32.6",
-    "tailwindcss": "^3.4.4",
-    "typescript": "5.2.2",
     "uglify-js": "^3.18.0"
-  },
-  "dependencies": {
-    "next": "^14.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
   }
 }
