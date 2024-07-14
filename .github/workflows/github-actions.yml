@@ -15,8 +15,7 @@ on:
 
 # Set GITHUB_TOKEN Permissions
 permissions:
-  id-token: write
-  pages: write
+  contents: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -37,8 +36,7 @@ jobs:
           bun install
           bun index.js
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          folder: docs # The folder the action should deploy.
