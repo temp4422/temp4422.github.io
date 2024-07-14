@@ -339,5 +339,5 @@ main()
 
 console.log('⭐️ END BUILD ⭐️\n🎉 🎉 🎉')
 
-module.exports = { kissX } // For development purpose
+module.exports = { kissX } // For development purpose import in watch.js
 // #endregion
