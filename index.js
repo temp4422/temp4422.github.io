@@ -1,3 +1,4 @@
+// #region Prepare environment
 console.log('⭐️ START BUILD ⭐️')
 
 const fs = require('fs')
@@ -30,12 +31,11 @@ const distAssetsImg = './docs/assets/img/'
 // Create dir if it doesnt exists
 if (!fs.existsSync(dist)) fs.mkdirSync(dist, { recursive: true })
 if (!fs.existsSync(distAssets)) fs.mkdirSync(distAssets, { recursive: true })
+// #endregion
 
+// #region KISS-x framework
 /* ************************************************************************************** */
-//
-// KISS-x framework main job. Replace special tags with corresponding content
-//
-/* ************************************************************************************** */
+// Replace special tags with corresponding content
 function kissX() {
   // Start replacing
   console.log(`Start replacing corresponding tags for all pages in ${srcPages} 🔨`)
@@ -71,11 +71,9 @@ function kissX() {
 
   console.log(`Tags replaced in all HTML pages and saved to the ${dist} directory. 👍 \n`)
 }
+//#endregion
 
-/* ************************************************************************************** */
-//
-// Optimize HTML
-//
+// #region Optimize HTML
 /* ************************************************************************************** */
 function optimizeHTML() {
   // Start optimization
@@ -105,11 +103,9 @@ function optimizeHTML() {
 
   console.log(`HTML optimization completed for all HTML files in the ${dist} directory. 👍 \n`)
 }
+// #endregion
 
-/* ************************************************************************************** */
-//
-// Optimize CSS
-//
+// #region Optimize CSS
 /* ************************************************************************************** */
 function optimizeCSS() {
   const srcDir = './src/'
@@ -208,11 +204,9 @@ function optimizeCSS() {
 
   replaceClassesWithRandomNumbers(srcDir, distDir)
 }
+// #endregion
 
-/* ************************************************************************************** */
-//
-// Optimize JS
-//
+// #region Optimize JS
 /* ************************************************************************************** */
 function optimizeJS() {
   // Start optimization
@@ -249,11 +243,9 @@ function optimizeJS() {
 
   console.log(`JS optimization completed, output in ${dist} 👍 \n`)
 }
+// #endregion
 
-/* ************************************************************************************** */
-//
-// Convert images
-//
+// #region Convert images
 /* ************************************************************************************** */
 function convertImages() {
   // Start optimization of images
@@ -287,11 +279,9 @@ function convertImages() {
 
   console.log(`Image conversion completed in ${distAssetsImg} 👍\n`)
 }
+// #endregion
 
-/* ************************************************************************************** */
-//
-// Copy assets
-//
+// #region Copy assets
 /* ************************************************************************************** */
 function copyAssets() {
   // Copy other assets
@@ -332,9 +322,10 @@ function copyAssets() {
   }
   console.log(`Finish copying 👍`)
 }
+// #endregion
 
-console.log('⭐️ END BUILD ⭐️\n🎉 🎉 🎉')
-
+// #region Run all functions
+/* ************************************************************************************** */
 function main() {
   // optimizeCSS() // run before kiss-x() // WIP
   kissX()
@@ -346,4 +337,7 @@ function main() {
 }
 main()
 
+console.log('⭐️ END BUILD ⭐️\n🎉 🎉 🎉')
+
 module.exports = { kissX } // For development purpose
+// #endregion
