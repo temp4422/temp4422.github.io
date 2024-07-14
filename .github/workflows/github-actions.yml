@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v4
       # Install and run Bun in GitHub Actions https://bun.sh/guides/runtime/cicd
       - name: Set up Bun
-      - uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@v2
       - name: Install dependencies
         run: bun install
       - name: Build
