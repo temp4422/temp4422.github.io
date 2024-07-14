@@ -118,32 +118,19 @@
     color: white;
     filter: var(--svg-glow-hover);
   }
+  img {
+    display: block;
+    max-width: 100%;
+  }
   svg {
     cursor: pointer;
+    filter: var(--svg-glow);
     transition: var(--svg-transition);
-    filter: var(--svg-glow);
   }
+  /* img:hover, */
   svg:hover {
-    transition: var(--svg-transition-hover);
     filter: var(--svg-glow-hover);
-  }
-  img {
-    width: 20rem;
-    height: auto;
-    margin: 2rem 1rem;
-    /* object-fit: contain; */
-    /* filter: grayscale(1); */
-    filter: var(--svg-glow);
-    border-radius: 1rem;
-  }
-  img:hover {
     transition: var(--svg-transition-hover);
-    filter: var(--svg-glow-hover);
-  }
-  @media (min-width: 768px) {
-    img {
-      width: 25rem;
-    }
   }
 
   /* Scrollbar Styling */
@@ -842,24 +829,55 @@
   /* #endregion */
 
   /*#region SECTION-WORKS */
+  .works {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   .works-title {
     width: 100%;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 2;
+    }
   }
-  .work-item {
-    width: 100%;
-    overflow: hidden;
-    margin: rem 0;
-    display: grid;
-    place-items: center;
 
-    .work-item__image-wrapper,
-    .work-item__image-wrapper:hover {
-      /* Disable filter for links */
+  .work-item {
+    /* Prevent default link filter on hover */
+    & a,
+    & a:hover {
       filter: none;
     }
-    .work-item__text {
-      margin-top: 0.5rem;
+
+    .work-item__image-wrapper {
+      width: 20rem;
+      /* height: auto; */
+      height: 15rem;
+      margin: 1rem;
+      border-radius: 1rem;
+
+      /* object-fit: contain; */
+      /* filter: grayscale(1); */
+      filter: var(--svg-glow);
+      transition: var(--svg-transition);
+      overflow: hidden;
+
+      background: blue;
     }
+    .work-item__image-wrapper:hover {
+      filter: var(--svg-glow-hover);
+      transition: var(--svg-transition-hover);
+    }
+
+    /* @media (min-width: 768px) {
+      img {
+        width: 25rem;
+      }
+    } */
   }
   /* #endregion */
 
@@ -887,7 +905,7 @@
 </section>
 
 <!-- WORKS -->
-<section id="works">
+<section id="works" class="works">
   <h2 class="works-title">MY WORKS</h2>
 
   <div class="work-item">
@@ -900,31 +918,39 @@
   </div>
 
   <div class="work-item">
-    <a href="https://alpenkrokus.com/" aria-label="Link to source">
-      <img loading="lazy" src="/assets/img/alpenkrokus.webp" alt="Alpen Krokus Hotel" />
-    </a>
-    <p>Alpen Krokus hotel</p>
+    <div class="work-item__image-wrapper">
+      <a href="https://alpenkrokus.com/" aria-label="Link to source">
+        <img loading="lazy" src="/assets/img/alpenkrokus.webp" alt="Alpen Krokus Hotel" />
+      </a>
+    </div>
+    <p class="work-item__text">Alpen Krokus hotel</p>
   </div>
 
   <div class="work-item">
-    <a href="https://solomia-portfolio.netlify.app/" aria-label="Solomia portfolio">
-      <img loading="lazy" src="/assets/img/solomia.webp" alt="solomia-portfolio" />
-    </a>
-    <p>Artful portfolio</p>
+    <div class="work-item__image-wrapper">
+      <a href="https://solomia-portfolio.netlify.app/" aria-label="Solomia portfolio">
+        <img loading="lazy" src="/assets/img/solomia.webp" alt="solomia-portfolio" />
+      </a>
+    </div>
+    <p class="work-item__text">Artful portfolio</p>
   </div>
 
   <div class="work-item">
-    <a href="/freecodecamp" aria-label="Freecodecamp">
-      <img loading="lazy" src="/assets/img/freecodecamp.webp" alt="freecodecamp" />
-    </a>
-    <p>freeCodeCamp projects</p>
+    <div class="work-item__image-wrapper">
+      <a href="/freecodecamp" aria-label="Freecodecamp">
+        <img loading="lazy" src="/assets/img/freecodecamp.webp" alt="freecodecamp" />
+      </a>
+    </div>
+    <p class="work-item__text">freeCodeCamp projects</p>
   </div>
 
   <div class="work-item">
-    <a href="/playground" aria-label="Playground">
-      <img loading="lazy" src="/assets/img/playground.webp" alt="playground" />
-    </a>
-    <p>An interactive playground</p>
+    <div class="work-item__image-wrapper">
+      <a href="/playground" aria-label="Playground">
+        <img loading="lazy" src="/assets/img/playground.webp" alt="playground" />
+      </a>
+    </div>
+    <p class="work-item__text">An interactive playground</p>
   </div>
 </section>
 

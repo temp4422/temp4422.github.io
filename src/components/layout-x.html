@@ -88,32 +88,19 @@
     color: white;
     filter: var(--svg-glow-hover);
   }
+  img {
+    display: block;
+    max-width: 100%;
+  }
   svg {
     cursor: pointer;
+    filter: var(--svg-glow);
     transition: var(--svg-transition);
-    filter: var(--svg-glow);
   }
+  /* img:hover, */
   svg:hover {
-    transition: var(--svg-transition-hover);
     filter: var(--svg-glow-hover);
-  }
-  img {
-    width: 20rem;
-    height: auto;
-    margin: 2rem 1rem;
-    /* object-fit: contain; */
-    /* filter: grayscale(1); */
-    filter: var(--svg-glow);
-    border-radius: 1rem;
-  }
-  img:hover {
     transition: var(--svg-transition-hover);
-    filter: var(--svg-glow-hover);
-  }
-  @media (min-width: 768px) {
-    img {
-      width: 25rem;
-    }
   }
 
   /* Scrollbar Styling */
