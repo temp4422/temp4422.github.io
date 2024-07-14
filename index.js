@@ -28,7 +28,8 @@ const dist = './docs/'
 const distAssets = './docs/assets/'
 const distAssetsImg = './docs/assets/img/'
 
-// Create dir if it doesnt exists
+// Clean and create dirs
+fs.rmSync(dist, { recursive: true, force: true })
 if (!fs.existsSync(dist)) fs.mkdirSync(dist, { recursive: true })
 if (!fs.existsSync(distAssets)) fs.mkdirSync(distAssets, { recursive: true })
 // #endregion
