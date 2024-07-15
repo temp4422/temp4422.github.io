@@ -10,7 +10,13 @@ function Counter() {
       justifyContent: 'center',
       alignItems: 'center',
     },
-
+    heading: {
+      padding: '0',
+      margin: '0',
+    },
+    paragraph: {
+      margin: '0.5rem',
+    },
     button: {
       width: '10rem',
       color: 'white',
@@ -23,8 +29,8 @@ function Counter() {
 
   return (
     <div style={mystyle.container}>
-      <h3>Counter</h3>
-      <p>You clicked {count} times</p>
+      <h3 style={mystyle.heading}>Counter</h3>
+      <p style={mystyle.paragraph}>You clicked {count} times</p>
       <button style={mystyle.button} onClick={() => setCount(count + 1)}>
         Click me
       </button>
@@ -33,7 +39,13 @@ function Counter() {
 }
 
 function Header() {
-  return <h2>Develop. Preview. Ship. 🚀</h2>
+  const mystyle = {
+    heading: {
+      padding: '0.5rem',
+      margin: '0',
+    },
+  }
+  return <h2 style={mystyle.heading}>Develop. Preview. Ship. 🚀</h2>
 }
 
 function App() {

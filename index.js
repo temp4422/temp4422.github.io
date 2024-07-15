@@ -340,5 +340,5 @@ main()
 
 console.log('⭐️ END BUILD ⭐️\n🎉 🎉 🎉')
 
-module.exports = { kissX, optimizeHTML } // For development purpose import in watch.js
+module.exports = { kissX, optimizeHTML, convertImages, copyAssets } // For development purpose import in watch.js
 // #endregion

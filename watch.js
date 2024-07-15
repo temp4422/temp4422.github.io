@@ -1,12 +1,14 @@
 const fs = require('fs')
-const { kissX, optimizeHTML } = require('./index.js')
+const { kissX, optimizeHTML, convertImages, copyAssets } = require('./index.js')
 // const { exec } = require('child_process')
 
 // Watch file changes and rebuild
 fs.watch('./src/', { recursive: true }, (event, filename) => {
   console.log(`Detected ${event} in ${filename}`)
   kissX()
-  optimizeHTML()
+  // optimizeHTML()
+  // convertImages()
+  // copyAssets()
 })
 
 // // Exec shell command
