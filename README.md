@@ -2,7 +2,7 @@
 
 [Link to Portfolio Website](https://temp4422.github.io)
 
-Greetings! This is my portfolio. Let me acquaintance you with my works ;)
+Greetings! This is my dev portfolio. Let me acquaintance you with my works ;)
 
 ## Philosophy
 
