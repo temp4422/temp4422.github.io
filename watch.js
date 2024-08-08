@@ -8,7 +8,7 @@ fs.watch('./src/', { recursive: true }, (event, filename) => {
   kissX()
   // optimizeHTML()
   // convertImages()
-  // copyAssets()
+  copyAssets()
 })
 
 // // Exec shell command
