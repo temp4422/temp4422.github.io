@@ -286,10 +286,15 @@ function convertImages() {
 /* ************************************************************************************** */
 function copyAssets() {
   // Copy other assets
-  console.log(`Copy all assets from ${srcAssets} to ${distAssets} dir  🔨`)
+  console.log(`Copy assets from ${srcAssets} to ${distAssets} dir  🔨`)
 
   try {
-    fs.cpSync(srcAssets, distAssets, { recursive: true })
+    fs.cpSync(srcAssets, distAssets, {
+      recursive: true,
+      // Exclude folders containing 'test'
+      filter: (item) => !item.includes('test'),
+    })
+
     // Add .nojekyll to disable Jekyll and proper assets loading
     fs.openSync(`${dist}.nojekyll`, 'w')
   } catch (err) {
