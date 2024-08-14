@@ -506,17 +506,14 @@
     </div>
   </label>
 </nav>
-<!-- <script>
+
+<script>
   /****************************** Navigation menu ******************************/
   const navButton = document.querySelector('.nav__button')
   const navPanel = document.querySelector('.nav__panel')
-  const navlinks = document.querySelectorAll('.nav__panel__link')
   const body = document.querySelector('body')
 
-  function showMenu() {
-    navButton.classList.toggle('show__nav')
-    navPanel.classList.toggle('show__nav__panel')
-
+  function toggleOverflow() {
     if (document.body.clientWidth < 600) {
       if (body.style.overflow === '') {
         body.style.overflow = 'hidden'
@@ -529,25 +526,7 @@
       }
     }
   }
-  // showMenu()
 
-  navButton.addEventListener('click', showMenu, false)
-  navPanel.addEventListener('click', showMenu)
-
-  navlinks.forEach((item) => {
-    item.addEventListener('click', showMenu, false)
-  })
-
-  /* Show links in folder START */
-  const linksfolder = document.querySelector('#js-links-folder')
-  const showLinksButton = document.querySelector('#js-show-links-button')
-
-  function showLinks(e) {
-    // showLinksButton.removeEventListener('click', showMenu) // Remove event click from button NOT WORK
-    // e.stopImmediatePropagation() // Disable showMenu, alternative to removeEventListener
-    e.stopPropagation() // Disable showMenu, alternative to removeEventListener
-    linksfolder.classList.toggle('show-links-folder')
-  }
-
-  showLinksButton.addEventListener('click', showLinks, false)
-</script> -->
+  navButton.addEventListener('click', toggleOverflow, false)
+  navPanel.addEventListener('click', toggleOverflow, false)
+</script>
