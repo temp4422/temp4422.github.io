@@ -1,5 +1,5 @@
 <style>
-  /****************************** NAVMENU ******************************/
+  /****************************** NAVIGATION HAMBURGER MENU ******************************/
   #nav {
     overflow-x: hidden;
     /* Declare variables */
@@ -8,6 +8,108 @@
     --transision-time-in: 0.2s;
     /* Links */
     --nav-links-gap: 1rem;
+  }
+
+  /* #region NAV BUTTON (with animation) */
+  /* Toggle nav button */
+
+  .nav__button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: grid;
+    align-content: space-evenly;
+    gap: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(186, 186, 186, 0.377);
+    margin: 1.5rem;
+    padding: 0.6rem;
+    border-radius: 30%;
+    animation: menu-spin-back var(--transision-time-in) ease-in-out;
+    animation-fill-mode: forwards;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: none;
+    z-index: 300;
+    cursor: pointer;
+    transition: 0.5s ease; /* box shadow animation on hover*/
+    filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
+  }
+  .nav__button:hover {
+    transition: 0.5s ease;
+    filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
+  }
+  .nav__button__line {
+    width: 100%;
+    height: 0.3rem;
+    /* background: var(--black); */
+    background: #000;
+    border-radius: 8px;
+  }
+  .nav__button__line:nth-child(1) {
+    transition: var(--transision-time-in);
+    transform: rotate(0) translate(0);
+  }
+  .nav__button__line:nth-child(2) {
+    opacity: 1;
+    transition: var(--transision-time-in);
+    transform: rotate(0);
+  }
+  .nav__button__line:nth-child(3) {
+    transition: var(--transision-time-in);
+    transform: rotate(0) translate(0);
+  }
+  #nav__checkbox:checked ~ .nav__button .nav__button__line:nth-child(1) {
+    transition: var(--transision-time-out);
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
+  #nav__checkbox:checked ~ .nav__button .nav__button__line:nth-child(2) {
+    opacity: 0;
+    transition: var(--transision-time-out);
+    transform: rotate(360deg);
+  }
+  #nav__checkbox:checked ~ .nav__button .nav__button__line:nth-child(3) {
+    transition: var(--transision-time-out);
+    transform: rotate(-45deg) translate(0.6rem, -0.65rem);
+  }
+  #nav__checkbox:checked ~ .nav__button {
+    animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
+    animation-fill-mode: forwards;
+  }
+  @keyframes menu-spin {
+    0% {
+      border-radius: 25%;
+    }
+    50% {
+      border-radius: 100%;
+    }
+    100% {
+      border-radius: 100%;
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes menu-spin-back {
+    0% {
+      border-radius: 100%;
+    }
+    50% {
+      border-radius: 50%;
+    }
+    100% {
+      border-radius: 25%;
+      transform: rotate(-180deg);
+    }
+  }
+
+  /* .show__nav .nav__button__line:nth-child(1) {transition: var(--transision-time-out);transform: rotate(45deg) translate(0.5rem, 0.5rem);}.show__nav .nav__button__line:nth-child(2) {opacity: 0;transition: var(--transision-time-out);transform: rotate(360deg);}.show__nav .nav__button__line:nth-child(3) {transition: var(--transision-time-out);transform: rotate(-45deg) translate(0.6rem, -0.65rem);}.show__nav {animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);animation-fill-mode: forwards;} */
+  /* #endregion */
+
+  /* #region NAV PANEL */
+  /* Show nav panel (hidden defult)*/
+  #nav__checkbox:checked ~ .nav__panel {
+    right: 0;
+    transition: calc(var(--transision-time-out) / 1.5) ease;
   }
   .nav__panel {
     position: fixed;
@@ -27,9 +129,11 @@
     place-items: start center;
     overflow-y: auto;
   }
-  .show__nav__panel {
-    right: 0;
-    transition: calc(var(--transision-time-out) / 1.5) ease;
+  @media (min-width: 600px) {
+    .nav__panel {
+      width: 25vw;
+      border-radius: 5px 0 0 5px;
+    }
   }
   .nav__panel__top {
     width: 100%;
@@ -61,101 +165,6 @@
     display: none;
   }
 
-  /* Navigation menu button animation */
-  .nav__button {
-    position: fixed;
-    top: 0;
-    right: 0;
-    display: grid;
-    align-content: space-evenly;
-    gap: 0.5rem;
-    width: 3rem;
-    height: 3rem;
-    background: rgba(186, 186, 186, 0.377);
-    margin: 1.5rem;
-    padding: 0.6rem;
-    border-radius: 30%;
-    animation: menu-spin-back var(--transision-time-in) ease-in-out;
-    animation-fill-mode: forwards;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: none;
-    z-index: 300;
-    cursor: pointer;
-    transition: 0.5s ease; /* box shadow animation on hover*/
-    filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
-  }
-  .nav__button:hover {
-    transition: 0.5s ease;
-    filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
-  }
-  @media (min-width: 600px) {
-    .nav__panel {
-      width: 25vw;
-      border-radius: 5px 0 0 5px;
-    }
-  }
-  .nav__button__line {
-    width: 100%;
-    height: 0.3rem;
-    /* background: var(--black); */
-    background: #000;
-    border-radius: 8px;
-  }
-  .nav__button__line:nth-child(1) {
-    transition: var(--transision-time-in);
-    transform: rotate(0) translate(0);
-  }
-  .nav__button__line:nth-child(2) {
-    opacity: 1;
-    transition: var(--transision-time-in);
-    transform: rotate(0);
-  }
-  .nav__button__line:nth-child(3) {
-    transition: var(--transision-time-in);
-    transform: rotate(0) translate(0);
-  }
-  .show__nav .nav__button__line:nth-child(1) {
-    transition: var(--transision-time-out);
-    transform: rotate(45deg) translate(0.5rem, 0.5rem);
-  }
-  .show__nav .nav__button__line:nth-child(2) {
-    opacity: 0;
-    transition: var(--transision-time-out);
-    transform: rotate(360deg);
-  }
-  .show__nav .nav__button__line:nth-child(3) {
-    transition: var(--transision-time-out);
-    transform: rotate(-45deg) translate(0.6rem, -0.65rem);
-  }
-  .show__nav {
-    animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
-    animation-fill-mode: forwards;
-  }
-  @keyframes menu-spin {
-    0% {
-      border-radius: 25%;
-    }
-    50% {
-      border-radius: 100%;
-    }
-    100% {
-      border-radius: 100%;
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes menu-spin-back {
-    0% {
-      border-radius: 100%;
-    }
-    50% {
-      border-radius: 50%;
-    }
-    100% {
-      border-radius: 25%;
-      transform: rotate(-180deg);
-    }
-  }
   /* Links folder */
   .show-links-button {
     background: transparent;
@@ -171,6 +180,8 @@
   .show-links-folder {
     display: flex;
   }
+  /* .show__nav__panel {right: 0;transition: calc(var(--transision-time-out) / 1.5) ease;} */
+  /* #endregion */
 </style>
 
 <nav id="nav">
@@ -488,7 +499,7 @@
     </div>
   </label>
 </nav>
-<script>
+<!-- <script>
   /****************************** Navigation menu ******************************/
   const navButton = document.querySelector('.nav__button')
   const navPanel = document.querySelector('.nav__panel')
@@ -532,4 +543,4 @@
   }
 
   showLinksButton.addEventListener('click', showLinks, false)
-</script>
+</script> -->
