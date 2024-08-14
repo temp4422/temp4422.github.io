@@ -27,7 +27,7 @@
     place-items: start center;
     overflow-y: auto;
   }
-  .show-nav__panel {
+  .show__nav__panel {
     right: 0;
     transition: calc(var(--transision-time-out) / 1.5) ease;
   }
@@ -43,7 +43,7 @@
     grid-auto-flow: column;
     justify-content: space-between;
   }
-  .nav__link {
+  .nav__panel__link {
     text-decoration: none;
   }
   .nav__svg {
@@ -115,20 +115,20 @@
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  .show-nav__menu .nav__button__line:nth-child(1) {
+  .show__nav .nav__button__line:nth-child(1) {
     transition: var(--transision-time-out);
     transform: rotate(45deg) translate(0.5rem, 0.5rem);
   }
-  .show-nav__menu .nav__button__line:nth-child(2) {
+  .show__nav .nav__button__line:nth-child(2) {
     opacity: 0;
     transition: var(--transision-time-out);
     transform: rotate(360deg);
   }
-  .show-nav__menu .nav__button__line:nth-child(3) {
+  .show__nav .nav__button__line:nth-child(3) {
     transition: var(--transision-time-out);
     transform: rotate(-45deg) translate(0.6rem, -0.65rem);
   }
-  .show-nav__menu {
+  .show__nav {
     animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
     animation-fill-mode: forwards;
   }
@@ -184,7 +184,7 @@
 
   <label class="nav__panel" for="nav__checkbox" aria-label="nav panel">
     <div class="nav__panel__top">
-      <a class="nav__link" href="/" aria-label="Home">
+      <a class="nav__panel__link" href="/" aria-label="Home">
         <div class="svg nav__svg">
           <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill="none" d="M0 0h48v48H0z" />
@@ -196,7 +196,7 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/freecodecamp.html" aria-label="freecodecamp">
+      <a class="nav__panel__link" href="/freecodecamp.html" aria-label="freecodecamp">
         <div class="svg nav__svg">
           <svg
             width="48"
@@ -220,7 +220,7 @@
         </div>
       </a>
 
-      <a class="nav__link" href="/playground.html" aria-label="Playground">
+      <a class="nav__panel__link" href="/playground.html" aria-label="Playground">
         <div class="svg nav__svg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +257,11 @@
 
       <!-- Links folder START -->
       <div id="js-links-folder" class="links-folder">
-        <a class="nav__link" href="/guess-the-number.html" aria-label="Guess the Number Game">
+        <a
+          class="nav__panel__link"
+          href="/guess-the-number.html"
+          aria-label="Guess the Number Game"
+        >
           <div class="svg nav__svg">
             <svg width="48" height="48" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -268,7 +272,7 @@
           </div>
         </a>
 
-        <a class="nav__link" href="/threejs.html" aria-label="Guess the Number Game">
+        <a class="nav__panel__link" href="/threejs.html" aria-label="Guess the Number Game">
           <div class="svg nav__svg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -313,7 +317,7 @@
           </div>
         </a>
 
-        <a class="nav__link" href="/svg-sprites.html" aria-label="link to page">
+        <a class="nav__panel__link" href="/svg-sprites.html" aria-label="link to page">
           <div class="svg nav__svg">
             <svg
               height="48px"
@@ -349,7 +353,7 @@
           </div>
         </a>
 
-        <a class="nav__link" href="/fonts.html" aria-label="link to page">
+        <a class="nav__panel__link" href="/fonts.html" aria-label="link to page">
           <div class="svg nav__svg">
             <svg
               height="48px"
@@ -391,7 +395,7 @@
           </div>
         </a>
 
-        <a class="nav__link" href="/react-nextjs.html" aria-label="link to page">
+        <a class="nav__panel__link" href="/react-nextjs.html" aria-label="link to page">
           <div class="svg nav__svg">
             <svg
               width="48"
@@ -416,7 +420,7 @@
           </div>
         </a>
 
-        <a class="nav__link" href="/test.html" aria-label="link to page">
+        <a class="nav__panel__link" href="/test.html" aria-label="link to page">
           <div class="svg nav__svg">
             <svg
               height="48px"
@@ -488,12 +492,12 @@
   /****************************** Navigation menu ******************************/
   const navButton = document.querySelector('.nav__button')
   const navPanel = document.querySelector('.nav__panel')
-  const navlinks = document.querySelectorAll('.nav__link')
+  const navlinks = document.querySelectorAll('.nav__panel__link')
   const body = document.querySelector('body')
 
   function showMenu() {
-    navButton.classList.toggle('show-nav__menu')
-    navPanel.classList.toggle('show-nav__panel')
+    navButton.classList.toggle('show__nav')
+    navPanel.classList.toggle('show__nav__panel')
 
     if (document.body.clientWidth < 600) {
       if (body.style.overflow === '') {
