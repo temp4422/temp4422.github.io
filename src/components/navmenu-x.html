@@ -1,6 +1,6 @@
 <style>
   /****************************** NAVMENU ******************************/
-  .nav {
+  #nav {
     overflow-x: hidden;
     /* Declare variables */
     /* Nav menu animation speed */
@@ -62,7 +62,7 @@
   }
 
   /* Navigation menu button animation */
-  .nav__menu {
+  .nav__button {
     position: fixed;
     top: 0;
     right: 0;
@@ -85,7 +85,7 @@
     transition: 0.5s ease; /* box shadow animation on hover*/
     filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
   }
-  .nav__menu:hover {
+  .nav__button:hover {
     transition: 0.5s ease;
     filter: drop-shadow(0 0 0.25rem rgba(255, 255, 255, 1));
   }
@@ -95,36 +95,36 @@
       border-radius: 5px 0 0 5px;
     }
   }
-  .nav__menu__line {
+  .nav__button__line {
     width: 100%;
     height: 0.3rem;
     /* background: var(--black); */
     background: #000;
     border-radius: 8px;
   }
-  .nav__menu__line:nth-child(1) {
+  .nav__button__line:nth-child(1) {
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  .nav__menu__line:nth-child(2) {
+  .nav__button__line:nth-child(2) {
     opacity: 1;
     transition: var(--transision-time-in);
     transform: rotate(0);
   }
-  .nav__menu__line:nth-child(3) {
+  .nav__button__line:nth-child(3) {
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  .show-nav__menu .nav__menu__line:nth-child(1) {
+  .show-nav__menu .nav__button__line:nth-child(1) {
     transition: var(--transision-time-out);
     transform: rotate(45deg) translate(0.5rem, 0.5rem);
   }
-  .show-nav__menu .nav__menu__line:nth-child(2) {
+  .show-nav__menu .nav__button__line:nth-child(2) {
     opacity: 0;
     transition: var(--transision-time-out);
     transform: rotate(360deg);
   }
-  .show-nav__menu .nav__menu__line:nth-child(3) {
+  .show-nav__menu .nav__button__line:nth-child(3) {
     transition: var(--transision-time-out);
     transform: rotate(-45deg) translate(0.6rem, -0.65rem);
   }
@@ -173,13 +173,16 @@
   }
 </style>
 
-<nav id="navmenu" class="nav">
-  <button class="nav__menu" aria-label="Navigation menu">
-    <div class="nav__menu__line"></div>
-    <div class="nav__menu__line"></div>
-    <div class="nav__menu__line"></div>
-  </button>
-  <div class="nav__panel">
+<nav id="nav">
+  <input id="nav__checkbox" type="checkbox" style="display: none" aria-hidden="true" />
+
+  <label class="nav__button" for="nav__checkbox" aria-label="nav button">
+    <div class="nav__button__line"></div>
+    <div class="nav__button__line"></div>
+    <div class="nav__button__line"></div>
+  </label>
+
+  <label class="nav__panel" for="nav__checkbox" aria-label="nav panel">
     <div class="nav__panel__top">
       <a class="nav__link" href="/" aria-label="Home">
         <div class="svg nav__svg">
@@ -479,35 +482,35 @@
         </svg>
       </div>
     </div>
-  </div>
+  </label>
 </nav>
 <script>
   /****************************** Navigation menu ******************************/
-  const navmenu = document.querySelector('.nav__menu')
-  const navpanel = document.querySelector('.nav__panel')
+  const navButton = document.querySelector('.nav__button')
+  const navPanel = document.querySelector('.nav__panel')
   const navlinks = document.querySelectorAll('.nav__link')
   const body = document.querySelector('body')
 
   function showMenu() {
-    navmenu.classList.toggle('show-nav__menu')
-    navpanel.classList.toggle('show-nav__panel')
+    navButton.classList.toggle('show-nav__menu')
+    navPanel.classList.toggle('show-nav__panel')
 
     if (document.body.clientWidth < 600) {
       if (body.style.overflow === '') {
         body.style.overflow = 'hidden'
         // body.style.paddingRight = '10px' // Prevent page shift
-        // navmenu.style.right = '15px' // Prevent navmenu shift
+        // navButton.style.right = '15px' // Prevent navButton shift
       } else {
         body.style.overflow = ''
         // body.style.paddingRight = '0'
-        // navmenu.style.right = '0'
+        // navButton.style.right = '0'
       }
     }
   }
   // showMenu()
 
-  navmenu.addEventListener('click', showMenu, false)
-  navpanel.addEventListener('click', showMenu)
+  navButton.addEventListener('click', showMenu, false)
+  navPanel.addEventListener('click', showMenu)
 
   navlinks.forEach((item) => {
     item.addEventListener('click', showMenu, false)
