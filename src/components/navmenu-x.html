@@ -190,6 +190,14 @@
   }
   /* .show-links-folder {display: flex;} */
   /* #endregion */
+
+  @view-transition {
+    navigation: auto;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 1s;
+  }
 </style>
 
 <nav id="nav">
@@ -512,8 +520,11 @@
   const navButton = document.querySelector('.nav__button')
   const navPanel = document.querySelector('.nav__panel')
   const body = document.querySelector('body')
+  const checkbox = document.querySelector('#nav__checkbox')
 
   function toggleOverflow() {
+    setTimeout(() => {}, 500)
+
     if (body.clientWidth < 600) {
       if (body.style.overflow === '') {
         body.style.overflow = 'hidden'
