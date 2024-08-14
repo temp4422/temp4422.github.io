@@ -514,15 +514,15 @@
   const body = document.querySelector('body')
 
   function toggleOverflow() {
-    if (document.body.clientWidth < 600) {
+    if (body.clientWidth < 600) {
       if (body.style.overflow === '') {
         body.style.overflow = 'hidden'
-        // body.style.paddingRight = '10px' // Prevent page shift
-        // navButton.style.right = '15px' // Prevent navButton shift
+        body.style.paddingRight = '10px' // Prevent page shift
+        navButton.style.right = '10px' // Prevent navButton shift
       } else {
         body.style.overflow = ''
-        // body.style.paddingRight = '0'
-        // navButton.style.right = '0'
+        body.style.paddingRight = '0'
+        navButton.style.right = '0'
       }
     }
   }
