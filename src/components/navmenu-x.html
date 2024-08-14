@@ -168,17 +168,25 @@
   /* #endregion */
 
   /* #region NAV PANLE FOLER */
-  /* Show nav panel foler cont */
+  /* Show nav panel foler */
   #nav__panel__checkbox:checked ~ .nav__panel__folder {
-    display: flex;
+    translate: 0;
+    visibility: visible;
+    opacity: 1;
+    transition: calc(var(--transision-time-out) / 1.5) ease;
   }
   .nav__panel__folder {
-    display: none;
-    visibility: none;
+    translate: -100% 0;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    transition: var(--transision-time-in) ease-out;
   }
   /* .show-links-folder {display: flex;} */
   /* #endregion */
