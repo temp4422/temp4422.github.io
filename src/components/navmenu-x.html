@@ -12,6 +12,23 @@
 
   /* #region NAV BUTTON (with animation) */
   /* Toggle nav button */
+  #nav__checkbox:checked ~ .nav__button {
+    animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
+    animation-fill-mode: forwards;
+  }
+  #nav__checkbox:checked ~ .nav__button .nav__button__line:nth-child(1) {
+    transition: var(--transision-time-out);
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
+  #nav__checkbox:checked ~ .nav__button .nav__button__line:nth-child(2) {
+    opacity: 0;
+    transition: var(--transision-time-out);
+    transform: rotate(360deg);
+  }
+  #nav__checkbox:checked ~ .nav__button .nav__button__line:nth-child(3) {
+    transition: var(--transision-time-out);
+    transform: rotate(-45deg) translate(0.6rem, -0.65rem);
+  }
 
   .nav__button {
     position: fixed;
@@ -60,23 +77,7 @@
     transition: var(--transision-time-in);
     transform: rotate(0) translate(0);
   }
-  #nav__checkbox:checked ~ .nav__button .nav__button__line:nth-child(1) {
-    transition: var(--transision-time-out);
-    transform: rotate(45deg) translate(0.5rem, 0.5rem);
-  }
-  #nav__checkbox:checked ~ .nav__button .nav__button__line:nth-child(2) {
-    opacity: 0;
-    transition: var(--transision-time-out);
-    transform: rotate(360deg);
-  }
-  #nav__checkbox:checked ~ .nav__button .nav__button__line:nth-child(3) {
-    transition: var(--transision-time-out);
-    transform: rotate(-45deg) translate(0.6rem, -0.65rem);
-  }
-  #nav__checkbox:checked ~ .nav__button {
-    animation: menu-spin var(--transision-time-out) cubic-bezier(0.8, -0.07, 0.05, 1.8);
-    animation-fill-mode: forwards;
-  }
+
   @keyframes menu-spin {
     0% {
       border-radius: 25%;
@@ -155,19 +156,19 @@
     width: 3rem;
     height: 3rem;
   }
-  .language-svg {
+  .language__svg {
     display: none;
   }
-  .sun-svg {
+  .sun__svg {
     display: none;
   }
-  .moon-svg {
+  .moon__svg {
     display: none;
   }
   /* .show__nav__panel {right: 0;transition: calc(var(--transision-time-out) / 1.5) ease;} */
   /* #endregion */
 
-  /* #region NAV PANLE FOLER */
+  /* #region NAV PANLE FOLDER */
   /* Show nav panel foler */
   #nav__panel__checkbox:checked ~ .nav__panel__folder {
     translate: 0;
@@ -190,14 +191,6 @@
   }
   /* .show-links-folder {display: flex;} */
   /* #endregion */
-
-  @view-transition {
-    navigation: auto;
-  }
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 1s;
-  }
 </style>
 
 <nav id="nav">
@@ -483,7 +476,7 @@
     </div>
 
     <div class="nav__panel__bottom">
-      <div class="svg nav__svg language-svg">
+      <div class="svg nav__svg language__svg">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M4 16h40M24 46c12.15 0 22-9.85 22-22S36.15 2 24 2 2 11.85 2 24s9.85 22 22 22Zm0 0c6 0 8-10 8-22S30 2 24 2s-8 10-8 22 2 22 8 22ZM4 32h40H4Z"
@@ -492,7 +485,7 @@
           />
         </svg>
       </div>
-      <div class="svg nav__svg sun-svg">
+      <div class="svg nav__svg sun__svg">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M24 33a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0 3a12 12 0 1 0 0-24 12 12 0 0 0 0 24Zm0-36a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 0Zm0 39a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 1 1-3 0v-6A1.5 1.5 0 0 1 24 39Zm24-15a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 48 24ZM9 24a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 1 1 0-3h6A1.5 1.5 0 0 1 9 24ZM40.971 7.029a1.5 1.5 0 0 1 0 2.121l-4.242 4.245a1.501 1.501 0 0 1-2.121-2.124l4.242-4.242a1.5 1.5 0 0 1 2.121 0ZM13.392 34.608a1.5 1.5 0 0 1 0 2.121L9.15 40.971a1.5 1.5 0 0 1-2.121-2.121l4.242-4.242a1.5 1.5 0 0 1 2.121 0Zm27.579 6.363a1.5 1.5 0 0 1-2.121 0l-4.242-4.242a1.5 1.5 0 0 1 2.121-2.121l4.242 4.242a1.5 1.5 0 0 1 0 2.121ZM13.392 13.395a1.5 1.5 0 0 1-2.121 0L7.029 9.15A1.5 1.5 0 1 1 9.15 7.029l4.242 4.242a1.5 1.5 0 0 1 0 2.124Z"
@@ -500,7 +493,7 @@
           />
         </svg>
       </div>
-      <div class="svg nav__svg moon-svg">
+      <div class="svg nav__svg moon__svg">
         <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M21 3C13.5 3 4.5 10.5 4.5 22.5s9 21 21 21S45 34.5 45 27C28.5 37.5 10.5 19.5 21 3Z"

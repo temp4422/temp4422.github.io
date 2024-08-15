@@ -119,4 +119,13 @@
     /* -webkit-border-radius: 10px; */
   }
   /* } */
+
+  /* View Tranisition API https://developer.chrome.com/docs/web-platform/view-transitions */
+  @view-transition {
+    navigation: auto;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 1s;
+  }
 </style>
