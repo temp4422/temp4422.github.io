@@ -1,9 +1,9 @@
 <style>
   /****************************** SECTIONS ******************************/
   section {
-    margin: 6rem auto;
     display: grid;
     place-items: center;
+    margin: 6rem auto;
     overflow-x: hidden;
   }
 
@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 4rem;
+    padding: 2rem;
   }
   @media (min-width: 768px) {
     .works {
@@ -34,42 +35,47 @@
     }
   }
   .work-item {
-    background: transparent;
-  }
-  .work-item a,
-  .work-item a:hover {
-    /* Prevent default link filter on hover */
-    filter: none;
-  }
-  .work-item__image-wrapper {
-    width: 20rem;
-    height: 15rem;
-    margin: 1rem;
-    border-radius: 1rem;
+    position: relative;
     filter: var(--svg-glow);
     transition: var(--svg-transition);
-    overflow: hidden;
+    background: transparent;
+    width: 20rem;
+    height: 15rem;
   }
-  .work-item__image-wrapper:hover {
+  .work-item:hover {
     filter: var(--svg-glow-hover);
     transition: var(--svg-transition-hover);
   }
-  .image {
+  .work-item__iframe {
+    margin: 1rem;
+    border-radius: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    overflow: hidden;
+    zoom: 50%;
+    z-index: -10;
+  }
+  .work-item__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+    background: transparent;
     width: 100%;
     height: 100%;
-    /* object-fit: contain; */
-    object-fit: cover;
+    overflow: hidden;
   }
   /* #endregion */
 
   /* #region SECTION-ABOUT */
   .web-core {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 4rem 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 4rem 0;
   }
   .jamstack-logo {
     margin: 2rem auto;
@@ -90,71 +96,73 @@
   <h2 class="works-title">MY WORKS</h2>
 
   <div class="work-item">
-    <div class="work-item__image-wrapper">
-      <a href="https://www.x-drive.ua/" target="_blank" aria-label="x-drive.ua">
-        <img class="image" loading="lazy" src="/assets/img/x-drive.webp" alt="x-drive" />
-      </a>
-    </div>
-    <p class="work-item__text">X-drive.ua ski rental network</p>
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://x-drive.ua"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://x-drive.ua"></a>
+    <!-- <p class="work-item__text">X-drive.ua ski rental network</p> -->
   </div>
 
   <div class="work-item">
-    <div class="work-item__image-wrapper">
-      <a href="https://alpenkrokus.com/" target="_blank" aria-label="Link to source">
-        <img
-          class="image"
-          loading="lazy"
-          src="/assets/img/alpenkrokus.webp"
-          alt="Alpen Krokus Hotel"
-        />
-      </a>
-    </div>
-    <p class="work-item__text">Alpen Krokus hotel</p>
+    <iframe
+      style="background: white"
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://alpenkrokus.com/"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://alpenkrokus.com/"></a>
   </div>
 
   <div class="work-item">
-    <div class="work-item__image-wrapper">
-      <a href="https://mountain-cake.onrender.com/" target="_blank" aria-label="Link to source">
-        <img
-          class="image"
-          loading="lazy"
-          src="/assets/img/mountain-cake.webp"
-          alt="Mountain Cake"
-        />
-      </a>
-    </div>
-    <p class="work-item__text">Mountain Cake</p>
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://mountain-cake.onrender.com/"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://mountain-cake.onrender.com/"></a>
   </div>
 
   <div class="work-item">
-    <div class="work-item__image-wrapper">
-      <a
-        href="https://solomia-portfolio.netlify.app/"
-        target="_blank"
-        aria-label="Solomia portfolio"
-      >
-        <img class="image" loading="lazy" src="/assets/img/solomia.webp" alt="solomia-portfolio" />
-      </a>
-    </div>
-    <p class="work-item__text">Artful portfolio</p>
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://solomia-portfolio.netlify.app/"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://solomia-portfolio.netlify.app/"></a>
   </div>
 
   <div class="work-item">
-    <div class="work-item__image-wrapper">
-      <a href="/freecodecamp" target="_blank" aria-label="Freecodecamp">
-        <img class="image" loading="lazy" src="/assets/img/freecodecamp.webp" alt="freecodecamp" />
-      </a>
-    </div>
-    <p class="work-item__text">freeCodeCamp projects</p>
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://temp4422.github.io/freecodecamp.html"
+    ></iframe>
+    <a
+      class="work-item__link"
+      target="_blank"
+      href="https://temp4422.github.io/freecodecamp.html"
+    ></a>
   </div>
 
   <div class="work-item">
-    <div class="work-item__image-wrapper">
-      <a href="/playground" target="_blank" aria-label="Playground">
-        <img class="image" loading="lazy" src="/assets/img/playground.webp" alt="playground" />
-      </a>
-    </div>
-    <p class="work-item__text">An interactive playground</p>
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://temp4422.github.io/playground.html"
+    ></iframe>
+    <a
+      class="work-item__link"
+      target="_blank"
+      href="https://temp4422.github.io/playground.html"
+    ></a>
   </div>
 </section>
 
