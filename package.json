@@ -7,7 +7,7 @@
   "main": "index.html",
   "scripts": {
     "//1": "🔹 BASIC COMMANDS",
-    "dev": "browser-sync start --server 'dist/' --files 'src/' & node watch.js",
+    "dev": "browser-sync start --server 'dist/' --files 'src/' --port 3000 --no-open --no-notify & node watch.js",
     "dev2": "serve dist/ & node watch.js",
     "build": "node index.js",
     "start": "serve dist/",
