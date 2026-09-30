@@ -52,6 +52,49 @@
     cursor: pointer;
     transition: 0.5s ease; /* box shadow animation on hover*/
     filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
+
+    /* #region Squircle Shape  */
+    /* Short */
+    clip-path: shape(
+      from 16.1612% 3.6612%,
+      curve to 50% 0 with 25% 0,
+      curve to 83.8388% 3.6612% with 75% 0,
+      curve to 96.3388% 16.1612% with 92.6776% 7.3224%,
+      curve to 100% 50% with 100% 25%,
+      curve to 96.3388% 83.8388% with 100% 75%,
+      curve to 83.8388% 96.3388% with 92.6776% 92.6776%,
+      curve to 50% 100% with 75% 100%,
+      curve to 16.1612% 96.3388% with 25% 100%,
+      curve to 3.6612% 83.8388% with 7.3224% 92.6776%,
+      curve to 0 50% with 0 75%,
+      curve to 3.6612% 16.1612% with 0 25%,
+      curve to 16.1612% 3.6612% with 7.3224% 7.3224%
+    );
+
+    /* Full https://css-shape.com/squircle/ */
+    /* between 0% [square] and 50% [squircle] (you can use pixel as well) */
+    /* --r: 50%;
+    --_r: clamp(0%, var(--r)/2, 25%);
+    --_v: calc(var(--_r) * (1 - sqrt(2) / 4));
+    --_p: calc(var(--_v) - var(--_r)/2);
+    clip-path: shape(
+      from var(--_v) var(--_p),
+      curve to 50% 0 with var(--_r) 0,
+      curve to calc(100% - var(--_v)) var(--_p) with calc(100% - var(--_r)) 0,
+      curve to calc(100% - var(--_p)) var(--_v) with calc(100% - 2 * var(--_p)) calc(2 * var(--_p)),
+      curve to 100% 50% with 100% var(--_r),
+      curve to calc(100% - var(--_p)) calc(100% - var(--_v)) with 100% calc(100% - var(--_r)),
+      curve to calc(100% - var(--_v)) calc(100% - var(--_p)) with calc(100% - 2 * var(--_p))
+        calc(100% - 2 * var(--_p)),
+      curve to 50% 100% with calc(100% - var(--_r)) 100%,
+      curve to var(--_v) calc(100% - var(--_p)) with var(--_r) 100%,
+      curve to var(--_p) calc(100% - var(--_v)) with calc(2 * var(--_p)) calc(100% - 2 * var(--_p)),
+      curve to 0 50% with 0 calc(100% - var(--_r)),
+      curve to var(--_p) var(--_v) with 0 var(--_r),
+      curve to var(--_v) var(--_p) with calc(2 * var(--_p)) calc(2 * var(--_p))
+    ); */
+    /* aspect-ratio: 1; */
+    /* #endregion Squircle Shape  */
   }
   .nav__button:hover {
     transition: 0.5s ease;
