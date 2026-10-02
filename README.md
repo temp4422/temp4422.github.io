@@ -8,7 +8,7 @@ Greetings! This is my dev portfolio. Let me acquaintance you with my works ;)
 
 Trying to [KISS](https://en.wikipedia.org/wiki/KISS_principle), while using latest and greatest core web technologies e.g. Web Components, SVG Sprites, ESNext, etc.
 
-## My framework: KISS-x
+## My framework: KISS-X
 
 Use simplest html elements as components and combine them in static pages with simple script.
 
