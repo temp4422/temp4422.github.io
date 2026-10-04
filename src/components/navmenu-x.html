@@ -164,6 +164,7 @@
     gap: var(--nav-links-gap);
     place-items: start center;
     overflow-y: auto;
+    scrollbar-width: none;
   }
   @media (min-width: 600px) {
     .nav__panel {
@@ -593,12 +594,12 @@
     if (body.clientWidth < 600) {
       if (body.style.overflow === '') {
         body.style.overflow = 'hidden'
-        body.style.paddingRight = '10px' // Prevent page shift
-        navButton.style.right = '10px' // Prevent navButton shift
+        // body.style.paddingRight = '10px' // Prevent page shift
+        // navButton.style.right = '10px' // Prevent navButton shift
       } else {
         body.style.overflow = ''
-        body.style.paddingRight = '0'
-        navButton.style.right = '0'
+        // body.style.paddingRight = '0'
+        // navButton.style.right = '0'
       }
     }
   }
