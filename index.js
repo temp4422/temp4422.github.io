@@ -1,13 +1,14 @@
 // #region Prepare environment
 console.log('⭐️ START BUILD ⭐️')
 
-const fs = require('fs')
-const path = require('path')
-const minify = require('html-minifier').minify
-const sharp = require('sharp')
+import fs from 'node:fs'
+import path from 'node:path'
+import crypto from 'node:crypto'
+import htmlMinifier from 'html-minifier'
+import sharp from 'sharp'
+import uglifyjs from 'uglify-js'
 
-const crypto = require('crypto')
-const uglifyjs = require('uglify-js')
+const minify = htmlMinifier.minify
 
 // Define source and destination directories, file extension, and tag files directory
 
@@ -37,7 +38,7 @@ if (!fs.existsSync(distAssets)) fs.mkdirSync(distAssets, { recursive: true })
 // #region KISS-x framework
 /* ************************************************************************************** */
 // Replace special tags with corresponding content
-function kissX() {
+export function kissX() {
   // Start replacing
   console.log(`Start replacing corresponding tags for all pages in ${srcPages} 🔨`)
 
@@ -76,7 +77,7 @@ function kissX() {
 
 // #region Optimize HTML
 /* ************************************************************************************** */
-function optimizeHTML() {
+export function optimizeHTML() {
   // Start optimization
   console.log(`Start optimization all pages in ${dist} 🔨`)
 
@@ -108,7 +109,7 @@ function optimizeHTML() {
 
 // #region Optimize CSS
 /* ************************************************************************************** */
-function optimizeCSS() {
+export function optimizeCSS() {
   const srcDir = './src/'
   const distDir = './dist/'
 
@@ -209,7 +210,7 @@ function optimizeCSS() {
 
 // #region Optimize JS
 /* ************************************************************************************** */
-function optimizeJS() {
+export function optimizeJS() {
   // Start optimization
   console.log(`Start optimization JS for all files in ${dist} 🔨`)
 
@@ -248,7 +249,7 @@ function optimizeJS() {
 
 // #region Convert images
 /* ************************************************************************************** */
-function convertImages() {
+export function convertImages() {
   // Start optimization of images
   console.log(`Start images conversion in ${srcAssetsImg} with sharp 🔨`)
 
@@ -284,7 +285,7 @@ function convertImages() {
 
 // #region Copy assets
 /* ************************************************************************************** */
-function copyAssets() {
+export function copyAssets() {
   // Copy other assets
   console.log(`Copy assets from ${srcAssets} to ${distAssets} dir  🔨`)
 
@@ -306,7 +307,7 @@ function copyAssets() {
 
 // #region Run all functions
 /* ************************************************************************************** */
-function main() {
+export function main() {
   // optimizeCSS() // run before kiss-x() // WIP
   kissX()
   optimizeHTML()
@@ -315,9 +316,8 @@ function main() {
   // optimizeJS() // WIP
   // fs.rmSync('./dist/', { recursive: true, force: true })
 }
+
 main()
 
 console.log('⭐️ END BUILD ⭐️\n🎉 🎉 🎉')
-
-module.exports = { kissX, optimizeHTML, convertImages, copyAssets } // For development purpose import in watch.js
 // #endregion

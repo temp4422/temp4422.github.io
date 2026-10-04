@@ -1,6 +1,6 @@
-const fs = require('fs')
-const { kissX, optimizeHTML, convertImages, copyAssets } = require('./index.js')
-// const { exec } = require('child_process')
+import fs from 'node:fs'
+import { kissX, optimizeHTML, convertImages, copyAssets } from './index.js'
+// import { exec } from 'node:child_process'
 
 // Watch file changes and rebuild
 fs.watch('./src/', { recursive: true }, (event, filename) => {

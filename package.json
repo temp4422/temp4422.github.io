@@ -25,9 +25,9 @@
     "watch": "node watch.js",
     "webpack": "webpack --watch & webpack serve --open",
     "lint": "echo lint",
-    "format": "npx prettier --write src/",
-    "minify": "npx terser dist/server.js --module --ecma 2022 --compress drop_console=true --mangle --output dist/server.js",
-    "lighthouse": "cd ./lighthouse/ && lighthouse http://localhost:3000 --quiet --chrome-flags='--headless'",
+    "format": "echo npx prettier --write src/",
+    "minify": "echo npx terser dist/server.js --module --ecma 2022 --compress drop_console=true --mangle --output dist/server.js",
+    "lighthouse": "echo cd ./lighthouse/ && lighthouse http://localhost:3000 --quiet --chrome-flags='--headless'",
     "//2": "🔹 NEXT COMMANDS",
     "dev-next": "next dev",
     "build-next": "next build",
@@ -35,10 +35,9 @@
     "lint-next": "next lint"
   },
   "devDependencies": {
-    "browser-sync": "^3.0.2",
-    "crypto": "^1.0.1",
+    "browser-sync": "^3.0.4",
     "html-minifier": "^4.0.0",
-    "sharp": "^0.33.4",
-    "uglify-js": "^3.19.0"
+    "sharp": "^0.35.5",
+    "uglify-js": "^3.19.3"
   }
 }
