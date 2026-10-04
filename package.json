@@ -1,18 +1,33 @@
 {
   "name": "dev-portfolio",
-  "version": "2.1.0",
+  "version": "3.0.1",
+  "description": "My personal portfolio website https://temp4422.github.io",
+  "homepage": "https://temp4422.github.io",
+  "keywords": [
+    "portfolio"
+  ],
   "author": "temp4422",
-  "description": "https://temp4422.github.io",
   "license": "ISC",
+  "type": "module",
   "main": "index.html",
+  "engines": {
+    "npm": "^11",
+    "node": "^24"
+  },
+  "packageManager": "npm@11.19.0",
   "scripts": {
     "//1": "🔹 BASIC COMMANDS",
     "dev": "browser-sync start --server 'dist/' --files 'src/' --port 3000 --no-open --no-notify & node watch.js",
     "dev2": "serve dist/ & node watch.js",
+    "prebuild": "npm run lint && npm run format",
     "build": "node index.js",
     "start": "serve dist/",
     "watch": "node watch.js",
     "webpack": "webpack --watch & webpack serve --open",
+    "lint": "echo lint",
+    "format": "npx prettier --write src/",
+    "minify": "npx terser dist/server.js --module --ecma 2022 --compress drop_console=true --mangle --output dist/server.js",
+    "lighthouse": "cd ./lighthouse/ && lighthouse http://localhost:3000 --quiet --chrome-flags='--headless'",
     "//2": "🔹 NEXT COMMANDS",
     "dev-next": "next dev",
     "build-next": "next build",
