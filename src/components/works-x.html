@@ -1,0 +1,149 @@
+<style>
+  /****************************** SECTIONS ******************************/
+  section {
+    display: grid;
+    place-items: center;
+    margin: 6rem auto;
+    overflow-x: hidden;
+  }
+
+  section#works {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  .works-title {
+    width: 100%;
+  }
+
+  .work-item {
+    position: relative;
+    filter: var(--svg-glow);
+    transition: var(--svg-transition);
+    background: transparent;
+    width: 20rem;
+    height: 13rem;
+  }
+  .work-item:hover {
+    filter: var(--svg-glow-hover);
+    transition: var(--svg-transition-hover);
+  }
+  .work-item__iframe {
+    margin: 1rem;
+    border-radius: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    overflow: hidden;
+    zoom: 40%;
+    z-index: -10;
+    border: 1px solid rgba(255, 255, 255, 0.115);
+  }
+  .work-item__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+</style>
+
+<section id="works">
+  <h2 class="works-title">MY WORKS</h2>
+
+  <div class="work-item">
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://x-drive.ua"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://x-drive.ua"></a>
+    <!-- <p class="work-item__text">X-drive.ua ski rental network</p> -->
+  </div>
+
+  <div class="work-item">
+    <iframe
+      style="background: white"
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://alpenkrokus.com/"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://alpenkrokus.com/"></a>
+  </div>
+
+  <div class="work-item">
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://mountain-cake.onrender.com/"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://mountain-cake.onrender.com/"></a>
+  </div>
+
+  <div class="work-item">
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://solomia-portfolio.netlify.app/"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://solomia-portfolio.netlify.app/"></a>
+  </div>
+
+  <div class="work-item">
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://temp4422.github.io/freecodecamp.html"
+    ></iframe>
+    <a
+      class="work-item__link"
+      target="_blank"
+      href="https://temp4422.github.io/freecodecamp.html"
+    ></a>
+  </div>
+
+  <div class="work-item">
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://temp4422.github.io/playground.html"
+    ></iframe>
+    <a
+      class="work-item__link"
+      target="_blank"
+      href="https://temp4422.github.io/playground.html"
+    ></a>
+  </div>
+
+  <div class="work-item">
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://passwd.temp44.top/"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://passwd.temp44.top/"></a>
+  </div>
+
+  <div class="work-item">
+    <iframe
+      class="work-item__iframe"
+      loading="lazy"
+      scrolling="no"
+      src="https://qr.temp44.top/"
+    ></iframe>
+    <a class="work-item__link" target="_blank" href="https://qr.temp44.top/"></a>
+  </div>
+</section>

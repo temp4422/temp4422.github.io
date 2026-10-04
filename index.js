@@ -149,7 +149,7 @@ export function optimizeCSS() {
           })
 
           return `class="${replacedClassList.join(' ')}"`
-        }
+        },
       )
 
       // Replace class names in <style></style> blocks
@@ -161,7 +161,7 @@ export function optimizeCSS() {
           })
 
           return `<style>${replacedStyleBlock}</style>`
-        }
+        },
       )
 
       // Replace class names in <script></script> blocks
@@ -173,7 +173,7 @@ export function optimizeCSS() {
           })
 
           return `<script>${replacedScriptBlock}</script>`
-        }
+        },
       )
 
       // Save the modified HTML to the 'dist' directory
@@ -305,10 +305,21 @@ export function copyAssets() {
 }
 // #endregion
 
+// #region generate html from markdown
+/* ************************************************************************************** */
+export function MDtoHTML() {
+  // Start converting Markdown to HTML
+  console.log(`Start converting Markdown to HTML in ${srcPages} 🔨`)
+  // TODO
+  console.log(`Markdown converted to HTML in all pages and saved to the ${dist} directory. 👍 \n`)
+}
+//#endregion
+
 // #region Run all functions
 /* ************************************************************************************** */
 export function main() {
   // optimizeCSS() // run before kiss-x() // WIP
+  // TODO MDtoHTML()
   kissX()
   optimizeHTML()
   convertImages()
