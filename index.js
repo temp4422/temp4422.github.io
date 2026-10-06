@@ -7,6 +7,7 @@ import crypto from 'node:crypto'
 import htmlMinifier from 'html-minifier'
 import sharp from 'sharp'
 import uglifyjs from 'uglify-js'
+import { marked } from 'marked'
 
 const minify = htmlMinifier.minify
 
@@ -20,14 +21,16 @@ const minify = htmlMinifier.minify
 // const srcPages = './dist/pages/' // for optimizeCSS()
 // const srcComponents = './dist/components/' // for optimizeCSS()
 
+const src = './src/'
 const srcPages = './src/pages/'
 const srcComponents = './src/components/'
-const src = './src/'
 const srcAssets = './src/assets/'
 const srcAssetsImg = './src/assets/img/jpg/'
+const srcBlog = './src/blog/'
 const dist = './dist/'
 const distAssets = './dist/assets/'
 const distAssetsImg = './dist/assets/img/'
+const distBlog = './dist/blog/'
 
 // Clean and create dirs
 // fs.rmSync(dist, { recursive: true, force: true })
@@ -309,23 +312,78 @@ export function copyAssets() {
 /* ************************************************************************************** */
 export function MDtoHTML() {
   // Start converting Markdown to HTML
-  console.log(`Start converting Markdown to HTML in ${srcPages} 🔨`)
-  // TODO
-  console.log(`Markdown converted to HTML in all pages and saved to the ${dist} directory. 👍 \n`)
+  console.log(`Start converting Markdown to HTML in ${srcBlog} 🔨`)
+
+  const HTML_TEMPLATE = (content) => `<!doctype html>
+<html lang="en">
+  <head>
+    <title>Dev Portfolio</title>
+    <head-x />
+    <layout-x />
+    <service_worker-x />
+    <gtm_head-x />
+  </head>
+
+  <body>
+    <gtm_body-x />
+
+    <header>
+      <navmenu-x />
+    </header>
+
+    <main>
+      <article>
+        ${content}
+      </article>
+    </main>
+
+    <footer>
+      <footer-x />
+    </footer>
+  </body>
+</html>
+`
+
+  async function generateBlog() {
+    fs.mkdirSync(distBlog, { recursive: true })
+
+    const files = fs.readdirSync(srcBlog)
+
+    const markdownFiles = files.filter((file) => path.extname(file).toLowerCase() === '.md')
+
+    for (const file of markdownFiles) {
+      const sourcePath = path.join(srcBlog, file)
+      const outputPath = path.join(distBlog, `${path.basename(file, '.md')}.html`)
+
+      const markdown = fs.readFileSync(sourcePath, 'utf8')
+      const html = marked.parse(markdown)
+
+      fs.writeFileSync(outputPath, HTML_TEMPLATE(html), 'utf8')
+
+      console.log(`Generated: ${outputPath}`)
+    }
+  }
+
+  generateBlog().catch((error) => {
+    console.error(error)
+    process.exit(1)
+  })
+
+  console.log(`Markdown converted to HTML and saved to the ${distBlog} directory. 👍 \n`)
 }
 //#endregion
 
 // #region Run all functions
 /* ************************************************************************************** */
 export function main() {
+  fs.rmSync('./dist/', { recursive: true, force: true })
   // optimizeCSS() // run before kiss-x() // WIP
-  // TODO MDtoHTML()
+  MDtoHTML()
   kissX()
-  optimizeHTML()
-  convertImages()
-  copyAssets()
+  // optimizeHTML()
+  // convertImages()
+  // copyAssets()
   // optimizeJS() // WIP
-  // fs.rmSync('./dist/', { recursive: true, force: true })
 }
 
 main()
