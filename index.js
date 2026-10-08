@@ -66,13 +66,24 @@ export function kissX() {
   // Get a list of all HTML files in the source directory
   const htmlFiles = fs.readdirSync(srcPages).filter((file) => path.extname(file) === '.html')
 
-  // Process each HTML file
+  // Process files in src/pages/
   htmlFiles.forEach((fileName) => {
     const srcFilePath = path.join(srcPages, fileName)
     const distFilePath = path.join(dist, fileName)
     replaceTagsInFile(srcFilePath, distFilePath)
     console.log(`Replaced tags in ${fileName} and saved to dist directory.`)
   })
+
+  // Process files in dist/blog/
+  if (fs.existsSync(distBlog)) {
+    const blogFiles = fs.readdirSync(distBlog).filter((file) => path.extname(file) === '.html')
+
+    blogFiles.forEach((fileName) => {
+      const blogFilePath = path.join(distBlog, fileName)
+      replaceTagsInFile(blogFilePath, blogFilePath)
+      console.log(`Replaced tags in ${fileName} and saved to blog directory.`)
+    })
+  }
 
   console.log(`Tags replaced in all HTML pages and saved to the ${dist} directory. 👍 \n`)
 }
@@ -320,6 +331,7 @@ export function MDtoHTML() {
     <title>Dev Portfolio</title>
     <head-x />
     <layout-x />
+    <blog-x />
     <service_worker-x />
     <gtm_head-x />
   </head>
