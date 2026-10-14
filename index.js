@@ -85,7 +85,15 @@ export function kissX() {
     })
   }
 
-  console.log(`Tags replaced in all HTML pages and saved to the ${dist} directory. 👍 \n`)
+  // Copy assets
+  try {
+    fs.cpSync(srcAssets, distAssets, { recursive: true })
+    fs.openSync(`${dist}.nojekyll`, 'w') // disable Jekyll for proper assets loading
+  } catch (err) {
+    console.error(err)
+  }
+
+  console.log(`Replaced tags in pages and saved to ${dist} directory. Assets copied 👍 \n`)
 }
 //#endregion
 
@@ -294,28 +302,6 @@ export function convertImages() {
   })
 
   console.log(`Image conversion completed in ${distAssetsImg} 👍\n`)
-}
-// #endregion
-
-// #region Copy assets
-/* ************************************************************************************** */
-export function copyAssets() {
-  // Copy other assets
-  console.log(`Copy assets from ${srcAssets} to ${distAssets} dir  🔨`)
-
-  try {
-    fs.cpSync(srcAssets, distAssets, {
-      recursive: true,
-      // Exclude folders containing 'test'
-      filter: (item) => !item.includes('test'),
-    })
-
-    // Add .nojekyll to disable Jekyll and proper assets loading
-    fs.openSync(`${dist}.nojekyll`, 'w')
-  } catch (err) {
-    console.error(err)
-  }
-  console.log(`Finish copying 👍`)
 }
 // #endregion
 
