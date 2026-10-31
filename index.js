@@ -374,13 +374,12 @@ export function MDtoHTML() {
 // #region Run all functions
 /* ************************************************************************************** */
 export function main() {
-  fs.rmSync('./dist/', { recursive: true, force: true })
-  // optimizeCSS() // run before kiss-x() // WIP
-  MDtoHTML()
+  // fs.rmSync('./dist/', { recursive: true, force: true })
   kissX()
+  MDtoHTML()
+  // optimizeCSS() // run before kiss-x() // WIP
   // optimizeHTML()
   // convertImages()
-  // copyAssets()
   // optimizeJS() // WIP
 }
 

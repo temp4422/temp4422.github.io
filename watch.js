@@ -1,5 +1,5 @@
 import fs from 'node:fs'
-import { kissX, optimizeHTML, convertImages, copyAssets } from './index.js'
+import { kissX, optimizeHTML, convertImages } from './index.js'
 // import { exec } from 'node:child_process'
 
 // Watch file changes and rebuild
@@ -8,7 +8,6 @@ fs.watch('./src/', { recursive: true }, (event, filename) => {
   kissX()
   // optimizeHTML()
   // convertImages()
-  copyAssets()
 })
 
 // // Exec shell command
