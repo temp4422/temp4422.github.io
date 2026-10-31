@@ -1,8 +1,9 @@
 <style>
   section#works {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: center;
+    align-items: center;
     gap: 4rem;
     width: 100%;
     overflow: hidden;
@@ -10,47 +11,74 @@
   .works-list {
     width: 100%;
     height: 100%;
-    background: red;
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
     padding: 1rem;
   }
+
+  .work-item {
+    background: red;
+    width: 100%;
+    height: 150px;
+    border-radius: 1rem;
+  }
+
   .work-item__iframe {
-    /* transform: scale(0.8); */
+    width: 100%;
+    height: 100%;
+    border: 0;
+
+    zoom: 30%;
+    transform-origin: top left;
+    pointer-events: none;
+  }
+  .works-link {
+    width: 100%;
+    height: 100%;
   }
 </style>
 
 <section id="works">
   <h2 class="works-title">MY WORKS!</h2>
 
-  <div class="works-list">
-    <iframe
-      class="work-item__iframe"
-      loading="lazy"
-      scrolling="no"
-      src="https://x-drive.ua/"
-    ></iframe>
-    <iframe
-      style="background: white"
-      class="work-item__iframe"
-      loading="lazy"
-      scrolling="no"
-      src="https://alpenkrokus.com/"
-    ></iframe>
-    <iframe
-      class="work-item__iframe"
-      loading="lazy"
-      scrolling="no"
-      src="https://mountain-cake.onrender.com/"
-    ></iframe>
-    <iframe
-      class="work-item__iframe"
-      loading="lazy"
-      scrolling="no"
-      src="https://kart.temp44.top/"
-    ></iframe>
-  </div>
+  <a href="works.html" class="works-link">
+    <div class="works-list">
+      <div class="work-item">
+        <iframe
+          class="work-item__iframe"
+          loading="lazy"
+          scrolling="no"
+          src="https://x-drive.ua/"
+        ></iframe>
+      </div>
+      <div class="work-item">
+        <iframe
+          style="background: white"
+          class="work-item__iframe"
+          loading="lazy"
+          scrolling="no"
+          src="https://alpenkrokus.com/"
+        ></iframe>
+      </div>
+      <div class="work-item">
+        <iframe
+          class="work-item__iframe"
+          loading="lazy"
+          scrolling="no"
+          src="https://mountain-cake.onrender.com/"
+        ></iframe>
+      </div>
+      <div class="work-item">
+        <iframe
+          class="work-item__iframe"
+          loading="lazy"
+          scrolling="no"
+          src="https://kart.temp44.top/"
+        ></iframe>
+      </div>
+    </div>
+  </a>
 </section>
