@@ -242,7 +242,17 @@
       </section>
 
       <script>
-        // paste code here
+        document.querySelectorAll('.work-item').forEach(async (item) => {
+          try {
+            const response = await fetch(item.querySelector('.work-item__link').href)
+            const page = new DOMParser().parseFromString(await response.text(), 'text/html')
+            item.querySelector('#target-link-title').textContent = page.title
+            item.querySelector('#target-link-description').textContent =
+              page.querySelector('meta[name="description"]')?.content || ''
+          } catch (error) {
+            console.error('Could not load work item metadata:', error)
+          }
+        })
       </script>
     </main>
 
