@@ -80,7 +80,7 @@
       .work-item__text {
         margin: 0.5rem;
         padding: 0;
-        text-align: center;
+        text-align: left;
       }
     </style>
   </head>
@@ -106,8 +106,10 @@
             ></iframe>
           </a>
           <div class="work-item__text-wrapper">
-            <h3 class="work-item__title" id="target-link-title"></h3>
-            <p class="work-item__text" id="target-link-description"></p>
+            <h3 class="work-item__title">Прокат лиж X-drive</h3>
+            <p class="work-item__text">
+              Відпочивай з Драйвом! Мережа прокатів гірськолижного спорядження.
+            </p>
           </div>
         </div>
 
@@ -122,8 +124,10 @@
             ></iframe>
           </a>
           <div class="work-item__text-wrapper">
-            <h3 class="work-item__title" id="target-link-title"></h3>
-            <p class="work-item__text" id="target-link-description"></p>
+            <h3 class="work-item__title">Alpen Krokus Hotel</h3>
+            <p class="work-item__text">
+              Apartment and suite accommodation near the ski resort of Bukovel.
+            </p>
           </div>
         </div>
 
@@ -137,8 +141,8 @@
             ></iframe>
           </a>
           <div class="work-item__text-wrapper">
-            <h3 class="work-item__title" id="target-link-title"></h3>
-            <p class="work-item__text" id="target-link-description"></p>
+            <h3 class="work-item__title">Mountain Cake</h3>
+            <p class="work-item__text">Створення красивих і смачних тортів.</p>
           </div>
         </div>
 
@@ -152,8 +156,8 @@
             ></iframe>
           </a>
           <div class="work-item__text-wrapper">
-            <h3 class="work-item__title" id="target-link-title"></h3>
-            <p class="work-item__text" id="target-link-description"></p>
+            <h3 class="work-item__title">KartingX</h3>
+            <p class="work-item__text">Premium karting experiences and adrenaline-filled events.</p>
           </div>
         </div>
 
@@ -167,8 +171,8 @@
             ></iframe>
           </a>
           <div class="work-item__text-wrapper">
-            <h3 class="work-item__title" id="target-link-title"></h3>
-            <p class="work-item__text" id="target-link-description"></p>
+            <h3 class="work-item__title">Solomia Portfolio</h3>
+            <p class="work-item__text">A personal portfolio website.</p>
           </div>
         </div>
 
@@ -186,8 +190,8 @@
             ></iframe>
           </a>
           <div class="work-item__text-wrapper">
-            <h3 class="work-item__title" id="target-link-title"></h3>
-            <p class="work-item__text" id="target-link-description"></p>
+            <h3 class="work-item__title">freeCodeCamp</h3>
+            <p class="work-item__text">Dev portfolio website</p>
           </div>
         </div>
 
@@ -205,8 +209,8 @@
             ></iframe>
           </a>
           <div class="work-item__text-wrapper">
-            <h3 class="work-item__title" id="target-link-title"></h3>
-            <p class="work-item__text" id="target-link-description"></p>
+            <h3 class="work-item__title">Playground</h3>
+            <p class="work-item__text">Dev portfolio website</p>
           </div>
         </div>
 
@@ -220,8 +224,8 @@
             ></iframe>
           </a>
           <div class="work-item__text-wrapper">
-            <h3 class="work-item__title" id="target-link-title"></h3>
-            <p class="work-item__text" id="target-link-description"></p>
+            <h3 class="work-item__title">Password Generator</h3>
+            <p class="work-item__text">A tool for creating secure passwords.</p>
           </div>
         </div>
 
@@ -235,25 +239,30 @@
             ></iframe>
           </a>
           <div class="work-item__text-wrapper">
-            <h3 class="work-item__title" id="target-link-title"></h3>
-            <p class="work-item__text" id="target-link-description"></p>
+            <h3 class="work-item__title">QR Code Generator</h3>
+            <p class="work-item__text">A tool for creating QR codes.</p>
           </div>
         </div>
       </section>
 
-      <script>
+      <!-- <script>
         document.querySelectorAll('.work-item').forEach(async (item) => {
           try {
             const response = await fetch(item.querySelector('.work-item__link').href)
             const page = new DOMParser().parseFromString(await response.text(), 'text/html')
-            item.querySelector('#target-link-title').textContent = page.title
-            item.querySelector('#target-link-description').textContent =
-              page.querySelector('meta[name="description"]')?.content || ''
+            const title = item.querySelector('.work-item__title')
+            const description = item.querySelector('.work-item__text')
+            const targetTitle = page.title.trim()
+            const targetDescription =
+              page.querySelector('meta[name="description"]')?.content.trim() || ''
+
+            if (targetTitle) title.textContent = targetTitle
+            if (targetDescription) description.textContent = targetDescription
           } catch (error) {
             console.error('Could not load work item metadata:', error)
           }
         })
-      </script>
+      </script> -->
     </main>
 
     <footer>
