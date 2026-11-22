@@ -26,7 +26,9 @@
       }
 
       .work-item {
+        display: grid;
         position: relative;
+        place-items: center;
         filter: var(--svg-glow);
         transition: var(--svg-transition);
         background: transparent;
@@ -37,26 +39,21 @@
         filter: var(--svg-glow-hover);
         transition: var(--svg-transition-hover);
       }
-      .work-item__iframe {
-        margin: 1rem;
-        border-radius: 1rem;
-        width: calc(100% - 2rem);
-        height: calc(100% - 2rem);
-        overflow: hidden;
-        zoom: 40%;
-        z-index: -10;
-        border: 1px solid rgba(255, 255, 255, 0.115);
-      }
       .work-item__link {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        cursor: pointer;
+        display: grid;
+        place-items: center;
         background: transparent;
         width: 100%;
         height: 100%;
+      }
+      .work-item__iframe {
+        zoom: 40%;
+        z-index: -10;
+        border-radius: 1rem;
+        width: 100%;
+        height: 100%;
         overflow: hidden;
+        pointer-events: none;
       }
     </style>
   </head>
@@ -73,107 +70,110 @@
         <h2 class="works-title">MY WORKS</h2>
 
         <div class="work-item">
-          <iframe
-            class="work-item__iframe"
-            loading="lazy"
-            scrolling="no"
-            src="https://x-drive.ua"
-          ></iframe>
-          <a class="work-item__link" target="_blank" href="https://x-drive.ua"></a>
+          <a class="work-item__link" target="_blank" href="https://x-drive.ua">
+            <iframe
+              class="work-item__iframe"
+              loading="lazy"
+              scrolling="no"
+              src="https://x-drive.ua"
+            ></iframe>
+          </a>
           <!-- <p class="work-item__text">X-drive.ua ski rental network</p> -->
         </div>
 
         <div class="work-item">
-          <iframe
-            style="background: white"
-            class="work-item__iframe"
-            loading="lazy"
-            scrolling="no"
-            src="https://alpenkrokus.com/"
-          ></iframe>
-          <a class="work-item__link" target="_blank" href="https://alpenkrokus.com/"></a>
+          <a class="work-item__link" target="_blank" href="https://alpenkrokus.com/">
+            <iframe
+              style="background: white"
+              class="work-item__iframe"
+              loading="lazy"
+              scrolling="no"
+              src="https://alpenkrokus.com/"
+            ></iframe>
+          </a>
         </div>
 
         <div class="work-item">
-          <iframe
-            class="work-item__iframe"
-            loading="lazy"
-            scrolling="no"
-            src="https://mountain-cake.onrender.com/"
-          ></iframe>
-          <a class="work-item__link" target="_blank" href="https://mountain-cake.onrender.com/"></a>
+          <a class="work-item__link" target="_blank" href="https://mountain-cake.onrender.com/">
+            <iframe
+              class="work-item__iframe"
+              loading="lazy"
+              scrolling="no"
+              src="https://mountain-cake.onrender.com/"
+            ></iframe>
+          </a>
         </div>
 
         <div class="work-item">
-          <iframe
-            class="work-item__iframe"
-            loading="lazy"
-            scrolling="no"
-            src="https://kart.temp44.top/"
-          ></iframe>
-          <a class="work-item__link" target="_blank" href="https://kart.temp44.top/"></a>
-        </div>
-
-        <div class="work-item">
-          <iframe
-            class="work-item__iframe"
-            loading="lazy"
-            scrolling="no"
-            src="https://solomia-portfolio.netlify.app/"
-          ></iframe>
-          <a
-            class="work-item__link"
-            target="_blank"
-            href="https://solomia-portfolio.netlify.app/"
+          <a class="work-item__link" target="_blank" href="https://kart.temp44.top/"
+            ><iframe
+              class="work-item__iframe"
+              loading="lazy"
+              scrolling="no"
+              src="https://kart.temp44.top/"
+            ></iframe
           ></a>
         </div>
 
         <div class="work-item">
-          <iframe
-            class="work-item__iframe"
-            loading="lazy"
-            scrolling="no"
-            src="https://temp4422.github.io/freecodecamp.html"
-          ></iframe>
+          <a class="work-item__link" target="_blank" href="https://solomia-portfolio.netlify.app/"
+            ><iframe
+              class="work-item__iframe"
+              loading="lazy"
+              scrolling="no"
+              src="https://solomia-portfolio.netlify.app/"
+            ></iframe
+          ></a>
+        </div>
+
+        <div class="work-item">
           <a
             class="work-item__link"
             target="_blank"
             href="https://temp4422.github.io/freecodecamp.html"
+            ><iframe
+              class="work-item__iframe"
+              loading="lazy"
+              scrolling="no"
+              src="https://temp4422.github.io/freecodecamp.html"
+            ></iframe
           ></a>
         </div>
 
         <div class="work-item">
-          <iframe
-            class="work-item__iframe"
-            loading="lazy"
-            scrolling="no"
-            src="https://temp4422.github.io/playground.html"
-          ></iframe>
           <a
             class="work-item__link"
             target="_blank"
             href="https://temp4422.github.io/playground.html"
+            ><iframe
+              class="work-item__iframe"
+              loading="lazy"
+              scrolling="no"
+              src="https://temp4422.github.io/playground.html"
+            ></iframe
           ></a>
         </div>
 
         <div class="work-item">
-          <iframe
-            class="work-item__iframe"
-            loading="lazy"
-            scrolling="no"
-            src="https://passwd.temp44.top/"
-          ></iframe>
-          <a class="work-item__link" target="_blank" href="https://passwd.temp44.top/"></a>
+          <a class="work-item__link" target="_blank" href="https://passwd.temp44.top/"
+            ><iframe
+              class="work-item__iframe"
+              loading="lazy"
+              scrolling="no"
+              src="https://passwd.temp44.top/"
+            ></iframe
+          ></a>
         </div>
 
         <div class="work-item">
-          <iframe
-            class="work-item__iframe"
-            loading="lazy"
-            scrolling="no"
-            src="https://qr.temp44.top/"
-          ></iframe>
-          <a class="work-item__link" target="_blank" href="https://qr.temp44.top/"></a>
+          <a class="work-item__link" target="_blank" href="https://qr.temp44.top/"
+            ><iframe
+              class="work-item__iframe"
+              loading="lazy"
+              scrolling="no"
+              src="https://qr.temp44.top/"
+            ></iframe
+          ></a>
         </div>
       </section>
     </main>
