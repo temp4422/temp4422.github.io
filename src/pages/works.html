@@ -191,7 +191,7 @@
           </a>
           <div class="work-item__text-wrapper">
             <h3 class="work-item__title">freeCodeCamp</h3>
-            <p class="work-item__text">Dev portfolio website</p>
+            <p class="work-item__text">Completed freeCodeCamp projects.</p>
           </div>
         </div>
 
@@ -210,7 +210,7 @@
           </a>
           <div class="work-item__text-wrapper">
             <h3 class="work-item__title">Playground</h3>
-            <p class="work-item__text">Dev portfolio website</p>
+            <p class="work-item__text">A place to experiment with new ideas and technologies.</p>
           </div>
         </div>
 
@@ -262,6 +262,15 @@
             console.error('Could not load work item metadata:', error)
           }
         })
+      </script> -->
+      // Alternative with clasees ChatGPT
+      <!-- <script>
+       document.querySelectorAll('.work-item__link').forEach(async (link) => {
+      try { const html = await (await fetch(link.href)).text() const page = new
+      DOMParser().parseFromString(html, 'text/html') const item = link.closest('.work-item')
+      item.querySelector('.target-link-title').textContent = page.title
+      item.querySelector('.target-link-description').textContent =
+      page.querySelector('meta[name="description"]')?.content || '' } catch {} })
       </script> -->
     </main>
 
