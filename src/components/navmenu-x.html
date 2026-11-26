@@ -43,8 +43,6 @@
     margin: 1.5rem;
     padding: 0.6rem;
     border-radius: 30%;
-    animation: menu-spin-back var(--transision-time-in) ease-in-out;
-    animation-fill-mode: forwards;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: none;
@@ -52,6 +50,7 @@
     cursor: pointer;
     transition: 0.5s ease; /* box shadow animation on hover*/
     filter: drop-shadow(0 0 2rem rgba(255, 255, 255, 0.5));
+    view-transition-name: nav-button;
 
     /* #region Squircle Shape  */
     /* Short */
@@ -95,6 +94,20 @@
     ); */
     /* aspect-ratio: 1; */
     /* #endregion Squircle Shape  */
+  }
+  .nav__button.nav__button--animated {
+    animation: menu-spin-back var(--transision-time-in) ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  ::view-transition-group(nav-button) {
+    animation: none;
+  }
+  ::view-transition-old(nav-button) {
+    display: none;
+  }
+  ::view-transition-new(nav-button) {
+    animation: none;
+    mix-blend-mode: normal;
   }
   .nav__button:hover {
     transition: 0.5s ease;
@@ -627,4 +640,11 @@
 
   navButton.addEventListener('click', toggleOverflow, false)
   navPanel.addEventListener('click', toggleOverflow, false)
+  checkbox.addEventListener(
+    'change',
+    () => {
+      navButton.classList.add('nav__button--animated')
+    },
+    { once: true },
+  )
 </script>
