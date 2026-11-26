@@ -6,6 +6,13 @@
     <layout-x />
     <service_worker-x />
     <gtm_head-x />
+    <script>
+      try {
+        if (!sessionStorage.getItem('navMenuRevealed')) {
+          document.documentElement.classList.add('nav-button-hidden')
+        }
+      } catch {}
+    </script>
   </head>
 
   <body>
