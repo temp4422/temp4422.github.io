@@ -653,41 +653,19 @@
     { once: true },
   )
 
-  function revealNavButton() {
-    document.documentElement.classList.remove('nav-button-hidden')
-    try {
-      sessionStorage.setItem('navMenuRevealed', '1')
-    } catch {}
-    window.removeEventListener('scroll', onFirstScroll)
+  function updateNavButtonVisibility() {
+    const isNotScrollable =
+      document.readyState !== 'loading' &&
+      document.documentElement.scrollHeight <= window.innerHeight
+    const shouldShow = window.scrollY > 0 || checkbox.checked || isNotScrollable
+    document.documentElement.classList.toggle('nav-button-hidden', !shouldShow)
   }
 
-  function onFirstScroll() {
-    if (window.scrollY > 0) {
-      revealNavButton()
-    }
-  }
-
-  if (document.documentElement.classList.contains('nav-button-hidden')) {
-    if (window.scrollY > 0) {
-      revealNavButton()
-    } else {
-      window.addEventListener('scroll', onFirstScroll, { passive: true })
-      window.addEventListener(
-        'load',
-        () => {
-          if (
-            window.scrollY > 0 ||
-            document.documentElement.scrollHeight <= window.innerHeight
-          ) {
-            revealNavButton()
-          }
-        },
-        { once: true },
-      )
-    }
-  } else {
-    try {
-      sessionStorage.setItem('navMenuRevealed', '1')
-    } catch {}
+  if (document.documentElement.classList.contains('nav-hide-at-top')) {
+    window.addEventListener('scroll', updateNavButtonVisibility, { passive: true })
+    window.addEventListener('DOMContentLoaded', updateNavButtonVisibility, { once: true })
+    window.addEventListener('load', updateNavButtonVisibility, { once: true })
+    window.addEventListener('resize', updateNavButtonVisibility, { passive: true })
+    checkbox.addEventListener('change', updateNavButtonVisibility)
   }
 </script>

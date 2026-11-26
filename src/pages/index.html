@@ -7,11 +7,7 @@
     <service_worker-x />
     <gtm_head-x />
     <script>
-      try {
-        if (!sessionStorage.getItem('navMenuRevealed')) {
-          document.documentElement.classList.add('nav-button-hidden')
-        }
-      } catch {}
+      document.documentElement.classList.add('nav-hide-at-top', 'nav-button-hidden')
     </script>
   </head>
 
