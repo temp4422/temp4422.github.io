@@ -1,10 +1,11 @@
 import fs from 'node:fs'
-import { kissX, optimizeHTML, convertImages } from './index.js'
+import { kissX, MDtoHTML, optimizeHTML, convertImages } from './index.js'
 // import { exec } from 'node:child_process'
 
 // Watch file changes and rebuild
 fs.watch('./src/', { recursive: true }, (event, filename) => {
   console.log(`Detected ${event} in ${filename}`)
+  MDtoHTML()
   kissX()
   // optimizeHTML()
   // convertImages()

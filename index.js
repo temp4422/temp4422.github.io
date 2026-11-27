@@ -311,14 +311,34 @@ export function MDtoHTML() {
   // Start converting Markdown to HTML
   console.log(`Start converting Markdown to HTML in ${srcBlog} 🔨`)
 
-  const HTML_TEMPLATE = (content) => `<!doctype html>
+  const escapeHtml = (str) =>
+    str
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;')
+
+  const formatTitle = (fileName, markdown) => {
+    const headingMatch = markdown.match(/^#\s+(.+)$/m)
+    if (headingMatch) return escapeHtml(headingMatch[1].trim())
+
+    const baseName = path.basename(fileName, path.extname(fileName))
+    const formatted = baseName
+      .split(/[-_]+/)
+      .filter(Boolean)
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(' ')
+    return escapeHtml(formatted || 'Blog')
+  }
+
+  const HTML_TEMPLATE = (title, content) => `<!doctype html>
 <html lang="en">
   <head>
-    <title>Dev Portfolio</title>
+    <title>${title}</title>
     <head-x />
     <layout-x />
     <blog-x />
-    <service_worker-x />
     <gtm_head-x />
   </head>
 
@@ -342,30 +362,23 @@ export function MDtoHTML() {
 </html>
 `
 
-  async function generateBlog() {
-    fs.mkdirSync(distBlog, { recursive: true })
+  fs.mkdirSync(distBlog, { recursive: true })
 
-    const files = fs.readdirSync(srcBlog)
+  const files = fs.readdirSync(srcBlog)
+  const markdownFiles = files.filter((file) => path.extname(file).toLowerCase() === '.md')
 
-    const markdownFiles = files.filter((file) => path.extname(file).toLowerCase() === '.md')
+  for (const file of markdownFiles) {
+    const sourcePath = path.join(srcBlog, file)
+    const outputPath = path.join(distBlog, `${path.basename(file, path.extname(file))}.html`)
 
-    for (const file of markdownFiles) {
-      const sourcePath = path.join(srcBlog, file)
-      const outputPath = path.join(distBlog, `${path.basename(file, '.md')}.html`)
+    const markdown = fs.readFileSync(sourcePath, 'utf8')
+    const title = formatTitle(file, markdown)
+    const html = marked.parse(markdown)
 
-      const markdown = fs.readFileSync(sourcePath, 'utf8')
-      const html = marked.parse(markdown)
+    fs.writeFileSync(outputPath, HTML_TEMPLATE(title, html), 'utf8')
 
-      fs.writeFileSync(outputPath, HTML_TEMPLATE(html), 'utf8')
-
-      console.log(`Generated: ${outputPath}`)
-    }
+    console.log(`Generated: ${outputPath}`)
   }
-
-  generateBlog().catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
 
   console.log(`Markdown converted to HTML and saved to the ${distBlog} directory. 👍 \n`)
 }
@@ -375,8 +388,8 @@ export function MDtoHTML() {
 /* ************************************************************************************** */
 export function main() {
   // fs.rmSync('./dist/', { recursive: true, force: true })
-  kissX()
   MDtoHTML()
+  kissX()
   // optimizeCSS() // run before kiss-x() // WIP
   // optimizeHTML()
   // convertImages()
