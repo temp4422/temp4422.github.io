@@ -332,8 +332,13 @@ export function MDtoHTML() {
     return escapeHtml(formatted || 'Blog')
   }
 
-  const HTML_TEMPLATE = (title, content) => `<!doctype html>
-<html lang="en">
+  const detectLang = (fileName) => {
+    const baseName = path.basename(fileName, path.extname(fileName))
+    return baseName.endsWith('-uk') ? 'uk' : 'en'
+  }
+
+  const HTML_TEMPLATE = (title, content, lang = 'en') => `<!doctype html>
+<html lang="${lang}">
   <head>
     <title>${title}</title>
     <head-x />
@@ -373,9 +378,10 @@ export function MDtoHTML() {
 
     const markdown = fs.readFileSync(sourcePath, 'utf8')
     const title = formatTitle(file, markdown)
+    const lang = detectLang(file)
     const html = marked.parse(markdown)
 
-    fs.writeFileSync(outputPath, HTML_TEMPLATE(title, html), 'utf8')
+    fs.writeFileSync(outputPath, HTML_TEMPLATE(title, html, lang), 'utf8')
 
     console.log(`Generated: ${outputPath}`)
   }
